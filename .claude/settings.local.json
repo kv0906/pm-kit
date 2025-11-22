@@ -17,6 +17,9 @@
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "playwright",
-    "context7"
+    "context7",
+    "brave-search",
+    "perplexity",
+    "gemini"
   ]
 }
