@@ -28,6 +28,12 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 /plugin install kv0906/pm-kit
 ```
 
+### One-Line Shell Install
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bash
+```
+
 ### Via Marketplace
 
 ```bash
