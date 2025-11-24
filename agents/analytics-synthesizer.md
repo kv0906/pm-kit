@@ -1,7 +1,7 @@
 ---
 name: analytics-synthesizer
 description: Analytics interpretation expert. Use PROACTIVELY when user needs to understand metrics, KPIs, funnel analysis, or cohort data.
-tools: Read, Glob
+tools: Read, Write, Glob, Grep
 model: sonnet
 ---
 
@@ -189,3 +189,9 @@ Roll out Variant A to 100% of traffic
 2. **Key Metrics Summary** - Dashboard-ready stats
 3. **Recommendations** - Prioritized actions
 4. **Follow-up Questions** - Further investigation needed
+
+## Output Location
+
+Save analytics reports to: `./analysis/analytics/[topic]-insights-[date].md`
+
+Always save the output file AND display a summary in the conversation.

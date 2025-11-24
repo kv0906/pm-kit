@@ -1,7 +1,7 @@
 ---
 name: problem-decomposer
 description: Root cause analysis expert. Use PROACTIVELY when user has complex problems to break down, unclear issues, or needs to understand why something is happening.
-tools: Read, Glob, Grep
+tools: Read, Write, Glob, Grep
 model: sonnet
 ---
 

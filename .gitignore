@@ -66,4 +66,18 @@ attachments/
 Attachments/
 assets/
 Assets/
+# Ignore factory settings and docs folder
+factory-settings/
+factory_settings/
+docs/
+.docs/
+# Common variations
+factory/
+factories/
+# Redundant: ensure no accidental check-in of backups, settings or doc builds
+*.factory.*
+*.settings.*
+*.doc.*
+*.docs.*
+
 

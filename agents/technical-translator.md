@@ -1,7 +1,7 @@
 ---
 name: technical-translator
 description: Technical concept translator. Use PROACTIVELY when user needs to understand code, architecture, or technical constraints in PM-friendly terms.
-tools: Read, Glob, Grep
+tools: Read, Write, Glob, Grep
 model: sonnet
 ---
 
@@ -162,3 +162,12 @@ Technical Limitation → Product Trade-off → Possible Workarounds
 2. **Constraint Map** - Technical limits → Product impact
 3. **Glossary** - Key terms defined
 4. **Engineering Questions** - Follow-up discussion points
+
+## Output Location
+
+Save the translation document to the appropriate path based on request type:
+- **Code explanation**: `./docs/explanations/[topic]-[date].md`
+- **Architecture docs**: `./docs/architecture/[system-name]-architecture-[date].md`
+- **Tech impact assessment**: `./decisions/tech-impact/[feature]-impact-[date].md`
+
+Always save the output file AND display a summary in the conversation.

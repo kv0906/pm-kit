@@ -65,6 +65,12 @@ Refer to `./.claude/workflows/technical-translation.md` for the complete methodo
 ### Phase 4: Documentation
 Generate explanation following template in `./.claude/workflows/technical-translation.md`
 
+## Output
+
+Save explanation to: `./docs/explanations/[topic]-[date].md`
+
+Also display a summary in the conversation for immediate reference.
+
 ## Output Format
 
 Provide explanation in this structure:

@@ -30,9 +30,9 @@ You can provide:
 
 ## Output
 
-Display daily suggestions directly in conversation (no file output by default).
+Save daily plan to: `./docs/today-[date].md`
 
-Optionally save to: `./docs/today-[date].md`
+Also display the plan in the conversation for immediate reference.
 
 ## Output Structure
 

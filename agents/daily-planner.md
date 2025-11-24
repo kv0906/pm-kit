@@ -239,5 +239,10 @@ Return to earlier phases if:
 
 ## Output Artifacts
 
-1. **Daily Plan** - Displayed in conversation
-2. **Optional File** - `./docs/today-[date].md` if requested
+1. **Daily Plan** - Saved to file AND displayed in conversation
+
+## Output Location
+
+Save daily plan to: `./docs/today-[date].md`
+
+Always save the output file AND display the plan in the conversation for immediate reference.
