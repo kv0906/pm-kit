@@ -1,20 +1,68 @@
 # Changelog
 
-All notable changes to ClaudeKit PM will be documented in this file.
+All notable changes to PM-Kit will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+*No unreleased changes*
+
+---
+
+## [0.4.0] - 2025-11-24
+
 ### Added
-- Repository maintenance documentation (CONTRIBUTING.md, CHANGELOG.md, CODE_OF_CONDUCT.md)
-- GitHub issue and PR templates
-- .gitignore file
+- Native Claude Code plugin support
+- `.claude-plugin/plugin.json` manifest for plugin installation
+- `.claude-plugin/marketplace.json` for pm-kit marketplace
+- Plugin can now be installed via `/plugin install kv0906/pm-kit`
 
 ### Changed
-- PLAN.md restructured as centralized knowledge base
-- README.md documentation links fixed
+- **Breaking**: Restructured to Claude Code plugin standard directories:
+  - `.claude/commands/` → `commands/`
+  - `.claude/agents/` → `agents/`
+  - `.claude/templates/` → `templates/`
+  - `.claude/skills/` → `skills/[name]/SKILL.md` format
+- Skills now use `SKILL.md` format in subdirectories for plugin auto-discovery
+- Updated all documentation for plugin-based installation
+- Project renamed from "ClaudeKit PM" to "PM-Kit"
+
+### Removed
+- `archived-workflows/` directory (workflows are embedded in agents)
+- Legacy `.claude/` directory structure
+- Dependency on `pm-kit-cli` for installation
+
+### Migration
+```bash
+# Old installation (deprecated)
+npm install -g pm-kit-cli && pm-kit init
+
+# New installation
+/plugin install kv0906/pm-kit
+```
+
+---
+
+## [0.3.0] - 2025-11-24
+
+### Added
+- Claude Code subagent pattern alignment
+- YAML frontmatter to all agents (`name`, `description`, `tools`, `model`)
+- "Use PROACTIVELY" triggers in agent descriptions for auto-delegation
+- ADR-005 documenting Claude Code alignment decision
+
+### Changed
+- All commands now use `$ARGUMENTS` placeholder (was `{{input}}`)
+- Workflows embedded directly into agent definitions
+- Architecture simplified from 3-layer to 2-layer:
+  - Before: Command → Agent → Workflow
+  - After: Command → Agent (workflow embedded)
+- Agents restructured with complete methodology in single file
+
+### Deprecated
+- Standalone workflow files (now archived, embedded in agents)
 
 ---
 
@@ -27,6 +75,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Command taxonomy in README organized by activity phase (Discovery, Definition, Decision, Communication)
 - Contributor guidelines in CLAUDE.md
 - PLAN.md optimization roadmap
+- Repository maintenance documentation (CONTRIBUTING.md, CHANGELOG.md, CODE_OF_CONDUCT.md)
+- GitHub issue and PR templates
 
 ### Changed
 - `/research` command now handles all research types with auto-detection:
@@ -42,54 +92,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `/evidence` - Use `/research` with evidence keywords
 - `/synthesize` - Use `/research` with user research keywords
 - `research-synthesizer.md` agent - Use `research-agent.md`
-- `research-synthesis.md` workflow - Use `research-core.md`
 
 ---
 
 ## [0.1.0] - 2024-11-21
 
 ### Added
-- Initial release of ClaudeKit PM Framework
+- Initial release of PM-Kit Framework
 - 18 comprehensive PM workflows implementing Long Chain-of-Thought methodology
-- 10 specialized agents for systematic problem-solving:
-  - Problem Decomposer
-  - PRD Writer
-  - Research Synthesizer
-  - User Researcher
-  - Prioritization Engine
-  - Consensus Builder
-  - Matrix Generator
-  - Analytics Synthesizer
-  - Technical Translator
-  - Rapid Prototyper
-- 16 slash commands for quick access:
-  - `/prd` - Generate PRDs
-  - `/decompose` - Problem decomposition
-  - `/research` - Research synthesis
-  - `/prioritize` - Feature prioritization
-  - `/strategy` - Strategic planning
-  - `/decide` - Decision framework
-  - `/consensus` - Stakeholder alignment
-  - `/matrix` - Comparison matrices
-  - `/evidence` - Evidence assessment
-  - `/synthesize` - User research synthesis
-  - `/architecture` - Architecture documentation
-  - `/explain-code` - Code translation
-  - `/tech-impact` - Technical feasibility
-  - `/mockup` - ASCII wireframes
-  - `/flow` - User flow diagrams
-  - `/design-spec` - Design handoff specs
-- 4 document templates:
-  - Consensus template
-  - Decision matrix
-  - Evidence log
-  - Research matrix
-- 5 technical literacy skills for non-technical PMs:
-  - JSON fundamentals
-  - API basics
-  - ASCII diagrams
-  - Frontend prompts
-  - Debug without code
+- 10 specialized agents for systematic problem-solving
+- 16 slash commands for PM tasks
+- 4 document templates (consensus, decision matrix, evidence log, research matrix)
+- 5 technical literacy skills for non-technical PMs
 
 ---
 
@@ -97,6 +111,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| 0.4.0 | 2025-11-24 | Claude Code plugin conversion, marketplace support |
+| 0.3.0 | 2025-11-24 | Claude Code alignment, embedded workflows |
 | 0.2.0 | 2025-11-24 | Research consolidation, `/pm` help, `/diagram` command |
 | 0.1.0 | 2024-11-21 | Initial release |
 
@@ -104,10 +120,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Versioning Policy
 
-ClaudeKit PM follows [Semantic Versioning](https://semver.org/):
+PM-Kit follows [Semantic Versioning](https://semver.org/):
 
-- **MAJOR** (X.0.0): Breaking changes to command interfaces or workflow outputs
-- **MINOR** (0.X.0): New commands, workflows, or agents; non-breaking enhancements
+- **MAJOR** (X.0.0): Breaking changes to command interfaces or plugin structure
+- **MINOR** (0.X.0): New commands, agents, or features; non-breaking enhancements
 - **PATCH** (0.0.X): Bug fixes, documentation updates, minor improvements
 
 ### Deprecation Timeline

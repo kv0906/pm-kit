@@ -1,90 +1,96 @@
-# PM-Kit - Product Management Framework for Claude Code
+# PM-Kit
 
-A comprehensive, AI-enhanced product management plugin implementing Long Chain-of-Thought methodology for systematic problem-solving, strategic planning, and product development.
+**Product Management Framework for Claude Code**
 
-## Quick Start
+A comprehensive AI-powered toolkit that brings systematic product management methodologies directly into Claude Code. Write PRDs, conduct research, prioritize features, and build stakeholder consensus - all through simple slash commands.
 
-### Install as Claude Code Plugin
+---
+
+## Why PM-Kit?
+
+| Traditional PM Work | With PM-Kit |
+|---------------------|-------------|
+| Hours writing PRDs from scratch | `/prd` generates comprehensive docs in minutes |
+| Scattered research across tools | `/research` synthesizes insights automatically |
+| Gut-feel prioritization | `/prioritize` applies RICE, ICE, Kano frameworks |
+| Endless stakeholder debates | `/consensus` structures alignment systematically |
+
+**Built on Long Chain-of-Thought methodology** - every command executes 15+ systematic reasoning steps with validation checkpoints.
+
+---
+
+## Installation
+
+### Quick Install
 
 ```bash
-# Start Claude Code
-claude
+# In Claude Code
+/plugin install kv0906/pm-kit
+```
 
+### Via Marketplace
+
+```bash
 # Add the marketplace
-/plugin marketplace add vanlumberworks/pm-kit
+/plugin marketplace add kv0906/pm-kit
 
 # Install the plugin
-/plugin install pm-kit@pm-tools
+/plugin install pm-kit@pm-kit
 
-# Restart Claude Code, then start using PM commands
-/pm   # Get help choosing the right command
-/prd  # Create your first PRD
-```
-
-### Alternative: Direct Installation
-
-```bash
-/plugin install vanlumberworks/pm-kit
+# Restart Claude Code to activate
 ```
 
 ---
 
-## How It Works: The Simple Mental Model
+## Commands
 
-PM-Kit gives you two things:
+### Discovery - Understanding Problems
 
-| Type | Purpose | When to Use |
-|------|---------|-------------|
-| **Commands** | Produce deliverables | "I need to do something" |
-| **Skills** | Learn concepts | "I need to understand something" |
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/decompose` | Break down complex problems into root causes using first principles | `/decompose "Why are users abandoning checkout?"` |
+| `/research` | Multi-source research synthesis with confidence scoring | `/research "Should we build a mobile app?"` |
 
-That's it. Everything else (agents) happens automatically under the hood.
+### Definition - Specifying Solutions
 
----
-
-## Commands by Activity Phase
-
-### Discovery - Understanding the Problem
-
-| Command | What It Does | Example |
-|---------|--------------|---------|
-| `/decompose` | Break down complex problems into root causes | `/decompose "Why are users abandoning checkout?"` |
-| `/research` | Gather and synthesize research from multiple sources | `/research "Should we build a mobile app?"` |
-
-### Definition - Specifying the Solution
-
-| Command | What It Does | Example |
-|---------|--------------|---------|
-| `/prd` | Generate comprehensive Product Requirements Document | `/prd "Shopping cart transparency feature"` |
-| `/flow` | Create user flow diagrams (Mermaid) | `/flow "Password reset journey"` |
-| `/mockup` | Generate ASCII wireframes | `/mockup "User profile page"` |
-| `/diagram` | Generate ASCII diagrams (flows, architecture, timelines) | `/diagram "checkout process flow"` |
-| `/design-spec` | Create design handoff specifications | `/design-spec "Checkout redesign"` |
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/prd` | Generate comprehensive Product Requirements Documents | `/prd "Shopping cart transparency feature"` |
+| `/flow` | Create user flow diagrams with Mermaid syntax | `/flow "Password reset journey"` |
+| `/mockup` | Generate ASCII wireframes for quick visualization | `/mockup "User profile settings page"` |
+| `/diagram` | Create ASCII diagrams (flows, architecture, timelines) | `/diagram "Microservices architecture"` |
+| `/design-spec` | Produce design handoff specifications | `/design-spec "Checkout redesign"` |
 
 ### Decision - Making Choices
 
-| Command | What It Does | Example |
-|---------|--------------|---------|
-| `/prioritize` | Apply RICE, ICE, Kano frameworks to features | `/prioritize "Q1 feature backlog"` |
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/prioritize` | Apply RICE, ICE, or Kano frameworks to feature lists | `/prioritize "Q1 feature backlog"` |
 | `/decide` | Quick decision framework with structured analysis | `/decide "Build vs buy payment processing?"` |
-| `/matrix` | Generate comparison matrices | `/matrix "CRM vendor comparison"` |
-| `/consensus` | Build stakeholder alignment | `/consensus "API pricing strategy"` |
+| `/matrix` | Generate comparison matrices for options | `/matrix "CRM vendor comparison"` |
+| `/consensus` | Build stakeholder alignment with structured approach | `/consensus "API pricing strategy"` |
 
 ### Communication - Sharing with Others
 
-| Command | What It Does | Example |
-|---------|--------------|---------|
-| `/strategy` | Create comprehensive strategic planning documents | `/strategy "AI-powered recommendations"` |
-| `/architecture` | Generate PM-friendly architecture documentation | `/architecture "Payment system"` |
-| `/explain-code` | Translate code concepts for non-technical PMs | `/explain-code "What does this API do?"` |
-| `/tech-impact` | Assess technical feasibility of features | `/tech-impact "Real-time notifications"` |
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/strategy` | Create strategic planning documents | `/strategy "AI-powered recommendations roadmap"` |
+| `/architecture` | Generate PM-friendly architecture documentation | `/architecture "Payment system overview"` |
+| `/explain-code` | Translate technical code into PM-friendly explanations | `/explain-code "What does this API endpoint do?"` |
+| `/tech-impact` | Assess technical feasibility of proposed features | `/tech-impact "Real-time notifications feature"` |
+
+### Help
+
+| Command | Description |
+|---------|-------------|
+| `/pm` | Interactive guide to help you choose the right command |
 
 ---
 
-## Quick Reference: "I need to..."
+## Quick Reference
 
-| I need to... | Use this command |
-|--------------|------------------|
+| I need to... | Use |
+|--------------|-----|
 | Understand why something is broken | `/decompose` |
 | Research a question or decision | `/research` |
 | Write product requirements | `/prd` |
@@ -93,77 +99,101 @@ That's it. Everything else (agents) happens automatically under the hood.
 | Compare options side-by-side | `/matrix` |
 | Get stakeholder buy-in | `/consensus` |
 | Plan a strategic initiative | `/strategy` |
-| Create an ASCII diagram | `/diagram` |
-| Create a wireframe sketch | `/mockup` |
-| Map out a user journey | `/flow` |
+| Create a diagram | `/diagram` |
+| Sketch a wireframe | `/mockup` |
+| Map a user journey | `/flow` |
 | Understand technical concepts | `/explain-code` |
-| Assess if something is feasible | `/tech-impact` |
+| Assess feasibility | `/tech-impact` |
 
 ---
 
-## Skills (For Learning)
-
-Skills are educational modules for non-technical PMs. They're automatically available when the plugin is installed.
-
-| Skill | What You'll Learn |
-|-------|-------------------|
-| `api-basics` | How APIs work, HTTP methods, status codes |
-| `json-fundamentals` | Reading and understanding JSON data |
-| `debug-without-code` | Debugging strategies without writing code |
-| `frontend-prompts` | Specifying frontend design requirements |
-| `ascii-diagrams` | Creating ASCII diagrams and wireframes |
-
----
-
-## Typical Workflows
+## Example Workflows
 
 ### New Feature Development
+
 ```
-/decompose "user problem"     # Understand the problem
-       |
-/research "solution approaches"   # Research options
-       |
-/prd "feature name"           # Write requirements
-       |
-/prioritize "feature list"    # Score and prioritize
-       |
-/consensus "stakeholders"     # Get alignment
+/decompose "user problem"        # Understand the root cause
+        ↓
+/research "solution approaches"  # Research possible solutions
+        ↓
+/prd "feature name"              # Write requirements
+        ↓
+/prioritize "feature list"       # Score against other work
+        ↓
+/consensus "stakeholders"        # Align the team
 ```
 
 ### Strategic Planning
+
 ```
-/research "market opportunity"    # Gather insights
-       |
-/strategy "initiative"            # Create strategy doc
-       |
-/prioritize "initiatives"         # Prioritize efforts
-       |
-/consensus "leadership"           # Align stakeholders
+/research "market opportunity"   # Gather market insights
+        ↓
+/strategy "initiative name"      # Create strategy document
+        ↓
+/prioritize "initiatives"        # Prioritize efforts
+        ↓
+/consensus "leadership"          # Get executive alignment
 ```
 
 ### Quick Decision
+
 ```
-/decide "the decision"        # Frame the decision
-       |
-/matrix "options"             # Compare options
-       |
-/consensus "approvers"        # Get buy-in
+/decide "the decision"           # Frame the decision
+        ↓
+/matrix "options"                # Compare alternatives
+        ↓
+/consensus "approvers"           # Get sign-off
 ```
 
 ---
 
-## Key Features
+## Skills (Learning Modules)
 
-- **Long Chain-of-Thought Reasoning**: Every command runs 15+ systematic steps with validation checkpoints
-- **Multi-Layer Validation**: Internal consistency, stakeholder alignment, and strategic fit checks
-- **Backtracking Support**: Commands can revisit earlier phases when issues are found
-- **Practical Templates**: Ready-to-use output formats
+PM-Kit includes educational modules for PMs who want to understand technical concepts:
+
+| Skill | What You'll Learn |
+|-------|-------------------|
+| **api-basics** | HTTP methods, status codes, REST concepts |
+| **json-fundamentals** | Reading and understanding JSON data structures |
+| **debug-without-code** | Debugging strategies without writing code |
+| **frontend-prompts** | How to specify frontend design requirements |
+| **ascii-diagrams** | Creating effective ASCII diagrams and wireframes |
+
+---
+
+## Output Locations
+
+When you use PM-Kit commands, outputs are saved to organized directories:
+
+```
+your-project/
+├── prds/           # Product Requirements Documents
+├── research/       # Research reports and syntheses
+├── decisions/      # Decision logs and matrices
+├── roadmaps/       # Strategic roadmaps
+└── metrics/        # KPIs and analytics reports
+```
+
+---
+
+## How It Works
+
+PM-Kit uses a **Command → Agent** architecture:
+
+1. **You invoke a command** (e.g., `/prd "feature name"`)
+2. **Command delegates to a specialized agent** with embedded workflow
+3. **Agent executes 15+ systematic steps** with verification checkpoints
+4. **Output is generated** using professional templates
+
+Each agent implements Long Chain-of-Thought methodology:
+- Multi-phase reasoning process
+- Verification checkpoints at each phase
+- Backtracking when issues are found
+- Quality checklists before completion
 
 ---
 
 ## Plugin Structure
-
-PM-Kit follows Claude Code plugin conventions:
 
 ```
 pm-kit/
@@ -173,59 +203,56 @@ pm-kit/
 ├── commands/             # 16 slash commands
 ├── agents/               # 11 specialized agents
 ├── skills/               # 5 educational modules
-├── templates/            # Output document formats
-└── archived-workflows/   # Legacy reference
-```
-
-**How it works:**
-1. PM invokes a command (e.g., `/prd`)
-2. Command delegates to an agent with embedded workflow
-3. Agent executes 15+ step methodology with verification checkpoints
-4. Output uses templates for consistent formatting
-
----
-
-## Documentation
-
-- [Contributing Guide](CONTRIBUTING.md) - How to contribute to the project
-- [Changelog](CHANGELOG.md) - Version history and changes
-- [Development Roadmap](PLAN.md) - Project roadmap and knowledge base
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Community standards
-
----
-
-## Output Locations
-
-When using PM-Kit, your outputs will be saved to:
-
-```
-your-project/
-├── prds/                     # PRD documents
-├── research/                 # Research outputs
-├── decisions/                # Decision logs
-├── roadmaps/                 # Strategic roadmaps
-└── metrics/                  # KPIs and analytics
+└── templates/            # Output templates
 ```
 
 ---
 
-## Updating the Plugin
+## Updating
 
 ```bash
 # Check for updates
 /plugin update pm-kit
 
-# Or reinstall
+# Or reinstall latest version
 /plugin uninstall pm-kit
-/plugin install pm-kit@pm-tools
+/plugin install kv0906/pm-kit
 ```
 
 ---
 
-**Version:** 0.4.0
-**Created:** 2024-11-21
-**Last Updated:** 2025-11-24
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Ways to Contribute
+
+- Report bugs or suggest features via [Issues](https://github.com/kv0906/pm-kit/issues)
+- Submit pull requests for improvements
+- Share your workflows and use cases
+- Help improve documentation
 
 ---
 
-**Keywords:** claude-code, plugin, product-management, pm, prd, research, prioritization, decision-matrix, stakeholder-alignment
+## Documentation
+
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute
+- [Changelog](CHANGELOG.md) - Version history
+- [Development Roadmap](PLAN.md) - Project roadmap
+- [Code of Conduct](CODE_OF_CONDUCT.md) - Community standards
+
+---
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+## Acknowledgments
+
+Built for the Product Management community using Claude Code's plugin system.
+
+---
+
+**Version:** 0.4.0 | **Author:** [willtran](https://github.com/kv0906)

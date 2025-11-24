@@ -19,7 +19,6 @@ pm-kit/
 ├── agents/        (11)      # Specialized agents with embedded workflows
 ├── skills/        (5)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
-├── archived-workflows/ (19) # Legacy workflows (for reference)
 ├── CLAUDE.md                # This file - primary routing
 ├── PLAN.md                  # Project knowledge base
 └── README.md                # Plugin overview

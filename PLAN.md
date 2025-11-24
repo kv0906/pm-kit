@@ -1,6 +1,6 @@
-# ClaudeKit PM - Project Knowledge Base
+# PM-Kit - Project Knowledge Base
 
-> This document serves as the centralized knowledge base for ClaudeKit PM, tracking project vision, architecture decisions, roadmap, and progress.
+> This document serves as the centralized knowledge base for PM-Kit, tracking project vision, architecture decisions, roadmap, and progress.
 
 **Last Updated:** 2025-11-24
 
@@ -37,7 +37,7 @@ Empower Product Managers with AI-enhanced systematic thinking through Long Chain
 
 ### Value Proposition
 ```
-Traditional PM Work          →    ClaudeKit PM
+Traditional PM Work          →    PM-Kit
 ──────────────────────────────────────────────────
 Hours writing PRDs           →    `/prd` in minutes
 Scattered research notes     →    `/research` synthesized
@@ -79,24 +79,26 @@ Every workflow implements:
 
 ## Architecture Decisions
 
-### ADR-001: Command → Agent → Workflow Pattern
-**Date:** 2024-11-21 | **Status:** Active
+### ADR-001: Command → Agent Pattern
+**Date:** 2024-11-21 | **Status:** Active (Updated v0.3.0)
 
 **Context:** Need a consistent pattern for how commands execute.
 
-**Decision:**
+**Decision (Updated):**
 ```
-User invokes:     Command loads:      Which follows:
-┌────────┐       ┌────────────┐      ┌──────────────┐
-│ /prd   │ ────> │ Agent      │ ───> │ Workflow     │ ──> Output
-└────────┘       │ Persona    │      │ Methodology  │
-                 └────────────┘      └──────────────┘
+User invokes:     Command delegates to:
+┌────────┐       ┌────────────────────────────────┐
+│ /prd   │ ────> │ Agent (with embedded workflow) │ ──> Output
+└────────┘       └────────────────────────────────┘
 ```
 
+**Original (v0.1.0):** 3-layer Command → Agent → Workflow
+**Current (v0.3.0+):** 2-layer Command → Agent (workflow embedded)
+
 **Rationale:**
-- Separation of concerns (entry point, capabilities, methodology)
-- Reusable agents across multiple commands
-- Detailed workflows without cluttering commands
+- Simpler architecture (2 components vs 3)
+- Single file per agent contains complete methodology
+- Easier maintenance and understanding
 
 ---
 
@@ -200,7 +202,7 @@ After:  Command → Agent (2 files, workflow embedded)
 **Migration:**
 ```
 Before: npm install -g pm-kit-cli && pm-kit init
-After:  /plugin marketplace add vanlumberworks/pm-kit && /plugin install pm-kit@pm-tools
+After:  /plugin install kv0906/pm-kit
 ```
 
 **Rationale:**
@@ -215,18 +217,18 @@ After:  /plugin marketplace add vanlumberworks/pm-kit && /plugin install pm-kit@
 
 **Version:** 0.4.0
 **Released:** 2025-11-24
-**Distribution:** Claude Code Plugin (marketplace: pm-tools)
+**Distribution:** Claude Code Plugin
+**Install:** `/plugin install kv0906/pm-kit`
 
 ### Component Counts
-| Component | Active | Deprecated | Archived | Total |
-|-----------|--------|------------|----------|-------|
-| Commands | 16 | 3 | 0 | 19 |
-| Agents | 10 | 1 | 0 | 11 |
-| Templates | 4 | 0 | 0 | 4 |
-| Skills | 5 | 0 | 0 | 5 |
-| Workflows | 0 | 0 | 19 | 19 |
+| Component | Active | Deprecated | Total |
+|-----------|--------|------------|-------|
+| Commands | 16 | 3 | 19 |
+| Agents | 10 | 1 | 11 |
+| Templates | 4 | 0 | 4 |
+| Skills | 5 | 0 | 5 |
 
-> **Note:** Now distributed as Claude Code plugin (v0.4.0+)
+> **Note:** Distributed as Claude Code plugin (v0.4.0+). Workflows embedded in agents.
 
 ### Active Commands by Category
 
@@ -318,11 +320,12 @@ After:  /plugin marketplace add vanlumberworks/pm-kit && /plugin install pm-kit@
 
 **What was done:**
 1. Created `.claude-plugin/plugin.json` manifest
-2. Created `.claude-plugin/marketplace.json` for pm-tools marketplace
+2. Created `.claude-plugin/marketplace.json` for pm-kit marketplace
 3. Moved `commands/`, `agents/`, `templates/` to root level
 4. Converted skills to `skills/[name]/SKILL.md` format
-5. Updated all documentation with plugin installation instructions
-6. Added deprecation notice for pm-kit-cli
+5. Removed `archived-workflows/` (workflows embedded in agents)
+6. Updated all documentation with plugin installation instructions
+7. Renamed project from "ClaudeKit PM" to "PM-Kit"
 
 ---
 
@@ -409,6 +412,8 @@ After:  /plugin marketplace add vanlumberworks/pm-kit && /plugin install pm-kit@
 | 2025-11-24 | Convert to Claude Code plugin | Native integration, marketplace distribution | ADR-006 |
 | 2025-11-24 | Restructure to plugin standard directories | Standard plugin layout, auto-discovery | ADR-006 |
 | 2025-11-24 | Convert skills to SKILL.md format | Plugin skill discovery requirement | ADR-006 |
+| 2025-11-24 | Remove archived-workflows | Workflows embedded in agents, cleaner plugin | ADR-006 |
+| 2025-11-24 | Rename to PM-Kit | Simpler, cleaner branding | ADR-006 |
 | 2025-11-24 | Root-level documentation files | Simpler than docs/ folder for markdown-only repo | - |
 
 ---

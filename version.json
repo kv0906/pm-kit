@@ -7,8 +7,7 @@
     "commands": 19,
     "agents": 11,
     "skills": 5,
-    "templates": 4,
-    "archivedWorkflows": 19
+    "templates": 4
   },
   "deprecatedFiles": {
     "commands": ["research-unified.md", "evidence.md", "synthesize.md"],
