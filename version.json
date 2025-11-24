@@ -1,20 +1,34 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "releaseDate": "2025-11-24T00:00:00Z",
   "minimumCliVersion": "0.1.0",
   "files": {
-    "workflows": 21,
     "agents": 11,
     "commands": 19,
     "templates": 4,
-    "skills": 4
+    "skills": 4,
+    "archivedWorkflows": 19
   },
   "deprecatedFiles": {
     "commands": ["research-unified.md", "evidence.md", "synthesize.md"],
-    "agents": ["research-synthesizer.md"],
-    "workflows": ["research-synthesis.md"]
+    "agents": ["research-synthesizer.md"]
   },
   "changelog": [
+    {
+      "version": "0.3.0",
+      "date": "2025-11-24",
+      "changes": [
+        "Claude Code Alignment: Migrated all commands from {{input}} to $ARGUMENTS",
+        "Claude Code Alignment: Restructured all agents with YAML frontmatter (name, description, tools, model)",
+        "Claude Code Alignment: Added 'Use PROACTIVELY' to agent descriptions for auto-delegation",
+        "Claude Code Alignment: Embedded workflows directly into agent definitions",
+        "Architecture: Simplified from 3-layer (Command→Agent→Workflow) to 2-layer (Command→Agent)",
+        "Archived legacy workflow files to .claude/archived-workflows/",
+        "Updated CLAUDE.md with Claude Code patterns documentation",
+        "Updated README.md with new architecture description",
+        "Updated PLAN.md with ADR-005 (Claude Code Alignment)"
+      ]
+    },
     {
       "version": "0.2.0",
       "date": "2025-11-24",

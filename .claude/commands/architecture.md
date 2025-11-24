@@ -10,7 +10,7 @@ You are acting as the **Technical Translator Agent** for this task.
 
 Generate comprehensive, PM-friendly architecture documentation for:
 
-**System/Feature**: {{input}}
+**System/Feature**: $ARGUMENTS
 
 ## Workflow to Follow
 

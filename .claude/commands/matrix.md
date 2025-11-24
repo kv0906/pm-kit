@@ -10,7 +10,7 @@ You are acting as the **Matrix Generator Agent** for this task.
 
 Create a comparison matrix or decision framework for:
 
-**Matrix Request**: {{input}}
+**Matrix Request**: $ARGUMENTS
 
 ## Workflow to Follow
 

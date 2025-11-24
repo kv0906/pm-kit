@@ -4,81 +4,48 @@ description: Systematically decompose complex product problems into manageable c
 
 # Problem Decomposition Command
 
-You are acting as the **Problem Decomposer Agent** for this task.
+Break down the following problem using first principles thinking:
 
-## Your Task
+**Problem Statement**: $ARGUMENTS
 
-Systematically break down the following problem into manageable components using first principles thinking and structured frameworks.
+## Instructions
 
-**Problem Statement**: {{input}}
+Use the **Problem Decomposer Agent** (`.claude/agents/problem-decomposer.md`) to complete this task.
 
-## Workflow to Follow
+The agent will guide you through:
+1. **Initial Analysis** - Clarify problem, map stakeholders, identify constraints
+2. **Systematic Decomposition** - First principles breakdown, multi-path analysis
+3. **Solution Framework** - Design solutions, validation protocols
+4. **Documentation** - Problem tree, recommendations, next steps
 
-Refer to `./.claude/workflows/problem-decomposition.md` for the complete methodology.
-
-## Your Process
-
-### Phase 1: Problem Clarification
-1. Analyze and refine the problem statement
-2. Map all stakeholders and their needs
-3. Gather necessary context and data
-4. **Verification**: Is problem measurable with clear scope?
-
-### Phase 2: Systematic Decomposition
-1. Construct problem tree (MECE structure)
-2. Generate hypotheses for each component
-3. Validate hypotheses with data
-4. **Verification**: Are all hypotheses testable?
-
-### Phase 3: Solution Framework
-1. Map solutions to top hypotheses
-2. Analyze dependencies and risks
-3. Prioritize solutions by impact/effort
-4. **Verification**: Are solutions technically feasible?
-
-### Phase 4: Output Generation
-1. Create problem tree document
-2. Generate stakeholder matrix
-3. Document solution recommendations
-4. Define success metrics
-
-## Output Location
+## Output
 
 Save analysis to: `./analysis/problem-trees/[problem-name]-[date].md`
 
-## Success Criteria
+## Analysis Structure
 
-- Problem broken down to atomic, actionable components
-- All stakeholders identified and mapped
-- Multiple solution paths explored
-- Clear prioritization with rationale
-- Technical feasibility confirmed
-- Risks identified with mitigation plans
-
-## Agent Capabilities
-
-Refer to `./.claude/agents/problem-decomposer.md` for detailed capabilities including:
-- Jobs-to-be-Done analysis
-- Problem tree construction
-- Root cause investigation
-- Opportunity mapping
-- Constraint identification
-- Dependency mapping
-- Risk factor analysis
+Your analysis should include:
+- Refined Problem Statement
+- Problem Tree (hierarchical breakdown)
+- Stakeholder Matrix
+- Constraint Analysis
+- Opportunity Assessment
+- Dependencies
+- Prioritized Recommendations
 
 ---
 
 ## Next Steps
 
-After completing problem decomposition, consider:
+After decomposing the problem:
 
 | Next Action | Command | When to Use |
 |-------------|---------|-------------|
-| Research the problem space | `/research` | Gather evidence and insights |
-| Write requirements | `/prd` | Define solution for validated problem |
-| Make a decision | `/decide` | Choose between solution approaches |
-| Visualize the problem | `/diagram` | Create problem tree or flow diagram |
+| Research solutions | `/research` | Gather evidence for options |
+| Write requirements | `/prd` | Document solution requirements |
+| Make decision | `/decide` | Choose between options |
+| Visualize structure | `/diagram` | Create visual problem tree |
 
 ---
 
-Begin your analysis now.
+Begin problem decomposition now.

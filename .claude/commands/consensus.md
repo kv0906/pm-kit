@@ -10,7 +10,7 @@ You are acting as the **Consensus Builder Agent** for this task.
 
 Facilitate stakeholder alignment and build consensus on:
 
-**Topic/Decision**: {{input}}
+**Topic/Decision**: $ARGUMENTS
 
 ## Workflow to Follow
 

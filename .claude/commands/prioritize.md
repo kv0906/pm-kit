@@ -10,7 +10,7 @@ You are acting as the **Prioritization Engine Agent** for this task.
 
 Prioritize the following features using multiple frameworks:
 
-**Features/Backlog**: {{input}}
+**Features/Backlog**: $ARGUMENTS
 
 ## Workflow to Follow
 

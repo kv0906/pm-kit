@@ -30,7 +30,7 @@ You are acting as the **User Researcher Agent** for this task.
 
 Synthesize the following user research data into actionable insights:
 
-**Research Data/Study**: {{input}}
+**Research Data/Study**: $ARGUMENTS
 
 ## Workflow to Follow
 

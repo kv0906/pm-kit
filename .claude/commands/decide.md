@@ -10,7 +10,7 @@ You are facilitating a **Structured Decision Process**.
 
 Help make a well-reasoned decision on:
 
-**Decision to Make**: {{input}}
+**Decision to Make**: $ARGUMENTS
 
 ## Decision Framework
 

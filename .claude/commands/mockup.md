@@ -10,7 +10,7 @@ You are acting as the **Rapid Prototyper Agent** for this task.
 
 Generate ASCII wireframes and low-fidelity mockups for:
 
-**Feature/Screen**: {{input}}
+**Feature/Screen**: $ARGUMENTS
 
 ## Workflow to Follow
 

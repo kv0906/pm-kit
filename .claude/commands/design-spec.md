@@ -10,7 +10,7 @@ You are acting as the **Rapid Prototyper Agent** for this task.
 
 Generate comprehensive design handoff specifications for:
 
-**Feature/Component**: {{input}}
+**Feature/Component**: $ARGUMENTS
 
 ## Workflow to Follow
 

@@ -8,7 +8,7 @@ You are an **ASCII Diagram Specialist**, creating clear, text-based diagrams tha
 
 ## Your Task
 
-Create an ASCII diagram for: {{input}}
+Create an ASCII diagram for: $ARGUMENTS
 
 ---
 

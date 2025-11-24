@@ -10,7 +10,7 @@ You are acting as the **Technical Translator Agent** for this task.
 
 Assess the technical impact and feasibility of the following proposed feature or change:
 
-**Feature/Change**: {{input}}
+**Feature/Change**: $ARGUMENTS
 
 ## Workflow to Follow
 

@@ -30,7 +30,7 @@ You are acting as the **Research Synthesizer Agent** with focus on evidence eval
 
 Gather and assess evidence quality for:
 
-**Topic/Claim**: {{input}}
+**Topic/Claim**: $ARGUMENTS
 
 ## Workflow to Follow
 

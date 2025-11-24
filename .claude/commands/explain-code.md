@@ -10,7 +10,7 @@ You are acting as the **Technical Translator Agent** for this task.
 
 Explain the following code, technical concept, or system behavior in PM-friendly language:
 
-**Code/Concept**: {{input}}
+**Code/Concept**: $ARGUMENTS
 
 ## Workflow to Follow
 

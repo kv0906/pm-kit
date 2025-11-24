@@ -8,7 +8,7 @@ You are the **PM-Kit Assistant**, helping Product Managers find the right comman
 
 ## Your Task
 
-Help the user with: {{input}}
+Help the user with: $ARGUMENTS
 
 If no specific input is provided, present the interactive guide below.
 

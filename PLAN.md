@@ -154,19 +154,50 @@ User invokes:     Command loads:      Which follows:
 
 ---
 
+### ADR-005: Claude Code Alignment
+**Date:** 2025-11-24 | **Status:** Implemented
+
+**Context:** Framework used custom patterns that didn't align with Claude Code best practices:
+- `{{input}}` placeholder instead of `$ARGUMENTS`
+- Agents lacked proper YAML frontmatter for auto-delegation
+- Workflows in separate files (complex 3-layer architecture)
+
+**Decision:** Align with Claude Code subagent patterns:
+1. Use `$ARGUMENTS` placeholder in all commands
+2. Add YAML frontmatter to agents: `name`, `description`, `tools`, `model`
+3. Include "Use PROACTIVELY" in agent descriptions for auto-delegation
+4. Embed workflows directly into agent files
+5. Archive legacy workflow files for reference
+
+**Migration:**
+```
+Before: Command → Agent → Workflow (3 files)
+After:  Command → Agent (2 files, workflow embedded)
+```
+
+**Rationale:**
+- Simpler architecture (2 components vs 3)
+- Better agent auto-delegation with proper frontmatter
+- Consistent with Claude Code documentation
+- Easier maintenance (single file per agent)
+
+---
+
 ## Current Status
 
-**Version:** 0.2.0
+**Version:** 0.3.0
 **Released:** 2025-11-24
 
 ### Component Counts
-| Component | Active | Deprecated | Total |
-|-----------|--------|------------|-------|
-| Commands | 16 | 3 | 19 |
-| Workflows | 20 | 1 | 21 |
-| Agents | 10 | 1 | 11 |
-| Templates | 4 | 0 | 4 |
-| Skills | 4 | 0 | 4 |
+| Component | Active | Deprecated | Archived | Total |
+|-----------|--------|------------|----------|-------|
+| Commands | 16 | 3 | 0 | 19 |
+| Agents | 10 | 1 | 0 | 11 |
+| Templates | 4 | 0 | 0 | 4 |
+| Skills | 4 | 0 | 0 | 4 |
+| Workflows | 0 | 0 | 19 | 19 |
+
+> **Note:** Workflows are now archived (embedded in agents as of v0.3.0)
 
 ### Active Commands by Category
 
@@ -198,17 +229,23 @@ User invokes:     Command loads:      Which follows:
 
 ## Roadmap
 
-### v0.3.0 - Quality of Life (Planned)
+### v0.3.0 - Claude Code Alignment (Released)
+- [x] Migrate `{{input}}` to `$ARGUMENTS` in all commands
+- [x] Restructure agents with YAML frontmatter
+- [x] Embed workflows into agents
+- [x] Archive legacy workflow files
+- [x] Update documentation
+
+### v0.4.0 - Quality of Life (Planned)
 - [ ] Command cheat sheet template
 - [ ] Interactive tutorials for new users
 - [ ] More "Next Steps" suggestions across all commands
 - [ ] Improved error handling and guidance
 
-### v0.4.0 - Expansion (Planned)
+### v0.5.0 - Expansion (Planned)
 - [ ] New commands for competitive analysis
 - [ ] New commands for go-to-market planning
 - [ ] Integration templates for common tools (Jira, Linear, Notion)
-- [ ] Multi-document workflows (PRD → Spec → Tasks)
 
 ### v1.0.0 - Stable Release (Future)
 - [ ] Comprehensive documentation
@@ -225,6 +262,32 @@ User invokes:     Command loads:      Which follows:
 ---
 
 ## Completed Initiatives
+
+### Initiative: Claude Code Alignment (v0.3.0)
+**Completed:** 2025-11-24
+
+**Goals:**
+- Align framework with Claude Code best practices
+- Simplify architecture from 3-layer to 2-layer
+- Enable proper agent auto-delegation
+
+**Outcomes:**
+| Metric | Before | After |
+|--------|--------|-------|
+| Architecture layers | 3 (Command→Agent→Workflow) | 2 (Command→Agent) |
+| Placeholder syntax | `{{input}}` | `$ARGUMENTS` |
+| Agent frontmatter | None | YAML with name, description, tools, model |
+| Workflow location | Separate files (21) | Embedded in agents |
+
+**What was done:**
+1. Migrated all 19 commands from `{{input}}` to `$ARGUMENTS`
+2. Restructured all 11 agents with Claude Code YAML frontmatter
+3. Embedded workflows directly into agent definitions
+4. Added "Use PROACTIVELY" to agent descriptions for auto-delegation
+5. Archived legacy workflow files to `.claude/archived-workflows/`
+6. Updated all documentation (CLAUDE.md, README, PLAN.md)
+
+---
 
 ### Initiative: Framework Optimization (v0.2.0)
 **Completed:** 2025-11-24
@@ -277,6 +340,9 @@ User invokes:     Command loads:      Which follows:
 | 2025-11-24 | Deprecate rather than delete | Non-breaking, gradual migration | ADR-002 |
 | 2025-11-24 | `/research` as canonical research command | Simpler, auto-detection for modes | ADR-003 |
 | 2025-11-24 | Convert ascii-diagrams skill to `/diagram` command | Commands for doing, skills for learning | ADR-004 |
+| 2025-11-24 | Align with Claude Code subagent patterns | Simpler architecture, better auto-delegation | ADR-005 |
+| 2025-11-24 | Embed workflows into agents | Single-file agents, easier maintenance | ADR-005 |
+| 2025-11-24 | Use `$ARGUMENTS` placeholder | Claude Code standard syntax | ADR-005 |
 | 2025-11-24 | Keep skills in `.claude/skills/` | Low priority to reorganize, current structure works | - |
 | 2025-11-24 | Root-level documentation files | Simpler than docs/ folder for markdown-only repo | - |
 

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ClaudeKit PM is a Product Management framework implementing Long Chain-of-Thought methodology. This is a **framework-only repository** containing markdown files (workflows, agents, commands, templates, skills) that are distributed via the separate `pm-kit-cli` installer.
+ClaudeKit PM is a Product Management framework implementing Long Chain-of-Thought methodology. This is a **framework-only repository** containing markdown files (agents, commands, templates, skills) that are distributed via the separate `pm-kit-cli` installer.
 
 ## Repository Structure
 
@@ -14,13 +14,13 @@ ClaudeKit PM is a Product Management framework implementing Long Chain-of-Though
 pm-kit/
 ├── .claude/                      # Core framework files
 │   ├── commands/      (19)       # Slash commands (/prd, /decompose, etc.)
-│   ├── workflows/     (21)       # Long-form workflow implementations
-│   ├── agents/        (11)       # Specialized agent definitions
+│   ├── agents/        (11)       # Specialized agents with embedded workflows
 │   ├── templates/     (4)        # Reusable templates
-│   └── skills/        (4)        # Technical literacy modules
+│   ├── skills/        (4)        # Technical literacy modules
+│   └── archived-workflows/ (19)  # Legacy workflows (now embedded in agents)
 ├── CLAUDE.md                     # This file - primary routing
-├── PLAN.md                       # Optimization roadmap
-├── version.json                  # Version tracking and file counts
+├── PLAN.md                       # Project knowledge base
+├── version.json                  # Version tracking
 └── README.md                     # Framework overview
 ```
 
@@ -37,7 +37,7 @@ PMs should think of this framework as providing two things:
 | **Commands** | Produce deliverables | Type `/command` in Claude |
 | **Skills** | Learn concepts | Read files in `.claude/skills/` |
 
-Everything else (agents, workflows) happens automatically under the hood.
+Everything else (agents) happens automatically under the hood.
 
 ---
 
@@ -88,42 +88,64 @@ Commands are defined in `.claude/commands/`. Active commands:
 
 ## For Contributors: Architecture
 
-### How Commands, Agents, and Workflows Relate
+### Claude Code Alignment (v0.3.0)
+
+This framework follows Claude Code subagent patterns:
 
 ```
-User types:         Command loads:         Which follows:
-┌────────┐         ┌────────────┐         ┌──────────────┐
-│ /prd   │ ──────> │ Agent      │ ──────> │ Workflow     │ ──> Output
-└────────┘         │ Persona    │         │ Methodology  │
-                   └────────────┘         └──────────────┘
+User types:         Command delegates to:
+┌────────┐         ┌────────────────────────────────┐
+│ /prd   │ ──────> │ Agent (with embedded workflow) │ ──> Output
+└────────┘         └────────────────────────────────┘
 ```
+
+**Key patterns:**
+- Commands use `$ARGUMENTS` placeholder for user input
+- Agents have YAML frontmatter: `name`, `description`, `tools`, `model`
+- Agent descriptions include "Use PROACTIVELY" for auto-delegation
+- Workflows are embedded directly in agent markdown body
+
+### Component Roles
 
 1. **Commands** (`.claude/commands/`) - Entry points that users invoke
-2. **Agents** (`.claude/agents/`) - Persona definitions with capabilities and validation rules
-3. **Workflows** (`.claude/workflows/`) - Detailed 15+ step methodologies
-4. **Templates** (`.claude/templates/`) - Output document formats
-5. **Skills** (`.claude/skills/`) - Educational content (separate from the above chain)
+   - Simple markdown with YAML frontmatter
+   - Delegate to agents for execution
+   - Include "Next Steps" section for follow-up commands
 
-### When Modifying Workflows
-1. Edit markdown files in `.claude/workflows/`
-2. Maintain 15+ step reasoning chains with verification checkpoints
-3. Include backtracking triggers for returning to previous phases
-4. Add a "Next Steps" section suggesting follow-up commands
+2. **Agents** (`.claude/agents/`) - Complete execution units
+   - YAML frontmatter with `name`, `description`, `tools`, `model`
+   - Embedded workflow methodology (15+ steps)
+   - Verification checkpoints and quality checklists
 
-### When Creating New Agents
-1. Add agent definitions to `.claude/agents/`
-2. Define responsibilities, capabilities, and invocation triggers
-3. Include validation and error correction protocols
+3. **Templates** (`.claude/templates/`) - Output document formats
 
-### When Adding Slash Commands
+4. **Skills** (`.claude/skills/`) - Educational content (separate from execution chain)
+
+### When Creating New Commands
 1. Create command file in `.claude/commands/`
 2. Add YAML frontmatter with `description` field
-3. Reference appropriate workflow or agent
-4. Include "Next Steps" section at the end
-5. Update README.md command tables
+3. Use `$ARGUMENTS` for user input placeholder
+4. Reference the appropriate agent
+5. Include "Next Steps" section at the end
+6. Update README.md command tables
+
+### When Creating New Agents
+1. Add agent definition to `.claude/agents/`
+2. Use YAML frontmatter:
+   ```yaml
+   ---
+   name: agent-name
+   description: Description. Use PROACTIVELY when [trigger condition].
+   tools: Read, Write, Glob, Grep
+   model: sonnet
+   ---
+   ```
+3. Embed the complete workflow methodology in the agent body
+4. Include verification checkpoints at each phase
+5. Add quality checklist before completion
 
 ### Deprecation Policy
-When consolidating commands/agents/workflows:
+When consolidating commands/agents:
 1. Add deprecation notice at top of file (don't delete)
 2. Include migration guide showing old → new usage
 3. Keep legacy documentation below the notice
@@ -170,3 +192,14 @@ Modules in `.claude/skills/` for non-technical PMs:
 - `debug-without-code.md` - Debugging strategies
 
 > **Note:** ASCII diagrams is now a command (`/diagram`), not a skill.
+
+---
+
+## Archived Workflows
+
+The `.claude/archived-workflows/` folder contains legacy workflow files that have been embedded into their respective agents as of v0.3.0. These are preserved for:
+- Historical reference
+- Detailed documentation not fully embedded
+- Potential recovery if needed
+
+**Do not use these directly** - always use commands and agents.

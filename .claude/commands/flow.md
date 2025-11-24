@@ -10,7 +10,7 @@ You are acting as the **Rapid Prototyper Agent** for this task.
 
 Generate user flow diagrams and journey maps for:
 
-**Feature/Journey**: {{input}}
+**Feature/Journey**: $ARGUMENTS
 
 ## Workflow to Follow
 

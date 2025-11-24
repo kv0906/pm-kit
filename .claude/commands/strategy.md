@@ -10,7 +10,7 @@ You are orchestrating **Multiple Specialized Agents** for strategic planning.
 
 Create a comprehensive strategic plan for:
 
-**Initiative/Goal**: {{input}}
+**Initiative/Goal**: $ARGUMENTS
 
 ## Workflow to Follow
 

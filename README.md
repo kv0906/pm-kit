@@ -162,22 +162,27 @@ Skills are educational modules for non-technical PMs. Read them when you need to
 
 ## Under the Hood (For Contributors)
 
-ClaudeKit PM uses a **File System As Context** architecture:
+ClaudeKit PM uses a **File System As Context** architecture aligned with Claude Code patterns:
 
 ```
 .claude/
-├── commands/    # Entry points (what PMs invoke)
-├── agents/      # Persona definitions (capabilities, validation rules)
-├── workflows/   # Detailed methodologies (15+ step processes)
-├── templates/   # Output document formats
-└── skills/      # Educational content
+├── commands/           # Entry points (what PMs invoke)
+├── agents/             # Complete agents with embedded workflows
+├── templates/          # Output document formats
+├── skills/             # Educational content
+└── archived-workflows/ # Legacy workflows (for reference)
 ```
 
-**How it works:**
+**How it works (v0.3.0):**
 1. PM invokes a command (e.g., `/prd`)
-2. Command loads an agent persona (e.g., PRD Writer)
-3. Agent follows a workflow (e.g., PRD Framework)
+2. Command delegates to an agent with embedded workflow
+3. Agent executes 15+ step methodology with verification checkpoints
 4. Output uses templates for consistent formatting
+
+**Claude Code Patterns:**
+- Commands use `$ARGUMENTS` placeholder for user input
+- Agents have YAML frontmatter: `name`, `description`, `tools`, `model`
+- Workflows are embedded directly in agent files (not separate)
 
 For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -206,7 +211,7 @@ your-project/
 
 ---
 
-**Version:** 0.2.0
+**Version:** 0.3.0
 **Created:** 2024-11-21
 **Last Updated:** 2025-11-24
 

@@ -35,9 +35,9 @@ You are acting as the **Research Agent** for this task.
 
 Conduct comprehensive research on the following topic:
 
-**Research Topic**: {{input}}
+**Research Topic**: $ARGUMENTS
 
-**Research Type**: {{type | default: "auto"}}
+**Research Type**: auto (detected from input)
 
 ---
 
