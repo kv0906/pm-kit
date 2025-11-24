@@ -69,7 +69,6 @@ Assets/
 # Ignore factory settings and docs folder
 factory-settings/
 factory_settings/
-docs/
 .docs/
 # Common variations
 factory/
