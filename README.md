@@ -2,7 +2,7 @@
 
 A comprehensive, AI-enhanced product management system implementing Long Chain-of-Thought methodology for systematic problem-solving, strategic planning, and product development.
 
-## 🚀 Quick Start (5 minutes)
+## Quick Start (5 minutes)
 
 ```bash
 # Install the CLI
@@ -14,282 +14,201 @@ pm-kit init
 
 # Start using PM workflows
 claude
+/pm   # Get help choosing the right command
 /prd  # Create your first PRD
 ```
-
-**New to ClaudeKit PM?** → Read the [Getting Started Guide](docs/guides/GETTING_STARTED.md) for a complete walkthrough.
 
 **One-Line Install:**
 ```bash
 curl -fsSL https://raw.githubusercontent.com/vanlumberworks/pm-kit-cli/main/install.sh | bash
 ```
 
-## 📚 Documentation
+---
 
-- [Getting Started](docs/guides/GETTING_STARTED.md) - Complete setup guide with examples
-- [Installation Guide](docs/guides/INSTALLATION.md) - Detailed installation instructions
-- [Commands Reference](docs/reference/COMMANDS.md) - All CLI commands explained
-- [Contributing](docs/development/CONTRIBUTING.md) - How to contribute to the project
+## How It Works: The Simple Mental Model
 
-## Overview
+ClaudeKit PM gives you two things:
 
-ClaudeKit PM is a **File System As Context** framework that enables Product Managers to leverage AI for complex reasoning chains, systematic validation, and data-driven decision-making. It provides structured workflows, specialized agents, and comprehensive templates for all aspects of product management.
+| Type | Purpose | When to Use |
+|------|---------|-------------|
+| **Commands** | Produce deliverables | "I need to do something" |
+| **Skills** | Learn concepts | "I need to understand something" |
 
-### Key Features
-
-- **Long Chain-of-Thought Reasoning**: Extended reasoning chains with 15+ systematic steps and validation checkpoints
-- **Multi-Agent Orchestration**: Specialized agents for problem decomposition, PRD writing, research synthesis, prioritization, and analytics
-- **Systematic Validation**: Multi-layer verification at each phase with backtracking capabilities
-- **Comprehensive Templates**: Ready-to-use templates for PRDs, decisions, personas, and more
-- **File System As Context**: Organized structure that enables efficient AI-enhanced workflows
-
-## System Architecture
-
-```
-claude-kit-pm/
-├── CLAUDE.md                 # Entry point - guides Claude's behavior
-├── .claude/
-│   ├── workflows/            # Detailed workflow implementations
-│   ├── agents/               # Specialized agent definitions
-│   ├── commands/             # Slash commands for quick invocation
-│   ├── templates/            # Reusable document templates
-│   └── skills/               # Technical literacy modules
-├── prds/                     # Product Requirements Documents
-│   ├── templates/
-│   ├── active/
-│   └── archive/
-├── specs/                    # Technical specifications
-│   ├── technical/
-│   └── functional/
-├── research/                 # User research and insights
-│   ├── user-interviews/
-│   ├── surveys/
-│   ├── insights/
-│   └── personas/
-├── roadmaps/                 # Strategic roadmaps
-│   ├── quarterly/
-│   ├── annual/
-│   └── strategic/
-├── metrics/                  # KPIs and analytics
-│   ├── dashboards/
-│   ├── reports/
-│   └── analyses/
-├── decisions/                # Decision logs and rationale
-│   ├── logs/
-│   ├── templates/
-│   └── reviews/
-└── frameworks/               # Reusable PM frameworks
-    ├── prioritization/
-    ├── analysis/
-    └── templates/
-```
-
-## Core Workflows
-
-### 1. Problem Decomposition
-**Command:** `/decompose [problem statement]`
-
-Systematically breaks down complex product problems using:
-- Jobs-to-be-Done analysis
-- Problem tree construction
-- Root cause investigation
-- Stakeholder impact mapping
-- Dependency and risk analysis
-
-**Workflow:** `.claude/workflows/problem-decomposition.md`
-**Agent:** `.claude/agents/problem-decomposer.md`
-
-### 2. PRD Framework
-**Command:** `/prd [feature name]`
-
-Creates comprehensive Product Requirements Documents with:
-- Multi-layer validation
-- User story generation
-- Acceptance criteria
-- Technical requirements
-- Implementation phasing
-- Risk mitigation
-
-**Workflow:** `.claude/workflows/prd-framework.md`
-**Agent:** `.claude/agents/prd-writer.md`
-
-### 3. User Research Synthesis
-**Command:** `/synthesize [research data]`
-
-Transforms research data into actionable insights through:
-- Thematic analysis
-- Affinity mapping
-- Sentiment analysis
-- Pattern recognition
-- Persona development
-- Opportunity mapping
-
-**Workflow:** `.claude/workflows/user-research-synthesis.md`
-**Agent:** `.claude/agents/user-researcher.md`
-
-### 4. Feature Prioritization
-**Command:** `/prioritize [feature list]`
-
-Applies multiple prioritization frameworks:
-- RICE scoring (Reach × Impact × Confidence / Effort)
-- ICE framework (Impact × Confidence × Ease)
-- Value vs. Effort matrix
-- Kano model analysis
-- MoSCoW method
-- Weighted scoring
-
-**Workflow:** `.claude/workflows/feature-prioritization.md`
-**Agent:** `.claude/agents/prioritization-engine.md`
-
-### 5. Strategic Planning
-**Command:** `/strategy [initiative/goal]`
-
-Creates comprehensive strategic plans with:
-- Vision and mission alignment
-- OKR development
-- Roadmap visualization
-- Resource allocation
-- Risk assessment
-- Multi-stakeholder validation
-
-**Workflow:** `.claude/workflows/strategic-planning.md`
-
-### 6. Quick Decisions
-**Command:** `/decide [decision]`
-
-Facilitates structured decision-making:
-- Decision framing
-- Option generation
-- Pros/cons analysis
-- Risk assessment
-- Decision documentation
-- Validation planning
-
-## Specialized Agents
-
-| Agent | Description | Location |
-|-------|-------------|----------|
-| **Problem Decomposer** | Breaks down complex problems using first principles thinking | `.claude/agents/problem-decomposer.md` |
-| **PRD Writer** | Creates comprehensive PRDs with multi-layer validation | `.claude/agents/prd-writer.md` |
-| **User Researcher** | Synthesizes research data into actionable insights | `.claude/agents/user-researcher.md` |
-| **Prioritization Engine** | Applies multiple frameworks with transparent rationale | `.claude/agents/prioritization-engine.md` |
-| **Analytics Synthesizer** | Transforms data into insights and predictive analytics | `.claude/agents/analytics-synthesizer.md` |
-| **Research Synthesizer** | Multi-source research with confidence scoring | `.claude/agents/research-synthesizer.md` |
-| **Consensus Builder** | Stakeholder alignment and consensus protocols | `.claude/agents/consensus-builder.md` |
-| **Matrix Generator** | Decision matrices and comparison frameworks | `.claude/agents/matrix-generator.md` |
-| **Technical Translator** | Code and architecture translation for PMs | `.claude/agents/technical-translator.md` |
-| **Rapid Prototyper** | ASCII wireframes and Mermaid diagrams | `.claude/agents/rapid-prototyper.md` |
-
-## Available Commands
-
-| Command | Description | Agent |
-|---------|-------------|-------|
-| `/decompose` | Systematic problem decomposition | Problem Decomposer |
-| `/prd` | Generate comprehensive PRD | PRD Writer |
-| `/synthesize` | Synthesize research into insights | User Researcher |
-| `/prioritize` | Apply prioritization frameworks | Prioritization Engine |
-| `/strategy` | Create strategic plans | Multi-agent orchestration |
-| `/decide` | Quick decision framework | Decision facilitation |
-| `/research` | Multi-source research synthesis | Research Synthesizer |
-| `/consensus` | Build stakeholder alignment | Consensus Builder |
-| `/matrix` | Generate comparison matrices | Matrix Generator |
-| `/evidence` | Evidence quality assessment | Evidence-based decision |
-| `/architecture` | PM-friendly architecture docs | Technical Translator |
-| `/explain-code` | Translate code for PMs | Technical Translator |
-| `/tech-impact` | Technical feasibility assessment | Technical Translator |
-| `/mockup` | ASCII wireframes | Rapid Prototyper |
-| `/flow` | User flow diagrams (Mermaid) | Rapid Prototyper |
-| `/design-spec` | Design handoff specifications | Rapid Prototyper |
-
-## Long Chain-of-Thought Methodology
-
-Every workflow implements extended reasoning chains with:
-
-- **Extended Reasoning**: 15+ systematic steps with clear progression
-- **Verification Checkpoints**: Multi-layer validation at each major phase
-- **Backtracking Mechanisms**: Clear triggers for returning to previous phases
-- **Error Correction**: Specific protocols for detecting and fixing common mistakes
-- **Multi-Layer Validation**: Internal consistency, stakeholder alignment, strategic fit
-- **Practical Templates**: Ready-to-use formats and structures
-- **Measurement Systems**: Clear metrics and success criteria
-
-## How to Use
-
-### Getting Started
-1. **Review CLAUDE.md**: Understand the system's role and capabilities
-2. **Choose a Workflow**: Select based on your current task
-3. **Use Commands**: Invoke agents with slash commands
-4. **Follow the Process**: Each workflow has detailed phase-by-phase guidance
-5. **Validate Outputs**: Use built-in verification checkpoints
-6. **Iterate**: Leverage backtracking for continuous refinement
-
-### Example Usage
-
-**Problem Decomposition:**
-```
-/decompose Users are abandoning the checkout process
-```
-
-**Create PRD:**
-```
-/prd Shopping cart transparency feature
-```
-
-**Prioritize Features:**
-```
-/prioritize Q1 feature backlog
-```
-
-**Strategic Planning:**
-```
-/strategy AI-powered product recommendations
-```
-
-**Make Decision:**
-```
-/decide Should we build vs. buy payment processing?
-```
-
-## Workflow Integration
-
-The system is designed for seamless integration:
-
-```
-Problem Decomposition → PRD Framework → Prioritization → Strategic Planning
-         ↓                    ↓               ↓                ↓
-    Research Synthesis → Analytics → Cross-functional → Risk Assessment
-```
-
-Each workflow produces outputs that feed into others, creating a cohesive product management system.
-
-## Quick Reference
-
-### When to Use What
-
-| Situation | Command |
-|-----------|---------|
-| New feature idea | `/decompose` |
-| Validated problem | `/prd` |
-| Feature backlog | `/prioritize` |
-| User feedback | `/synthesize` |
-| Strategic initiative | `/strategy` |
-| Important decision | `/decide` |
-| Technical feasibility | `/tech-impact` |
-| Quick mockup | `/mockup` |
-
-### Most Common Workflows
-
-1. **Feature Development**: Problem Decomposition → PRD Framework → Cross-functional Coordination
-2. **Strategic Planning**: User Research Synthesis → Feature Prioritization → Strategic Planning
-3. **Decision Making**: Quick Decision → Risk Assessment → Documentation
+That's it. Everything else (agents, workflows) happens automatically under the hood.
 
 ---
 
-**Version:** 1.0
-**Created:** 2024-11-21
-**Last Updated:** 2024-11-22
+## Commands by Activity Phase
 
-For detailed implementation guides, refer to individual workflow and agent documentation in `.claude/`.
+### Discovery - Understanding the Problem
+
+| Command | What It Does | Example |
+|---------|--------------|---------|
+| `/decompose` | Break down complex problems into root causes | `/decompose "Why are users abandoning checkout?"` |
+| `/research` | Gather and synthesize research from multiple sources | `/research "Should we build a mobile app?"` |
+
+### Definition - Specifying the Solution
+
+| Command | What It Does | Example |
+|---------|--------------|---------|
+| `/prd` | Generate comprehensive Product Requirements Document | `/prd "Shopping cart transparency feature"` |
+| `/flow` | Create user flow diagrams (Mermaid) | `/flow "Password reset journey"` |
+| `/mockup` | Generate ASCII wireframes | `/mockup "User profile page"` |
+| `/diagram` | Generate ASCII diagrams (flows, architecture, timelines) | `/diagram "checkout process flow"` |
+| `/design-spec` | Create design handoff specifications | `/design-spec "Checkout redesign"` |
+
+### Decision - Making Choices
+
+| Command | What It Does | Example |
+|---------|--------------|---------|
+| `/prioritize` | Apply RICE, ICE, Kano frameworks to features | `/prioritize "Q1 feature backlog"` |
+| `/decide` | Quick decision framework with structured analysis | `/decide "Build vs buy payment processing?"` |
+| `/matrix` | Generate comparison matrices | `/matrix "CRM vendor comparison"` |
+| `/consensus` | Build stakeholder alignment | `/consensus "API pricing strategy"` |
+
+### Communication - Sharing with Others
+
+| Command | What It Does | Example |
+|---------|--------------|---------|
+| `/strategy` | Create comprehensive strategic planning documents | `/strategy "AI-powered recommendations"` |
+| `/architecture` | Generate PM-friendly architecture documentation | `/architecture "Payment system"` |
+| `/explain-code` | Translate code concepts for non-technical PMs | `/explain-code "What does this API do?"` |
+| `/tech-impact` | Assess technical feasibility of features | `/tech-impact "Real-time notifications"` |
+
+---
+
+## Quick Reference: "I need to..."
+
+| I need to... | Use this command |
+|--------------|------------------|
+| Understand why something is broken | `/decompose` |
+| Research a question or decision | `/research` |
+| Write product requirements | `/prd` |
+| Prioritize my backlog | `/prioritize` |
+| Make a quick decision | `/decide` |
+| Compare options side-by-side | `/matrix` |
+| Get stakeholder buy-in | `/consensus` |
+| Plan a strategic initiative | `/strategy` |
+| Create an ASCII diagram | `/diagram` |
+| Create a wireframe sketch | `/mockup` |
+| Map out a user journey | `/flow` |
+| Understand technical concepts | `/explain-code` |
+| Assess if something is feasible | `/tech-impact` |
+
+---
+
+## Skills (For Learning)
+
+Skills are educational modules for non-technical PMs. Read them when you need to understand a concept.
+
+| Skill | What You'll Learn |
+|-------|-------------------|
+| `api-basics.md` | How APIs work, HTTP methods, status codes |
+| `json-fundamentals.md` | Reading and understanding JSON data |
+| `debug-without-code.md` | Debugging strategies without writing code |
+| `frontend-prompts.md` | Specifying frontend design requirements |
+
+**Location:** `.claude/skills/`
+
+> **Note:** ASCII diagrams are now a command! Use `/diagram` to generate them on demand.
+
+---
+
+## Typical Workflows
+
+### New Feature Development
+```
+/decompose "user problem"     # Understand the problem
+       ↓
+/research "solution approaches"   # Research options
+       ↓
+/prd "feature name"           # Write requirements
+       ↓
+/prioritize "feature list"    # Score and prioritize
+       ↓
+/consensus "stakeholders"     # Get alignment
+```
+
+### Strategic Planning
+```
+/research "market opportunity"    # Gather insights
+       ↓
+/strategy "initiative"            # Create strategy doc
+       ↓
+/prioritize "initiatives"         # Prioritize efforts
+       ↓
+/consensus "leadership"           # Align stakeholders
+```
+
+### Quick Decision
+```
+/decide "the decision"        # Frame the decision
+       ↓
+/matrix "options"             # Compare options
+       ↓
+/consensus "approvers"        # Get buy-in
+```
+
+---
+
+## Key Features
+
+- **Long Chain-of-Thought Reasoning**: Every command runs 15+ systematic steps with validation checkpoints
+- **Multi-Layer Validation**: Internal consistency, stakeholder alignment, and strategic fit checks
+- **Backtracking Support**: Commands can revisit earlier phases when issues are found
+- **Practical Templates**: Ready-to-use output formats
+
+---
+
+## Under the Hood (For Contributors)
+
+ClaudeKit PM uses a **File System As Context** architecture:
+
+```
+.claude/
+├── commands/    # Entry points (what PMs invoke)
+├── agents/      # Persona definitions (capabilities, validation rules)
+├── workflows/   # Detailed methodologies (15+ step processes)
+├── templates/   # Output document formats
+└── skills/      # Educational content
+```
+
+**How it works:**
+1. PM invokes a command (e.g., `/prd`)
+2. Command loads an agent persona (e.g., PRD Writer)
+3. Agent follows a workflow (e.g., PRD Framework)
+4. Output uses templates for consistent formatting
+
+For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## Documentation
+
+- [Contributing Guide](CONTRIBUTING.md) - How to contribute to the project
+- [Changelog](CHANGELOG.md) - Version history and changes
+- [Development Roadmap](PLAN.md) - Project roadmap and knowledge base
+- [Code of Conduct](CODE_OF_CONDUCT.md) - Community standards
+
+---
+
+## Project Structure (After Installation)
+
+```
+your-project/
+├── .claude/                  # Framework files (installed by pm-kit)
+├── prds/                     # Your PRD documents
+├── research/                 # Research outputs
+├── decisions/                # Decision logs
+├── roadmaps/                 # Strategic roadmaps
+└── metrics/                  # KPIs and analytics
+```
+
+---
+
+**Version:** 0.2.0
+**Created:** 2024-11-21
+**Last Updated:** 2025-11-24
 
 ---
 

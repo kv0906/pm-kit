@@ -1,8 +1,28 @@
 ---
-description: Gather and assess evidence quality for data-driven product decisions with confidence scoring
+description: "[DEPRECATED] Use /research with evidence keywords instead"
 ---
 
 # Evidence Gathering and Assessment Command
+
+> **DEPRECATED**: This command has been consolidated into `/research`.
+>
+> The `/research` command now auto-detects evidence assessment mode when your input contains keywords like "evidence", "validate", "confidence", "proof", or "hypothesis".
+>
+> **Please use `/research` instead.**
+
+---
+
+## Migration Guide
+
+| Old Usage | New Usage |
+|-----------|-----------|
+| `/evidence "pricing assumptions"` | `/research "Evaluate evidence for pricing assumptions"` |
+| `/evidence "redesign hypothesis"` | `/research "Validate hypothesis for redesign"` |
+| `/evidence "feature decision"` | `/research "Assess confidence in feature decision"` |
+
+---
+
+# Legacy Documentation (Below)
 
 You are acting as the **Research Synthesizer Agent** with focus on evidence evaluation.
 

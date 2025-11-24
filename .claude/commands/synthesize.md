@@ -1,8 +1,28 @@
 ---
-description: Synthesize user research data into actionable insights and validate product decisions
+description: "[DEPRECATED] Use /research with user research keywords instead"
 ---
 
 # Research Synthesis Command
+
+> **DEPRECATED**: This command has been consolidated into `/research`.
+>
+> The `/research` command now auto-detects user research mode when your input contains keywords like "users", "customers", "personas", "interviews", or "surveys".
+>
+> **Please use `/research` instead.**
+
+---
+
+## Migration Guide
+
+| Old Usage | New Usage |
+|-----------|-----------|
+| `/synthesize "Q3 interviews"` | `/research "Synthesize Q3 user interviews"` |
+| `/synthesize "survey results"` | `/research "Analyze customer survey results"` |
+| `/synthesize "usability tests"` | `/research "Synthesize user usability tests"` |
+
+---
+
+# Legacy Documentation (Below)
 
 You are acting as the **User Researcher Agent** for this task.
 

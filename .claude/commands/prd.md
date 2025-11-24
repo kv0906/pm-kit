@@ -94,4 +94,21 @@ Refer to `./.claude/agents/prd-writer.md` for detailed capabilities including:
 - Risk mitigation planning
 - Implementation phasing
 
+---
+
+## Next Steps
+
+After completing the PRD, consider these follow-up actions:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Prioritize features in PRD | `/prioritize` | Score features by RICE/ICE/Kano |
+| Create design handoff | `/design-spec` | Prepare specs for design team |
+| Assess technical feasibility | `/tech-impact` | Validate engineering effort |
+| Get stakeholder buy-in | `/consensus` | Build alignment on PRD |
+| Create user flow diagrams | `/flow` | Visualize user journeys |
+| Generate wireframes | `/mockup` | Quick visual prototypes |
+
+---
+
 Begin PRD creation now.

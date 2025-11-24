@@ -128,4 +128,19 @@ Refer to `./.claude/agents/prioritization-engine.md` for detailed capabilities i
 - Cost of Delay (CD3)
 - Backtracking protocols
 
+---
+
+## Next Steps
+
+After completing prioritization, consider:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Get stakeholder alignment | `/consensus` | Build buy-in on priorities |
+| Write PRD for top priority | `/prd` | Spec out highest priority feature |
+| Create strategic plan | `/strategy` | Plan roadmap execution |
+| Compare options further | `/matrix` | Deep-dive comparison if needed |
+
+---
+
 Begin feature prioritization now.

@@ -386,4 +386,19 @@ Consensus building is successful when:
 - [ ] Stakeholders genuinely support decision (not just comply)
 - [ ] Review and validation plan in place
 
+---
+
+## Next Steps
+
+After building consensus, consider:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Write requirements | `/prd` | Document agreed-upon solution |
+| Create strategic plan | `/strategy` | Plan implementation roadmap |
+| Assess technical impact | `/tech-impact` | Validate feasibility of decision |
+| Document the decision | `/decide` | Create formal decision record |
+
+---
+
 Begin consensus building now.

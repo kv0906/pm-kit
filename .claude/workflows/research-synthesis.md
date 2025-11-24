@@ -1,5 +1,15 @@
 # Research Synthesis Workflow
 
+> **DEPRECATED**: This workflow has been consolidated into `research-core.md`.
+>
+> The `research-core.md` workflow now serves as the canonical research methodology for all research types.
+>
+> **Commands should reference `./.claude/workflows/research-core.md` instead.**
+
+---
+
+# Legacy Documentation (Below)
+
 ## Comprehensive Multi-Source Research and Evidence-Based Decision Making
 
 This workflow provides a systematic approach to conducting thorough research, synthesizing findings from multiple sources, and generating high-confidence insights that inform product decisions.

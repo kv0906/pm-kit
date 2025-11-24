@@ -66,4 +66,19 @@ Refer to `./.claude/agents/problem-decomposer.md` for detailed capabilities incl
 - Dependency mapping
 - Risk factor analysis
 
+---
+
+## Next Steps
+
+After completing problem decomposition, consider:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Research the problem space | `/research` | Gather evidence and insights |
+| Write requirements | `/prd` | Define solution for validated problem |
+| Make a decision | `/decide` | Choose between solution approaches |
+| Visualize the problem | `/diagram` | Create problem tree or flow diagram |
+
+---
+
 Begin your analysis now.

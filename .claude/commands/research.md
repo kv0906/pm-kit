@@ -1,312 +1,272 @@
 ---
-description: Conduct comprehensive multi-source research synthesis with evidence-based insights and confidence scoring
+description: Comprehensive research - multi-source synthesis, user research, evidence assessment, and analytics
 ---
 
-# Research Synthesis Command
+# Research Command
 
-You are acting as the **Research Synthesizer Agent** for this task.
+You are acting as the **Research Agent** for this task.
 
 ## Your Task
 
-Conduct comprehensive research synthesis on the following topic:
+Conduct comprehensive research on:
 
 **Research Topic**: {{input}}
 
-## Workflow to Follow
+---
 
-Refer to `./.claude/workflows/research-synthesis.md` for the complete methodology.
+## Research Mode Auto-Detection
 
-## Your Process
+Analyze the input to determine the appropriate research mode:
 
-### Phase 1: Research Planning (Complete First)
+| Keywords in Input | Mode |
+|-------------------|------|
+| "users", "customers", "personas", "interviews", "surveys" | **User Research** |
+| "evidence", "validate", "confidence", "proof", "hypothesis" | **Evidence Assessment** |
+| "metrics", "analytics", "data", "KPI", "cohort", "funnel" | **Analytics Research** |
+| Default (or "research", "investigate", "study") | **Multi-Source Synthesis** |
 
-1. **Define Research Objectives**:
-   - Clearly state what decision this research informs
-   - Identify 3-5 key questions that must be answered
-   - Set success criteria for the research
-   - **Use template**: `./.claude/templates/research-matrix.md`
+---
 
-2. **Identify Data Sources**:
-   - Primary research (user interviews, surveys, usability tests)
-   - Secondary research (analytics, competitors, market reports)
-   - Organizational knowledge (sales, support, past research)
-   - Document which sources are available and accessible
+## Mode 1: Multi-Source Synthesis (Default)
 
-3. **Create Research Plan**:
-   - Source list with methods and timeline
+**Use when**: Making significant decisions requiring comprehensive evidence from diverse sources.
+
+### Phase 1: Research Planning
+1. **Define Research Objectives**
+   - State what decision this informs
+   - Identify 3-5 key questions to answer
+   - Set success criteria
+   - **Template**: `./.claude/templates/research-matrix.md`
+
+2. **Identify Data Sources**
+   - Primary: user interviews, surveys, usability tests
+   - Secondary: analytics, competitors, market reports
+   - Organizational: sales, support, past research
+   - Aim for 3+ diverse sources
+
+3. **Create Research Plan**
+   - Sources, methods, timeline
    - Quality criteria for each source
-   - Success metrics
-   - **Verification**: Is the plan comprehensive and realistic?
 
 ### Phase 2: Data Collection
-
-1. **Collect Existing Evidence**:
-   - Search for relevant research in `./research/` directories
-   - Review analytics data
-   - Check previous decision documents in `./decisions/`
+1. **Collect Evidence**
+   - Search `./research/` directories
+   - Review analytics and `./decisions/` history
    - Gather competitive intelligence
-   - Review support tickets and customer feedback
 
-2. **Evaluate Source Quality**:
-   - Use source evaluation matrix from research-matrix template
-   - Rate each source on Reliability (1-5), Recency (1-5), Relevance (1-5)
+2. **Evaluate Source Quality**
+   - Rate: Reliability (1-5), Recency (1-5), Relevance (1-5)
    - Document sample sizes
-   - Calculate overall quality scores
    - **Output**: `./outputs/evidence-logs/[topic]-source-quality-[date].md`
 
-3. **Create Evidence Log**:
-   - **Use template**: `./.claude/templates/evidence-log.md`
-   - Document each source with ID (EV-001, EV-002, etc.)
-   - Extract key findings with supporting quotes/data
-   - Note limitations and biases
-   - **Verification**: All sources documented with quality ratings?
+3. **Create Evidence Log**
+   - **Template**: `./.claude/templates/evidence-log.md`
+   - Assign IDs (EV-001, EV-002, etc.)
 
-### Phase 3: Analysis and Synthesis
+### Phase 3: Analysis & Synthesis
+1. **Create Research Synthesis Matrix**:
+   ```
+   ┌──────────────┬──────────┬──────────┬──────────┬─────┐
+   │ Finding      │Source 1  │Source 2  │Source 3  │Conf.│
+   ├──────────────┼──────────┼──────────┼──────────┼─────┤
+   │ Finding 1    │ Evidence │ Evidence │ Evidence │ 9.2 │
+   │ Finding 2    │ Evidence │ Evidence │ ---      │ 7.5 │
+   └──────────────┴──────────┴──────────┴──────────┴─────┘
+   ```
 
-1. **Analyze Each Source**:
-   - Extract key findings
-   - Identify patterns and themes
-   - Note sentiment and frequency
-   - Document evidence quality
-   - Assess confidence levels
+2. **Identify Patterns**:
+   - **Converging**: 3+ sources agree (High confidence)
+   - **Diverging**: Sources conflict (Investigate)
+   - **Unique**: Single-source findings (Validate)
+   - **Gaps**: What we don't know
 
-2. **Cross-Source Synthesis**:
-   - **Create Research Synthesis Matrix** (use Matrix Generator capabilities):
-     ```
-     ┌──────────────┬──────────┬──────────┬──────────┬──────────┬─────┐
-     │ Finding      │Source 1  │Source 2  │Source 3  │Source 4  │Conf.│
-     ├──────────────┼──────────┼──────────┼──────────┼──────────┼─────┤
-     │ Finding 1    │ Evidence │ Evidence │ Evidence │ Evidence │ 9.2 │
-     │ Finding 2    │ Evidence │ Evidence │ ---      │ Evidence │ 7.5 │
-     │ Finding 3    │ Evidence │ ---      │ ---      │ ---      │ 4.1 │
-     └──────────────┴──────────┴──────────┴──────────┴──────────┴─────┘
-     ```
-   - **Identify patterns**:
-     - Converging Evidence: Where 3+ sources agree (High confidence)
-     - Diverging Evidence: Where sources conflict (Investigate)
-     - Unique Insights: Single-source findings (Validate)
-     - Knowledge Gaps: What we still don't know
-   - **Output**: `./outputs/research-reports/[topic]-synthesis-matrix-[date].md`
+3. **Generate Insights**
+   - Confidence scores (1-10)
+   - Quality criteria: surprising, actionable, evidence-based, relevant, specific
 
-3. **Generate Insights**:
-   - For each major finding, create an insight with:
-     - Clear statement of what we learned
-     - Supporting evidence from multiple sources
-     - Confidence score (1-10)
-     - Why it matters (business and user impact)
-     - Actionable implications
-     - Related insights
-   - **Quality criteria**: Insights must be surprising, actionable, evidence-based, relevant, and specific
+4. **Prioritize** using Impact vs. Evidence Matrix
 
-4. **Prioritize Insights**:
-   - Use Impact vs. Evidence Matrix:
-     ```
-     High Impact + Strong Evidence = PRIORITY 1 (Act immediately)
-     High Impact + Weak Evidence = INVESTIGATE (More research)
-     Low Impact + Strong Evidence = DOCUMENT (Track for future)
-     Low Impact + Weak Evidence = IGNORE (Deprioritize)
-     ```
-   - **Verification**: All insights prioritized with clear rationale?
+### Phase 4: Documentation
+- **Output**: `./outputs/research-reports/[topic]-report-[date].md`
+- Executive summary, methodology, findings, synthesis, recommendations
 
-### Phase 4: Documentation and Communication
+---
 
-1. **Create Research Report**:
-   - **Structure**:
-     - Executive Summary (key findings, recommendations, confidence)
-     - Research Objectives & Questions
-     - Methodology (sources, methods, timeline)
-     - Source Evaluation Matrix
-     - Key Findings (with evidence and confidence scores)
-     - Research Synthesis Matrix
-     - Insights Prioritization
-     - Recommendations (immediate, short-term, long-term)
-     - Knowledge Gaps
-     - Limitations & Caveats
-     - Appendices
-   - **Output**: `./outputs/research-reports/[topic]-report-[date].md`
-   - **Verification**: Report is comprehensive and actionable?
+## Mode 2: User Research Synthesis
 
-2. **Create Stakeholder Presentation Summary**:
-   - Top 3-5 key insights
-   - Evidence supporting each
-   - Confidence levels
-   - Recommended actions
-   - Next steps
+**Use when**: Synthesizing interviews, surveys, usability tests; creating personas; mapping journeys.
 
-3. **Document Knowledge Gaps**:
-   - What we still don't know
-   - Why it matters for the decision
-   - Suggested follow-up research
-   - Priority level
+### Phase 1: Data Preparation
+1. **Load Research Data**
+   - Interview transcripts: `./research/user-interviews/`
+   - Survey results: `./research/surveys/`
+   - Usability tests: `./research/usability/`
+   - Support tickets: `./research/support/`
 
-### Phase 5: Decision Support (If Applicable)
+2. **Clean and Standardize**
 
-If this research informs a specific decision:
+### Phase 2: Thematic Analysis
+1. **Qualitative Coding**
+   - Line-by-line coding
+   - Pattern identification
+   - Theme development
 
-1. **Decision Confidence Assessment**:
-   - Overall confidence score (1-10)
-   - Based on: evidence quality, source diversity, triangulation
-   - Recommendation: Proceed / More research needed / Reconsider
+2. **Affinity Mapping**
+   - Cluster related insights
+   - Build theme hierarchy
 
-2. **Next Steps**:
-   - If consensus needed: Prepare for consensus-building process
-   - If decision needed: Prepare decision matrix with options
-   - If gaps exist: Plan follow-up research
+3. **Sentiment Analysis**
+   - Score sentiment per feature
+   - Map emotional journey
 
-## Output Locations
+### Phase 3: Insight Generation
+1. **Pattern Recognition** with cross-method triangulation
 
-All outputs should be saved to:
+2. **Persona-Based Insights**
+   - Map to personas
+   - **Output**: `./research/personas/[persona-name].md`
 
-- **Research Report**: `./outputs/research-reports/[topic]-report-[date].md`
-- **Evidence Log**: `./outputs/evidence-logs/[topic]-evidence-[date].md`
-- **Synthesis Matrix**: `./outputs/research-reports/[topic]-synthesis-matrix-[date].md`
-- **Source Quality Assessment**: `./outputs/evidence-logs/[topic]-source-quality-[date].md`
+3. **Jobs-to-be-Done Analysis**
+   - Functional, emotional, social jobs
+   - Current struggles
+   - Solution opportunities
 
-## Research Report Structure
+4. **Journey Mapping**
+   - **Output**: `./research/journeys/[journey-name].md`
 
-Your report must include:
+### Phase 4: Prioritization
+- Problem x Frequency x Dissatisfaction scoring
+- Opportunity mapping
 
-### 1. Executive Summary
-- Key findings (3-5 bullets with confidence scores)
-- Overall confidence level
-- Recommendations (prioritized)
-- Next steps
+### Phase 5: Documentation
+- **Output**: `./research/insights/[study-name]-report.md`
 
-### 2. Research Objectives
-- Decision to inform
-- Key questions to answer
-- Success criteria
+---
 
-### 3. Methodology
-- Sources used (with quality matrix)
-- Methods applied
-- Timeline
-- Participant/sample details
+## Mode 3: Evidence Assessment
 
-### 4. Key Findings
-For each priority finding:
-- **Finding**: [Clear statement]
-- **Evidence**: [Quotes, data from multiple sources]
-- **Confidence**: X/10 (with justification)
-- **Why it matters**: [Impact]
-- **Implications**: [What to do about it]
-- **Related insights**: [Connections]
+**Use when**: Evaluating strength of evidence for decisions; assessing readiness; identifying gaps.
 
-### 5. Research Synthesis
-- Cross-source synthesis matrix
-- Converging evidence (patterns across sources)
-- Diverging evidence (conflicts and how resolved)
-- Unique insights (single-source findings)
+### Phase 1: Define the Question
+1. **Clarify What Needs Evidence**
+   - What claim/hypothesis?
+   - What decision does this inform?
+   - What confidence level is needed?
 
-### 6. Insights Prioritization
-- Impact vs. Evidence Matrix
-- Priority 1 (Act Now) insights
-- Priority 2 (Plan) insights
-- Priority 3 (Monitor) insights
+2. **Frame as Hypothesis**:
+   - **We believe that**: [action/decision]
+   - **Will result in**: [outcome]
+   - **We'll know we're right when**: [metrics]
 
-### 7. Recommendations
-- **Immediate Actions** (This sprint)
-- **Short-term Initiatives** (This quarter)
-- **Long-term Considerations** (This year)
+### Phase 2: Collect Evidence
+- Search `./research/`, `./outputs/research-reports/`, `./decisions/`
+- Check analytics and customer feedback
 
-### 8. Knowledge Gaps
-- What we still don't know
-- Why it matters
-- Suggested follow-up research
-- Priority
+### Phase 3: Evaluate Quality
+**Create Evidence Quality Matrix**:
+```
+┌─────────────┬──────────┬────────┬──────────┬────────┬──────┐
+│ Source      │Reliability│Recency │Relevance │Sample  │Score │
+│             │  (1-5)   │ (1-5)  │  (1-5)   │Size    │(Avg) │
+├─────────────┼──────────┼────────┼──────────┼────────┼──────┤
+│ User Intrvw │    4     │   5    │    5     │  20    │ 4.7  │
+│ Analytics   │    5     │   5    │    4     │ 10K    │ 4.7  │
+└─────────────┴──────────┴────────┴──────────┴────────┴──────┘
+```
 
-### 9. Limitations
-- Sample size limitations
-- Methodological constraints
-- Bias concerns
-- Generalizability
-- Data freshness
+### Phase 4: Synthesize
+- **Converging Evidence**: 3+ sources (Confidence: 8-10)
+- **Diverging Evidence**: Conflicts (Confidence: 4-6)
+- **Unique Insights**: Single source (Confidence: 3-4)
 
-### 10. Appendices
-- Detailed methodology
-- Raw data locations
-- Interview guides / survey questions
-- Participant screening criteria
-- Additional analysis
+### Phase 5: Assess Overall Confidence
+**Calculate Score (1-10)** based on:
+- Evidence quality
+- Triangulation
+- Methodological diversity
+- Sample adequacy
+
+**Recommendation**:
+- ✅ **Proceed with confidence** (≥8/10)
+- ⚠️ **Proceed with caution** (5-7/10)
+- ❌ **Need more research** (<5/10)
+
+### Phase 6: Document
+- **Output**: `./outputs/evidence-logs/[topic]-evidence-[date].md`
+
+---
+
+## Mode 4: Analytics Research
+
+**Use when**: Interpreting product analytics; understanding segments/cohorts; optimizing funnels.
+
+### Phase 1: Define Objectives
+- What metrics matter?
+- What behaviors to investigate?
+- What benchmarks exist?
+
+### Phase 2: Data Collection
+- Product analytics platforms
+- Event tracking data
+- A/B test results
+
+### Phase 3: Analysis
+1. **Descriptive**: Summary stats, trends, segment breakdowns
+2. **Funnel Analysis**: Drop-off points, conversion rates
+3. **Cohort Analysis**: Behavior over time, retention
+4. **Correlation Analysis**: Relationships between metrics
+
+### Phase 4: Insights
+- Behavioral predictors
+- Segment differences
+- Optimization opportunities
+
+### Phase 5: Documentation
+- **Output**: `./outputs/research-reports/[topic]-analytics-[date].md`
+
+---
 
 ## Quality Checklist
 
-Before finalizing, verify:
+Before finalizing:
 
-### Research Quality
-- [ ] Clear research objectives aligned with decision needs
-- [ ] Multiple sources used (3+ sources)
-- [ ] Mix of qualitative and quantitative data
+- [ ] Clear objectives aligned with decision needs
+- [ ] Multiple sources used (3+ when applicable)
 - [ ] Source quality assessed systematically
-- [ ] Appropriate sample sizes for methods used
-- [ ] Bias mitigation considered
-
-### Evidence Quality
-- [ ] Evidence log created with all sources documented
-- [ ] Source quality scores calculated
-- [ ] Overall confidence level appropriate
+- [ ] Confidence levels stated and justified
 - [ ] Limitations acknowledged
-- [ ] Contradictions addressed
-
-### Synthesis Quality
-- [ ] Cross-source synthesis matrix created
-- [ ] Patterns identified (converging, diverging, unique)
-- [ ] Themes emerged from data (not imposed)
-- [ ] Alternative explanations considered
-- [ ] Confidence scores calibrated appropriately
-
-### Insight Quality
-- [ ] Insights meet quality criteria (surprising, actionable, evidence-based, relevant, specific)
-- [ ] Strong evidence supports each insight (multiple sources)
-- [ ] Confidence levels clearly stated and justified
-- [ ] Business and user impact explained
-- [ ] Actionable implications identified
-- [ ] Insights prioritized by impact and evidence
-
-### Communication Quality
-- [ ] Executive summary is clear and concise
-- [ ] Report structure is logical and complete
-- [ ] Findings presented with supporting evidence
-- [ ] Visual aids (matrices, charts) used effectively
-- [ ] Recommendations are specific and actionable
-- [ ] Next steps clear with owners (if known)
-
-## Integration with Other Tools
-
-After completing research:
-
-- **If consensus needed**: Use `/consensus` command to build stakeholder alignment on findings and recommendations
-
-- **If decision needed**: Use decision matrix workflow to evaluate options based on research findings
-
-- **If comparison needed**: Use `/matrix` command to create feature comparisons or evaluation matrices
-
-- **For ongoing tracking**: Create decision record in `./decisions/` directory
-
-## Agent Capabilities
-
-As the Research Synthesizer Agent, you have access to:
-
-- **Research planning frameworks** (research-matrix template)
-- **Evidence quality assessment** (source evaluation matrix)
-- **Cross-source synthesis** (synthesis matrix generation)
-- **Insight generation** (pattern recognition, confidence scoring)
-- **Prioritization frameworks** (impact vs. evidence matrix)
-- **Documentation templates** (evidence log, research report)
-
-Refer to `./.claude/agents/research-synthesizer.md` for detailed capabilities.
-
-## Success Criteria
-
-Research synthesis is successful when:
-- [ ] Research objectives fully addressed
-- [ ] Confidence level ≥7/10 on key findings
-- [ ] Clear, actionable insights generated
-- [ ] Evidence from multiple sources triangulated
-- [ ] Patterns and conflicts identified and explained
+- [ ] Insights are actionable and evidence-based
 - [ ] Recommendations specific and prioritized
-- [ ] Knowledge gaps identified
-- [ ] Limitations acknowledged
-- [ ] Stakeholders can make informed decision based on findings
 
-Begin research synthesis now.
+---
+
+## Next Steps
+
+After completing research, consider:
+
+- `/consensus` - Build stakeholder alignment on findings
+- `/decide` - Make decision based on research
+- `/matrix` - Compare options from research
+- `/prd` - Write requirements based on insights
+
+---
+
+## Usage Examples
+
+```
+# Multi-source (default)
+/research "Should we build a mobile app?"
+
+# User research
+/research "Synthesize Q3 user interview findings"
+
+# Evidence assessment
+/research "Evaluate evidence for redesign hypothesis"
+
+# Analytics
+/research "Analyze onboarding funnel drop-off"
+```
+
+---
+
+Begin research now based on detected mode.

@@ -1,5 +1,18 @@
 # Research Synthesizer Agent
 
+> **DEPRECATED**: This agent has been consolidated into `research-agent.md`.
+>
+> The Research Agent now includes all capabilities from this agent plus:
+> - User research synthesis
+> - Evidence assessment
+> - Analytics research
+>
+> **Commands should reference `./.claude/agents/research-agent.md` instead.**
+
+---
+
+# Legacy Documentation (Below)
+
 ## Purpose
 Conducts comprehensive multi-source research, synthesizes findings across diverse data sources, and generates evidence-based insights with confidence scoring for product management decisions.
 

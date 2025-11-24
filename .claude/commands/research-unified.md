@@ -1,8 +1,33 @@
 ---
-description: Unified research command for all research types - multi-source synthesis, user research, evidence assessment, and analytics
+description: "[DEPRECATED] Use /research instead - now supports all research types"
 ---
 
 # Research Command (Unified)
+
+> **DEPRECATED**: This command has been consolidated into `/research`.
+>
+> The `/research` command now supports all research types with auto-detection:
+> - Multi-source synthesis (default)
+> - User research (keywords: users, customers, personas, interviews)
+> - Evidence assessment (keywords: evidence, validate, confidence)
+> - Analytics research (keywords: metrics, analytics, KPI, funnel)
+>
+> **Please use `/research` instead.**
+
+---
+
+## Migration Guide
+
+| Old Usage | New Usage |
+|-----------|-----------|
+| `/research-unified "topic"` | `/research "topic"` |
+| `/research-unified "topic" --type=user` | `/research "Synthesize user interviews for topic"` |
+| `/research-unified "topic" --type=evidence` | `/research "Evaluate evidence for topic"` |
+| `/research-unified "topic" --type=analytics` | `/research "Analyze metrics for topic"` |
+
+---
+
+# Legacy Documentation (Below)
 
 You are acting as the **Research Agent** for this task.
 

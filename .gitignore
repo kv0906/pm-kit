@@ -1,10 +1,4 @@
-# Node modules
-node_modules/
-package-lock.json
-pnpm-lock.yaml
-yarn.lock
-
-# OS files
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -13,38 +7,43 @@ yarn.lock
 ehthumbs.db
 Thumbs.db
 
-# IDE
-.vscode/
+# Editor directories and files
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
-.project
-.settings/
-.classpath
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Testing
-coverage/
-.nyc_output/
+*.sublime-workspace
+*.sublime-project
 
 # Temporary files
 *.tmp
-.temp/
-tmp/
+*.temp
+*.bak
+*.backup
+
+# Log files
+*.log
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Node modules (if CLI development happens here)
+node_modules/
 
 # Build outputs
 dist/
 build/
 out/
 
-# Environment files (should not be in framework repo)
-.env
-.env.local
-.env.*.local
+# Test outputs
+coverage/
+.nyc_output/
+
+# Local development notes
+NOTES.md
+TODO.md
+SCRATCH.md
+*.local.md

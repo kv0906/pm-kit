@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://github.com/vanlumberworks/pm-kit#readme
+    about: Check the README for usage instructions
+  - name: Contributing Guide
+    url: https://github.com/vanlumberworks/pm-kit/blob/main/CONTRIBUTING.md
+    about: Read the contributing guide before submitting
+  - name: Questions & Discussions
+    url: https://github.com/vanlumberworks/pm-kit/discussions
+    about: Ask questions and discuss ideas

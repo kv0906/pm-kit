@@ -1,15 +1,36 @@
 {
-  "version": "0.1.0",
-  "releaseDate": "2024-11-21T00:00:00Z",
+  "version": "0.2.0",
+  "releaseDate": "2025-11-24T00:00:00Z",
   "minimumCliVersion": "0.1.0",
   "files": {
-    "workflows": 18,
-    "agents": 10,
-    "commands": 16,
+    "workflows": 21,
+    "agents": 11,
+    "commands": 19,
     "templates": 4,
-    "skills": 5
+    "skills": 4
+  },
+  "deprecatedFiles": {
+    "commands": ["research-unified.md", "evidence.md", "synthesize.md"],
+    "agents": ["research-synthesizer.md"],
+    "workflows": ["research-synthesis.md"]
   },
   "changelog": [
+    {
+      "version": "0.2.0",
+      "date": "2025-11-24",
+      "changes": [
+        "Added /pm help command for guided command selection",
+        "Added /diagram command for ASCII diagrams (promoted from skill)",
+        "Consolidated research commands: /research now handles all research types",
+        "Deprecated /research-unified, /evidence, /synthesize (redirect to /research)",
+        "Deprecated research-synthesizer agent (use research-agent)",
+        "Deprecated research-synthesis workflow (use research-core)",
+        "Added next-step suggestions to major commands",
+        "Updated README with command taxonomy by activity phase",
+        "Updated CLAUDE.md with contributor guidelines",
+        "Created PLAN.md optimization roadmap"
+      ]
+    },
     {
       "version": "0.1.0",
       "date": "2024-11-21",
