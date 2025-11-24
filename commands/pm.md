@@ -82,10 +82,10 @@ Skills are educational modules you can read (not commands to run):
 
 | Topic | Skill File |
 |-------|------------|
-| Understanding APIs | `.claude/skills/api-basics.md` |
-| Reading JSON data | `.claude/skills/json-fundamentals.md` |
-| Debugging without code | `.claude/skills/debug-without-code.md` |
-| Frontend specifications | `.claude/skills/frontend-prompts.md` |
+| Understanding APIs | `./skills/api-basics/SKILL.md` |
+| Reading JSON data | `./skills/json-fundamentals/SKILL.md` |
+| Debugging without code | `./skills/debug-without-code/SKILL.md` |
+| Frontend specifications | `./skills/frontend-prompts/SKILL.md` |
 
 ---
 

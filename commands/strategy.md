@@ -12,10 +12,6 @@ Create a comprehensive strategic plan for:
 
 **Initiative/Goal**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/strategic-planning.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Strategic Assessment
@@ -141,7 +137,7 @@ This command coordinates:
 - Prioritization Engine: For initiative selection
 - PRD Writer: For key initiative specs
 
-Refer to `./.claude/workflows/strategic-planning.md` for full orchestration details.
+The agents coordinate to produce comprehensive strategic documentation.
 
 ## Success Criteria
 

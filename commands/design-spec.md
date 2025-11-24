@@ -12,10 +12,6 @@ Generate comprehensive design handoff specifications for:
 
 **Feature/Component**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/design-handoff.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Requirements Gathering
@@ -517,7 +513,7 @@ Save specifications to: `./prototypes/design-specs/[feature-name]-spec-[date].md
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/rapid-prototyper.md` for detailed capabilities including:
+Refer to `./agents/rapid-prototyper.md` for detailed capabilities including:
 - Component specification
 - Design handoff documentation
 - Interactive state management

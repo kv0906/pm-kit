@@ -12,10 +12,6 @@ Explain the following code, technical concept, or system behavior in PM-friendly
 
 **Code/Concept**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/technical-translation.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Code Analysis
@@ -63,7 +59,7 @@ Refer to `./.claude/workflows/technical-translation.md` for the complete methodo
    - Technical debt or risks
 
 ### Phase 4: Documentation
-Generate explanation following template in `./.claude/workflows/technical-translation.md`
+Generate explanation following the output format below
 
 ## Output
 
@@ -277,7 +273,7 @@ flowchart TD
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/technical-translator.md` for detailed capabilities including:
+Refer to `./agents/technical-translator.md` for detailed capabilities including:
 - Code understanding for PMs
 - Engineering concept translation
 - Technical constraint mapping

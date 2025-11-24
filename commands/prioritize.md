@@ -12,10 +12,6 @@ Prioritize the following features using multiple frameworks:
 
 **Features/Backlog**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/feature-prioritization.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Feature Normalization
@@ -118,7 +114,7 @@ Before finalizing, verify:
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/prioritization-engine.md` for detailed capabilities including:
+Refer to `./agents/prioritization-engine.md` for detailed capabilities including:
 - RICE scoring
 - ICE framework
 - Value vs. Effort matrix

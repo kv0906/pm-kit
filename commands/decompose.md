@@ -10,7 +10,7 @@ Break down the following problem using first principles thinking:
 
 ## Instructions
 
-Use the **Problem Decomposer Agent** (`.claude/agents/problem-decomposer.md`) to complete this task.
+Use the **Problem Decomposer Agent** (`./agents/problem-decomposer.md`) to complete this task.
 
 The agent will guide you through:
 1. **Initial Analysis** - Clarify problem, map stakeholders, identify constraints

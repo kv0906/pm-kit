@@ -15,8 +15,8 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest (required)
 │   └── marketplace.json     # Marketplace definition
-├── commands/      (24)      # Slash commands (/prd, /decompose, etc.)
-├── agents/        (15)      # Specialized agents with embedded workflows
+├── commands/      (21)      # Slash commands (/prd, /decompose, etc.)
+├── agents/        (14)      # Specialized agents with embedded workflows
 ├── skills/        (6)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
 ├── CLAUDE.md                # This file - primary routing
@@ -85,13 +85,6 @@ Commands are defined in `commands/`. Active commands:
 | `/retro` | Meeting notes to structured retrospectives |
 | `/today` | Daily work suggestions |
 | `/handover` | Vacation handover documentation |
-
-### Deprecated (Still Work, Point to Replacements)
-| Command | Replaced By |
-|---------|-------------|
-| `/research-unified` | `/research` |
-| `/evidence` | `/research` (evidence mode) |
-| `/synthesize` | `/research` (user research mode) |
 
 ---
 
@@ -189,7 +182,6 @@ Specialized agents in `agents/`:
 | `retro-facilitator.md` | Retrospective facilitation |
 | `daily-planner.md` | Daily work planning |
 | `handover-generator.md` | Handover documentation |
-| `research-synthesizer.md` | **[DEPRECATED]** Use research-agent.md |
 
 ---
 

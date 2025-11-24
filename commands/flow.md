@@ -12,10 +12,6 @@ Generate user flow diagrams and journey maps for:
 
 **Feature/Journey**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/rapid-prototyping.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Journey Mapping
@@ -396,7 +392,7 @@ Save flows to: `./prototypes/flows/[feature-name]-flow-[date].md`
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/rapid-prototyper.md` for detailed capabilities including:
+Refer to `./agents/rapid-prototyper.md` for detailed capabilities including:
 - User flow diagram creation
 - State machine mapping
 - Interactive state management

@@ -216,8 +216,8 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json       # Plugin manifest
 │   └── marketplace.json  # Marketplace definition
-├── commands/             # 24 slash commands
-├── agents/               # 15 specialized agents
+├── commands/             # 21 slash commands
+├── agents/               # 14 specialized agents
 ├── skills/               # 6 educational modules
 └── templates/            # Output templates
 ```

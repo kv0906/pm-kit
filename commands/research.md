@@ -10,7 +10,7 @@ Conduct comprehensive research on:
 
 ## Instructions
 
-Use the **Research Agent** (`.claude/agents/research-agent.md`) to complete this task.
+Use the **Research Agent** (`./agents/research-agent.md`) to complete this task.
 
 ## Research Mode Auto-Detection
 

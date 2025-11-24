@@ -10,7 +10,7 @@ Create a comprehensive Product Requirements Document for:
 
 ## Instructions
 
-Use the **PRD Writer Agent** (`.claude/agents/prd-writer.md`) to complete this task.
+Use the **PRD Writer Agent** (`./agents/prd-writer.md`) to complete this task.
 
 The agent will guide you through:
 1. **Foundation Building** - Context gathering, problem validation, success metrics

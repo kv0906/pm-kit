@@ -12,10 +12,6 @@ Generate comprehensive, PM-friendly architecture documentation for:
 
 **System/Feature**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/architecture-documentation.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Codebase Exploration
@@ -177,7 +173,7 @@ Before finalizing, verify:
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/technical-translator.md` for detailed capabilities including:
+Refer to `./agents/technical-translator.md` for detailed capabilities including:
 - Architecture explanation
 - Code understanding for PMs
 - Technical constraint mapping

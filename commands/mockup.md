@@ -12,10 +12,6 @@ Generate ASCII wireframes and low-fidelity mockups for:
 
 **Feature/Screen**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/rapid-prototyping.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Requirement Gathering
@@ -79,7 +75,7 @@ Generate wireframes using ASCII art:
 └─────────────────────────────────────────┘
 ```
 
-Use wireframe component library from `./.claude/agents/rapid-prototyper.md`
+Use wireframe component library from `./agents/rapid-prototyper.md`
 
 ### Structure
 
@@ -266,7 +262,7 @@ Save mockups to: `./prototypes/mockups/[feature-name]-mockup-[date].md`
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/rapid-prototyper.md` for detailed capabilities including:
+Refer to `./agents/rapid-prototyper.md` for detailed capabilities including:
 - ASCII wireframe generation
 - Component specification
 - State management documentation

@@ -12,10 +12,6 @@ Create a comparison matrix or decision framework for:
 
 **Matrix Request**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/matrix-generation.md` for the complete methodology.
-
 ## Matrix Type Selection
 
 Based on the request, determine which type of matrix to generate:
@@ -443,7 +439,7 @@ As the Matrix Generator Agent, you have access to:
 - **Analysis techniques** (gap analysis, sensitivity analysis, pattern recognition)
 - **Documentation templates** for each matrix type
 
-Refer to `./.claude/agents/matrix-generator.md` for detailed capabilities.
+Refer to `./agents/matrix-generator.md` for detailed capabilities.
 
 ## Success Criteria
 

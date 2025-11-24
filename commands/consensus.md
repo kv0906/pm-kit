@@ -12,10 +12,6 @@ Facilitate stakeholder alignment and build consensus on:
 
 **Topic/Decision**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/consensus-report.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Preparation and Planning
@@ -167,7 +163,7 @@ Refer to `./.claude/workflows/consensus-report.md` for the complete methodology.
    - Explain trade-offs accepted
 
 4. **Create Comprehensive Consensus Report**:
-   - **Use template**: `./.claude/templates/consensus-template.md`
+   - **Use template**: `./templates/consensus-template.md`
    - **Include**:
      - Executive Summary (decision, alignment score, confidence, status)
      - Context (background, scope, constraints)
@@ -370,7 +366,7 @@ As the Consensus Builder Agent, you have access to:
 - **Alignment measurement** (scoring methodology)
 - **Documentation templates** (consensus report template)
 
-Refer to `./.claude/agents/consensus-builder.md` for detailed capabilities.
+Refer to `./agents/consensus-builder.md` for detailed capabilities.
 
 ## Success Criteria
 

@@ -12,10 +12,6 @@ Assess the technical impact and feasibility of the following proposed feature or
 
 **Feature/Change**: $ARGUMENTS
 
-## Workflow to Follow
-
-Refer to `./.claude/workflows/technical-translation.md` for the complete methodology.
-
 ## Your Process
 
 ### Phase 1: Feature Understanding
@@ -313,7 +309,7 @@ Before finalizing assessment:
 
 ## Agent Capabilities
 
-Refer to `./.claude/agents/technical-translator.md` for detailed capabilities including:
+Refer to `./agents/technical-translator.md` for detailed capabilities including:
 - Architecture explanation
 - Technical constraint mapping
 - Impact analysis
