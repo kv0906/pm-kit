@@ -15,7 +15,7 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest (required)
 │   └── marketplace.json     # Marketplace definition
-├── commands/      (23)      # Slash commands (/prd, /decompose, etc.)
+├── commands/      (24)      # Slash commands (/prd, /decompose, etc.)
 ├── agents/        (15)      # Specialized agents with embedded workflows
 ├── skills/        (6)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
@@ -51,6 +51,7 @@ Commands are defined in `commands/`. Active commands:
 | `/pm` | Help choosing the right command |
 | `/decompose` | Systematic problem decomposition |
 | `/research` | Comprehensive research (all types) |
+| `/gemini-research` | Research with Gemini grounded search (real-time + citations) |
 
 ### Definition
 | Command | Purpose |

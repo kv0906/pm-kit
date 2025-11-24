@@ -50,6 +50,7 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 |---------|-------------|---------|
 | `/decompose` | Break down complex problems into root causes using first principles | `/decompose "Why are users abandoning checkout?"` |
 | `/research` | Multi-source research synthesis with confidence scoring | `/research "Should we build a mobile app?"` |
+| `/gemini-research` | Research with Gemini grounded search (real-time + citations) | `/gemini-research "Latest AI trends 2025"` |
 
 ### Definition - Specifying Solutions
 
@@ -102,6 +103,7 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 |--------------|-----|
 | Understand why something is broken | `/decompose` |
 | Research a question or decision | `/research` |
+| Research with real-time sources + citations | `/gemini-research` |
 | Write product requirements | `/prd` |
 | Define a new product vision | `/northstar` |
 | Prioritize my backlog | `/prioritize` |
@@ -214,7 +216,7 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json       # Plugin manifest
 │   └── marketplace.json  # Marketplace definition
-├── commands/             # 20 slash commands
+├── commands/             # 24 slash commands
 ├── agents/               # 15 specialized agents
 ├── skills/               # 6 educational modules
 └── templates/            # Output templates
