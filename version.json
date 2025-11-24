@@ -1,12 +1,13 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "releaseDate": "2025-11-24T00:00:00Z",
-  "minimumCliVersion": "0.1.0",
+  "distribution": "claude-code-plugin",
+  "marketplace": "pm-tools",
   "files": {
-    "agents": 11,
     "commands": 19,
+    "agents": 11,
+    "skills": 5,
     "templates": 4,
-    "skills": 4,
     "archivedWorkflows": 19
   },
   "deprecatedFiles": {
@@ -14,6 +15,21 @@
     "agents": ["research-synthesizer.md"]
   },
   "changelog": [
+    {
+      "version": "0.4.0",
+      "date": "2025-11-24",
+      "changes": [
+        "Plugin Conversion: Created .claude-plugin/plugin.json manifest",
+        "Plugin Conversion: Created .claude-plugin/marketplace.json for pm-tools marketplace",
+        "Plugin Conversion: Restructured to plugin standard directories (commands/, agents/, skills/)",
+        "Plugin Conversion: Converted skills to SKILL.md format in subdirectories",
+        "Distribution: Now installable via /plugin install vanlumberworks/pm-kit",
+        "Distribution: Marketplace available at /plugin marketplace add vanlumberworks/pm-kit",
+        "Documentation: Updated README with plugin installation instructions",
+        "Documentation: Updated CLAUDE.md with plugin architecture",
+        "Documentation: Added ADR-006 for plugin conversion decision"
+      ]
+    },
     {
       "version": "0.3.0",
       "date": "2025-11-24",
@@ -23,7 +39,7 @@
         "Claude Code Alignment: Added 'Use PROACTIVELY' to agent descriptions for auto-delegation",
         "Claude Code Alignment: Embedded workflows directly into agent definitions",
         "Architecture: Simplified from 3-layer (Command→Agent→Workflow) to 2-layer (Command→Agent)",
-        "Archived legacy workflow files to .claude/archived-workflows/",
+        "Archived legacy workflow files to archived-workflows/",
         "Updated CLAUDE.md with Claude Code patterns documentation",
         "Updated README.md with new architecture description",
         "Updated PLAN.md with ADR-005 (Claude Code Alignment)"

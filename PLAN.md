@@ -183,10 +183,39 @@ After:  Command → Agent (2 files, workflow embedded)
 
 ---
 
+### ADR-006: Claude Code Plugin Conversion
+**Date:** 2025-11-24 | **Status:** Implemented
+
+**Context:** Framework was distributed via custom CLI (`pm-kit-cli`) which required separate installation and maintenance. Claude Code now supports native plugins with marketplace distribution.
+
+**Decision:** Convert to native Claude Code plugin:
+1. Create `.claude-plugin/plugin.json` manifest
+2. Create `.claude-plugin/marketplace.json` for distribution
+3. Restructure to plugin standard directories:
+   - `.claude/commands/` → `commands/`
+   - `.claude/agents/` → `agents/`
+   - `.claude/skills/` → `skills/[name]/SKILL.md` format
+4. Deprecate pm-kit-cli in favor of plugin installation
+
+**Migration:**
+```
+Before: npm install -g pm-kit-cli && pm-kit init
+After:  /plugin marketplace add vanlumberworks/pm-kit && /plugin install pm-kit@pm-tools
+```
+
+**Rationale:**
+- Native Claude Code integration (no CLI required)
+- Marketplace discovery for wider adoption
+- Automatic updates via plugin system
+- Standard structure familiar to plugin developers
+
+---
+
 ## Current Status
 
-**Version:** 0.3.0
+**Version:** 0.4.0
 **Released:** 2025-11-24
+**Distribution:** Claude Code Plugin (marketplace: pm-tools)
 
 ### Component Counts
 | Component | Active | Deprecated | Archived | Total |
@@ -194,10 +223,10 @@ After:  Command → Agent (2 files, workflow embedded)
 | Commands | 16 | 3 | 0 | 19 |
 | Agents | 10 | 1 | 0 | 11 |
 | Templates | 4 | 0 | 0 | 4 |
-| Skills | 4 | 0 | 0 | 4 |
+| Skills | 5 | 0 | 0 | 5 |
 | Workflows | 0 | 0 | 19 | 19 |
 
-> **Note:** Workflows are now archived (embedded in agents as of v0.3.0)
+> **Note:** Now distributed as Claude Code plugin (v0.4.0+)
 
 ### Active Commands by Category
 
@@ -236,13 +265,20 @@ After:  Command → Agent (2 files, workflow embedded)
 - [x] Archive legacy workflow files
 - [x] Update documentation
 
-### v0.4.0 - Quality of Life (Planned)
+### v0.4.0 - Plugin Conversion (Released)
+- [x] Create `.claude-plugin/plugin.json` manifest
+- [x] Create `.claude-plugin/marketplace.json`
+- [x] Restructure to plugin standard directories
+- [x] Convert skills to `SKILL.md` format
+- [x] Update documentation for plugin installation
+
+### v0.5.0 - Quality of Life (Planned)
 - [ ] Command cheat sheet template
 - [ ] Interactive tutorials for new users
 - [ ] More "Next Steps" suggestions across all commands
 - [ ] Improved error handling and guidance
 
-### v0.5.0 - Expansion (Planned)
+### v0.6.0 - Expansion (Planned)
 - [ ] New commands for competitive analysis
 - [ ] New commands for go-to-market planning
 - [ ] Integration templates for common tools (Jira, Linear, Notion)
@@ -251,17 +287,44 @@ After:  Command → Agent (2 files, workflow embedded)
 - [ ] Comprehensive documentation
 - [ ] Battle-tested workflows
 - [ ] Community contributions incorporated
-- [ ] CLI v1.0.0 alignment
+- [ ] Plugin marketplace verification
 
 ### Future Considerations
 - Localization (non-English support)
 - Industry-specific command variants (B2B, B2C, Platform)
 - Custom command creation guide
 - Agent orchestration (multi-agent collaboration)
+- Additional PM tool plugins in marketplace
 
 ---
 
 ## Completed Initiatives
+
+### Initiative: Plugin Conversion (v0.4.0)
+**Completed:** 2025-11-24
+
+**Goals:**
+- Convert to native Claude Code plugin
+- Enable marketplace distribution
+- Deprecate custom CLI installation
+
+**Outcomes:**
+| Metric | Before | After |
+|--------|--------|-------|
+| Distribution | npm CLI (pm-kit-cli) | Claude Code plugin |
+| Installation | `npm install -g pm-kit-cli` | `/plugin install pm-kit` |
+| Directory structure | `.claude/` subdirectories | Root-level plugin standard |
+| Skills format | Individual `.md` files | `SKILL.md` in directories |
+
+**What was done:**
+1. Created `.claude-plugin/plugin.json` manifest
+2. Created `.claude-plugin/marketplace.json` for pm-tools marketplace
+3. Moved `commands/`, `agents/`, `templates/` to root level
+4. Converted skills to `skills/[name]/SKILL.md` format
+5. Updated all documentation with plugin installation instructions
+6. Added deprecation notice for pm-kit-cli
+
+---
 
 ### Initiative: Claude Code Alignment (v0.3.0)
 **Completed:** 2025-11-24
@@ -343,7 +406,9 @@ After:  Command → Agent (2 files, workflow embedded)
 | 2025-11-24 | Align with Claude Code subagent patterns | Simpler architecture, better auto-delegation | ADR-005 |
 | 2025-11-24 | Embed workflows into agents | Single-file agents, easier maintenance | ADR-005 |
 | 2025-11-24 | Use `$ARGUMENTS` placeholder | Claude Code standard syntax | ADR-005 |
-| 2025-11-24 | Keep skills in `.claude/skills/` | Low priority to reorganize, current structure works | - |
+| 2025-11-24 | Convert to Claude Code plugin | Native integration, marketplace distribution | ADR-006 |
+| 2025-11-24 | Restructure to plugin standard directories | Standard plugin layout, auto-discovery | ADR-006 |
+| 2025-11-24 | Convert skills to SKILL.md format | Plugin skill discovery requirement | ADR-006 |
 | 2025-11-24 | Root-level documentation files | Simpler than docs/ folder for markdown-only repo | - |
 
 ---

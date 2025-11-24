@@ -47,3 +47,7 @@ NOTES.md
 TODO.md
 SCRATCH.md
 *.local.md
+
+# Claude Code user-specific files
+.claude/settings.local.json
+.claude/settings.json

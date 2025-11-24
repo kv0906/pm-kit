@@ -1,0 +1,25 @@
+{
+  "name": "pm-kit",
+  "owner": {
+    "name": "willtran",
+    "url": "https://github.com/kv0906"
+  },
+  "metadata": {
+    "description": "Product Management tools and frameworks for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "pm-kit",
+      "source": "./",
+      "description": "Product Management framework with Long Chain-of-Thought methodology. Includes 16 commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
+      "version": "1.0.0",
+      "author": {
+        "name": "willtran"
+      },
+      "category": "productivity",
+      "tags": ["product-management", "prd", "research", "prioritization", "decision-making"],
+      "strict": true
+    }
+  ]
+}

@@ -1,40 +1,44 @@
-# ClaudeKit PM - Product Management Framework
+# PM-Kit - Product Management Framework for Claude Code
 
-A comprehensive, AI-enhanced product management system implementing Long Chain-of-Thought methodology for systematic problem-solving, strategic planning, and product development.
+A comprehensive, AI-enhanced product management plugin implementing Long Chain-of-Thought methodology for systematic problem-solving, strategic planning, and product development.
 
-## Quick Start (5 minutes)
+## Quick Start
+
+### Install as Claude Code Plugin
 
 ```bash
-# Install the CLI
-npm install -g pm-kit-cli
-
-# Initialize in your project
-cd your-project
-pm-kit init
-
-# Start using PM workflows
+# Start Claude Code
 claude
+
+# Add the marketplace
+/plugin marketplace add vanlumberworks/pm-kit
+
+# Install the plugin
+/plugin install pm-kit@pm-tools
+
+# Restart Claude Code, then start using PM commands
 /pm   # Get help choosing the right command
 /prd  # Create your first PRD
 ```
 
-**One-Line Install:**
+### Alternative: Direct Installation
+
 ```bash
-curl -fsSL https://raw.githubusercontent.com/vanlumberworks/pm-kit-cli/main/install.sh | bash
+/plugin install vanlumberworks/pm-kit
 ```
 
 ---
 
 ## How It Works: The Simple Mental Model
 
-ClaudeKit PM gives you two things:
+PM-Kit gives you two things:
 
 | Type | Purpose | When to Use |
 |------|---------|-------------|
 | **Commands** | Produce deliverables | "I need to do something" |
 | **Skills** | Learn concepts | "I need to understand something" |
 
-That's it. Everything else (agents, workflows) happens automatically under the hood.
+That's it. Everything else (agents) happens automatically under the hood.
 
 ---
 
@@ -99,18 +103,15 @@ That's it. Everything else (agents, workflows) happens automatically under the h
 
 ## Skills (For Learning)
 
-Skills are educational modules for non-technical PMs. Read them when you need to understand a concept.
+Skills are educational modules for non-technical PMs. They're automatically available when the plugin is installed.
 
 | Skill | What You'll Learn |
 |-------|-------------------|
-| `api-basics.md` | How APIs work, HTTP methods, status codes |
-| `json-fundamentals.md` | Reading and understanding JSON data |
-| `debug-without-code.md` | Debugging strategies without writing code |
-| `frontend-prompts.md` | Specifying frontend design requirements |
-
-**Location:** `.claude/skills/`
-
-> **Note:** ASCII diagrams are now a command! Use `/diagram` to generate them on demand.
+| `api-basics` | How APIs work, HTTP methods, status codes |
+| `json-fundamentals` | Reading and understanding JSON data |
+| `debug-without-code` | Debugging strategies without writing code |
+| `frontend-prompts` | Specifying frontend design requirements |
+| `ascii-diagrams` | Creating ASCII diagrams and wireframes |
 
 ---
 
@@ -119,33 +120,33 @@ Skills are educational modules for non-technical PMs. Read them when you need to
 ### New Feature Development
 ```
 /decompose "user problem"     # Understand the problem
-       ↓
+       |
 /research "solution approaches"   # Research options
-       ↓
+       |
 /prd "feature name"           # Write requirements
-       ↓
+       |
 /prioritize "feature list"    # Score and prioritize
-       ↓
+       |
 /consensus "stakeholders"     # Get alignment
 ```
 
 ### Strategic Planning
 ```
 /research "market opportunity"    # Gather insights
-       ↓
+       |
 /strategy "initiative"            # Create strategy doc
-       ↓
+       |
 /prioritize "initiatives"         # Prioritize efforts
-       ↓
+       |
 /consensus "leadership"           # Align stakeholders
 ```
 
 ### Quick Decision
 ```
 /decide "the decision"        # Frame the decision
-       ↓
+       |
 /matrix "options"             # Compare options
-       ↓
+       |
 /consensus "approvers"        # Get buy-in
 ```
 
@@ -160,31 +161,27 @@ Skills are educational modules for non-technical PMs. Read them when you need to
 
 ---
 
-## Under the Hood (For Contributors)
+## Plugin Structure
 
-ClaudeKit PM uses a **File System As Context** architecture aligned with Claude Code patterns:
+PM-Kit follows Claude Code plugin conventions:
 
 ```
-.claude/
-├── commands/           # Entry points (what PMs invoke)
-├── agents/             # Complete agents with embedded workflows
-├── templates/          # Output document formats
-├── skills/             # Educational content
-└── archived-workflows/ # Legacy workflows (for reference)
+pm-kit/
+├── .claude-plugin/
+│   ├── plugin.json       # Plugin manifest
+│   └── marketplace.json  # Marketplace definition
+├── commands/             # 16 slash commands
+├── agents/               # 11 specialized agents
+├── skills/               # 5 educational modules
+├── templates/            # Output document formats
+└── archived-workflows/   # Legacy reference
 ```
 
-**How it works (v0.3.0):**
+**How it works:**
 1. PM invokes a command (e.g., `/prd`)
 2. Command delegates to an agent with embedded workflow
 3. Agent executes 15+ step methodology with verification checkpoints
 4. Output uses templates for consistent formatting
-
-**Claude Code Patterns:**
-- Commands use `$ARGUMENTS` placeholder for user input
-- Agents have YAML frontmatter: `name`, `description`, `tools`, `model`
-- Workflows are embedded directly in agent files (not separate)
-
-For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -197,12 +194,13 @@ For contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-## Project Structure (After Installation)
+## Output Locations
+
+When using PM-Kit, your outputs will be saved to:
 
 ```
 your-project/
-├── .claude/                  # Framework files (installed by pm-kit)
-├── prds/                     # Your PRD documents
+├── prds/                     # PRD documents
 ├── research/                 # Research outputs
 ├── decisions/                # Decision logs
 ├── roadmaps/                 # Strategic roadmaps
@@ -211,10 +209,23 @@ your-project/
 
 ---
 
-**Version:** 0.3.0
+## Updating the Plugin
+
+```bash
+# Check for updates
+/plugin update pm-kit
+
+# Or reinstall
+/plugin uninstall pm-kit
+/plugin install pm-kit@pm-tools
+```
+
+---
+
+**Version:** 0.4.0
 **Created:** 2024-11-21
 **Last Updated:** 2025-11-24
 
 ---
 
-**Keywords:** claude, product-management, pm, prd, cli, ai, assistant, user-stories, requirements, documentation, research, competitive-analysis
+**Keywords:** claude-code, plugin, product-management, pm, prd, research, prioritization, decision-matrix, stakeholder-alignment
