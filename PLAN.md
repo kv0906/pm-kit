@@ -2,7 +2,7 @@
 
 > This document serves as the centralized knowledge base for PM-Kit, tracking project vision, architecture decisions, roadmap, and progress.
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2025-11-24 (Roadmap updated with v0.5.0-v0.7.0 plans)
 
 ---
 
@@ -213,6 +213,31 @@ After:  /plugin install kv0906/pm-kit
 
 ---
 
+### ADR-007: Golden Commands Initiative
+**Date:** 2025-11-24 | **Status:** Planned (v0.5.0)
+
+**Context:** Current command set covers core PM workflows but lacks "viral" daily-use commands that form habits. Analysis of successful PM tools shows high adoption comes from commands that:
+1. Solve an immediate, frequent problem (daily use)
+2. Produce shareable, impressive output (social proof)
+3. Chain naturally to other commands (workflow lock-in)
+
+**Decision:** Add 4 high-impact "Golden Commands" in v0.5.0:
+
+| Command | Purpose | Viral Factor |
+|---------|---------|--------------|
+| `/northstar` | Raw idea → structured North Star framework | Clear before/after transformation |
+| `/retro` | Meeting notes → structured retro with actions | Daily team use case |
+| `/today` | Suggest daily work based on open items | Habit-forming daily trigger |
+| `/handover` | Generate vacation handover docs | Solves universal PM pain point |
+
+**Rationale:**
+- Each command targets a frequent PM pain point
+- Outputs are naturally shareable (impressive transformations)
+- Commands chain: `/northstar` → `/prd` → `/prioritize`
+- Low complexity to implement (leverage existing agent patterns)
+
+---
+
 ## Current Status
 
 **Version:** 0.4.0
@@ -274,29 +299,62 @@ After:  /plugin install kv0906/pm-kit
 - [x] Convert skills to `SKILL.md` format
 - [x] Update documentation for plugin installation
 
-### v0.5.0 - Quality of Life (Planned)
-- [ ] Command cheat sheet template
-- [ ] Interactive tutorials for new users
-- [ ] More "Next Steps" suggestions across all commands
-- [ ] Improved error handling and guidance
+### v0.5.0 - Golden Commands (Planned)
+**Theme:** High-impact "viral" commands for daily PM workflows
 
-### v0.6.0 - Expansion (Planned)
-- [ ] New commands for competitive analysis
-- [ ] New commands for go-to-market planning
-- [ ] Integration templates for common tools (Jira, Linear, Notion)
+#### New Commands
+- [ ] `/northstar` - Generate North Star framework from raw ideas (Problem → Vision → Target → Constraints → Bets)
+- [ ] `/retro` - Transform meeting notes into structured retros with actions/owners
+- [ ] `/today` - Daily work suggestions based on open PRDs/decisions
+- [ ] `/handover` - Generate vacation handover docs with open tasks and owners
+
+#### Enhancements
+- [ ] Add "Next Steps" suggestions to all 16 commands (currently 5 have this)
+- [ ] Add screenshots/GIFs to README for onboarding
+
+### v0.6.0 - Templates & Tools (Planned)
+**Theme:** Expand template library and add utility commands
+
+#### New Templates
+- [ ] `prd-mobile-feature.md` - Mobile feature PRD template
+- [ ] `prd-platform.md` - Platform PRD template
+- [ ] `prd-growth-experiment.md` - Growth experiment template
+- [ ] `decision-build-vs-buy.md` - Build vs buy decision template
+
+#### New Commands
+- [ ] `/template [type]` - Browse and apply templates
+- [ ] `/skill [topic]` - Interactive skill browser
+- [ ] `/share` - Format output for X/Twitter/LinkedIn sharing
+
+#### Enhancements
+- [ ] `/mockup` - Add Excalidraw JSON output option
+- [ ] `/diagram` - Add Gantt chart subtype
+- [ ] `/prd-fast`, `/research-fast` - Lightweight variants for quick outputs
+
+### v0.7.0 - Community & Polish (Planned)
+**Theme:** Community growth and documentation polish
+
+- [ ] Update CONTRIBUTING.md paths (`.claude/` → root level)
+- [ ] Submit to Claude Code plugin directories
+- [ ] Add plugin badges to README
+- [ ] Document testing of zero-install flow
+- [ ] Community contribution showcase
 
 ### v1.0.0 - Stable Release (Future)
 - [ ] Comprehensive documentation
-- [ ] Battle-tested workflows
+- [ ] Battle-tested workflows (6+ months of usage)
 - [ ] Community contributions incorporated
 - [ ] Plugin marketplace verification
+- [ ] All commands have "Next Steps" guidance
 
 ### Future Considerations
 - Localization (non-English support)
 - Industry-specific command variants (B2B, B2C, Platform)
 - Custom command creation guide
 - Agent orchestration (multi-agent collaboration)
-- Additional PM tool plugins in marketplace
+- `/competitive` - Competitive analysis command
+- `/gtm` - Go-to-market planning command
+- Integration templates for common tools (Jira, Linear, Notion)
 
 ---
 
@@ -415,6 +473,11 @@ After:  /plugin install kv0906/pm-kit
 | 2025-11-24 | Remove archived-workflows | Workflows embedded in agents, cleaner plugin | ADR-006 |
 | 2025-11-24 | Rename to PM-Kit | Simpler, cleaner branding | ADR-006 |
 | 2025-11-24 | Root-level documentation files | Simpler than docs/ folder for markdown-only repo | - |
+| 2025-11-24 | Add "Golden Commands" for v0.5.0 | Viral daily-use commands for adoption | ADR-007 |
+| 2025-11-24 | `/northstar` for idea-to-framework | Clear before/after transformation | ADR-007 |
+| 2025-11-24 | `/retro` for meeting-to-actions | Daily team use case | ADR-007 |
+| 2025-11-24 | `/today` for daily suggestions | Habit-forming trigger | ADR-007 |
+| 2025-11-24 | `/handover` for vacation docs | Universal PM pain point | ADR-007 |
 
 ---
 
