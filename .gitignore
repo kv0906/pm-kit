@@ -51,3 +51,19 @@ SCRATCH.md
 # Claude Code user-specific files
 .claude/settings.local.json
 .claude/settings.json
+# Obsidian (markdown knowledge base) workspace files
+.obsidian/
+.obsidian*
+/.obsidian*
+/*.obsidian*
+
+# Common Obsidian plugin temp and cache files
+.DS_Store
+.excalidraw
+
+# Obsidian asset folders (if using default attachments folder)
+attachments/
+Attachments/
+assets/
+Assets/
+
