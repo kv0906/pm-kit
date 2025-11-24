@@ -60,6 +60,7 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | `/mockup` | Generate ASCII wireframes for quick visualization | `/mockup "User profile settings page"` |
 | `/diagram` | Create ASCII diagrams (flows, architecture, timelines) | `/diagram "Microservices architecture"` |
 | `/design-spec` | Produce design handoff specifications | `/design-spec "Checkout redesign"` |
+| `/northstar` | Transform raw ideas into North Star framework | `/northstar "AI-powered search for e-commerce"` |
 
 ### Decision - Making Choices
 
@@ -79,6 +80,14 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | `/explain-code` | Translate technical code into PM-friendly explanations | `/explain-code "What does this API endpoint do?"` |
 | `/tech-impact` | Assess technical feasibility of proposed features | `/tech-impact "Real-time notifications feature"` |
 
+### Daily Operations - Managing Your Work
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/retro` | Transform meeting notes into structured retrospectives | `/retro "Sprint 23 notes: discussed velocity..."` |
+| `/today` | Get personalized daily work suggestions | `/today "Open: checkout PRD, pricing decision"` |
+| `/handover` | Generate vacation/transition handover docs | `/handover "Dec 20 - Jan 3, backup: Sarah"` |
+
 ### Help
 
 | Command | Description |
@@ -94,6 +103,7 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | Understand why something is broken | `/decompose` |
 | Research a question or decision | `/research` |
 | Write product requirements | `/prd` |
+| Define a new product vision | `/northstar` |
 | Prioritize my backlog | `/prioritize` |
 | Make a quick decision | `/decide` |
 | Compare options side-by-side | `/matrix` |
@@ -104,6 +114,9 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | Map a user journey | `/flow` |
 | Understand technical concepts | `/explain-code` |
 | Assess feasibility | `/tech-impact` |
+| Structure my day | `/today` |
+| Run a retrospective | `/retro` |
+| Prepare for time off | `/handover` |
 
 ---
 
@@ -200,8 +213,8 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json       # Plugin manifest
 │   └── marketplace.json  # Marketplace definition
-├── commands/             # 16 slash commands
-├── agents/               # 11 specialized agents
+├── commands/             # 20 slash commands
+├── agents/               # 15 specialized agents
 ├── skills/               # 5 educational modules
 └── templates/            # Output templates
 ```
@@ -255,4 +268,4 @@ Built for the Product Management community using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.4.0 | **Author:** [willtran](https://github.com/kv0906)
+**Version:** 0.5.0 | **Author:** [willtran](https://github.com/kv0906)

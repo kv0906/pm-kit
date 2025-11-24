@@ -15,8 +15,8 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest (required)
 │   └── marketplace.json     # Marketplace definition
-├── commands/      (19)      # Slash commands (/prd, /decompose, etc.)
-├── agents/        (11)      # Specialized agents with embedded workflows
+├── commands/      (23)      # Slash commands (/prd, /decompose, etc.)
+├── agents/        (15)      # Specialized agents with embedded workflows
 ├── skills/        (5)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
 ├── CLAUDE.md                # This file - primary routing
@@ -60,6 +60,7 @@ Commands are defined in `commands/`. Active commands:
 | `/mockup` | ASCII wireframes |
 | `/diagram` | ASCII diagrams (flows, architecture) |
 | `/design-spec` | Design handoff specifications |
+| `/northstar` | North Star framework from raw ideas |
 
 ### Decision
 | Command | Purpose |
@@ -76,6 +77,13 @@ Commands are defined in `commands/`. Active commands:
 | `/architecture` | PM-friendly architecture docs |
 | `/explain-code` | Translate code for PMs |
 | `/tech-impact` | Technical feasibility assessment |
+
+### Daily Operations
+| Command | Purpose |
+|---------|---------|
+| `/retro` | Meeting notes to structured retrospectives |
+| `/today` | Daily work suggestions |
+| `/handover` | Vacation handover documentation |
 
 ### Deprecated (Still Work, Point to Replacements)
 | Command | Replaced By |
@@ -176,6 +184,10 @@ Specialized agents in `agents/`:
 | `technical-translator.md` | Code translation for PMs |
 | `rapid-prototyper.md` | ASCII wireframes, Mermaid diagrams |
 | `user-researcher.md` | User research synthesis |
+| `northstar-architect.md` | North Star framework generation |
+| `retro-facilitator.md` | Retrospective facilitation |
+| `daily-planner.md` | Daily work planning |
+| `handover-generator.md` | Handover documentation |
 | `research-synthesizer.md` | **[DEPRECATED]** Use research-agent.md |
 
 ---

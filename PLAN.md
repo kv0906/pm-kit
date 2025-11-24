@@ -240,7 +240,7 @@ After:  /plugin install kv0906/pm-kit
 
 ## Current Status
 
-**Version:** 0.4.0
+**Version:** 0.5.0
 **Released:** 2025-11-24
 **Distribution:** Claude Code Plugin
 **Install:** `/plugin install kv0906/pm-kit`
@@ -248,8 +248,8 @@ After:  /plugin install kv0906/pm-kit
 ### Component Counts
 | Component | Active | Deprecated | Total |
 |-----------|--------|------------|-------|
-| Commands | 16 | 3 | 19 |
-| Agents | 10 | 1 | 11 |
+| Commands | 20 | 3 | 23 |
+| Agents | 14 | 1 | 15 |
 | Templates | 4 | 0 | 4 |
 | Skills | 5 | 0 | 5 |
 
@@ -268,6 +268,7 @@ After:  /plugin install kv0906/pm-kit
 - `/mockup` - ASCII wireframes
 - `/diagram` - ASCII diagrams
 - `/design-spec` - Design handoff specs
+- `/northstar` - North Star framework from raw ideas
 
 **Decision:**
 - `/prioritize` - RICE/ICE/Kano frameworks
@@ -280,6 +281,11 @@ After:  /plugin install kv0906/pm-kit
 - `/architecture` - PM-friendly architecture docs
 - `/explain-code` - Code translation
 - `/tech-impact` - Technical feasibility
+
+**Daily Operations (v0.5.0):**
+- `/retro` - Meeting notes to structured retrospectives
+- `/today` - Daily work suggestions
+- `/handover` - Vacation handover documentation
 
 ---
 
@@ -299,17 +305,17 @@ After:  /plugin install kv0906/pm-kit
 - [x] Convert skills to `SKILL.md` format
 - [x] Update documentation for plugin installation
 
-### v0.5.0 - Golden Commands (Planned)
+### v0.5.0 - Golden Commands (Released)
 **Theme:** High-impact "viral" commands for daily PM workflows
 
 #### New Commands
-- [ ] `/northstar` - Generate North Star framework from raw ideas (Problem → Vision → Target → Constraints → Bets)
-- [ ] `/retro` - Transform meeting notes into structured retros with actions/owners
-- [ ] `/today` - Daily work suggestions based on open PRDs/decisions
-- [ ] `/handover` - Generate vacation handover docs with open tasks and owners
+- [x] `/northstar` - Generate North Star framework from raw ideas (Problem → Vision → Target → Constraints → Bets)
+- [x] `/retro` - Transform meeting notes into structured retros with actions/owners
+- [x] `/today` - Daily work suggestions based on open PRDs/decisions
+- [x] `/handover` - Generate vacation handover docs with open tasks and owners
 
 #### Enhancements
-- [ ] Add "Next Steps" suggestions to all 16 commands (currently 5 have this)
+- [ ] Add "Next Steps" suggestions to all 20 commands (currently 9 have this)
 - [ ] Add screenshots/GIFs to README for onboarding
 
 ### v0.6.0 - Templates & Tools (Planned)
