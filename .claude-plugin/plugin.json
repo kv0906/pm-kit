@@ -1,5 +1,5 @@
 {
-  "name": "pm-kit",
+  "name": "pm",
   "description": "Product Management framework implementing Long Chain-of-Thought methodology. 20 slash commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
   "version": "0.5.0",
   "author": {

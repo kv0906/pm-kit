@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bas
 /plugin marketplace add kv0906/pm-kit
 
 # Install the plugin
-/plugin install pm-kit@pm-kit
+/plugin install pm-kit@pm
 
 # Restart Claude Code to activate
 ```
@@ -234,10 +234,10 @@ pm-kit/
 
 ```bash
 # Check for updates
-/plugin update pm-kit
+/plugin update pm
 
 # Or reinstall latest version
-/plugin uninstall pm-kit
+/plugin uninstall pm
 /plugin install kv0906/pm-kit
 ```
 

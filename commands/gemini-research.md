@@ -13,7 +13,7 @@ Conduct research with real-time web search and citations:
 First, load the Gemini search capability:
 
 ```
-Skill("pm-kit:gemini-grounded-search")
+Skill("pm:gemini-grounded-search")
 ```
 
 ## Available Tools

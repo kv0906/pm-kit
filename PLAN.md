@@ -379,7 +379,7 @@ After:  /plugin install kv0906/pm-kit
 | Metric | Before | After |
 |--------|--------|-------|
 | Distribution | npm CLI (pm-kit-cli) | Claude Code plugin |
-| Installation | `npm install -g pm-kit-cli` | `/plugin install pm-kit` |
+| Installation | `npm install -g pm-kit-cli` | `/plugin install kv0906/pm-kit` |
 | Directory structure | `.claude/` subdirectories | Root-level plugin standard |
 | Skills format | Individual `.md` files | `SKILL.md` in directories |
 
