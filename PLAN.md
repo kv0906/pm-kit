@@ -248,10 +248,10 @@ After:  /plugin install kv0906/pm-kit
 ### Component Counts
 | Component | Active | Deprecated | Total |
 |-----------|--------|------------|-------|
-| Commands | 20 | 3 | 23 |
+| Commands | 21 | 3 | 24 |
 | Agents | 14 | 1 | 15 |
 | Templates | 4 | 0 | 4 |
-| Skills | 5 | 0 | 5 |
+| Skills | 6 | 0 | 6 |
 
 > **Note:** Distributed as Claude Code plugin (v0.4.0+). Workflows embedded in agents.
 
@@ -261,6 +261,7 @@ After:  /plugin install kv0906/pm-kit
 - `/pm` - Help choosing the right command
 - `/decompose` - Problem decomposition
 - `/research` - Comprehensive research (all types)
+- `/gemini-research` - Research with Gemini grounded search (real-time + citations)
 
 **Definition:**
 - `/prd` - Product Requirements Document

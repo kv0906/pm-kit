@@ -11,6 +11,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.5.0] - 2025-11-24
+
+### Added
+- `/northstar` - Transform raw ideas into North Star framework (Problem → Vision → Target → Constraints → Bets)
+- `/retro` - Transform meeting notes into structured retrospectives with actions and owners
+- `/today` - Daily work suggestions based on open items, priorities, and blockers
+- `/handover` - Generate vacation/transition handover documentation
+- `/gemini-research` - Research with Gemini grounded search (real-time web results with citations)
+- `gemini-grounded-search` skill - Real-time web search and code execution via Gemini API
+- Next-step suggestions added to all remaining commands
+
+### Added Agents
+- `northstar-architect.md` - North Star framework generation from raw ideas
+- `retro-facilitator.md` - Retrospective facilitation and meeting synthesis
+- `daily-planner.md` - Daily work planning and prioritization
+- `handover-generator.md` - Handover and transition documentation
+
+### Fixed
+- Corrected broken file path references in 14 command files
+- Fixed `.claude/agents/` → `./agents/` paths
+- Fixed `.claude/templates/` → `./templates/` paths
+- Fixed `.claude/skills/` → `./skills/*/SKILL.md` paths
+
+### Removed
+- `commands/evidence.md` - Deprecated, use `/research` with evidence keywords
+- `commands/synthesize.md` - Deprecated, use `/research` with user research keywords
+- `commands/research-unified.md` - Deprecated, use `/research` instead
+- `agents/research-synthesizer.md` - Consolidated into `research-agent.md`
+- Non-existent `.claude/workflows/` references from all commands
+
+---
+
 ## [0.4.0] - 2025-11-24
 
 ### Added
@@ -111,6 +143,7 @@ npm install -g pm-kit-cli && pm-kit init
 
 | Version | Date | Highlights |
 |---------|------|------------|
+| 0.5.0 | 2025-11-24 | Golden Commands, Gemini integration, path fixes |
 | 0.4.0 | 2025-11-24 | Claude Code plugin conversion, marketplace support |
 | 0.3.0 | 2025-11-24 | Claude Code alignment, embedded workflows |
 | 0.2.0 | 2025-11-24 | Research consolidation, `/pm` help, `/diagram` command |
