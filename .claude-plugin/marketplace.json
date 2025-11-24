@@ -1,24 +1,29 @@
 {
   "name": "pm-kit",
   "owner": {
-    "name": "willtran",
-    "url": "https://github.com/kv0906"
+    "name": "Will Tran",
+    "username": "kv0906",
+    "url": "https://github.com/kv0906",
+    "website": "https://vanthk.com",
+    "twitter": "@will_tran33"
   },
   "metadata": {
-    "description": "Product Management tools and frameworks for Claude Code",
-    "version": "1.0.0"
+    "description": "Product Management tools and frameworks for Claude Code. Building tools that make PMs more technical.",
+    "version": "0.5.0"
   },
   "plugins": [
     {
       "name": "pm-kit",
       "source": "./",
-      "description": "Product Management framework with Long Chain-of-Thought methodology. Includes 16 commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
-      "version": "1.0.0",
+      "description": "Product Management framework with Long Chain-of-Thought methodology. 20 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
+      "version": "0.5.0",
       "author": {
-        "name": "willtran"
+        "name": "Will Tran",
+        "username": "kv0906",
+        "twitter": "@will_tran33"
       },
       "category": "productivity",
-      "tags": ["product-management", "prd", "research", "prioritization", "decision-making"],
+      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
       "strict": true
     }
   ]

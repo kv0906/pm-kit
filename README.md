@@ -268,4 +268,4 @@ Built for the Product Management community using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.5.0 | **Author:** [willtran](https://github.com/kv0906)
+**Version:** 0.5.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
