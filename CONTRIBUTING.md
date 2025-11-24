@@ -1,11 +1,12 @@
-# Contributing to ClaudeKit PM
+# Contributing to PM-Kit
 
-Thank you for your interest in contributing to ClaudeKit PM! This document provides guidelines and instructions for contributing to the framework.
+Thank you for your interest in contributing to PM-Kit! This is an open-source Claude Code plugin that empowers Product Managers with AI-augmented systematic thinking.
 
 ## Table of Contents
 
 - [Types of Contributions](#types-of-contributions)
 - [Getting Started](#getting-started)
+- [Architecture Overview](#architecture-overview)
 - [Style Guide](#style-guide)
 - [Creating New Components](#creating-new-components)
 - [Testing Your Changes](#testing-your-changes)
@@ -20,14 +21,13 @@ We welcome contributions in several areas:
 
 | Contribution Type | Location | Description |
 |-------------------|----------|-------------|
-| **Commands** | `.claude/commands/` | Slash commands that PMs invoke directly |
-| **Workflows** | `.claude/workflows/` | Detailed 15+ step methodologies |
-| **Agents** | `.claude/agents/` | Persona definitions with capabilities |
-| **Templates** | `.claude/templates/` | Output document formats |
-| **Skills** | `.claude/skills/` | Educational content for non-technical PMs |
-| **Documentation** | Root files | README, guides, etc. |
+| **Commands** | `commands/` | Slash commands that PMs invoke directly |
+| **Agents** | `agents/` | Specialized agents with embedded workflows |
+| **Skills** | `skills/[name]/SKILL.md` | Educational content for PMs |
+| **Templates** | `templates/` | Output document formats |
+| **Documentation** | Root files | README, CLAUDE.md, etc. |
 | **Bug Reports** | GitHub Issues | Report problems or inconsistencies |
-| **Feature Requests** | GitHub Issues | Suggest new commands or workflows |
+| **Feature Requests** | GitHub Issues | Suggest new commands or improvements |
 
 ---
 
@@ -37,6 +37,7 @@ We welcome contributions in several areas:
 
 - Git
 - A text editor (VS Code recommended for markdown preview)
+- Claude Code installed
 - Basic understanding of markdown
 - Familiarity with product management concepts
 
@@ -53,6 +54,39 @@ We welcome contributions in several areas:
    git checkout -b feature/your-feature-name
    ```
 
+### Testing Locally
+
+To test your changes in Claude Code:
+
+```bash
+# Install your local fork as a plugin
+cd your-project
+# Copy or symlink pm-kit to test
+```
+
+---
+
+## Architecture Overview
+
+PM-Kit uses a **2-layer architecture**:
+
+```
+User invokes:       Command delegates to:
+┌────────────┐     ┌────────────────────────────────┐
+│  /command  │ ──> │ Agent (with embedded workflow) │ ──> Output
+└────────────┘     └────────────────────────────────┘
+```
+
+### Key Patterns
+
+| Pattern | Description |
+|---------|-------------|
+| Commands use `$ARGUMENTS` | Placeholder for user input |
+| Agents have YAML frontmatter | `name`, `description`, `tools`, `model` |
+| "Use PROACTIVELY" in descriptions | Enables auto-delegation |
+| Skills use `SKILL.md` format | In subdirectories for plugin discovery |
+| Workflows embedded in agents | Single-file agents, no separate workflow files |
+
 ---
 
 ## Style Guide
@@ -61,11 +95,10 @@ We welcome contributions in several areas:
 
 | Component | Convention | Example |
 |-----------|------------|---------|
-| Commands | `kebab-case.md` | `feature-request.md` |
-| Workflows | `kebab-case.md` | `user-research-synthesis.md` |
-| Agents | `kebab-case.md` | `problem-decomposer.md` |
+| Commands | `kebab-case.md` | `northstar.md` |
+| Agents | `kebab-case.md` | `daily-planner.md` |
 | Templates | `kebab-case.md` | `decision-matrix.md` |
-| Skills | `kebab-case.md` | `api-basics.md` |
+| Skills | `skill-name/SKILL.md` | `api-basics/SKILL.md` |
 
 ### Command Structure
 
@@ -78,39 +111,35 @@ description: Brief one-line description (shown in command menu)
 
 # Command Title
 
-You are acting as the **[Agent Name] Agent** for this task.
-
-## Your Task
-
 [Description of what this command does]
 
-**Input**: {{input}}
+**Input**: $ARGUMENTS
 
-## Your Process
+## Instructions
 
-### Phase 1: [Phase Name]
-1. Step 1
-2. Step 2
-3. **Verification**: [Checkpoint question]
+Use the **[Agent Name] Agent** (`agents/[agent-name].md`) to complete this task.
 
-### Phase 2: [Phase Name]
+The agent will guide you through:
+1. **Phase 1** - Description
+2. **Phase 2** - Description
 ...
 
-## Output Locations
+## Output
 
-- **Primary Output**: `./path/to/output.md`
+Save output to: `./path/to/output-[date].md`
 
-## Quality Checklist
+## Output Structure
 
-Before finalizing:
-- [ ] Criterion 1
-- [ ] Criterion 2
+Your output must include:
+- Section 1
+- Section 2
+...
 
 ---
 
 ## Next Steps
 
-After completing this task, consider:
+After completing this task:
 
 | Next Action | Command | When to Use |
 |-------------|---------|-------------|
@@ -121,27 +150,99 @@ After completing this task, consider:
 Begin [task] now.
 ```
 
-### Workflow Structure
-
-Workflows should include:
-
-1. **Overview section** with purpose, when to use, and outputs
-2. **Multiple phases** (typically 4-6 phases)
-3. **15+ total steps** across all phases
-4. **Verification checkpoints** at each phase end
-5. **Backtracking triggers** - when to return to previous phases
-6. **Quality checklist** before finalization
-
 ### Agent Structure
 
-Agents should define:
+Agents should include YAML frontmatter and embedded workflow:
 
-1. **Purpose** - One paragraph describing the agent's role
-2. **Core Capabilities** - 5-7 specific abilities with details
-3. **Analysis/Validation Protocols** - How the agent validates work
-4. **Input/Output Artifacts** - What it receives and produces
-5. **Integration Points** - How it works with other agents
-6. **Success Criteria** - When the agent's work is complete
+```markdown
+---
+name: agent-name
+description: Role description. Use PROACTIVELY when [trigger condition].
+tools: Read, Write, Glob, Grep
+model: sonnet
+---
+
+# Agent Name Agent
+
+You are an expert [role] implementing Long Chain-of-Thought methodology with [approach].
+
+## Core Capabilities
+
+1. **Capability** - Description
+2. **Capability** - Description
+...
+
+## Workflow Process
+
+### Phase 1: [Phase Name]
+
+**Step 1.1: [Step Name]**
+- Action item
+- Action item
+- **Verification**: [Checkpoint question]
+
+**Step 1.2: [Step Name]**
+- Action item
+- **Gate**: [Gate condition]
+
+### Phase 2: [Phase Name]
+...
+
+### Phase N: Documentation
+
+Generate output following this structure:
+
+```markdown
+[Template structure]
+```
+
+**Output Location**: `./path/to/output.md`
+
+## Backtracking Triggers
+
+Return to earlier phases if:
+- Condition 1
+- Condition 2
+
+## Quality Checklist
+
+**Before finalizing:**
+- [ ] Checklist item
+- [ ] Checklist item
+
+## Output Artifacts
+
+1. **Artifact Name** - Description
+2. **Artifact Name** - Description
+```
+
+### Skill Structure
+
+Skills are educational modules in `skills/[name]/SKILL.md`:
+
+```markdown
+# Skill Title
+
+## Overview
+
+[What this skill teaches]
+
+## Key Concepts
+
+### Concept 1
+[Explanation with examples]
+
+### Concept 2
+[Explanation with examples]
+
+## Quick Reference
+
+[Cheat sheet or summary table]
+
+## Related Skills
+
+- [Link to related skill]
+```
 
 ### Writing Style
 
@@ -150,7 +251,7 @@ Agents should define:
 - Include **examples** where helpful
 - Use **tables** for structured information
 - Use **ASCII diagrams** for visual concepts
-- Include **verification checkpoints** throughout
+- Include **verification checkpoints** throughout workflows
 
 ### Markdown Conventions
 
@@ -167,44 +268,53 @@ Agents should define:
 
 ### Adding a New Command
 
-1. Create file in `.claude/commands/your-command.md`
+1. Create file in `commands/your-command.md`
 2. Follow the [command structure](#command-structure) above
-3. Reference an existing agent or create a new one
-4. Include "Next Steps" section
-5. Update `README.md` command tables
-6. Update `CLAUDE.md` command list
-7. Update `version.json` file counts
-
-### Adding a New Workflow
-
-1. Create file in `.claude/workflows/your-workflow.md`
-2. Ensure 15+ steps across multiple phases
-3. Include verification checkpoints at each phase
-4. Add backtracking triggers
-5. Update `version.json` file counts
+3. Use `$ARGUMENTS` placeholder for user input
+4. Reference an existing agent or create a new one
+5. Include "Next Steps" section at the end
+6. Update `README.md` command tables
+7. Update `CLAUDE.md` command list
+8. Update `PLAN.md` component counts
 
 ### Adding a New Agent
 
-1. Create file in `.claude/agents/your-agent.md`
-2. Define capabilities, protocols, and success criteria
-3. Update `CLAUDE.md` agent list
-4. Update `version.json` file counts
+1. Create file in `agents/your-agent.md`
+2. Add YAML frontmatter with required fields:
+   ```yaml
+   ---
+   name: your-agent
+   description: Description. Use PROACTIVELY when [trigger].
+   tools: Read, Write, Glob, Grep
+   model: sonnet
+   ---
+   ```
+3. Embed the complete workflow (15+ steps across phases)
+4. Include verification checkpoints at each phase
+5. Add backtracking triggers and quality checklist
+6. Update `CLAUDE.md` agent list
+7. Update `PLAN.md` component counts
 
 ### Adding a New Skill
 
-Skills are educational content, not commands. They should:
+1. Create subdirectory in `skills/` with skill name
+2. Create `SKILL.md` file inside
+3. Follow the [skill structure](#skill-structure) above
+4. Skills are auto-discovered by the plugin system
+5. Update `README.md` skills table
 
-1. Explain concepts clearly for non-technical readers
-2. Include practical examples
-3. Provide quick reference cards
-4. Link to related skills
-5. Update `version.json` file counts
+### Adding a New Template
+
+1. Create file in `templates/your-template.md`
+2. Use clear section headers
+3. Include placeholder text showing what goes where
+4. Update `CLAUDE.md` templates list
 
 ---
 
 ## Testing Your Changes
 
-Since ClaudeKit PM is a markdown-only framework, "testing" means validation:
+Since PM-Kit is a markdown-only framework, "testing" means validation:
 
 ### Manual Validation Checklist
 
@@ -214,13 +324,15 @@ Since ClaudeKit PM is a markdown-only framework, "testing" means validation:
 - [ ] **Completeness**: All required sections present
 - [ ] **Consistency**: Terminology matches existing components
 - [ ] **Quality**: Content is clear, specific, and actionable
+- [ ] **Frontmatter**: YAML frontmatter is valid (for agents)
 
-### Testing Commands
+### Testing Commands in Claude Code
 
-1. Install the framework in a test project
+1. Install pm-kit in a test project
 2. Invoke your command with sample input
 3. Verify the output matches expectations
 4. Check that "Next Steps" suggestions make sense
+5. Test agent auto-delegation if applicable
 
 ### Cross-Reference Check
 
@@ -239,7 +351,7 @@ grep -r "your-file-name" .
 
 1. **Self-review** your changes against the style guide
 2. **Test** your changes as described above
-3. **Update documentation** (README, CLAUDE.md, version.json)
+3. **Update documentation** (README.md, CLAUDE.md, PLAN.md)
 4. **Write clear commit messages**
 
 ### Commit Message Format
@@ -259,7 +371,7 @@ feat(commands): add /stakeholder-map command
 
 - Creates stakeholder influence matrix
 - Includes communication planning
-- References consensus-builder agent
+- References new stakeholder-mapper agent
 ```
 
 ```
@@ -276,10 +388,10 @@ Your PR should include:
 
 - [ ] Clear description of changes
 - [ ] Link to related issue (if applicable)
-- [ ] Updated documentation (README, CLAUDE.md)
-- [ ] Updated version.json (if adding/removing files)
+- [ ] Updated documentation (README.md, CLAUDE.md)
+- [ ] Updated PLAN.md component counts (if adding/removing files)
 - [ ] Follows style guide
-- [ ] Self-tested
+- [ ] Self-tested in Claude Code
 
 ### Review Process
 
@@ -296,16 +408,18 @@ When consolidating or removing components:
 
 ### Do NOT Delete Files
 
-Instead, add a deprecation notice:
+Instead, add a deprecation notice at the top:
 
 ```markdown
-# Component Title
+---
+description: [DEPRECATED] Use /new-command instead
+---
 
-> **DEPRECATED**: This [command/agent/workflow] has been consolidated into `[replacement]`.
+# Command Title
+
+> **DEPRECATED**: This command has been consolidated into `/new-command`.
 >
-> [Explanation of what changed]
->
-> **Please use `[replacement]` instead.**
+> **Please use `/new-command` instead.**
 
 ---
 
@@ -326,7 +440,7 @@ Instead, add a deprecation notice:
 
 1. Update `CLAUDE.md` to mark as deprecated
 2. Update `README.md` if command is listed
-3. Add to `deprecatedFiles` in `version.json`
+3. Update `PLAN.md` component counts
 4. Update `CHANGELOG.md`
 
 ### Minimum Deprecation Period
@@ -337,8 +451,9 @@ Deprecated components remain for at least **2 minor versions** before removal co
 
 ## Questions?
 
-- Open a [GitHub Issue](https://github.com/vanlumberworks/pm-kit/issues) for questions
+- Open a [GitHub Issue](https://github.com/kv0906/pm-kit/issues) for questions
 - Tag issues with `question` label
+- Follow [@will_tran33](https://twitter.com/will_tran33) for updates
 
 ---
 
@@ -347,5 +462,16 @@ Deprecated components remain for at least **2 minor versions** before removal co
 Contributors are recognized in:
 - Release notes
 - CHANGELOG.md (for significant contributions)
+- README.md acknowledgments (for major contributions)
 
-Thank you for contributing to ClaudeKit PM!
+---
+
+## Code of Conduct
+
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
+
+---
+
+Thank you for contributing to PM-Kit! Together, we're making PMs more technical.
+
+**Maintainer:** [Will Tran](https://github.com/kv0906) | [@will_tran33](https://twitter.com/will_tran33)
