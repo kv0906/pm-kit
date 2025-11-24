@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gemini-grounding": {
+      "command": "npx",
+      "args": ["-y", "gemini-grounding"],
+      "env": {
+        "GEMINI_API_KEY": "$GEMINI_API_KEY"
+      }
+    }
+  }
+}

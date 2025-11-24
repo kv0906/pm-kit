@@ -171,6 +171,7 @@ PM-Kit includes educational modules for PMs who want to understand technical con
 | **debug-without-code** | Debugging strategies without writing code |
 | **frontend-prompts** | How to specify frontend design requirements |
 | **ascii-diagrams** | Creating effective ASCII diagrams and wireframes |
+| **gemini-grounded-search** | Real-time web search and code execution via Gemini API |
 
 ---
 
@@ -215,7 +216,7 @@ pm-kit/
 │   └── marketplace.json  # Marketplace definition
 ├── commands/             # 20 slash commands
 ├── agents/               # 15 specialized agents
-├── skills/               # 5 educational modules
+├── skills/               # 6 educational modules
 └── templates/            # Output templates
 ```
 

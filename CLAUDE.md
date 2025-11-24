@@ -17,7 +17,7 @@ pm-kit/
 │   └── marketplace.json     # Marketplace definition
 ├── commands/      (23)      # Slash commands (/prd, /decompose, etc.)
 ├── agents/        (15)      # Specialized agents with embedded workflows
-├── skills/        (5)       # Technical literacy modules (SKILL.md format)
+├── skills/        (6)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
 ├── CLAUDE.md                # This file - primary routing
 ├── PLAN.md                  # Project knowledge base
@@ -203,6 +203,7 @@ Educational modules in `skills/`:
 | `frontend-prompts/` | Frontend design specs |
 | `debug-without-code/` | Debugging strategies |
 | `ascii-diagrams/` | ASCII diagram reference |
+| `gemini-grounded-search/` | Real-time web search, code execution via Gemini API |
 
 ---
 
