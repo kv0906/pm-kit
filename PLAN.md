@@ -315,7 +315,7 @@ After:  /plugin install kv0906/pm-kit
 - [x] `/handover` - Generate vacation handover docs with open tasks and owners
 
 #### Enhancements
-- [ ] Add "Next Steps" suggestions to all 20 commands (currently 9 have this)
+- [x] Add "Next Steps" suggestions to all 20 commands (20/20 complete)
 - [ ] Add screenshots/GIFs to README for onboarding
 
 ### v0.6.0 - Templates & Tools (Planned)

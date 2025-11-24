@@ -206,4 +206,20 @@ Link this decision to:
 - Strategic plan if strategic decision
 - Risk assessment if high-risk decision
 
+---
+
+## Next Steps
+
+After completing the decision:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Build stakeholder buy-in | `/consensus` | Align team on the decision |
+| Create comparison matrix | `/matrix` | Deep-dive into option comparison |
+| Write requirements | `/prd` | If decision leads to building something |
+| Assess feasibility | `/tech-impact` | Validate engineering impact |
+| Create strategic plan | `/strategy` | If decision affects product direction |
+
+---
+
 Begin decision analysis now.

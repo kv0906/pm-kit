@@ -152,4 +152,20 @@ Refer to `./.claude/workflows/strategic-planning.md` for full orchestration deta
 - Governance and review process established
 - Strategy communicated across organization
 
+---
+
+## Next Steps
+
+After completing the strategic plan:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Write initiative PRDs | `/prd` | Define requirements for key initiatives |
+| Prioritize initiatives | `/prioritize` | Rank initiatives by RICE/ICE frameworks |
+| Build stakeholder buy-in | `/consensus` | Align leadership on strategy |
+| Assess feasibility | `/tech-impact` | Validate technical capacity |
+| Create architecture docs | `/architecture` | Document technical implications |
+
+---
+
 Begin strategic planning now.

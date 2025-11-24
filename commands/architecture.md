@@ -269,4 +269,20 @@ Our system is a **microservices architecture** serving 50K daily active users. I
 - Document incrementally (don't try to map everything)
 - Prioritize components PMs interact with
 
+---
+
+## Next Steps
+
+After completing the architecture documentation:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Assess feature feasibility | `/tech-impact` | Validate what's possible to build |
+| Explain code to stakeholders | `/explain-code` | Deep-dive into specific components |
+| Write requirements | `/prd` | Define architectural changes as features |
+| Create strategic plan | `/strategy` | Plan technical roadmap |
+| Build stakeholder buy-in | `/consensus` | Align on architectural decisions |
+
+---
+
 Begin architecture documentation now.

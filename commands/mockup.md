@@ -272,4 +272,20 @@ Refer to `./.claude/agents/rapid-prototyper.md` for detailed capabilities includ
 - State management documentation
 - Responsive design notation
 
+---
+
+## Next Steps
+
+After completing the mockups:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Create user flows | `/flow` | Map journey between screens |
+| Design handoff specs | `/design-spec` | Detailed specs for design team |
+| Write requirements | `/prd` | Full feature documentation |
+| Build stakeholder buy-in | `/consensus` | Align on design direction |
+| Create technical diagram | `/diagram` | Visualize system architecture |
+
+---
+
 Begin mockup generation now.

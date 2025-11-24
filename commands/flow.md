@@ -402,4 +402,20 @@ Refer to `./.claude/agents/rapid-prototyper.md` for detailed capabilities includ
 - Interactive state management
 - Journey visualization
 
+---
+
+## Next Steps
+
+After completing the user flow:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Create wireframes | `/mockup` | Visualize screens in the flow |
+| Design handoff specs | `/design-spec` | Prepare detailed specs for designers |
+| Write requirements | `/prd` | Document full feature requirements |
+| Assess feasibility | `/tech-impact` | Validate engineering effort |
+| Create architecture diagram | `/diagram` | Visualize technical flow |
+
+---
+
 Begin user flow generation now.

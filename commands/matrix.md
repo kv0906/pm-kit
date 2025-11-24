@@ -456,4 +456,20 @@ Matrix generation is successful when:
 - [ ] Audience can make decision based on matrix
 - [ ] Documentation complete for future reference
 
+---
+
+## Next Steps
+
+After completing the matrix:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Make decision | `/decide` | Formalize choice based on matrix results |
+| Build stakeholder buy-in | `/consensus` | Align team on matrix conclusions |
+| Prioritize features | `/prioritize` | If matrix compared features |
+| Write requirements | `/prd` | If matrix selected a feature to build |
+| Assess feasibility | `/tech-impact` | Validate technical implications |
+
+---
+
 Begin matrix generation now.

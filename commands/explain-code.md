@@ -277,4 +277,20 @@ Refer to `./.claude/agents/technical-translator.md` for detailed capabilities in
 - Technical constraint mapping
 - Impact analysis
 
+---
+
+## Next Steps
+
+After completing the code explanation:
+
+| Next Action | Command | When to Use |
+|-------------|---------|-------------|
+| Assess technical impact | `/tech-impact` | Evaluate change feasibility |
+| Document architecture | `/architecture` | Full system documentation |
+| Write requirements | `/prd` | If changes are needed |
+| Create technical diagram | `/diagram` | Visualize code structure |
+| Build stakeholder buy-in | `/consensus` | Align on technical decisions |
+
+---
+
 Begin code explanation now.
