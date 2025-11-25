@@ -1,13 +1,13 @@
 ---
 name: gemini-grounded-search
-description: Ground AI responses with real-time web search, code execution, and URL context using Google's Gemini API. Use this skill for market research, competitive analysis, data validation, evidence gathering, and any task requiring current information with citations.
+description: Use Google's Gemini API directly for real-time web search, code execution, and URL analysis via Python CLI scripts. Includes tools for market research, competitive analysis, data validation, and evidence gathering with automatic source citations.
 ---
 
-# Gemini Grounded Search
+# Gemini Grounded Search (Python CLI)
 
-Enable Claude to search the web in real-time using Google's Gemini API with automatic source citations.
+Use Google's Gemini API directly through Python CLI scripts for real-time web search with automatic source citations.
 
-## Quick Setup (3 Steps)
+## Quick Setup (2 Steps)
 
 ### Step 1: Get Your Free API Key
 
@@ -16,95 +16,105 @@ Enable Claude to search the web in real-time using Google's Gemini API with auto
 3. Click **"Create API Key"**
 4. Copy the key (starts with `AIza...`)
 
-### Step 2: Create Your .env File
-
-In your project folder, create a file named `.env`:
+### Step 2: Set Environment Variable
 
 ```bash
-# Copy from .env.example or create manually
-GEMINI_API_KEY=AIza...your-key-here
+# Add to your shell profile (.bashrc, .zshrc, etc.)
+export GEMINI_API_KEY="AIza...your-key-here"
 ```
 
-### Step 3: Restart Claude Code
-
-```bash
-# In your terminal
-claude
-```
-
-That's it! Claude now has access to real-time web search via Gemini.
+That's it! You can now use the CLI scripts.
 
 ---
 
-## How It Works
+## CLI Scripts
 
-Once configured, the research agent (`/research`) automatically uses Gemini's grounded search for:
+### Web Search with Citations
 
-| Use Case | Example |
-|----------|---------|
-| Market Research | "What are the top CRM tools in 2025?" |
-| Competitive Analysis | "Compare Notion vs Obsidian features" |
-| Evidence Gathering | "What studies support remote work effectiveness?" |
-| Trend Analysis | "Latest AI developments this month" |
-| Data Validation | "Verify: Apple's market cap exceeded $3T in 2024" |
+```bash
+uv run --with google-genai scripts/gemini/grounded_search.py "your query"
+```
 
-### What You Get
+Use for:
+- Market research ("What are the top CRM tools in 2025?")
+- Competitive analysis ("Compare Notion vs Obsidian features")
+- Evidence gathering ("What studies support remote work effectiveness?")
+- Trend analysis ("Latest AI developments this month")
+
+### Code Execution
+
+```bash
+uv run --with google-genai scripts/gemini/code_execution.py "calculate X"
+```
+
+Use for:
+- Mathematical calculations
+- Data analysis with NumPy/Pandas
+- Creating charts with Matplotlib
+- Running Python code in sandbox
+
+### Combined Search + Code
+
+```bash
+uv run --with google-genai scripts/gemini/multi_tool_query.py "research and visualize X"
+```
+
+Use for:
+- Research that requires calculations
+- Data visualization from web sources
+- Complex queries needing multiple steps
+
+### URL Analysis
+
+```bash
+uv run --with google-genai scripts/gemini/url_context.py "https://..." "summarize this"
+```
+
+Use for:
+- Analyzing specific web pages
+- Extracting information from URLs
+- Summarizing long articles
+
+See `scripts/gemini/` directory for full documentation and examples.
+
+---
+
+## What You Get
 
 - **Real-time web results** - Not limited to training data cutoff
 - **Source citations** - Every claim linked to its source
 - **Search transparency** - See what queries were used
-- **Synthesized answers** - Not raw search results, but analyzed information
+- **Synthesized answers** - Analyzed information, not raw search results
+- **Code execution** - Run Python in secure sandbox environment
 
 ---
 
-## Available Tools (via MCP)
+## Technical Reference
 
-When configured, these tools become available to Claude:
+### Supported Models
 
-| Tool | What It Does |
-|------|--------------|
-| `mcp__gemini-grounding__search` | Web search with citations |
-| `mcp__gemini-grounding__searchDeveloper` | Developer docs search |
-| `mcp__gemini-grounding__searchReddit` | Reddit discussions search |
+The scripts use Google's Gemini models:
 
----
+| Model | Best For |
+|-------|----------|
+| `gemini-2.5-flash` | Fast search, general use (default) |
+| `gemini-2.5-pro` | Complex queries, deep research |
 
-## Verify Setup
+### Grounding Capabilities
 
-Check if Gemini MCP is connected:
+- **Google Search** - Real-time web search with citations
+- **Code Execution** - Run Python in sandbox (NumPy, Pandas, Matplotlib)
+- **URL Context** - Analyze specific web pages
 
-```
-/mcp
-```
+### API Quotas
 
-You should see `gemini-grounding` in the list of connected servers.
-
----
-
-## Troubleshooting
-
-### "Server not connected"
-
-1. Check your `.env` file exists and has the correct key
-2. Restart Claude Code
-3. Run `/mcp` to check status
-
-### "Invalid API key"
-
-1. Go back to [Google AI Studio](https://aistudio.google.com/apikey)
-2. Create a new key
-3. Update your `.env` file
-4. Restart Claude Code
-
-### "Quota exceeded"
-
-The free tier has generous limits, but if exceeded:
-- Wait a few minutes and try again
-- Or upgrade to a paid tier at Google AI Studio
+- **Free tier**: Generous limits for personal use
+- **Rate limits**: Subject to Google AI Studio quotas
+- **Enterprise**: Consider Vertex AI for higher quotas
 
 ---
 
-## Best Practices for Research Prompts
+## Best Practices
 
 ### Be Specific About Time
 > "What are the AI trends in **November 2025**?"
@@ -120,66 +130,9 @@ The free tier has generous limits, but if exceeded:
 
 ---
 
-## Advanced: CLI Scripts
-
-For power users who want direct command-line access, PM-Kit includes Python scripts:
-
-```bash
-# Web search with citations
-uv run --with google-genai scripts/gemini/grounded_search.py "your query"
-
-# Code execution (calculations, charts)
-uv run --with google-genai scripts/gemini/code_execution.py "calculate X"
-
-# Combined search + code
-uv run --with google-genai scripts/gemini/multi_tool_query.py "research and visualize X"
-
-# URL analysis
-uv run --with google-genai scripts/gemini/url_context.py "https://..." "summarize this"
-```
-
-See `scripts/gemini/` for full documentation.
-
----
-
-## Technical Reference
-
-### MCP Configuration
-
-PM-Kit includes a pre-configured `.mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "gemini-grounding": {
-      "command": "npx",
-      "args": ["-y", "gemini-grounding"],
-      "env": {
-        "GEMINI_API_KEY": "$GEMINI_API_KEY"
-      }
-    }
-  }
-}
-```
-
-### Supported Models
-
-| Model | Best For |
-|-------|----------|
-| `gemini-2.5-flash` | Fast search, general use |
-| `gemini-2.5-pro` | Complex queries, deep research |
-
-### Grounding Capabilities
-
-- **Google Search** - Real-time web search with citations
-- **Code Execution** - Run Python in sandbox (NumPy, Pandas, Matplotlib)
-- **URL Context** - Analyze specific web pages
-
----
-
 ## Notes
 
-- Google Search grounding is subject to API quotas (generous free tier)
 - All responses include source attribution
 - Grounding metadata shows search queries used
-- For enterprise use, consider Vertex AI for higher quotas
+- Python scripts run locally with direct API access
+- No MCP server required - simple CLI tools

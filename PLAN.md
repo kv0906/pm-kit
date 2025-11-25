@@ -261,7 +261,6 @@ After:  /plugin install kv0906/pm-kit
 - `/pm` - Help choosing the right command
 - `/decompose` - Problem decomposition
 - `/research` - Comprehensive research (all types)
-- `/gemini-research` - Research with Gemini grounded search (real-time + citations)
 
 **Definition:**
 - `/prd` - Product Requirements Document

@@ -21,19 +21,6 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 
 ## Installation
 
-### Quick Install
-
-```bash
-# In Claude Code
-/plugin install kv0906/pm-kit
-```
-
-### One-Line Shell Install
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bash
-```
-
 ### Via Marketplace
 
 ```bash
@@ -56,7 +43,6 @@ curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bas
 |---------|-------------|---------|
 | `/decompose` | Break down complex problems into root causes using first principles | `/decompose "Why are users abandoning checkout?"` |
 | `/research` | Multi-source research synthesis with confidence scoring | `/research "Should we build a mobile app?"` |
-| `/gemini-research` | Research with Gemini grounded search (real-time + citations) | `/gemini-research "Latest AI trends 2025"` |
 
 ### Definition - Specifying Solutions
 
@@ -109,7 +95,6 @@ curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bas
 |--------------|-----|
 | Understand why something is broken | `/decompose` |
 | Research a question or decision | `/research` |
-| Research with real-time sources + citations | `/gemini-research` |
 | Write product requirements | `/prd` |
 | Define a new product vision | `/northstar` |
 | Prioritize my backlog | `/prioritize` |

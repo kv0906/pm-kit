@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-*No unreleased changes*
+### Removed
+- `/gemini-research` command - MCP-based Gemini integration removed (Python scripts still available in `scripts/gemini/`)
+- `.mcp.json` - MCP server configuration no longer required
+- MCP tool references from `research-agent.md` and `gemini-grounded-search/SKILL.md`
 
 ---
 
