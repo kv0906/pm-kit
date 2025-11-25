@@ -49,9 +49,10 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | Command | Description | Example |
 |---------|-------------|---------|
 | `/prd` | Generate comprehensive Product Requirements Documents | `/prd "Shopping cart transparency feature"` |
-| `/flow` | Create user flow diagrams with Mermaid syntax | `/flow "Password reset journey"` |
-| `/mockup` | Generate ASCII wireframes for quick visualization | `/mockup "User profile settings page"` |
-| `/diagram` | Create ASCII diagrams (flows, architecture, timelines) | `/diagram "Microservices architecture"` |
+| `/mermaid` | Create visual diagrams (flows, architecture, Gantt, ERD) that render in modern tools | `/mermaid "Password reset journey"` |
+| `/ascii` | Generate text-based diagrams for universal compatibility | `/ascii "Microservices architecture"` |
+| `/wireframe` | Create ASCII wireframes for quick UI visualization | `/wireframe "User profile settings page"` |
+| `/excalidraw` | Generate hand-drawn style diagrams for presentations | `/excalidraw "System architecture brainstorm"` |
 | `/design-spec` | Produce design handoff specifications | `/design-spec "Checkout redesign"` |
 | `/northstar` | Transform raw ideas into North Star framework | `/northstar "AI-powered search for e-commerce"` |
 
@@ -102,9 +103,10 @@ A comprehensive AI-powered toolkit that brings systematic product management met
 | Compare options side-by-side | `/matrix` |
 | Get stakeholder buy-in | `/consensus` |
 | Plan a strategic initiative | `/strategy` |
-| Create a diagram | `/diagram` |
-| Sketch a wireframe | `/mockup` |
-| Map a user journey | `/flow` |
+| Create visual diagrams (Mermaid) | `/mermaid` |
+| Create text diagrams (ASCII) | `/ascii` |
+| Sketch a wireframe | `/wireframe` |
+| Create presentation diagrams | `/excalidraw` |
 | Understand technical concepts | `/explain-code` |
 | Assess feasibility | `/tech-impact` |
 | Structure my day | `/today` |

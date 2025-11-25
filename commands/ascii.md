@@ -264,9 +264,9 @@ Before outputting:
 After creating the diagram, suggest:
 
 **Related commands you might find useful:**
-- `/flow` - Create Mermaid user flow diagrams (renders visually in supported tools)
-- `/mockup` - Generate ASCII wireframes for UI screens
-- `/architecture` - Create detailed architecture documentation
+- `/mermaid` - Create visual diagrams that render in modern tools (GitHub, Notion)
+- `/wireframe` - Generate ASCII wireframes for UI screens
+- `/excalidraw` - Create hand-drawn style diagrams for presentations
 
 ---
 

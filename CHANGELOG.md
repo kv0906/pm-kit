@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `/mermaid` - Enhanced visual diagram command (flowcharts, architecture, Gantt, ERD) replacing `/flow`
+- `/ascii` - Text-based diagram command (universal compatibility) replacing `/diagram`
+- `/wireframe` - ASCII wireframe command (renamed from `/mockup` for clarity)
+- `/excalidraw` - NEW hand-drawn style diagram generator (JSON format for presentations)
+- C4 architecture diagrams in `/mermaid`
+- Gantt chart support in `/mermaid`
+- Entity relationship diagram (ERD) support in `/mermaid`
+
+### Changed
+- `rapid-prototyper` agent enhanced with Excalidraw JSON generation capability
+- Command count increased from 20 to 21 commands
+
+### Deprecated
+- `/diagram` → Use `/ascii` instead (same functionality, clearer name)
+- `/flow` → Use `/mermaid` instead (enhanced with C4, Gantt, ERD)
+- `/mockup` → Use `/wireframe` instead (renamed for clarity)
+
 ### Removed
 - `/gemini-research` command - MCP-based Gemini integration removed (Python scripts still available in `scripts/gemini/`)
 - `.mcp.json` - MCP server configuration no longer required

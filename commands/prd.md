@@ -49,8 +49,8 @@ After completing the PRD:
 | Create design handoff | `/design-spec` | Prepare specs for design team |
 | Assess feasibility | `/tech-impact` | Validate engineering effort |
 | Get stakeholder buy-in | `/consensus` | Build alignment on PRD |
-| Create user flows | `/flow` | Visualize user journeys |
-| Generate wireframes | `/mockup` | Quick visual prototypes |
+| Create user flows | `/mermaid` | Visualize user journeys |
+| Generate wireframes | `/wireframe` | Quick visual prototypes |
 
 ---
 

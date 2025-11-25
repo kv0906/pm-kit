@@ -290,7 +290,7 @@ After completing the code explanation:
 | Assess technical impact | `/tech-impact` | Evaluate change feasibility |
 | Document architecture | `/architecture` | Full system documentation |
 | Write requirements | `/prd` | If changes are needed |
-| Create technical diagram | `/diagram` | Visualize code structure |
+| Create technical diagram | `/mermaid` or `/ascii` | Visualize code structure |
 | Build stakeholder buy-in | `/consensus` | Align on technical decisions |
 
 ---

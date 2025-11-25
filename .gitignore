@@ -64,8 +64,6 @@ SCRATCH.md
 # Obsidian asset folders (if using default attachments folder)
 attachments/
 Attachments/
-assets/
-Assets/
 # Ignore factory settings and docs folder
 factory-settings/
 factory_settings/

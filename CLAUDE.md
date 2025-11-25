@@ -15,7 +15,7 @@ pm-kit/
 ├── .claude-plugin/
 │   ├── plugin.json          # Plugin manifest (required)
 │   └── marketplace.json     # Marketplace definition
-├── commands/      (20)      # Slash commands (/prd, /decompose, etc.)
+├── commands/      (21)      # Slash commands (/prd, /decompose, /mermaid, etc.)
 ├── agents/        (14)      # Specialized agents with embedded workflows
 ├── skills/        (6)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
@@ -56,9 +56,10 @@ Commands are defined in `commands/`. Active commands:
 | Command | Purpose |
 |---------|---------|
 | `/prd` | Generate comprehensive PRD |
-| `/flow` | User flow diagrams (Mermaid) |
-| `/mockup` | ASCII wireframes |
-| `/diagram` | ASCII diagrams (flows, architecture) |
+| `/mermaid` | Visual diagrams (flows, architecture, Gantt, ERD) |
+| `/ascii` | Text-based diagrams (universal compatibility) |
+| `/wireframe` | ASCII wireframes for UI screens |
+| `/excalidraw` | Hand-drawn style diagrams (presentations) |
 | `/design-spec` | Design handoff specifications |
 | `/northstar` | North Star framework from raw ideas |
 

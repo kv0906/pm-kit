@@ -143,16 +143,53 @@ User invokes:     Command delegates to:
 ---
 
 ### ADR-004: ASCII Diagrams as Command
-**Date:** 2025-11-24 | **Status:** Implemented
+**Date:** 2025-11-24 | **Status:** Superseded by ADR-007
 
 **Context:** `ascii-diagrams.md` skill was educational but users wanted to generate diagrams on demand.
 
 **Decision:** Create `/diagram` command, keep skill for reference.
 
+**Update (2025-11-25):** Renamed to `/ascii` for clarity. See ADR-007.
+
 **Rationale:**
 - Skills are for learning, commands are for doing
 - Diagrams are frequently needed in PM work
 - On-demand generation more valuable than reference material
+
+---
+
+### ADR-007: Diagram Command Consolidation
+**Date:** 2025-11-25 | **Status:** Implemented
+
+**Context:** Had multiple overlapping diagram-related commands causing user confusion:
+- `/mockup` - ASCII wireframes
+- `/wireframe` - Same as mockup (newer)
+- `/flow` - Mermaid user flows
+- `/mermaid` - Same as flow but with more diagram types
+- `/diagram` - ASCII diagrams
+- `/ascii` - Same as diagram (newer)
+
+**Decision:** Consolidate and rename for clarity:
+1. **DELETE**: `/mockup` → Use `/wireframe` instead
+2. **DELETE**: `/flow` → Use `/mermaid` instead
+3. **DELETE**: `/diagram` → Use `/ascii` instead
+
+**Migration Guide:**
+- `/mockup "page"` → `/wireframe "page"`
+- `/flow "journey"` → `/mermaid "journey"`
+- `/diagram "system"` → `/ascii "system"`
+
+**Rationale:**
+- **Clarity**: Names now match output format (wireframe, mermaid, ascii, excalidraw)
+- **Simplicity**: 4 distinct commands instead of 7 overlapping ones
+- **Discoverability**: Easier for users to understand which command to use
+- **Non-breaking**: Kept deprecated files initially with migration notices (later removed)
+
+**Final Command Structure:**
+- `/mermaid` - Visual diagrams (Mermaid.js - flowcharts, Gantt, ERD, etc.)
+- `/ascii` - Text-based diagrams (universal compatibility)
+- `/wireframe` - ASCII wireframes for UI screens
+- `/excalidraw` - Hand-drawn style diagrams (presentations)
 
 ---
 
@@ -264,9 +301,10 @@ After:  /plugin install kv0906/pm-kit
 
 **Definition:**
 - `/prd` - Product Requirements Document
-- `/flow` - User flow diagrams (Mermaid)
-- `/mockup` - ASCII wireframes
-- `/diagram` - ASCII diagrams
+- `/mermaid` - Visual diagrams (flows, architecture, Gantt, ERD)
+- `/ascii` - Text-based diagrams (universal compatibility)
+- `/wireframe` - ASCII wireframes for UI screens
+- `/excalidraw` - Hand-drawn style diagrams (presentations)
 - `/design-spec` - Design handoff specs
 - `/northstar` - North Star framework from raw ideas
 
@@ -333,8 +371,8 @@ After:  /plugin install kv0906/pm-kit
 - [ ] `/share` - Format output for X/Twitter/LinkedIn sharing
 
 #### Enhancements
-- [ ] `/mockup` - Add Excalidraw JSON output option
-- [ ] `/diagram` - Add Gantt chart subtype
+- [x] `/wireframe` - Add Excalidraw JSON output option (implemented as `/excalidraw`)
+- [x] `/mermaid` - Add Gantt chart subtype (completed)
 - [ ] `/prd-fast`, `/research-fast` - Lightweight variants for quick outputs
 
 ### v0.7.0 - Community & Polish (Planned)
@@ -431,13 +469,13 @@ After:  /plugin install kv0906/pm-kit
 | Metric | Before | After |
 |--------|--------|-------|
 | Research entry points | 4 | 1 |
-| New helpful commands | 0 | 2 (`/pm`, `/diagram`) |
+| New helpful commands | 0 | 2 (`/pm`, `/ascii`) |
 | Commands with next-step guidance | 0 | 5 |
 | Mental model concepts | 4 | 2 |
 
 **What was done:**
 1. Created `/pm` help command for guided selection
-2. Created `/diagram` command (promoted from skill)
+2. Created `/ascii` command (promoted from skill, originally `/diagram`)
 3. Consolidated research stack into single `/research` command
 4. Added next-step suggestions to major commands
 5. Updated README with command taxonomy
@@ -469,7 +507,8 @@ After:  /plugin install kv0906/pm-kit
 | 2024-11-21 | Command → Agent → Workflow pattern | Separation of concerns, reusability | ADR-001 |
 | 2025-11-24 | Deprecate rather than delete | Non-breaking, gradual migration | ADR-002 |
 | 2025-11-24 | `/research` as canonical research command | Simpler, auto-detection for modes | ADR-003 |
-| 2025-11-24 | Convert ascii-diagrams skill to `/diagram` command | Commands for doing, skills for learning | ADR-004 |
+| 2025-11-24 | Convert ascii-diagrams skill to `/ascii` command | Commands for doing, skills for learning | ADR-004 |
+| 2025-11-25 | Consolidate diagram commands | Eliminate confusion: `/mockup`→`/wireframe`, `/flow`→`/mermaid`, `/diagram`→`/ascii` | ADR-007 |
 | 2025-11-24 | Align with Claude Code subagent patterns | Simpler architecture, better auto-delegation | ADR-005 |
 | 2025-11-24 | Embed workflows into agents | Single-file agents, easier maintenance | ADR-005 |
 | 2025-11-24 | Use `$ARGUMENTS` placeholder | Claude Code standard syntax | ADR-005 |

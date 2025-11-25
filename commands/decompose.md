@@ -44,7 +44,7 @@ After decomposing the problem:
 | Research solutions | `/research` | Gather evidence for options |
 | Write requirements | `/prd` | Document solution requirements |
 | Make decision | `/decide` | Choose between options |
-| Visualize structure | `/diagram` | Create visual problem tree |
+| Visualize structure | `/mermaid` or `/ascii` | Create visual problem tree |
 
 ---
 

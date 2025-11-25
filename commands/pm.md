@@ -34,8 +34,8 @@ If no specific input is provided, present the interactive guide below.
 | Your Situation | Recommended Command |
 |----------------|---------------------|
 | Need to write requirements | `/prd "feature name"` |
-| Need a user flow diagram | `/flow "journey name"` |
-| Need a quick wireframe | `/mockup "screen name"` |
+| Need a visual diagram (Mermaid) | `/mermaid "journey name"` |
+| Need a quick wireframe | `/wireframe "screen name"` |
 | Need design handoff specs | `/design-spec "feature name"` |
 
 ---
@@ -69,9 +69,10 @@ If no specific input is provided, present the interactive guide below.
 
 | Your Situation | Recommended Command |
 |----------------|---------------------|
-| ASCII flowchart or architecture | `/diagram "what to diagram"` |
-| Mermaid user flow (renders visually) | `/flow "journey name"` |
-| Quick ASCII wireframe | `/mockup "screen name"` |
+| Visual diagrams (Mermaid - flows, Gantt, ERD) | `/mermaid "what to diagram"` |
+| ASCII text-based diagrams | `/ascii "what to diagram"` |
+| Quick ASCII wireframe | `/wireframe "screen name"` |
+| Hand-drawn style diagrams | `/excalidraw "what to diagram"` |
 
 ---
 
@@ -101,9 +102,10 @@ Skills are educational modules you can read (not commands to run):
 | Compare options | `/matrix` |
 | Get stakeholder buy-in | `/consensus` |
 | Create a strategy doc | `/strategy` |
-| Create an ASCII diagram | `/diagram` |
-| Sketch a wireframe | `/mockup` |
-| Map a user journey | `/flow` |
+| Create visual diagrams (Mermaid) | `/mermaid` |
+| Create text diagrams (ASCII) | `/ascii` |
+| Sketch a wireframe | `/wireframe` |
+| Create hand-drawn diagrams | `/excalidraw` |
 | Understand tech concepts | `/explain-code` |
 | Check if something is feasible | `/tech-impact` |
 | Create architecture docs | `/architecture` |
@@ -135,7 +137,7 @@ Skills are educational modules you can read (not commands to run):
 
 ### Visualization
 ```
-/diagram → /flow → /mockup
+/mermaid → /wireframe → /excalidraw
 ```
 
 ---
@@ -152,4 +154,4 @@ Skills are educational modules you can read (not commands to run):
 
 - "It sounds like you need to break down a complex problem. Try: `/decompose "Why are users abandoning checkout?"`"
 - "For comparing vendor options, use: `/matrix "CRM vendor comparison"` to create a structured comparison."
-- "To visualize your checkout flow, use: `/diagram "checkout process flow"` for ASCII or `/flow "checkout journey"` for Mermaid."
+- "To visualize your checkout flow, use: `/ascii "checkout process flow"` for text diagrams or `/mermaid "checkout journey"` for visual diagrams."

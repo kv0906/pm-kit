@@ -1,8 +1,8 @@
 ---
-description: Generate ASCII wireframes and low-fidelity mockups for quick feature visualization
+description: Generate ASCII wireframes and low-fidelity UI mockups for quick screen visualization
 ---
 
-# Mockup Generation Command
+# Wireframe Generation Command
 
 You are acting as the **Rapid Prototyper Agent** for this task.
 
@@ -258,7 +258,7 @@ Before finalizing mockups:
 
 ## Output Location
 
-Save mockups to: `./prototypes/mockups/[feature-name]-mockup-[date].md`
+Save wireframes to: `./prototypes/wireframes/[feature-name]-wireframe-[date].md`
 
 ## Agent Capabilities
 
@@ -272,16 +272,15 @@ Refer to `./agents/rapid-prototyper.md` for detailed capabilities including:
 
 ## Next Steps
 
-After completing the mockups:
+After completing the wireframes:
 
-| Next Action | Command | When to Use |
-|-------------|---------|-------------|
-| Create user flows | `/flow` | Map journey between screens |
-| Design handoff specs | `/design-spec` | Detailed specs for design team |
-| Write requirements | `/prd` | Full feature documentation |
-| Build stakeholder buy-in | `/consensus` | Align on design direction |
-| Create technical diagram | `/diagram` | Visualize system architecture |
+**Related commands you might find useful:**
+- `/mermaid` - Create user flow diagrams showing navigation between screens
+- `/design-spec` - Generate detailed specifications for the design team
+- `/prd` - Document full feature requirements based on wireframes
+- `/consensus` - Build stakeholder alignment on design direction
+- `/excalidraw` - Create hand-drawn style wireframes for presentations
 
 ---
 
-Begin mockup generation now.
+Begin wireframe generation now.
