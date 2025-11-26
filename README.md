@@ -166,6 +166,7 @@ PM-Kit includes educational modules for PMs who want to understand technical con
 | **debug-without-code** | Debugging strategies without writing code |
 | **frontend-prompts** | How to specify frontend design requirements |
 | **ascii-diagrams** | Creating effective ASCII diagrams and wireframes |
+| **mermaid-diagrams** | Mermaid syntax, optimization rules, rendering best practices for 7 diagram types |
 | **gemini-grounded-search** | Real-time web search and code execution via Gemini API |
 
 ---

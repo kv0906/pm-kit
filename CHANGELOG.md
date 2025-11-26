@@ -9,16 +9,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - `/mermaid` - Enhanced visual diagram command (flowcharts, architecture, Gantt, ERD) replacing `/flow`
+  - Anti-overlap optimization rules (subgraph alignment, link styles)
+  - Gantt-specific optimization (dependencies, date formats)
+  - Flowchart-specific optimization (decision branches, spacing)
+  - Comprehensive quality checklist (20+ verification points)
 - `/ascii` - Text-based diagram command (universal compatibility) replacing `/diagram`
 - `/wireframe` - ASCII wireframe command (renamed from `/mockup` for clarity)
-- `/excalidraw` - NEW hand-drawn style diagram generator (JSON format for presentations)
+- `/excalidraw` - Hand-drawn style diagram generator with intelligent auto-detection
+  - **Auto-type detection** from keywords (flow, thinking, architecture, timeline, wireframe)
+  - **5 diagram types**: Flowcharts, Mind Maps, Architecture (3-tier + microservices), Timelines (horizontal + Gantt), Wireframes (mobile + desktop)
+  - **Template system** with metadata-driven selection
+  - **Complexity analysis** with breakdown suggestions (>20 elements, >4 connections/node, >2000px canvas)
+  - **Synonym support** for flexible keyword matching (brainstorm, ideation, explore → mind map)
+- `excalidraw-skill` - Comprehensive Excalidraw generation patterns and optimization (420+ lines)
+  - Diagram type auto-detection with keyword mapping table (8 types)
+  - 5 comprehensive diagram patterns with layouts, color schemes, and best practices
+  - Complexity thresholds and detection rules with breakdown suggestions
+  - Progressive disclosure pattern for complex systems (overview + detail diagrams)
+  - Breakdown strategies: by layer, phase, component, journey, time
+- `mermaid-diagrams` skill - Comprehensive Mermaid syntax, optimization rules, and rendering best practices (610 lines)
+- Template assets for Excalidraw:
+  - `templates.json` - Metadata for all diagram templates (9 templates defined)
+  - `mindmap-basic.excalidraw.json` - Mind map with 4 radiating branches
+  - `architecture-3tier.excalidraw.json` - Frontend/Backend/Database layers
+  - `timeline-horizontal.excalidraw.json` - Q1-Q4 roadmap with milestones
 - C4 architecture diagrams in `/mermaid`
 - Gantt chart support in `/mermaid`
 - Entity relationship diagram (ERD) support in `/mermaid`
 
 ### Changed
-- `rapid-prototyper` agent enhanced with Excalidraw JSON generation capability
-- Command count increased from 20 to 21 commands
+- **Refactored**: `/mermaid` command split into skill-based architecture for better maintainability
+  - `commands/mermaid.md` reduced from 556 → 113 lines (-79%)
+  - New `skills/mermaid-diagrams/SKILL.md` (610 lines) contains all syntax, rules, and optimization guidelines
+  - `agents/rapid-prototyper.md` enhanced with Mermaid workflow methodology (+144 lines)
+  - Separation of concerns: Command (entry point) → Skill (knowledge) → Agent (execution)
+- **Enhanced**: `/excalidraw` command with intelligent workflow (+100 lines)
+  - Auto-detection of diagram type from user keywords
+  - Template selection and customization phase
+  - Complexity management with 3 breakdown options
+  - Detection priority rules for ambiguous cases
+- **Enhanced**: `excalidraw-skill` with comprehensive patterns (+280 lines)
+  - 5 detailed diagram patterns (flowchart, mind map, architecture, timeline, wireframe)
+  - Complexity analysis section with thresholds and strategies
+  - User journey pattern for experience mapping
+- **Enhanced**: `rapid-prototyper` agent with Excalidraw capabilities
+  - Added 5 Excalidraw diagram types to output identification
+  - Integrated complexity analysis capability
+  - Updated core capabilities list with auto-type detection
+- Command count: 21 commands
+- Skills count: 7 skills (added `excalidraw-skill`)
 
 ### Deprecated
 - `/diagram` → Use `/ascii` instead (same functionality, clearer name)

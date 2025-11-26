@@ -5,9 +5,9 @@ description: Create Excalidraw diagrams as JSON files for flowcharts, user journ
 
 # Excalidraw Diagram Generator
 
-Create Excalidraw-compatible JSON diagrams. Output files use `.excalidraw.json` extension.
+Create Excalidraw-compatible JSON diagrams. Output `.excalidraw.json` files.
 
-## JSON Schema Structure
+## JSON Schema
 
 ```json
 {
@@ -23,28 +23,97 @@ Create Excalidraw-compatible JSON diagrams. Output files use `.excalidraw.json` 
 }
 ```
 
+## Coordinate System
+
+- **Origin**: Top-left corner (0, 0)
+- **X-axis**: Increases rightward
+- **Y-axis**: Increases downward
+- **Unit**: Pixels
+
+## Grid-Based Layout System
+
+Use a 20px grid for alignment. Standard positions:
+
+```
+GRID_UNIT = 20
+COLUMN_WIDTH = 200    # Element + gap
+ROW_HEIGHT = 150      # Element + gap
+
+Position formula:
+  x = START_X + (column * COLUMN_WIDTH)
+  y = START_Y + (row * ROW_HEIGHT)
+
+Recommended START_X = 50, START_Y = 100
+```
+
+### Standard Element Sizes
+
+| Element | Width | Height | Use Case |
+|---------|-------|--------|----------|
+| Small box | 120 | 60 | Labels, simple steps |
+| Standard box | 160 | 80 | Process steps |
+| Large box | 200 | 100 | Detailed nodes |
+| Wide box | 240 | 80 | Long text |
+| Diamond | 100 | 100 | Decision points |
+| Circle | 80 | 80 | Start/End nodes |
+| Icon circle | 90 | 80 | With emoji |
+
+## Text Centering Formula
+
+**CRITICAL**: To center text inside a shape:
+
+```
+text_x = shape_x + (shape_width - text_width) / 2
+text_y = shape_y + (shape_height - text_height) / 2
+```
+
+### Text Size Reference
+
+| Font Size | Char Width | Line Height | Use |
+|-----------|------------|-------------|-----|
+| 11 | ~6px | 15px | Labels, annotations |
+| 12 | ~7px | 16px | Secondary text |
+| 14 | ~8px | 18px | Body text |
+| 16 | ~9px | 20px | Primary text |
+| 18 | ~10px | 24px | Headings |
+| 20 | ~11px | 26px | Titles |
+| 28 | ~16px | 35px | Icons/Emoji |
+
+**Estimate text_width**: `char_count * char_width`
+**Estimate text_height**: `line_count * line_height`
+
+### Centering Example
+
+```
+Shape: x=100, y=100, width=160, height=80
+Text: "Process" (7 chars), fontSize=16
+
+text_width = 7 * 9 = 63
+text_height = 1 * 20 = 20
+text_x = 100 + (160 - 63) / 2 = 148.5 ≈ 148
+text_y = 100 + (80 - 20) / 2 = 130
+```
+
 ## Element Types
 
-All elements share common properties. See `references/elements.md` for complete element specifications.
-
-### Common Properties (all elements)
+### Common Properties (required for all)
 
 ```json
 {
-  "id": "unique-string",
-  "type": "rectangle|ellipse|diamond|line|arrow|text|freedraw|image",
+  "id": "unique-id",
+  "type": "rectangle",
   "x": 100,
   "y": 100,
-  "width": 200,
-  "height": 100,
+  "width": 160,
+  "height": 80,
   "strokeColor": "#1e1e1e",
-  "backgroundColor": "#a5d8ff",
-  "fillStyle": "solid|hachure|cross-hatch",
-  "strokeWidth": 1,
-  "roughness": 0,
+  "backgroundColor": "transparent",
+  "fillStyle": "solid",
+  "strokeWidth": 2,
+  "roughness": 1,
   "opacity": 100,
   "angle": 0,
-  "seed": 12345,
+  "seed": 100,
   "version": 1,
   "isDeleted": false,
   "boundElements": null,
@@ -53,119 +122,206 @@ All elements share common properties. See `references/elements.md` for complete 
 }
 ```
 
-### Quick Element Reference
+### Type-Specific Properties
 
-| Type | Key Properties |
-|------|----------------|
-| `rectangle` | Common + `roundness: {type: 3}` for rounded corners |
-| `ellipse` | Common only |
-| `diamond` | Common only |
-| `text` | Common + `text`, `fontSize`, `fontFamily`, `textAlign`, `verticalAlign` |
-| `arrow` | Common + `points`, `startBinding`, `endBinding`, `startArrowhead`, `endArrowhead` |
-| `line` | Common + `points` |
+**Rectangle**: Add `"roundness": {"type": 3}` for rounded corners
 
-## Color Palette
-
-### Stroke Colors
-- Blue: `#1971c2`, Green: `#2f9e44`, Orange: `#e8590c`, Purple: `#9c36b5`
-- Yellow: `#f08c00`, Teal: `#099268`, Red: `#e03131`, Gray: `#868e96`
-- Black: `#1e1e1e`
-
-### Background Colors (light fills)
-- Blue: `#a5d8ff`, Green: `#b2f2bb`, Orange/Red: `#ffc9c9`, Purple: `#eebefa`
-- Yellow: `#ffec99`, Teal: `#96f2d7`, Gray: `#dee2e6`
-
-## Layout Guidelines
-
-1. **Spacing**: Use 220px horizontal gap, 200px vertical gap between elements
-2. **Element sizes**: Standard box 160x80, larger boxes 200x100
-3. **Text positioning**: Center text within boxes, offset by ~20px from box x/y
-4. **Arrow points**: Use relative coordinates `[[0,0], [50,0]]` for horizontal arrows
-5. **Flow direction**: Left-to-right for horizontal flows, top-to-bottom for vertical
-
-## Minimal Examples
-
-### Rectangle with Text
-
+**Text**:
 ```json
 {
-  "elements": [
-    {
-      "id": "box1",
-      "type": "rectangle",
-      "x": 100, "y": 100, "width": 160, "height": 80,
-      "strokeColor": "#1971c2",
-      "backgroundColor": "#a5d8ff",
-      "fillStyle": "solid",
-      "strokeWidth": 2,
-      "roughness": 1,
-      "opacity": 100,
-      "roundness": {"type": 3}
-    },
-    {
-      "id": "text1",
-      "type": "text",
-      "x": 120, "y": 125,
-      "width": 120, "height": 30,
-      "text": "Step 1",
-      "fontSize": 16,
-      "fontFamily": 1,
-      "textAlign": "center",
-      "strokeColor": "#1e1e1e",
-      "backgroundColor": "transparent"
-    }
-  ]
+  "type": "text",
+  "text": "Content\nLine 2",
+  "fontSize": 16,
+  "fontFamily": 1,
+  "textAlign": "center",
+  "verticalAlign": "middle"
 }
 ```
+- fontFamily: 1=Virgil (hand), 2=Helvetica, 3=Cascadia (mono)
 
-### Arrow Connecting Elements
-
+**Arrow/Line**:
 ```json
 {
-  "id": "arrow1",
   "type": "arrow",
-  "x": 265, "y": 140,
-  "width": 50, "height": 0,
-  "strokeColor": "#1971c2",
-  "strokeWidth": 2,
-  "roughness": 1,
-  "points": [[0, 0], [50, 0]],
+  "points": [[0, 0], [100, 0]],
   "startArrowhead": null,
   "endArrowhead": "arrow"
 }
 ```
+- Points are relative to element's x,y
+- Arrowheads: `null`, `"arrow"`, `"bar"`, `"dot"`, `"triangle"`
 
-## Diagram Patterns
+## Arrow Positioning
 
-### Flowchart Pattern
-- Use rectangles for process steps
-- Use diamonds for decisions
-- Connect with arrows
-- Color-code by category/phase
+### Horizontal Arrow (Left to Right)
+```
+From shape at (x1, y1, w1, h1) to shape at (x2, y2, w2, h2):
 
-### User Journey Pattern
-- Horizontal or snake-path flow
-- Phase labels above sections
-- Details/bullet points below each step
-- Drop-off indicators where applicable
-- Loop-back arrows for repeat customers
+arrow_x = x1 + w1           # Right edge of source
+arrow_y = y1 + h1/2         # Vertical center
+gap = x2 - (x1 + w1)        # Space between shapes
+points = [[0, 0], [gap, 0]]
+```
 
-### Architecture Pattern
-- Group related components with proximity
-- Use different colors for different layers
-- Add connecting lines/arrows for data flow
+### Vertical Arrow (Top to Bottom)
+```
+arrow_x = x1 + w1/2         # Horizontal center
+arrow_y = y1 + h1           # Bottom edge of source
+gap = y2 - (y1 + h1)
+points = [[0, 0], [0, gap]]
+```
 
-## Best Practices
+### Diagonal/Curved Arrow
+```
+points = [[0, 0], [dx/2, dy], [dx, dy]]  # Curved path
+```
 
-1. **Generate unique IDs**: Use descriptive IDs like `"stage1"`, `"arrow-1-2"`, `"title"`
-2. **Set seed values**: Use incrementing numbers (100, 200, 300) for consistent rendering
-3. **Pair shapes with text**: Place text elements centered within shapes
-4. **Use boundElements**: Link arrows to shapes for dynamic connections
-5. **Keep roughness consistent**: Use `1` for hand-drawn look, `0` for clean lines
-6. **Always set version to 1**: Required for proper rendering
+## Color Palette
 
-## Output Instructions
+| Color | Stroke | Background | Use |
+|-------|--------|------------|-----|
+| Blue | #1971c2 | #a5d8ff | Primary, info |
+| Green | #2f9e44 | #b2f2bb | Success, start |
+| Orange | #e8590c | #ffc9c9 | Warning, action |
+| Red | #e03131 | #ffc9c9 | Error, end |
+| Purple | #9c36b5 | #eebefa | Special, loop |
+| Yellow | #f08c00 | #ffec99 | Highlight |
+| Teal | #099268 | #96f2d7 | Secondary |
+| Gray | #868e96 | #dee2e6 | Neutral, labels |
+| Black | #1e1e1e | - | Text, borders |
 
-1. Save as `.excalidraw.json` file
-2. Copy to `/mnt/user-data/outputs/` for user download
-3. Inform user: "Open in Excalidraw (excalidraw.com) → Menu → Open → Select file"
+## Z-Order (Element Array Order)
+
+Elements render in array order. First = back, last = front.
+
+**Correct order:**
+1. Background shapes (containers, frames)
+2. Connection lines/arrows
+3. Foreground shapes (nodes, boxes)
+4. Text labels
+5. Icons/overlays
+
+## Layout Patterns
+
+### Horizontal Flow (Left to Right)
+
+```
+COL_GAP = 60  # Gap between elements
+
+Element 1: x=50,  y=100, w=160, h=80
+Arrow 1:   x=210, y=140, points=[[0,0],[60,0]]
+Element 2: x=270, y=100, w=160, h=80
+Arrow 2:   x=430, y=140, points=[[0,0],[60,0]]
+Element 3: x=490, y=100, w=160, h=80
+```
+
+### Vertical Flow (Top to Bottom)
+
+```
+ROW_GAP = 50
+
+Element 1: x=100, y=50,  w=160, h=80
+Arrow 1:   x=180, y=130, points=[[0,0],[0,50]]
+Element 2: x=100, y=180, w=160, h=80
+```
+
+### Decision Branch (Diamond)
+
+```
+Diamond:    x=300, y=200, w=100, h=100
+Center:     (350, 250)
+
+Yes path (up-right):
+  arrow_x=350, arrow_y=200
+  points=[[0,0], [0,-50], [100,-50]]
+
+No path (down-right):
+  arrow_x=350, arrow_y=300
+  points=[[0,0], [0,50], [100,50]]
+```
+
+### Feedback Loop (Return Arrow)
+
+```
+From bottom-right back to left:
+  Start: (800, 400)
+  points=[
+    [0, 0],        # Start
+    [0, 80],       # Down
+    [-400, 80],    # Left
+    [-400, -150]   # Up to target
+  ]
+```
+
+## Complete Node Example
+
+```json
+[
+  {
+    "id": "node1-box",
+    "type": "rectangle",
+    "x": 100, "y": 100, "width": 160, "height": 80,
+    "strokeColor": "#1971c2",
+    "backgroundColor": "#a5d8ff",
+    "fillStyle": "solid",
+    "strokeWidth": 2,
+    "roughness": 1,
+    "opacity": 100,
+    "angle": 0,
+    "seed": 100,
+    "version": 1,
+    "isDeleted": false,
+    "boundElements": [{"id": "arrow1", "type": "arrow"}],
+    "roundness": {"type": 3},
+    "link": null,
+    "locked": false
+  },
+  {
+    "id": "node1-text",
+    "type": "text",
+    "x": 130, "y": 130,
+    "width": 100, "height": 20,
+    "text": "Process Step",
+    "fontSize": 16,
+    "fontFamily": 1,
+    "textAlign": "center",
+    "verticalAlign": "middle",
+    "strokeColor": "#1e1e1e",
+    "backgroundColor": "transparent",
+    "fillStyle": "solid",
+    "strokeWidth": 1,
+    "roughness": 1,
+    "opacity": 100,
+    "angle": 0,
+    "seed": 101,
+    "version": 1,
+    "isDeleted": false,
+    "boundElements": null,
+    "link": null,
+    "locked": false
+  }
+]
+```
+
+## Positioning Checklist
+
+Before generating:
+1. ☐ Define grid: START_X, START_Y, COLUMN_WIDTH, ROW_HEIGHT
+2. ☐ List all elements with row/column positions
+3. ☐ Calculate exact x,y using formulas
+4. ☐ Calculate text positions using centering formula
+5. ☐ Calculate arrow start points and relative endpoints
+6. ☐ Order elements correctly for z-order
+7. ☐ Assign unique IDs and incrementing seeds
+
+## Templates
+
+- Basic flowchart: `assets/flowchart-template.excalidraw.json`
+- Processing loop: `references/processing-loop-template.md`
+- Element specs: `references/elements.md`
+
+## Output
+
+1. Save as `.excalidraw.json`
+2. Copy to `/mnt/user-data/outputs/`
+3. Tell user: "Open at excalidraw.com → Menu → Open"

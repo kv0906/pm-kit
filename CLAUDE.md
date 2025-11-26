@@ -17,7 +17,7 @@ pm-kit/
 │   └── marketplace.json     # Marketplace definition
 ├── commands/      (21)      # Slash commands (/prd, /decompose, /mermaid, etc.)
 ├── agents/        (14)      # Specialized agents with embedded workflows
-├── skills/        (6)       # Technical literacy modules (SKILL.md format)
+├── skills/        (7)       # Technical literacy modules (SKILL.md format)
 ├── templates/     (4)       # Reusable output templates
 ├── CLAUDE.md                # This file - primary routing
 ├── PLAN.md                  # Project knowledge base
@@ -196,6 +196,7 @@ Educational modules in `skills/`:
 | `frontend-prompts/` | Frontend design specs |
 | `debug-without-code/` | Debugging strategies |
 | `ascii-diagrams/` | ASCII diagram reference |
+| `mermaid-diagrams/` | Mermaid syntax, optimization rules, rendering best practices |
 | `gemini-grounded-search/` | Real-time web search, code execution via Gemini API |
 
 ---
@@ -217,3 +218,4 @@ The `.claude-plugin/` directory contains:
 - `marketplace.json` - Marketplace definition for distribution
 
 These follow Claude Code plugin specifications and enable installation via `/plugin install`.
+- let's update Changelog.md and plan.nd as well always after new feature or update in pm kit

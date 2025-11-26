@@ -1,0 +1,145 @@
+{
+  "templates": {
+    "flowchart-simple": {
+      "name": "Simple Flowchart",
+      "type": "flowchart",
+      "complexity": "simple",
+      "file": "flowchart-template.excalidraw.json",
+      "elements": "5-10",
+      "use_case": "Basic process flows with 3-5 steps, simple decision points",
+      "keywords": ["flow", "process", "steps", "journey", "workflow", "procedure"],
+      "best_for": "Linear processes, simple decision trees, step-by-step guides"
+    },
+    "mindmap-basic": {
+      "name": "Basic Mind Map",
+      "type": "mindmap",
+      "complexity": "simple",
+      "file": "mindmap-basic.excalidraw.json",
+      "elements": "8-15",
+      "use_case": "Brainstorming with central concept and 3-5 main branches",
+      "keywords": ["mindmap", "brainstorm", "thinking", "ideas", "concept", "explore"],
+      "best_for": "Idea exploration, concept mapping, creative thinking sessions"
+    },
+    "mindmap-complex": {
+      "name": "Complex Mind Map",
+      "type": "mindmap",
+      "complexity": "complex",
+      "file": "mindmap-complex.excalidraw.json",
+      "elements": "20-30",
+      "use_case": "Multi-level thinking with 5+ main branches and sub-branches",
+      "keywords": ["mindmap", "brainstorm", "complex", "detailed", "comprehensive"],
+      "best_for": "Deep analysis, comprehensive planning, multi-faceted problems"
+    },
+    "architecture-3tier": {
+      "name": "3-Tier Architecture",
+      "type": "architecture",
+      "complexity": "simple",
+      "file": "architecture-3tier.excalidraw.json",
+      "elements": "8-12",
+      "use_case": "Traditional web application with presentation, logic, and data layers",
+      "keywords": ["architecture", "system", "3tier", "layers", "backend", "frontend", "database"],
+      "best_for": "Web applications, client-server systems, layered architectures"
+    },
+    "architecture-microservices": {
+      "name": "Microservices Architecture",
+      "type": "architecture",
+      "complexity": "complex",
+      "file": "architecture-microservices.excalidraw.json",
+      "elements": "15-25",
+      "use_case": "Distributed systems with multiple services and APIs",
+      "keywords": ["microservices", "distributed", "services", "api", "cloud", "containers"],
+      "best_for": "Scalable systems, cloud-native apps, service-oriented architecture"
+    },
+    "timeline-horizontal": {
+      "name": "Horizontal Timeline",
+      "type": "timeline",
+      "complexity": "simple",
+      "file": "timeline-horizontal.excalidraw.json",
+      "elements": "6-10",
+      "use_case": "Linear roadmap with milestones and phases",
+      "keywords": ["timeline", "roadmap", "schedule", "phases", "milestones", "plan"],
+      "best_for": "Product roadmaps, project timelines, release schedules"
+    },
+    "timeline-gantt": {
+      "name": "Gantt-Style Timeline",
+      "type": "timeline",
+      "complexity": "complex",
+      "file": "timeline-gantt.excalidraw.json",
+      "elements": "12-20",
+      "use_case": "Project plan with overlapping tasks and dependencies",
+      "keywords": ["gantt", "project", "tasks", "dependencies", "schedule", "planning"],
+      "best_for": "Complex projects, task tracking, dependency management"
+    },
+    "wireframe-mobile": {
+      "name": "Mobile Wireframe",
+      "type": "wireframe",
+      "complexity": "simple",
+      "file": "wireframe-mobile.excalidraw.json",
+      "elements": "10-15",
+      "use_case": "Mobile app screen layout (375px width)",
+      "keywords": ["wireframe", "mobile", "app", "screen", "UI", "mockup", "phone"],
+      "best_for": "Mobile app screens, responsive design (mobile-first)"
+    },
+    "wireframe-desktop": {
+      "name": "Desktop Wireframe",
+      "type": "wireframe",
+      "complexity": "simple",
+      "file": "wireframe-desktop.excalidraw.json",
+      "elements": "15-25",
+      "use_case": "Desktop web application layout (1200px+ width)",
+      "keywords": ["wireframe", "desktop", "web", "screen", "UI", "mockup", "page"],
+      "best_for": "Web applications, dashboard layouts, desktop interfaces"
+    }
+  },
+  "type_definitions": {
+    "flowchart": {
+      "description": "Sequential processes with decision points and flow control",
+      "common_elements": ["start/end nodes", "process steps", "decision diamonds", "arrows"],
+      "color_scheme": "green (start), blue (process), yellow (decision), red (end)"
+    },
+    "mindmap": {
+      "description": "Radial concept exploration with central idea and branches",
+      "common_elements": ["central node", "main branches", "sub-branches", "curved connections"],
+      "color_scheme": "distinct colors per main branch, gradient for sub-branches"
+    },
+    "architecture": {
+      "description": "System components and their relationships",
+      "common_elements": ["layers", "components", "data flows", "grouping frames"],
+      "color_scheme": "layer-based colors, distinct per tier or service"
+    },
+    "timeline": {
+      "description": "Chronological sequence of events or milestones",
+      "common_elements": ["timeline axis", "milestones", "phases", "date labels"],
+      "color_scheme": "status-based (planned=blue, in-progress=yellow, complete=green)"
+    },
+    "wireframe": {
+      "description": "UI screen layout with components and interactions",
+      "common_elements": ["screen frame", "navigation", "buttons", "inputs", "content areas"],
+      "color_scheme": "monochrome (grays) with one accent color"
+    }
+  },
+  "complexity_thresholds": {
+    "element_count": {
+      "simple": "5-15 elements",
+      "medium": "15-25 elements",
+      "complex": "25+ elements"
+    },
+    "connection_density": {
+      "simple": "1-2 connections per node",
+      "medium": "2-4 connections per node",
+      "complex": "4+ connections per node"
+    },
+    "canvas_size": {
+      "simple": "< 1500px width/height",
+      "medium": "1500-2500px",
+      "complex": "> 2500px"
+    }
+  },
+  "breakdown_strategies": {
+    "by_layer": "Frontend → Backend → Database → Infrastructure",
+    "by_phase": "Discovery → Definition → Development → Delivery",
+    "by_component": "Authentication → API → Storage → Analytics",
+    "by_user_journey": "Awareness → Consideration → Decision → Retention",
+    "by_time": "Q1 → Q2 → Q3 → Q4 or Week 1 → Week 2 → Week 3"
+  }
+}

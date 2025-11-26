@@ -43,64 +43,114 @@ Excalidraw creates hand-drawn, sketch-style diagrams that feel informal and appr
 
 ---
 
-## Diagram Type Detection
+## Diagram Type Auto-Detection
 
-Based on input, create appropriate diagram type:
+Based on user input keywords, automatically select the best visualization type:
 
-| Keywords | Diagram Type |
-|----------|--------------|
-| flow, process, steps | **Flowchart** |
-| architecture, system, components | **System Architecture** |
-| wireframe, UI, screen | **UI Wireframe** |
-| brainstorm, ideas, mindmap | **Mind Map / Brainstorm** |
-| concept, explain, visualize | **Concept Diagram** |
-| timeline, sequence | **Timeline / Sequence** |
+| Keywords | Diagram Type | Template Used |
+|----------|--------------|---------------|
+| flow, process, steps, journey, workflow | **Flowchart** | flowchart-template.excalidraw.json |
+| mindmap, brainstorm, thinking, ideas, explore | **Mind Map** | mindmap-basic.excalidraw.json |
+| architecture, system, 3tier, layers, backend, frontend | **3-Tier Architecture** | architecture-3tier.excalidraw.json |
+| microservices, distributed, services, api, cloud | **Microservices** | architecture-microservices.excalidraw.json |
+| timeline, roadmap, schedule, phases, milestones | **Timeline** | timeline-horizontal.excalidraw.json |
+| gantt, project, tasks, dependencies | **Gantt Timeline** | timeline-gantt.excalidraw.json |
+| wireframe, mobile, app, screen, UI, phone | **Mobile Wireframe** | wireframe-mobile.excalidraw.json |
+| wireframe, desktop, web, UI, page | **Desktop Wireframe** | wireframe-desktop.excalidraw.json |
+
+### Detection Priority Rules
+
+1. **Specific wins over general**: "microservices" > "architecture"
+2. **Complexity indicators**: "complex", "detailed" → Use complex template variant
+3. **Simplicity indicators**: "simple", "basic", "quick" → Use simple template variant
+4. **Multiple matches**: Choose most specific based on full context
 
 ---
 
 ## Your Process
 
-### Phase 1: Analysis
-1. **Understand Intent**:
-   - What needs to be visualized?
-   - Who is the audience?
-   - What's the context (presentation, documentation, brainstorm)?
-   - **Verification**: Intent clear?
+### Phase 1: Detection & Analysis
+1. **Auto-Detect Diagram Type**:
+   - Analyze user input for keywords
+   - Match against keyword table (see Diagram Type Auto-Detection above)
+   - Select best-matching template
+   - If ambiguous, default to flowchart for processes, mindmap for thinking
+   - **Verification**: Correct diagram type selected?
 
-2. **Identify Elements**:
-   - Main components/entities
+2. **Analyze Complexity**:
+   - Count expected elements (nodes, connections)
+   - Estimate canvas size needed
+   - Check for depth/hierarchy levels
+   - **IF complexity thresholds exceeded, SUGGEST BREAKDOWN** (see Phase 4)
+   - **Verification**: Complexity manageable for single diagram?
+
+3. **Identify Elements**:
+   - Main components/entities/nodes
    - Relationships and connections
    - Hierarchies or groupings
-   - Annotations and labels
+   - Annotations and labels needed
    - **Verification**: All elements identified?
 
-### Phase 2: Layout Design
-1. **Plan Visual Hierarchy**:
-   - Central elements vs. supporting elements
-   - Logical flow direction
-   - Grouping and spacing
-   - **Verification**: Layout makes sense?
+### Phase 2: Template Selection & Customization
+1. **Load Template**:
+   - Reference: `/Users/van/projects/pm-kit/skills/excalidraw-skill/assets/templates.json`
+   - Use selected template as starting structure
+   - Templates provide proper JSON schema, layout, and color schemes
+   - **Verification**: Template matches diagram type?
 
-2. **Choose Visual Style**:
-   - Boxes for entities
-   - Arrows for relationships
-   - Colors for categorization
-   - Hand-drawn text for labels
-   - **Verification**: Style appropriate?
+2. **Plan Customizations**:
+   - Adapt template elements to user's content
+   - Adjust positions for user's specific flow
+   - Add/remove elements as needed
+   - Maintain template's color scheme and spacing
+   - **Verification**: Layout makes sense for content?
 
 ### Phase 3: JSON Generation
-1. **Create Excalidraw JSON**:
-   - Generate proper JSON structure
-   - Define elements (rectangles, arrows, text)
-   - Set positions and dimensions
-   - Apply colors and styling
-   - **Verification**: Valid JSON syntax?
+1. **Generate Excalidraw JSON**:
+   - Use template structure as base
+   - Customize element labels and text
+   - Adjust positions/dimensions as needed
+   - Maintain consistent spacing (from template guidelines)
+   - Apply colors from template color scheme
+   - **Verification**: Valid JSON syntax? Elements properly connected?
 
-2. **Add Annotations**:
-   - Explain the diagram
-   - Note how to use it
-   - Suggest modifications
-   - **Verification**: Sufficient guidance?
+2. **Quality Check**:
+   - Verify all bindings (arrows to shapes)
+   - Check for overlapping elements
+   - Ensure text is readable (proper positioning)
+   - Validate JSON structure
+   - **Verification**: Diagram renders correctly?
+
+### Phase 4: Complexity Management
+**IF element_count > 20 OR canvas_size > 2000px**, suggest breakdown:
+
+```markdown
+⚠️ **Complexity Warning**
+This diagram would have [X] elements. Recommendations:
+
+**Option A: Split by [layer/phase/component]**
+- Diagram 1: [Scope]
+- Diagram 2: [Scope]
+- Diagram 3: [Scope]
+
+**Option B: Overview + Detail**
+- Overview: High-level (8-10 components)
+- Detail diagrams: One per major component
+
+**Option C: Simplify**
+- Group related elements
+- Higher abstraction level
+- Focus on key flow only
+
+Would you like me to proceed with Option A, B, C, or create the full complex diagram?
+```
+
+**Breakdown Strategies:**
+- **By Layer**: Frontend → Backend → Database
+- **By Phase**: Discovery → Definition → Development → Delivery
+- **By Component**: Auth → API → Storage → Analytics
+- **By User Journey**: Awareness → Consideration → Decision
+- **By Time**: Q1 → Q2 → Q3 → Q4
 
 ---
 
