@@ -2,7 +2,7 @@
 
 > This document serves as the centralized knowledge base for PM-Kit, tracking project vision, architecture decisions, roadmap, and progress.
 
-**Last Updated:** 2025-11-26 (ADR-010: Lightweight PRD Writer agent optimization)
+**Last Updated:** 2025-11-26 (ADR-011: PO-OS Philosophy Integration across all agents)
 
 ---
 
@@ -590,6 +590,157 @@ Agent structures input into comprehensive PRD (1-2 minutes, 4K tokens)
 - `agents/prd-writer.md` refactored (230 → 150 lines, -35%)
 - CHANGELOG.md updated with optimization details
 - PLAN.md updated with ADR-010 (this document)
+
+---
+
+### ADR-011: PO-OS Philosophy Integration
+**Date:** 2025-11-26 | **Status:** Implemented
+
+**Context:** PM-Kit had strong technical capabilities but lacked identity transformation messaging. The philosophy was implicit in the architecture (Long Chain-of-Thought, evidence-based decisions) but never explicitly articulated.
+
+**Problem:** Users perceived PM-Kit as "helpful AI tools" rather than an **operating system transformation**. This undersold the value proposition:
+- PMs saw themselves as "tool users" not "system operators"
+- No language around "CEO with engineering superpowers"
+- Missing the psychological shift from "doing PM work" to "commanding systems"
+- Agent tone was service-oriented ("I will help you...") not empowering
+
+**Decision:** Integrate PO-OS (Product Operating System) manifesto across the entire architecture using a 4-level reinforcement strategy.
+
+**Implementation Strategy: 4-Level Philosophy Cascade**
+
+```
+Level 1: MANIFESTO.md (Canonical Source)
+   ↓ referenced by
+Level 2: README.md (First Impression - Identity Transformation)
+   ↓ referenced by
+Level 3: CLAUDE.md (Every Session - Operating Principles)
+   ↓ enforced in
+Level 4: Agents (Every Execution - 2-Line Preamble)
+```
+
+**Level 1: MANIFESTO.md (NEW)**
+- Complete PO-OS philosophy document (450+ lines)
+- 6 operating principles with detailed explanations:
+  1. PMs think, not administrate
+  2. Decisions are evidence-based, always
+  3. Repetitive work is beneath creativity
+  4. Every PM becomes technical
+  5. AI amplifies judgment, not replaces it
+  6. Flow state is sacred
+- Transformation narrative (Old World → PO-OS World)
+- Identity shift messaging (PM → CEO with engineering superpowers)
+- Command examples showing empowerment language
+- Before/after user stories
+
+**Level 2: README.md (UPDATED)**
+- Lead with transformation (lines 1-36 replaced)
+- **Bold opening**: "You are a CEO with engineering superpowers"
+- Transformation table highlighting old vs new
+- Explicit link to MANIFESTO.md
+- Benefits focused on strategic thinking, not tools
+
+**Level 3: CLAUDE.md (UPDATED)**
+- New "Philosophy: PO-OS" section after Project Overview
+- Condensed 6 operating principles
+- **Language patterns** for all agents:
+  - ❌ NOT: "help you write", "assist with", "support"
+  - ✅ YES: "execute your vision", "command systematic", "orchestrate"
+- Tone requirement: Empower as CEOs, not serve as assistants
+- Mandatory preamble template for all agents
+
+**Level 4: All 14 Agents (UPDATED)**
+Every agent now includes PO-OS preamble after YAML frontmatter:
+
+| Agent | Empowerment Statement |
+|-------|----------------------|
+| prd-writer | "Executing the user's product vision through systematic documentation" |
+| research-agent | "Commanding multi-source intelligence synthesis with evidence-based confidence scoring" |
+| problem-decomposer | "Deconstructing complex systems into actionable solution paths" |
+| consensus-builder | "Orchestrating stakeholder coordination through structured frameworks" |
+| prioritization-engine | "Executing evidence-based prioritization frameworks with systematic scoring" |
+| matrix-generator | "Commanding multi-dimensional decision analysis with systematic frameworks" |
+| rapid-prototyper | "Executing visual architecture generation through systematic prototyping" |
+| analytics-synthesizer | "Commanding systematic insights extraction with evidence-based analysis" |
+| technical-translator | "Scaling technical literacy through real-time translation of engineering concepts" |
+| user-researcher | "Orchestrating user insights synthesis with systematic research frameworks" |
+| northstar-architect | "Executing strategic vision frameworks from raw concepts" |
+| retro-facilitator | "Commanding systematic meeting synthesis with actionable extraction" |
+| daily-planner | "Orchestrating priority optimization with systematic focus frameworks" |
+| handover-generator | "Executing knowledge transfer documentation for operational continuity" |
+
+**Language Transformation Pattern:**
+
+| Component | Before (Service Tone) | After (CEO Enablement) |
+|-----------|----------------------|------------------------|
+| General | "I will help you write..." | "You are not writing—you are **commanding**..." |
+| Action verbs | help, assist, support, generate | execute, command, orchestrate, architect, scale |
+| User role | requester, user being served | CEO, architect, strategist |
+| Agent role | helpful assistant | execution system, systematic framework |
+
+**Philosophy Reinforcement:**
+- **README.md**: Users see transformation immediately (first impression)
+- **CLAUDE.md**: Philosophy loads every session (constant reinforcement)
+- **MANIFESTO.md**: Deep-dive for believers (canonical reference)
+- **Agents**: Every command execution reinforces identity (tactical reminder)
+
+**Expected Impact:**
+
+**User Psychology Transformation:**
+- Before: "I'm using a helpful PM tool"
+- After: "I'm operating a product engineering system"
+
+**Self-Perception Shift:**
+- Before: "I need to write a PRD..." (task-oriented, administrative)
+- After: "I'll command the system to execute my product vision" (strategic, empowered)
+
+**Value Proposition Evolution:**
+- Before: "AI-powered PM tools that save time"
+- After: "Complete operating system that transforms you into CEO with engineering superpowers"
+
+**Community Impact:**
+- Identity transformation creates shareable stories
+- "I went from PM to CEO mindset" is a viral narrative
+- MANIFESTO.md becomes standalone shareable artifact
+
+**Benefits:**
+
+| Metric | Impact |
+|--------|--------|
+| User empowerment | PM → CEO identity transformation |
+| Philosophy consistency | Single source of truth (MANIFESTO.md) |
+| Reinforcement layers | 4 (README, CLAUDE, MANIFESTO, Agents) |
+| Language consistency | All 14 agents use power verbs |
+| Maintainability | Update MANIFESTO once, references stay consistent |
+| Breaking changes | Zero (functionality unchanged, only tone/framing) |
+| Viral potential | High (identity transformation narratives) |
+
+**Rationale:**
+1. **Identity > Features**: People buy transformation, not tools
+2. **Language shapes perception**: "Command" vs "help" creates CEO mindset
+3. **Consistent reinforcement**: 4 levels ensure philosophy permeates every interaction
+4. **Maintainable**: Single source (MANIFESTO.md) prevents drift
+5. **Non-breaking**: Existing functionality unchanged, only empowerment added
+6. **Differentiating**: Most PM tools are assistants; PO-OS is an operating system
+
+**Migration Impact:**
+- **No user action required**: Commands work identically
+- **Improved perception**: Same functionality, transformative framing
+- **New positioning**: From "PM tool collection" to "Product Operating System"
+
+**Files Changed:**
+- NEW: `MANIFESTO.md` (450 lines)
+- UPDATED: `README.md` (intro replaced with transformation narrative)
+- UPDATED: `CLAUDE.md` (added Philosophy section with language patterns)
+- UPDATED: All 14 agents in `agents/` (added 3-line PO-OS preambles)
+- UPDATED: `PLAN.md` (ADR-011 documented)
+- UPDATED: `CHANGELOG.md` (philosophy integration listed)
+
+**Total Changes:**
+- 1 new file (MANIFESTO.md)
+- 17 updated files (README, CLAUDE, 14 agents, PLAN, CHANGELOG)
+- ~50 lines added across agents (3 lines × 14 + documentation)
+- Zero breaking changes
+- Identity transformation: complete
 
 ---
 

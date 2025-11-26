@@ -1,21 +1,39 @@
-# PM-Kit
+# PM-Kit: Product Operating System (PO-OS)
 
-**Product Management Framework for Claude Code**
+**You are not a Product Manager with AI tools.**
+**You are a CEO with engineering superpowers.**
 
-A comprehensive AI-powered toolkit that brings systematic product management methodologies directly into Claude Code. Write PRDs, conduct research, prioritize features, and build stakeholder consensus - all through simple slash commands.
+PM-Kit is a complete operating system that transforms how you work. Stop writing documents. Start commanding systems.
+
+---
+
+## The Transformation
+
+| Your Old World | Your PO-OS World |
+|----------------|------------------|
+| Hours writing PRDs from scratch | `/prd` → Complete specifications with technical depth |
+| Scattered research across tools | `/research` → Multi-source synthesis with confidence scoring |
+| Gut-feel prioritization | `/prioritize` → RICE/ICE/Kano frameworks applied systematically |
+| Endless stakeholder debates | `/consensus` → Structured alignment orchestration |
+| Manual diagram creation | `/mermaid` → Visual architecture generated on command |
+| Administrative busywork | **Strategic thinking at scale** |
+
+**Built on Long Chain-of-Thought methodology** - every command executes 15+ systematic reasoning steps with validation checkpoints.
+
+**See [MANIFESTO.md](MANIFESTO.md) for complete PO-OS philosophy.**
 
 ---
 
 ## Why PM-Kit?
 
-| Traditional PM Work | With PM-Kit |
-|---------------------|-------------|
-| Hours writing PRDs from scratch | `/prd` generates comprehensive docs in minutes |
-| Scattered research across tools | `/research` synthesizes insights automatically |
-| Gut-feel prioritization | `/prioritize` applies RICE, ICE, Kano frameworks |
-| Endless stakeholder debates | `/consensus` structures alignment systematically |
+Because **product work should be strategic, not administrative**.
 
-**Built on Long Chain-of-Thought methodology** - every command executes 15+ systematic reasoning steps with validation checkpoints.
+You don't need another tool. You need an operating system that:
+- ✅ **Eliminates repetitive work** - Workflows run automatically
+- ✅ **Enforces evidence-based decisions** - Confidence scoring on every insight
+- ✅ **Scales your expertise** - Expert-level frameworks at every step
+- ✅ **Builds technical literacy** - Learn engineering concepts while working
+- ✅ **Keeps you in flow** - One command, complete execution
 
 ---
 

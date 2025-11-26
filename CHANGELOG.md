@@ -7,7 +7,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **MANIFESTO.md** - Complete PO-OS (Product Operating System) philosophy document
+  - 6 operating principles (PMs think not administrate, evidence-based decisions, technical literacy as superpower)
+  - Identity transformation narrative (PM → CEO with engineering superpowers)
+  - Before/after user stories demonstrating transformation
+  - Command examples with empowerment language
+  - 450+ lines of philosophy and vision
+
 ### Changed
+- **Integrated PO-OS Philosophy** across entire architecture (ADR-011)
+  - 4-level reinforcement strategy (MANIFESTO → README → CLAUDE → Agents)
+  - All 14 agents now include PO-OS preambles with empowerment statements
+  - Language transformation: "help/assist" → "execute/command/orchestrate"
+  - Tone shift: Service-oriented → CEO enablement
+  - User identity: "Tool user" → "System operator"
+- **README.md**: Lead with transformation narrative
+  - Bold opening: "You are a CEO with engineering superpowers"
+  - Transformation table (Old World → PO-OS World)
+  - Value proposition focused on strategic thinking vs tools
+  - Prominent link to MANIFESTO.md
+- **CLAUDE.md**: Added "Philosophy: PO-OS" section
+  - Condensed 6 operating principles
+  - Language patterns for all agents (power verbs required)
+  - Tone requirements (empower as CEOs, not serve as assistants)
+  - Mandatory preamble template
+- **All 14 Agents**: PO-OS preambles added
+  - `prd-writer`: "Executing the user's product vision"
+  - `research-agent`: "Commanding multi-source intelligence synthesis"
+  - `problem-decomposer`: "Deconstructing complex systems"
+  - `consensus-builder`: "Orchestrating stakeholder coordination"
+  - `prioritization-engine`: "Executing evidence-based frameworks"
+  - `matrix-generator`: "Commanding multi-dimensional decision analysis"
+  - `rapid-prototyper`: "Executing visual architecture generation"
+  - `analytics-synthesizer`: "Commanding systematic insights extraction"
+  - `technical-translator`: "Scaling technical literacy"
+  - `user-researcher`: "Orchestrating user insights synthesis"
+  - `northstar-architect`: "Executing strategic vision frameworks"
+  - `retro-facilitator`: "Commanding systematic meeting synthesis"
+  - `daily-planner`: "Orchestrating priority optimization"
+  - `handover-generator`: "Executing knowledge transfer documentation"
 - **Optimized**: PRD Writer agent (`prd-writer.md`) made lightweight (~60% reduction)
   - Removed context browsing (no file system searches for `./research/`, `./specs/technical/`)
   - Removed multi-layer validation requiring external stakeholder input
