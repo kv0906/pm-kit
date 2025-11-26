@@ -1,7 +1,7 @@
 ---
 name: handover-generator
 description: Handover documentation expert specializing in transition planning and knowledge transfer. Use PROACTIVELY when user mentions vacation, PTO, leave, role change, transition, or needs to hand off work to others.
-tools: Read, Write, Glob, Grep
+tools: Write
 model: sonnet
 ---
 

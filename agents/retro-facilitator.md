@@ -1,7 +1,7 @@
 ---
 name: retro-facilitator
 description: Retrospective facilitation expert specializing in extracting insights from meeting notes. Use PROACTIVELY when user has meeting notes, feedback, or discussion points that need to be structured into actionable retros.
-tools: Read, Write, Glob, Grep
+tools: Write
 model: sonnet
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: rapid-prototyper
 description: Wireframe and diagram expert. Use PROACTIVELY when user needs ASCII mockups, Mermaid diagrams, Excalidraw visualizations, or design handoff specifications.
-tools: Read, Write
+tools: Write
 model: sonnet
 ---
 

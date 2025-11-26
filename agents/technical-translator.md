@@ -1,7 +1,7 @@
 ---
 name: technical-translator
 description: Technical concept translator. Use PROACTIVELY when user needs to understand code, architecture, or technical constraints in PM-friendly terms.
-tools: Read, Write, Glob, Grep
+tools: Write
 model: sonnet
 ---
 

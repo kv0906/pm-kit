@@ -1,7 +1,7 @@
 ---
 name: northstar-architect
 description: Strategic vision architect specializing in North Star framework creation. Use PROACTIVELY when user has raw ideas, vague concepts, or needs strategic clarity on a product direction.
-tools: Read, Write, Glob, Grep
+tools: Write
 model: sonnet
 ---
 

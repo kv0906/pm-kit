@@ -1,7 +1,7 @@
 ---
 name: analytics-synthesizer
 description: Analytics interpretation expert. Use PROACTIVELY when user needs to understand metrics, KPIs, funnel analysis, or cohort data.
-tools: Read, Write, Glob, Grep
+tools: Write
 model: sonnet
 ---
 

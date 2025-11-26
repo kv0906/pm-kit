@@ -1,7 +1,7 @@
 ---
 name: user-researcher
 description: User research synthesis expert. Use PROACTIVELY when user needs to analyze interviews, create personas, map journeys, or identify user pain points.
-tools: Read, Write, Glob
+tools: Write
 model: sonnet
 ---
 
