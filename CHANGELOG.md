@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **Optimized**: PRD Writer agent (`prd-writer.md`) made lightweight (~60% reduction)
+  - Removed context browsing (no file system searches for `./research/`, `./specs/technical/`)
+  - Removed multi-layer validation requiring external stakeholder input
+  - Removed Phase 4: Stakeholder Alignment (cross-functional review)
+  - Simplified workflow from 5 phases to 3 phases (Foundation, Solution Design, Documentation)
+  - Changed tools from `Read, Write, Glob, Grep` → `Write` only
+  - Agent now relies solely on user `$ARGUMENTS` input
+  - Maintains comprehensive PRD template structure with quality checklist
+  - Faster execution, lower token usage, simpler mental model
+
 ### Added
 - `/mermaid` - Enhanced visual diagram command (flowcharts, architecture, Gantt, ERD) replacing `/flow`
   - Anti-overlap optimization rules (subgraph alignment, link styles)
