@@ -1,5 +1,7 @@
 ---
 description: Generate daily work suggestions based on open items, priorities, and blockers
+allowed-tools: [Write]
+argument-hint: "[optional: context about current work]"
 ---
 
 # Today Command

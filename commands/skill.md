@@ -1,5 +1,6 @@
 ---
 description: Interactive skill browser - learn technical concepts for PMs
+argument-hint: "[optional: topic to learn]"
 ---
 
 # Skill Browser

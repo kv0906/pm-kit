@@ -1,5 +1,7 @@
 ---
 description: Generate ASCII diagrams for flows, architecture, timelines, and more
+allowed-tools: [Write]
+argument-hint: <what to diagram>
 ---
 
 # ASCII Diagram Generator

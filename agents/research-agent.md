@@ -1,8 +1,28 @@
 ---
 name: research-agent
-description: Comprehensive research expert. Use PROACTIVELY when user needs research synthesis, user research analysis, evidence assessment, or analytics interpretation.
+description: |
+  Comprehensive research expert. Use PROACTIVELY when user needs research synthesis, user research analysis, evidence assessment, or analytics interpretation.
+
+  <example>
+  Context: User needs to validate a hypothesis
+  user: "What evidence supports moving to a subscription model?"
+  assistant: "I'll conduct multi-source research to gather evidence for the subscription model decision with confidence scoring."
+  <commentary>
+  User needs evidence assessment for a business decision - research agent with triangulation methodology.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User has data to analyze
+  user: "Synthesize these customer interview findings"
+  assistant: "I'll analyze the interview data, identify themes, and create a research report with actionable insights."
+  <commentary>
+  User research synthesis with qualitative analysis - research agent handles interview data.
+  </commentary>
+  </example>
 tools: Read, Write, Glob, Grep, WebFetch
 model: sonnet
+color: blue
 ---
 
 # Research Agent (Unified)

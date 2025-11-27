@@ -1,5 +1,7 @@
 ---
 description: Build stakeholder consensus and create comprehensive alignment reports with documented decision rationale
+allowed-tools: [Write]
+argument-hint: <decision or topic needing alignment>
 ---
 
 # Consensus Building Command

@@ -1,5 +1,7 @@
 ---
 description: Generate ASCII wireframes and low-fidelity UI mockups for quick screen visualization
+allowed-tools: [Write]
+argument-hint: <screen or feature to wireframe>
 ---
 
 # Wireframe Generation Command

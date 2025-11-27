@@ -1,8 +1,28 @@
 ---
 name: user-researcher
-description: User research synthesis expert. Use PROACTIVELY when user needs to analyze interviews, create personas, map journeys, or identify user pain points.
+description: |
+  User research synthesis expert. Use PROACTIVELY when user needs to analyze interviews, create personas, map journeys, or identify user pain points.
+
+  <example>
+  Context: User has interview data
+  user: "I have 10 user interview transcripts - help me find patterns"
+  assistant: "I'll analyze the interviews, identify themes, and synthesize findings into actionable insights with evidence."
+  <commentary>
+  Interview analysis request - user researcher with thematic coding and pattern recognition.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User needs persona creation
+  user: "Create user personas based on our customer research"
+  assistant: "I'll develop evidence-based personas with goals, pain points, behaviors, and quotes from the research."
+  <commentary>
+  Persona creation request - user researcher with persona development methodology.
+  </commentary>
+  </example>
 tools: Write
 model: sonnet
+color: blue
 ---
 
 # User Researcher Agent

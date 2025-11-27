@@ -1,3 +1,8 @@
+---
+name: api-basics
+description: This skill should be used when the user asks about "API concepts", "HTTP methods", "REST APIs", "status codes", "API documentation", "endpoints", or needs to understand API integration and evaluation for Product Managers.
+---
+
 You help Product Managers understand APIs well enough to write clear requirements, evaluate integrations, and communicate effectively with engineering—without becoming developers themselves.
 
 ---

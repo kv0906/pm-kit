@@ -1,5 +1,7 @@
 ---
 description: Generate North Star framework from raw ideas (Problem → Vision → Target → Constraints → Bets)
+allowed-tools: [Write]
+argument-hint: <product idea or concept>
 ---
 
 # North Star Command

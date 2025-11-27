@@ -2,7 +2,7 @@
 
 > This document serves as the centralized knowledge base for PM-Kit, tracking project vision, architecture decisions, roadmap, and progress.
 
-**Last Updated:** 2025-11-26 (ADR-012: Agent Performance Optimization - Input-First Architecture)
+**Last Updated:** 2025-11-27 (Plugin best practices complete: argument-hint added to all commands)
 
 ---
 
@@ -847,7 +847,7 @@ Root cause analysis revealed a fundamental design philosophy mismatch: agents we
 | Commands | 21 | 3 | 24 |
 | Agents | 14 | 1 | 15 |
 | Templates | 4 | 0 | 4 |
-| Skills | 6 | 0 | 6 |
+| Skills | 8 | 0 | 8 |
 
 > **Note:** Distributed as Claude Code plugin (v0.4.0+). Workflows embedded in agents.
 
@@ -933,6 +933,15 @@ Root cause analysis revealed a fundamental design philosophy mismatch: agents we
 - [x] `/wireframe` - Add Excalidraw JSON output option (implemented as `/excalidraw`)
 - [x] `/mermaid` - Add Gantt chart subtype (completed)
 - [ ] `/prd-fast`, `/research-fast` - Lightweight variants for quick outputs
+
+#### Plugin Best Practices (Completed)
+- [x] Add YAML frontmatter to skills missing it (api-basics, json-fundamentals)
+- [x] Add `<example>` blocks to all 14 agent descriptions for better triggering
+- [x] Add `color` field to all agents (green, blue, purple, magenta, red, orange by function)
+- [x] Split oversized skills with references/ (mermaid-diagrams: 611→323 lines + 3 reference files)
+- [x] Add gemini scripts to skill directory (moved to skills/gemini-grounded-search/scripts/)
+- [x] Add `allowed-tools` to commands (20 commands now specify allowed tools)
+- [x] Add `argument-hint` to commands (23 commands now show input guidance)
 
 ### v0.7.0 - Community & Polish (Planned)
 **Theme:** Community growth and documentation polish

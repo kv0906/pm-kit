@@ -1,5 +1,7 @@
 ---
 description: Systematically decompose complex product problems into manageable components
+allowed-tools: [Write]
+argument-hint: <problem to break down>
 ---
 
 # Problem Decomposition Command

@@ -1,5 +1,7 @@
 ---
 description: Comprehensive research - multi-source synthesis, user research, evidence assessment, and analytics
+allowed-tools: [Read, Write, Glob, Grep, WebFetch]
+argument-hint: <topic to research>
 ---
 
 # Research Command
