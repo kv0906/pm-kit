@@ -1,5 +1,10 @@
 # PM-Kit: Product Operating System (PO-OS)
 
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/pm-kit)
+[![Version](https://img.shields.io/badge/version-0.5.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
+
 **You are not a Product Manager with AI tools.**
 **You are a CEO with engineering superpowers.**
 
@@ -39,7 +44,7 @@ You don't need another tool. You need an operating system that:
 
 ## Installation
 
-### Via Marketplace
+### Via Marketplace (Recommended)
 
 ```bash
 # Add the marketplace
@@ -50,6 +55,26 @@ You don't need another tool. You need an operating system that:
 
 # Restart Claude Code to activate
 ```
+
+### Zero-Install Testing
+
+To test PM-Kit without installation, clone and work directly:
+
+```bash
+# Clone the repository
+git clone https://github.com/kv0906/pm-kit.git
+cd pm-kit
+
+# Open in Claude Code - commands work immediately
+# No installation required for local testing
+```
+
+**Verification Checklist:**
+- [ ] Commands appear in `/pm` help
+- [ ] `/template` shows template catalog
+- [ ] `/skill` shows skill browser
+- [ ] Agents execute with proper workflows
+- [ ] Output files save to correct directories
 
 ---
 
@@ -100,11 +125,13 @@ You don't need another tool. You need an operating system that:
 | `/today` | Get personalized daily work suggestions | `/today "Open: checkout PRD, pricing decision"` |
 | `/handover` | Generate vacation/transition handover docs | `/handover "Dec 20 - Jan 3, backup: Sarah"` |
 
-### Help
+### Help & Discovery
 
 | Command | Description |
 |---------|-------------|
 | `/pm` | Interactive guide to help you choose the right command |
+| `/template` | Browse and apply PM-Kit templates |
+| `/skill` | Interactive skill browser - learn technical concepts |
 
 ---
 
@@ -130,6 +157,8 @@ You don't need another tool. You need an operating system that:
 | Structure my day | `/today` |
 | Run a retrospective | `/retro` |
 | Prepare for time off | `/handover` |
+| Browse available templates | `/template` |
+| Learn a technical concept | `/skill` |
 
 ---
 

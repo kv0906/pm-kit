@@ -79,14 +79,24 @@ If no specific input is provided, present the interactive guide below.
 ### 6. Learning Something
 > "I need to understand a technical concept"
 
-Skills are educational modules you can read (not commands to run):
+| Your Situation | Recommended Command |
+|----------------|---------------------|
+| Browse all learning modules | `/skill` |
+| Learn API concepts | `/skill api` |
+| Learn JSON fundamentals | `/skill json` |
+| Learn debugging strategies | `/skill debug` |
+| Learn Mermaid diagrams | `/skill mermaid` |
 
-| Topic | Skill File |
-|-------|------------|
-| Understanding APIs | `./skills/api-basics/SKILL.md` |
-| Reading JSON data | `./skills/json-fundamentals/SKILL.md` |
-| Debugging without code | `./skills/debug-without-code/SKILL.md` |
-| Frontend specifications | `./skills/frontend-prompts/SKILL.md` |
+### 7. Using Templates
+> "I need a structured document format"
+
+| Your Situation | Recommended Command |
+|----------------|---------------------|
+| Browse all templates | `/template` |
+| Stakeholder alignment doc | `/template consensus` |
+| Option comparison | `/template decision-matrix` |
+| Evidence tracking | `/template evidence` |
+| Research organization | `/template research-matrix` |
 
 ---
 
@@ -110,6 +120,8 @@ Skills are educational modules you can read (not commands to run):
 | Check if something is feasible | `/tech-impact` |
 | Create architecture docs | `/architecture` |
 | Create design specs | `/design-spec` |
+| Browse templates | `/template` |
+| Learn a technical concept | `/skill` |
 
 ---
 

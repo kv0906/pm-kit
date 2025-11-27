@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **`/template` command** - Browse and apply PM-Kit templates
+  - Catalog of available templates (consensus, decision-matrix, evidence-log, research-matrix)
+  - Interactive template application workflow
+- **`/skill` command** - Interactive skill browser
+  - Catalog of all 8 learning modules
+  - Topic matching for easy discovery
+  - Difficulty levels indicated
+- **README badges** - Plugin, version, license, and PRs welcome badges
+- **Zero-install testing documentation** - Verification checklist for local testing
+
+### Changed
+- **CLAUDE.md**: Added new commands to Discovery & Help section
+- **PLAN.md**: Marked v0.6.0 new commands and v0.7.0 community tasks as complete
+- **README.md**: Updated command tables with `/template` and `/skill`
+
 ## [0.6.0] - 2025-11-26
 
 ### Added

@@ -925,8 +925,8 @@ Root cause analysis revealed a fundamental design philosophy mismatch: agents we
 - [ ] `decision-build-vs-buy.md` - Build vs buy decision template
 
 #### New Commands
-- [ ] `/template [type]` - Browse and apply templates
-- [ ] `/skill [topic]` - Interactive skill browser
+- [x] `/template [type]` - Browse and apply templates
+- [x] `/skill [topic]` - Interactive skill browser
 - [ ] `/share` - Format output for X/Twitter/LinkedIn sharing
 
 #### Enhancements
@@ -937,10 +937,10 @@ Root cause analysis revealed a fundamental design philosophy mismatch: agents we
 ### v0.7.0 - Community & Polish (Planned)
 **Theme:** Community growth and documentation polish
 
-- [ ] Update CONTRIBUTING.md paths (`.claude/` → root level)
+- [x] Update CONTRIBUTING.md paths (`.claude/` → root level) - Already at root level
 - [ ] Submit to Claude Code plugin directories
-- [ ] Add plugin badges to README
-- [ ] Document testing of zero-install flow
+- [x] Add plugin badges to README
+- [x] Document testing of zero-install flow
 - [ ] Community contribution showcase
 
 ### v1.0.0 - Stable Release (Future)
