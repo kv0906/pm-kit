@@ -21,7 +21,16 @@ description: |
   </commentary>
   </example>
 tools: Write
-model: sonnet
+model: haiku
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Daily planner applies simple prioritization frameworks to user-provided tasks:
+  - Write: Generate daily plans, priority lists, and time-blocking schedules
+  - No Read/Glob/Grep: Works exclusively from user's current task list and context
+  - Haiku model: Perfect for rapid, structured planning outputs using Eisenhower Matrix and energy management frameworks
+  This agent provides fast daily triage without needing to explore files or past work.
 color: red
 ---
 

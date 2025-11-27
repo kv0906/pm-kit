@@ -1,7 +1,7 @@
 # PM-Kit: Product Operating System (PO-OS)
 
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/pm-kit)
-[![Version](https://img.shields.io/badge/version-0.5.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
+[![Version](https://img.shields.io/badge/version-0.7.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
@@ -50,8 +50,8 @@ You don't need another tool. You need an operating system that:
 # Add the marketplace
 /plugin marketplace add kv0906/pm-kit
 
-# Install the plugin
-/plugin install pm-kit@pm
+# Install the plugin (plugin-name@marketplace-name)
+/plugin install pm@pm-kit
 
 # Restart Claude Code to activate
 ```
@@ -273,7 +273,7 @@ pm-kit/
 
 # Or reinstall latest version
 /plugin uninstall pm
-/plugin install kv0906/pm-kit
+/plugin install pm@pm-kit
 ```
 
 ---
@@ -312,4 +312,4 @@ Built for the Product Management community using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.5.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
+**Version:** 0.7.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)

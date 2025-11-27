@@ -7,6 +7,50 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2025-11-27
+
+### Added
+- **Subagent Architecture Fields** - All 14 agents enhanced with standardized YAML frontmatter
+  - `mode`: Execution pattern (sequential/parallel/iterative)
+  - `parallelizable`: Can run in parallel with other agents (true/false)
+  - `context_isolation`: Context preservation needs (low/medium/high)
+  - `tool_rationale`: Explicit justification for tool choices with per-tool explanations
+- **AGENT-DESIGN-PRINCIPLES.md enhancements** - New YAML frontmatter documentation
+  - Complete field definitions and value ranges
+  - Model selection guidelines (haiku/sonnet/opus)
+  - Mode guidelines (sequential/parallel/iterative)
+  - Context isolation guidelines (low/medium/high)
+  - Updated agent classification tables with new fields
+
+### Changed
+- **Model Optimization** - 2 agents upgraded to Haiku for faster execution
+  - `rapid-prototyper.md`: sonnet → haiku (deterministic diagram generation)
+  - `daily-planner.md`: sonnet → haiku (rapid prioritization frameworks)
+- **Agent Classification Update** - Enhanced documentation in CLAUDE.md
+  - Updated agent table with Model, Mode, and Context Isolation columns
+  - Added clear group classifications (Group A: Input-Focused, Group B: Research)
+  - Documented haiku-optimized agents
+- **Tool Rationale Documentation** - All 14 agents now explain their tool choices
+  - Group A agents (12): Write-only rationale with input-first justification
+  - Group B agents (1): Multi-tool rationale for research-agent's exploration needs
+  - Clear "No Read/Glob/Grep" explanations for input-focused agents
+
+### Performance Impact
+- **Expected improvements** from model optimization:
+  - rapid-prototyper: ~40% faster diagram generation
+  - daily-planner: ~50% faster daily plan creation
+  - Maintained quality: Both agents use structured, templated outputs ideal for Haiku
+- **Architectural clarity**:
+  - Explicit execution patterns documented
+  - Clear parallelization boundaries
+  - Transparent tool usage justification
+
+### Architecture
+- **ADR-013**: Subagent Architecture Adoption (see PLAN.md)
+  - Standardized YAML fields across all agents
+  - Model selection optimization strategy
+  - Context isolation classification system
+
 ### Added
 - **`/template` command** - Browse and apply PM-Kit templates
   - Catalog of available templates (consensus, decision-matrix, evidence-log, research-matrix)

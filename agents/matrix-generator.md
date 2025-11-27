@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Matrix generator creates structured comparison frameworks from user input:
+  - Write: Generate decision matrices, comparison tables, MCDA frameworks, and scoring models
+  - No Read/Glob/Grep: Works exclusively from user-provided options, criteria, and data
+  - Low isolation: Universal matrix generation methodology applies across all domains
+  This agent transforms comparison needs into visual decision frameworks.
 color: magenta
 ---
 

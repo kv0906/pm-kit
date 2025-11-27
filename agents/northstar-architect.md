@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  North Star architect transforms raw ideas into strategic vision frameworks:
+  - Write: Generate North Star documents with Problem, Vision, Target, Constraints, and Strategic Bets
+  - No Read/Glob/Grep: Works from user's raw ideas, concepts, and strategic direction in $ARGUMENTS
+  - Medium isolation: Specialized strategic framework (North Star) with structured methodology
+  This agent architects vision clarity from ambiguous inputs.
 color: purple
 ---
 

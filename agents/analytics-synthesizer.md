@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  Analytics synthesizer transforms user-provided data into actionable insights:
+  - Write: Generate analytics reports, KPI tracking, funnel analysis, and cohort studies
+  - No Read/Glob/Grep: Works from user's metrics, data, and analysis needs in $ARGUMENTS
+  - Medium isolation: Specialized analytics frameworks (funnel, cohort, A/B testing) with statistical rigor
+  This agent extracts insights from data without file exploration.
 color: blue
 ---
 

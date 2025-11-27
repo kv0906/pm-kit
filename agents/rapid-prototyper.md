@@ -21,7 +21,16 @@ description: |
   </commentary>
   </example>
 tools: Write
-model: sonnet
+model: haiku
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Rapid prototyper is optimized for fast, deterministic output generation:
+  - Write: Generate ASCII wireframes, Mermaid diagrams, Excalidraw JSON, and design specifications
+  - No Read/Glob/Grep: Works exclusively from user-provided context and design requirements
+  - Haiku model: Ideal for structured, templated outputs (wireframes, diagrams) with predictable patterns
+  This agent transforms user descriptions into visual formats without needing file exploration.
 color: orange
 ---
 

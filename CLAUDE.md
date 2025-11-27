@@ -123,7 +123,7 @@ Commands are defined in `commands/`. Active commands:
 
 ---
 
-## Agent Design Principles (v0.6.0+)
+## Agent Design Principles (v0.7.0+)
 
 **Important:** All agents follow strict design principles for optimal performance:
 
@@ -131,11 +131,20 @@ Commands are defined in `commands/`. Active commands:
 2. **Tool Minimalism**: Most agents use `Write` only (exceptions: research-agent)
 3. **No Speculative File Search**: Agents never search files without explicit user request
 4. **Explicit Over Implicit**: When context missing, agents prompt user instead of searching
+5. **Subagent Architecture**: All agents now include standardized YAML fields (mode, parallelizable, context_isolation, tool_rationale)
+6. **Model Optimization**: Haiku model for fast, deterministic tasks (daily-planner, rapid-prototyper)
 
 **Performance Impact:**
 - 50-60% reduction in token usage
 - 40-50% faster execution time
 - Predictable, consistent behavior
+- Clear tool usage justification
+
+**New YAML Fields:**
+- `mode`: Execution pattern (sequential/parallel/iterative)
+- `parallelizable`: Can run in parallel with other agents (true/false)
+- `context_isolation`: Context preservation needs (low/medium/high)
+- `tool_rationale`: Explicit justification for tool choices
 
 See `AGENT-DESIGN-PRINCIPLES.md` for complete guidelines.
 
@@ -219,22 +228,27 @@ When consolidating commands/agents:
 
 Specialized agents in `agents/`:
 
-| Agent | Purpose |
-|-------|---------|
-| `problem-decomposer.md` | Root cause analysis |
-| `prd-writer.md` | Requirements documents |
-| `research-agent.md` | Unified research (canonical) |
-| `consensus-builder.md` | Stakeholder alignment |
-| `prioritization-engine.md` | RICE, ICE, Kano frameworks |
-| `matrix-generator.md` | Decision matrices |
-| `analytics-synthesizer.md` | Data insights |
-| `technical-translator.md` | Code translation for PMs |
-| `rapid-prototyper.md` | ASCII wireframes, Mermaid diagrams |
-| `user-researcher.md` | User research synthesis |
-| `northstar-architect.md` | North Star framework generation |
-| `retro-facilitator.md` | Retrospective facilitation |
-| `daily-planner.md` | Daily work planning |
-| `handover-generator.md` | Handover documentation |
+| Agent | Purpose | Model | Mode | Context Isolation |
+|-------|---------|-------|------|-------------------|
+| `problem-decomposer.md` | Root cause analysis | sonnet | sequential | medium |
+| `prd-writer.md` | Requirements documents | sonnet | sequential | medium |
+| `research-agent.md` | Unified research (canonical) | sonnet | parallel | medium |
+| `consensus-builder.md` | Stakeholder alignment | sonnet | iterative | medium |
+| `prioritization-engine.md` | RICE, ICE, Kano frameworks | sonnet | sequential | medium |
+| `matrix-generator.md` | Decision matrices | sonnet | sequential | low |
+| `analytics-synthesizer.md` | Data insights | sonnet | sequential | medium |
+| `technical-translator.md` | Code translation for PMs | sonnet | sequential | high |
+| `rapid-prototyper.md` | ASCII wireframes, Mermaid diagrams | **haiku** | sequential | low |
+| `user-researcher.md` | User research synthesis | sonnet | sequential | medium |
+| `northstar-architect.md` | North Star framework generation | sonnet | sequential | medium |
+| `retro-facilitator.md` | Retrospective facilitation | sonnet | sequential | low |
+| `daily-planner.md` | Daily work planning | **haiku** | sequential | low |
+| `handover-generator.md` | Handover documentation | sonnet | sequential | low |
+
+**Agent Classifications:**
+- **Group A (Input-Focused)**: 12 agents using `Write` only - work from user-provided context
+- **Group B (Research)**: 2 agents (`research-agent`, uses Read/Write/Glob/Grep/WebFetch) - exploration allowed when explicitly requested
+- **Haiku-optimized**: 2 agents (`rapid-prototyper`, `daily-planner`) - fast, deterministic outputs
 
 ---
 

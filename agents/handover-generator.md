@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Handover generator creates knowledge transfer documentation for operational continuity:
+  - Write: Generate handover documents with projects, stakeholders, escalation paths, and decision context
+  - No Read/Glob/Grep: Works from user-provided project lists, responsibilities, and transition context
+  - Low isolation: Universal handover patterns apply across roles and industries
+  This agent ensures business continuity during absences and role transitions.
 color: green
 ---
 

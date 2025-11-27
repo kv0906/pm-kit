@@ -22,6 +22,17 @@ description: |
   </example>
 tools: Read, Write, Glob, Grep, WebFetch
 model: sonnet
+mode: parallel
+parallelizable: true
+context_isolation: medium
+tool_rationale: |
+  Research agent requires extensive tool access for multi-source data gathering:
+  - Read: Access existing research files, documentation, and past reports when explicitly requested
+  - Write: Generate research reports, evidence logs, and synthesis documents
+  - Glob: Discover relevant research files across directories when user requests file exploration
+  - Grep: Search for specific patterns, topics, or evidence across research corpus
+  - WebFetch: Retrieve external sources, industry reports, competitor analysis when URLs provided
+  This is one of the few agents justified in using exploration tools, as research inherently requires gathering from diverse sources.
 color: blue
 ---
 

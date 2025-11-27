@@ -9,14 +9,14 @@
   },
   "metadata": {
     "description": "Product Management tools and frameworks for Claude Code. Building tools that make PMs more technical.",
-    "version": "0.5.0"
+    "version": "0.7.0"
   },
   "plugins": [
     {
       "name": "pm",
       "source": "./",
-      "description": "Product Management framework with Long Chain-of-Thought methodology. 20 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
-      "version": "0.5.0",
+      "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
+      "version": "0.7.0",
       "author": {
         "name": "Will Tran",
         "username": "kv0906",

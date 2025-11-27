@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Retro facilitator structures meeting notes into actionable retrospectives:
+  - Write: Generate retrospective documents with What Went Well, What Didn't, Actions, and Owners
+  - No Read/Glob/Grep: Works from user-provided meeting notes, feedback, and discussion points
+  - Low isolation: Universal retrospective framework applies across all teams and contexts
+  This agent transforms raw meeting notes into structured improvement plans.
 color: red
 ---
 

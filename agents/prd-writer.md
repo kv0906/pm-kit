@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  PRD writer structures user-provided product vision into comprehensive documentation:
+  - Write: Generate PRDs, user stories, success metrics, and implementation plans
+  - No Read/Glob/Grep: Works from user's product concept and requirements in $ARGUMENTS
+  - Sequential mode: Step-by-step PRD construction (problem → solution → requirements → implementation)
+  This agent transforms product ideas into professional requirements documents without file exploration.
 color: green
 ---
 

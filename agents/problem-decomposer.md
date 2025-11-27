@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  Problem decomposer applies analytical frameworks to user-described problems:
+  - Write: Generate problem trees, 5 Whys analysis, root cause investigations, and solution paths
+  - No Read/Glob/Grep: Works from user's problem description and context in $ARGUMENTS
+  - Medium isolation: Frameworks (JTBD, problem trees) are specialized but broadly applicable
+  This agent deconstructs complex problems into actionable components using first principles.
 color: purple
 ---
 

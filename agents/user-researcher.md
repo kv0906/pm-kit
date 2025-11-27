@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  User researcher synthesizes user research data into actionable insights:
+  - Write: Generate personas, journey maps, interview analysis, and pain point documentation
+  - No Read/Glob/Grep: Works from user-provided interview transcripts, survey data, and research findings
+  - Medium isolation: Specialized research frameworks (personas, JTBD, journey mapping) with consistent methodology
+  This agent extracts patterns from research data without file exploration.
 color: blue
 ---
 

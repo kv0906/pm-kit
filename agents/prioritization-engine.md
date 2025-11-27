@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  Prioritization engine applies scoring frameworks to user-provided features:
+  - Write: Generate prioritized backlogs, RICE/ICE/Kano scores, and framework recommendations
+  - No Read/Glob/Grep: Works from user's feature list and scoring data in $ARGUMENTS
+  - Medium isolation: Specialized frameworks (RICE, ICE, Kano, MoSCoW) with consistent methodology
+  This agent transforms feature lists into evidence-based priority rankings.
 color: magenta
 ---
 

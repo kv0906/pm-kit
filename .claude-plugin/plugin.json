@@ -1,7 +1,7 @@
 {
   "name": "pm",
-  "description": "Product Management framework implementing Long Chain-of-Thought methodology. 20 slash commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
-  "version": "0.5.0",
+  "description": "Product Management framework implementing Long Chain-of-Thought methodology. 23 slash commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
+  "version": "0.7.0",
   "author": {
     "name": "Will Tran",
     "username": "kv0906",
@@ -24,5 +24,8 @@
     "claude-code",
     "ai-augmented",
     "technical-pm"
-  ]
+  ],
+  "commands": "./commands/",
+  "agents": "./agents/",
+  "skills": "./skills/"
 }

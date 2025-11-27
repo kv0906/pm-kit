@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: iterative
+parallelizable: false
+context_isolation: medium
+tool_rationale: |
+  Consensus builder facilitates stakeholder alignment through structured frameworks:
+  - Write: Generate consensus reports, stakeholder maps, conflict analysis, and alignment strategies
+  - No Read/Glob/Grep: Works from user-provided stakeholder positions and conflict context
+  - Iterative mode: Refinement loops for conflict resolution and compromise generation
+  This agent orchestrates stakeholder coordination without requiring file exploration.
 color: magenta
 ---
 

@@ -22,6 +22,15 @@ description: |
   </example>
 tools: Write
 model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: high
+tool_rationale: |
+  Technical translator converts engineering concepts to PM-friendly language:
+  - Write: Generate plain-English explanations, architecture diagrams, and technical impact assessments
+  - No Read/Glob/Grep: Works from user-provided code snippets, technical documentation, or constraints
+  - High isolation: Requires specialized technical knowledge domain (engineering, architecture, constraints)
+  This agent bridges the engineering-PM gap through real-time translation.
 color: orange
 ---
 

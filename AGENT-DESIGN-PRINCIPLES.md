@@ -8,6 +8,61 @@ This document defines the canonical design principles for all PM-Kit agents. Eve
 
 ---
 
+## YAML Frontmatter Structure
+
+All PM-Kit agents use standardized YAML frontmatter for configuration and Claude Code plugin integration.
+
+### Required Fields
+
+```yaml
+---
+name: agent-name
+description: Brief description. Use PROACTIVELY when [trigger condition].
+tools: Read, Write, Glob, Grep
+model: sonnet
+mode: sequential
+parallelizable: false
+context_isolation: low
+tool_rationale: |
+  Explanation of why these specific tools are needed for this agent.
+  - Tool1: Reason for inclusion
+  - Tool2: Reason for inclusion
+---
+```
+
+### Field Definitions
+
+| Field | Type | Purpose | Values |
+|-------|------|---------|--------|
+| `name` | string | Agent identifier | kebab-case |
+| `description` | string | Purpose and trigger conditions | Include "Use PROACTIVELY when..." |
+| `tools` | list | Tool access permissions | Write, Read, Glob, Grep, Execute, WebFetch |
+| `model` | string | LLM model selection | `sonnet` (default), `haiku` (rapid tasks), `opus` (complex) |
+| `mode` | string | Execution pattern | `sequential` (most), `parallel` (research), `iterative` (refinement) |
+| `parallelizable` | boolean | Can run in parallel with others | `true` (read-only), `false` (writes outputs) |
+| `context_isolation` | string | Context preservation needs | `high` (specialized), `medium` (balanced), `low` (general) |
+| `tool_rationale` | multiline | Justification for tool choices | Explain each tool's necessity |
+
+### Model Selection Guidelines
+
+- **haiku**: Fast, deterministic tasks (daily planning, quick diagrams, simple formatting)
+- **sonnet**: Default for most agents (PRDs, research, consensus, prioritization)
+- **opus**: Complex reasoning (architecture decisions, multi-stakeholder analysis)
+
+### Mode Guidelines
+
+- **sequential**: Step-by-step workflows (PRDs, strategies, retrospectives)
+- **parallel**: Independent data gathering (research, user studies)
+- **iterative**: Refinement loops (consensus building, prioritization)
+
+### Context Isolation Guidelines
+
+- **high**: Specialized knowledge domains (technical translation, architecture)
+- **medium**: General PM workflows with specific frameworks (PRD, prioritization)
+- **low**: Universal workflows (daily planning, handovers)
+
+---
+
 ## Core Philosophy
 
 PM-Kit agents are **task-focused executors**, not contextually-aware helpers. They structure what users provide, not explore files to find context.
@@ -166,21 +221,25 @@ Would you like to include this context in your PRD?"
 
 ### Group A: Input-Focused Agents (No File Exploration)
 
-**Tools:** `Write` only
+**Configuration:**
+- **Tools:** `Write` only
+- **Mode:** `sequential`
+- **Parallelizable:** `false` (writes outputs)
+- **Context Isolation:** `low` to `medium`
 
 **Agents:**
-- prd-writer
-- matrix-generator
-- rapid-prototyper
-- northstar-architect
-- retro-facilitator
-- daily-planner
-- handover-generator
-- problem-decomposer
-- consensus-builder
-- prioritization-engine
-- analytics-synthesizer
-- technical-translator
+- prd-writer (medium isolation, sonnet)
+- matrix-generator (low isolation, sonnet)
+- rapid-prototyper (low isolation, **haiku**)
+- northstar-architect (medium isolation, sonnet)
+- retro-facilitator (low isolation, sonnet)
+- daily-planner (low isolation, **haiku**)
+- handover-generator (low isolation, sonnet)
+- problem-decomposer (medium isolation, sonnet)
+- consensus-builder (medium isolation, sonnet)
+- prioritization-engine (medium isolation, sonnet)
+- analytics-synthesizer (medium isolation, sonnet)
+- technical-translator (high isolation, sonnet)
 
 **Pattern:**
 - User provides context in $ARGUMENTS
@@ -189,11 +248,15 @@ Would you like to include this context in your PRD?"
 
 ### Group B: Research Agents (Exploration Allowed)
 
-**Tools:** `Read, Write, Glob, Grep, WebFetch`
+**Configuration:**
+- **Tools:** `Read, Write, Glob, Grep, WebFetch`
+- **Mode:** `parallel` (independent data gathering)
+- **Parallelizable:** `true` (read-only until synthesis)
+- **Context Isolation:** `medium`
 
 **Agents:**
-- research-agent
-- user-researcher
+- research-agent (parallel, sonnet)
+- user-researcher (parallel, sonnet)
 
 **Pattern:**
 - User explicitly requests research
