@@ -17,8 +17,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Difficulty levels indicated
 - **README badges** - Plugin, version, license, and PRs welcome badges
 - **Zero-install testing documentation** - Verification checklist for local testing
+- **Agent triggering examples** - All 14 agents now include `<example>` blocks in descriptions
+  - Improves Claude's ability to automatically select the right agent
+  - Each agent has 2 concrete examples showing when to trigger
+  - Examples include Context, user request, assistant response, and commentary
+- **Agent color coding** - All 14 agents now have `color` field in frontmatter
+  - Green: Documentation agents (prd-writer, handover-generator)
+  - Blue: Research agents (research-agent, user-researcher, analytics-synthesizer)
+  - Purple: Problem solving agents (problem-decomposer, northstar-architect)
+  - Magenta: Decision making agents (prioritization-engine, matrix-generator, consensus-builder)
+  - Red: Planning agents (daily-planner, retro-facilitator)
+  - Orange: Technical/design agents (technical-translator, rapid-prototyper)
+- **Command security** - All 20 agent-invoking commands now have `allowed-tools` field
+  - Specifies which tools agents can use
+  - Improves security and transparency
+  - Helps users understand what file operations will occur
+- **Command hints** - All 23 commands now have `argument-hint` field
+  - Shows placeholder text guiding expected input
+  - Optional commands use `[optional: ...]` format
+  - Improves discoverability and UX
+- **Mermaid skill references** - Split mermaid-diagrams skill into progressive disclosure pattern
+  - `SKILL.md`: Overview and quick reference (323 lines, was 611)
+  - `references/syntax-reference.md`: Complete syntax for all 7 diagram types
+  - `references/optimization-rules.md`: Rendering rules and quality checklist
+  - `references/examples.md`: Practice exercises and prompt patterns
 
 ### Changed
+- **Skills frontmatter** - Added missing YAML frontmatter to skills
+  - `api-basics/SKILL.md` - Added name and description with trigger phrases
+  - `json-fundamentals/SKILL.md` - Added name and description with trigger phrases
+- **Gemini scripts location** - Moved Python scripts to skill directory
+  - From: `scripts/gemini/` (now removed)
+  - To: `skills/gemini-grounded-search/scripts/`
+  - Updated all script paths in skill documentation
 - **CLAUDE.md**: Added new commands to Discovery & Help section
 - **PLAN.md**: Marked v0.6.0 new commands and v0.7.0 community tasks as complete
 - **README.md**: Updated command tables with `/template` and `/skill`

@@ -1,5 +1,6 @@
 ---
 description: Browse and apply PM-Kit templates for common documents
+argument-hint: "[optional: template type]"
 ---
 
 # Template Browser

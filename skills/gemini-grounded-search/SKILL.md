@@ -32,7 +32,7 @@ That's it! You can now use the CLI scripts.
 ### Web Search with Citations
 
 ```bash
-uv run --with google-genai scripts/gemini/grounded_search.py "your query"
+uv run --with google-genai skills/gemini-grounded-search/scripts/grounded_search.py "your query"
 ```
 
 Use for:
@@ -44,7 +44,7 @@ Use for:
 ### Code Execution
 
 ```bash
-uv run --with google-genai scripts/gemini/code_execution.py "calculate X"
+uv run --with google-genai skills/gemini-grounded-search/scripts/code_execution.py "calculate X"
 ```
 
 Use for:
@@ -56,7 +56,7 @@ Use for:
 ### Combined Search + Code
 
 ```bash
-uv run --with google-genai scripts/gemini/multi_tool_query.py "research and visualize X"
+uv run --with google-genai skills/gemini-grounded-search/scripts/multi_tool_query.py "research and visualize X"
 ```
 
 Use for:
@@ -67,7 +67,7 @@ Use for:
 ### URL Analysis
 
 ```bash
-uv run --with google-genai scripts/gemini/url_context.py "https://..." "summarize this"
+uv run --with google-genai skills/gemini-grounded-search/scripts/url_context.py "https://..." "summarize this"
 ```
 
 Use for:
@@ -75,7 +75,7 @@ Use for:
 - Extracting information from URLs
 - Summarizing long articles
 
-See `scripts/gemini/` directory for full documentation and examples.
+See `scripts/` directory for full documentation and examples.
 
 ---
 

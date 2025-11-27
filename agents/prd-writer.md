@@ -1,8 +1,28 @@
 ---
 name: prd-writer
-description: PRD generation expert. Use PROACTIVELY when user needs product requirements, feature specifications, or comprehensive documentation for new features/products.
+description: |
+  PRD generation expert. Use PROACTIVELY when user needs product requirements, feature specifications, or comprehensive documentation for new features/products.
+
+  <example>
+  Context: User wants to document a new feature
+  user: "I need to write requirements for our new checkout flow"
+  assistant: "I'll create a comprehensive PRD for the checkout flow feature using structured templates and frameworks."
+  <commentary>
+  User explicitly needs product requirements documentation, triggering PRD generation workflow.
+  </commentary>
+  </example>
+
+  <example>
+  Context: Planning a new product MVP
+  user: "Help me spec out the mobile app MVP"
+  assistant: "I'll generate a complete PRD for your mobile app MVP including user stories, success metrics, and implementation phases."
+  <commentary>
+  MVP planning requires comprehensive feature specification - PRD writer is the appropriate agent.
+  </commentary>
+  </example>
 tools: Write
 model: sonnet
+color: green
 ---
 
 # PRD Writer Agent

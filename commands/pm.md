@@ -1,5 +1,6 @@
 ---
 description: Get help choosing the right PM command for your task
+argument-hint: "[optional: what you need help with]"
 ---
 
 # PM-Kit Help & Command Router

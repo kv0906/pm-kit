@@ -1,5 +1,7 @@
 ---
 description: Assess technical impact and feasibility of proposed product features
+allowed-tools: [Write]
+argument-hint: <feature to assess>
 ---
 
 # Technical Impact Assessment Command

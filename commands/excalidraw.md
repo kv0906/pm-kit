@@ -1,5 +1,7 @@
 ---
 description: Generate hand-drawn style diagrams in Excalidraw JSON format for presentations and visual thinking
+allowed-tools: [Write]
+argument-hint: <what to visualize>
 ---
 
 # Excalidraw Diagram Generator

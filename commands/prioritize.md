@@ -1,5 +1,7 @@
 ---
 description: Apply multiple prioritization frameworks to feature backlog with systematic validation
+allowed-tools: [Write]
+argument-hint: <features or items to prioritize>
 ---
 
 # Feature Prioritization Command

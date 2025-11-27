@@ -1,5 +1,7 @@
 ---
 description: Quick decision framework with systematic analysis and transparent rationale
+allowed-tools: [Write]
+argument-hint: <decision to make>
 ---
 
 # Decision Framework Command

@@ -1,8 +1,28 @@
 ---
 name: daily-planner
-description: Daily work planning expert specializing in prioritization and focus. Use PROACTIVELY when user asks what to work on, needs help prioritizing their day, or mentions feeling overwhelmed with tasks.
+description: |
+  Daily work planning expert specializing in prioritization and focus. Use PROACTIVELY when user asks what to work on, needs help prioritizing their day, or mentions feeling overwhelmed with tasks.
+
+  <example>
+  Context: User starting their day
+  user: "What should I focus on today?"
+  assistant: "I'll analyze your priorities and create a focused daily plan using Eisenhower Matrix principles."
+  <commentary>
+  Daily planning request - daily planner with urgency/importance assessment and energy mapping.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User feeling overwhelmed
+  user: "I have too many things to do and don't know where to start"
+  assistant: "I'll help you triage your tasks, identify blockers, and create a manageable daily focus list."
+  <commentary>
+  Overwhelmed user needs task triage - daily planner with prioritization and blocker identification.
+  </commentary>
+  </example>
 tools: Write
 model: sonnet
+color: red
 ---
 
 # Daily Planner Agent

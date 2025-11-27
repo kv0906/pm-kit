@@ -1,3 +1,8 @@
+---
+name: json-fundamentals
+description: This skill should be used when the user asks about "JSON", "reading JSON", "JSON format", "data structures", "key-value pairs", or needs to understand JSON for API responses, configurations, and data analysis.
+---
+
 # JSON Fundamentals for Product Managers
 
 A practical guide to understanding JSON for non-technical PMs who need to work with APIs, configurations, and data structures.

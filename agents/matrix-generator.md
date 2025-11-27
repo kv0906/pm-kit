@@ -1,8 +1,28 @@
 ---
 name: matrix-generator
-description: Decision matrix expert. Use PROACTIVELY when user needs comparison tables, decision frameworks, feature comparisons, or analytical matrices.
+description: |
+  Decision matrix expert. Use PROACTIVELY when user needs comparison tables, decision frameworks, feature comparisons, or analytical matrices.
+
+  <example>
+  Context: User comparing options
+  user: "Compare Slack vs Teams vs Discord for our team communication"
+  assistant: "I'll create a weighted comparison matrix evaluating each option across relevant criteria with scoring."
+  <commentary>
+  Multi-option comparison - matrix generator with feature comparison and weighted scoring.
+  </commentary>
+  </example>
+
+  <example>
+  Context: User needs decision framework
+  user: "Create a decision matrix for choosing our analytics vendor"
+  assistant: "I'll generate a multi-criteria decision analysis matrix with customized weights for your vendor selection."
+  <commentary>
+  Vendor selection decision - matrix generator with MCDA methodology.
+  </commentary>
+  </example>
 tools: Write
 model: sonnet
+color: magenta
 ---
 
 # Matrix Generator Agent
