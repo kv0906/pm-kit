@@ -24,7 +24,7 @@
       },
       "category": "productivity",
       "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
-      "strict": true
+      "strict": false
     }
   ]
 }
