@@ -1,4 +1,9 @@
-# Command: help-mkt
+---
+description: Marketing commands and workflows reference guide
+argument-hint: "[optional: specific command to learn about]"
+---
+
+# Marketing Help
 
 Marketing commands and workflows in PM-Kit.
 
@@ -234,10 +239,10 @@ Templates, patterns, and insights accumulate over time.
 ## Resources
 
 - **Project Overview**: `exercises/markit/README.md`
-- **CM Plugin Docs**: `plugins/cm/PLUGIN.md`
-- **CF Plugin Docs**: `plugins/cf/PLUGIN.md`
-- **Getting Started**: Type `/start-mkt`
+- **CM Plugin Docs**: `plugins/cm/README.md`
+- **CF Plugin Docs**: `plugins/cf/README.md`
+- **Getting Started**: Type `/cm:start`
 
 ---
 
-**Questions?** Type `/pm` for main PM-Kit help or `/start-mkt` to begin the marketing course.
+**Questions?** Type `/pm:pm` for main PM-Kit help or `/cm:start` to begin the marketing course.

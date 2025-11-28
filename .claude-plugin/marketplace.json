@@ -19,7 +19,10 @@
         "twitter": "@will_tran33"
       },
       "category": "productivity",
-      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"]
+      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
+      "commands": ["./commands/"],
+      "agents": ["./agents/"],
+      "skills": ["./skills/"]
     },
     {
       "name": "cm",
@@ -32,7 +35,9 @@
         "twitter": "@will_tran33"
       },
       "category": "marketing",
-      "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics", "brand-voice"]
+      "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics", "brand-voice"],
+      "commands": ["./commands/"],
+      "agents": ["./agents/"]
     },
     {
       "name": "cf",
@@ -45,7 +50,8 @@
         "twitter": "@will_tran33"
       },
       "category": "marketing",
-      "tags": ["marketing", "content-generation", "content-marketing", "batch-processing", "social-media", "blog", "email"]
+      "tags": ["marketing", "content-generation", "content-marketing", "batch-processing", "social-media", "blog", "email"],
+      "commands": ["./commands/"]
     }
   ]
 }

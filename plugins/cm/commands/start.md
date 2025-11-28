@@ -1,4 +1,9 @@
-# Command: start-mkt
+---
+description: Welcome to PM-Kit Marketing - introduces compounding marketing workflows
+argument-hint: "[optional: topic to explore]"
+---
+
+# Marketing Start Guide
 
 Welcome to PM-Kit Marketing! This introduces you to compounding marketing workflows with intelligent automation.
 
@@ -33,7 +38,7 @@ Unlike traditional marketing tools that require the same effort every time, PM-K
 
 **Campaign 5 (15 hours - 62% faster):**
 - Leverage accumulated templates
-- Reference past successful campaigns  
+- Reference past successful campaigns
 - Patterns recognized automatically
 
 **Campaign 10 (10 hours - 75% faster):**
@@ -73,11 +78,11 @@ The CM (Compounding Marketing) plugin plans campaigns with intelligence:
 ```
 
 This will:
-- ✅ Research similar past campaigns (compounding effect!)
-- ✅ Analyze target audience and competitors
-- ✅ Generate comprehensive 12-section brief
-- ✅ Create execution checklist
-- ✅ Save structured plan to campaigns/
+- Research similar past campaigns (compounding effect!)
+- Analyze target audience and competitors
+- Generate comprehensive 12-section brief
+- Create execution checklist
+- Save structured plan to campaigns/
 
 ### Step 3: Generate Content at Scale
 
@@ -88,11 +93,11 @@ The CF (Content Factory) plugin creates content in parallel:
 ```
 
 This will:
-- ✅ Create 28 pieces of content simultaneously
-- ✅ Validate brand voice consistency
-- ✅ Optimize for SEO and conversion
-- ✅ Organize in structured folders
-- ✅ Generate content calendar
+- Create 28 pieces of content simultaneously
+- Validate brand voice consistency
+- Optimize for SEO and conversion
+- Organize in structured folders
+- Generate content calendar
 
 ### Step 4: Review with Specialized Agents
 
@@ -114,7 +119,7 @@ Get multi-perspective feedback:
 |---------|---------|
 | `/cm:plan` | Create comprehensive campaign brief with compounding intelligence |
 
-### Content Generation  
+### Content Generation
 | Command | Purpose |
 |---------|---------|
 | `/cf:generate` | Batch content creation across formats |
@@ -152,16 +157,16 @@ Then generate content:
 ## What Makes This Different?
 
 ### Traditional Marketing Tools
-- ❌ Same effort every campaign
-- ❌ Start from scratch each time
-- ❌ Templates sit unused
-- ❌ No learning or improvement
+- Same effort every campaign
+- Start from scratch each time
+- Templates sit unused
+- No learning or improvement
 
 ### PM-Kit Marketing Plugins
-- ✅ Each campaign faster than the last
-- ✅ Accumulated patterns and templates
-- ✅ Intelligent recommendations from history
-- ✅ Compounding knowledge base
+- Each campaign faster than the last
+- Accumulated patterns and templates
+- Intelligent recommendations from history
+- Compounding knowledge base
 
 ---
 
@@ -172,7 +177,7 @@ Then generate content:
 3. **Review with agents**: Tag specialized reviewers
 4. **Document learnings**: Update templates for compounding
 
-**Type `/help-mkt` to see all marketing commands.**
+**Type `/cm:help` to see all marketing commands.**
 
 ---
 
