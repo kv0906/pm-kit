@@ -1,0 +1,14 @@
+{
+  "name": "cm",
+  "version": "0.1.0",
+  "description": "Compounding Marketing: Campaign planning with compounding intelligence. Each campaign makes the next one faster through accumulated patterns and templates.",
+  "author": {
+    "name": "Will Tran",
+    "username": "kv0906",
+    "url": "https://github.com/kv0906",
+    "twitter": "@will_tran33"
+  },
+  "commands": ["plan"],
+  "category": "marketing",
+  "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics"]
+}

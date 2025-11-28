@@ -1,7 +1,7 @@
 # PM-Kit: Product Operating System (PO-OS)
 
 [![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/pm-kit)
-[![Version](https://img.shields.io/badge/version-0.7.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
+[![Version](https://img.shields.io/badge/version-0.8.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
@@ -125,6 +125,38 @@ cd pm-kit
 | `/today` | Get personalized daily work suggestions | `/today "Open: checkout PRD, pricing decision"` |
 | `/handover` | Generate vacation/transition handover docs | `/handover "Dec 20 - Jan 3, backup: Sarah"` |
 
+### Marketing - Campaign Planning & Content Generation (NEW)
+
+PM-Kit now includes **marketing workflow plugins** with compounding intelligence.
+
+#### CM: Compounding Marketing
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/cm:plan` | Create campaign briefs that learn from past campaigns | `/cm:plan "Q1 Product Launch" --budget 50000 --duration "6 weeks"` |
+
+#### CF: Content Factory
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `/cf:generate` | Batch content creation across blog, email, social, video | `/cf:generate "Q1 Launch" --formats "blog,email,social" --quantity "3 blogs, 5 emails, 20 social"` |
+| `/cf:repurpose` | Transform one piece into many formats | `/cf:repurpose blog/post.md --into "social" --platforms "linkedin,twitter"` |
+| `/cf:schedule` | Create and organize content calendars | `/cf:schedule --period "March 2025" --frequency "2 blogs/week, 5 social/day"` |
+
+**Marketing Agents** (6 specialized reviewers):
+- `@brand-voice-guardian` - Brand consistency validation
+- `@conversion-optimizer` - Conversion rate optimization
+- `@seo-specialist` - SEO optimization
+- `@startup-sam-reviewer` - Founder persona feedback
+- `@manager-maria-reviewer` - Manager persona feedback
+- `@solo-steve-reviewer` - Solopreneur persona feedback
+
+**Compounding Effect**: Each campaign makes the next one faster (Campaign 1: 40hrs → Campaign 10: 10hrs)
+
+**Practice Workspace**: `exercises/markit/` - Marketing agency working for client Planerio
+
+**Quick Start**: Type `/start-mkt` for interactive marketing course or `/help-mkt` for command reference.
+
 ### Help & Discovery
 
 | Command | Description |
@@ -132,6 +164,8 @@ cd pm-kit
 | `/pm` | Interactive guide to help you choose the right command |
 | `/template` | Browse and apply PM-Kit templates |
 | `/skill` | Interactive skill browser - learn technical concepts |
+| `/start-mkt` | Start marketing workflow course |
+| `/help-mkt` | Marketing commands reference |
 
 ---
 
@@ -312,4 +346,4 @@ Built for the Product Management community using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.7.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
+**Version:** 0.8.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)

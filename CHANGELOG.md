@@ -7,13 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2025-11-28
+
+### Added
+- **Marketing Plugins** - Two new plugins for marketing workflows with compounding intelligence
+  - **CM (Compounding Marketing)**: Campaign planning that learns from past campaigns
+    - `/cm:plan` - Create comprehensive campaign briefs with compounding intelligence
+    - 6 specialized marketing agents (brand voice, conversion, SEO, 3 persona reviewers)
+    - Campaign brief, email sequence, and content calendar templates
+    - Each campaign makes the next one faster (Campaign 1: 40hrs → Campaign 10: 10hrs)
+  - **CF (Content Factory)**: Batch content generation across formats
+    - `/cf:generate` - Create weeks of content in hours across blog, email, social, video
+    - `/cf:repurpose` - Transform one piece into many formats
+    - `/cf:schedule` - Create and organize content calendars
+    - Blog, social media, and video script templates
+  - `exercises/markit/` - Marketing practice workspace (Markit agency working for client Planerio)
+  - `.claude/commands/` - Interactive lessons (`/start-mkt`, `/help-mkt`)
+- **Marketing Agents** - 6 specialized reviewers following PO-OS principles
+  - `brand-voice-guardian` - Brand consistency validation
+  - `conversion-optimizer` - Conversion rate optimization
+  - `seo-specialist` - SEO optimization
+  - `startup-sam-reviewer` - Founder persona feedback (28-year-old startup founder)
+  - `manager-maria-reviewer` - Manager persona feedback (38-year-old team manager)
+  - `solo-steve-reviewer` - Solopreneur persona feedback (32-year-old freelancer)
+  - All agents include YAML frontmatter and PO-OS philosophy preambles
+  - All agents parallelizable for multi-perspective feedback
+- **Plugin Manifests** - `plugin.json` for both marketing plugins
+  - Proper versioning (0.1.0)
+  - Category: marketing
+  - Appropriate tags for discoverability
+
 ### Changed
 - **Multi-plugin marketplace restructure** - Transformed repo into marketplace hosting multiple plugins
   - Created `plugins/pm/` directory for Product Management plugin
   - Moved `commands/`, `agents/`, `skills/`, `templates/` into `plugins/pm/`
   - Moved `plugin.json` to `plugins/pm/.claude-plugin/`
   - Updated `marketplace.json` source to `"./plugins/pm"`
-  - Prepares for future plugins (marketing, etc.)
+  - Added CM and CF plugins to marketplace.json
+- **Documentation Updates**
+  - CLAUDE.md: Added "Marketing Plugins (v0.8.0+)" section with complete reference
+  - README.md: Added marketing commands section with examples and quick start
+  - Repository structure diagram updated to show all three plugins
+  - Version bumped to 0.8.0 across all files
 
 ### Fixed
 - **Plugin marketplace discovery** - Fixed source path in `marketplace.json`
