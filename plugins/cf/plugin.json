@@ -8,7 +8,6 @@
     "url": "https://github.com/kv0906",
     "twitter": "@will_tran33"
   },
-  "commands": ["generate", "repurpose", "schedule"],
   "category": "marketing",
   "tags": ["marketing", "content-generation", "content-marketing", "batch-processing", "social-media", "blog", "email"]
 }
