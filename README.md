@@ -1,14 +1,71 @@
-# PM-Kit: Product Operating System (PO-OS)
+# CC-PMKT: Claude Code Plugin Marketplace
 
-[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/cc-pmkt)
+[![Claude Code Marketplace](https://img.shields.io/badge/Claude%20Code-Marketplace-blue?style=flat-square)](https://github.com/kv0906/cc-pmkt)
 [![Version](https://img.shields.io/badge/version-0.9.0-green?style=flat-square)](https://github.com/kv0906/cc-pmkt/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
-**You are not a Product Manager with AI tools.**
-**You are a CEO with engineering superpowers.**
+**Systematize your workflows. Boost productivity 10x.**
 
-PM-Kit is a complete operating system that transforms how you work. Stop writing documents. Start commanding systems.
+A curated marketplace of Claude Code plugins that transform how modern professionals work. Stop doing repetitive tasks manually. Start commanding AI-powered systems.
+
+---
+
+## Available Plugins
+
+| Plugin | Focus | Commands | What It Does |
+|--------|-------|----------|--------------|
+| **PM** | Product Management | 21 commands | PRDs, research, prioritization, diagrams, stakeholder alignment |
+| **CM** | Compounding Marketing | 1 command | Campaign planning with accumulated intelligence |
+| **CF** | Content Factory | 3 commands | Batch content generation across blog, email, social, video |
+
+**Install one, some, or all** — each plugin works independently or together as a complete operating system.
+
+---
+
+## Vision: The Knowledge Operating System
+
+**Where we're going:**
+
+Today, professional knowledge is scattered — in books, courses, senior colleagues' heads, and tribal wisdom that takes years to acquire. We're building something different.
+
+**CC-PMKT aims to become the curated intelligence layer for modern knowledge work.**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Knowledge Operating System                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   Today (v0.9)              Tomorrow                Future       │
+│   ─────────────             ────────                ──────       │
+│   • PM Plugin               • Design Plugin         • Finance    │
+│   • CM Plugin               • Engineering Plugin    • Legal      │
+│   • CF Plugin               • Sales Plugin          • HR         │
+│                             • Operations Plugin     • Strategy   │
+│                                                                  │
+│   ══════════════════════════════════════════════════════════    │
+│                    Claude Code Runtime                           │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**The thesis:**
+1. **Every role has patterns** — Product managers write PRDs. Marketers plan campaigns. Engineers architect systems. These patterns can be systematized.
+2. **Expert knowledge is transferable** — The best frameworks, mental models, and workflows can be encoded into AI-executable commands.
+3. **Compounding intelligence** — Each plugin learns from usage, making the next execution faster and better.
+4. **Democratized expertise** — A junior PM with CC-PMKT operates at senior level. A solo founder gets enterprise-grade workflows.
+
+**Future plugins we're exploring:**
+| Plugin | Role | Systematized Knowledge |
+|--------|------|------------------------|
+| **DE** | Design | Design systems, accessibility audits, handoff specs |
+| **EN** | Engineering | Architecture decisions, code reviews, tech debt tracking |
+| **SA** | Sales | Pipeline management, proposal generation, competitive analysis |
+| **OP** | Operations | Process documentation, SOP creation, workflow optimization |
+| **FI** | Finance | Budget planning, forecasting, financial modeling |
+
+**The end game:** A knowledge industry professional opens Claude Code, installs plugins for their role, and instantly operates with systematized best practices from thousands of experts — not replacing human judgment, but **amplifying it 10x**.
+
+Want to contribute a plugin for your domain? See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -29,16 +86,16 @@ PM-Kit is a complete operating system that transforms how you work. Stop writing
 
 ---
 
-## Why PM-Kit?
+## Why This Marketplace?
 
-Because **product work should be strategic, not administrative**.
+Because **your work should be strategic, not administrative**.
 
-You don't need another tool. You need an operating system that:
-- ✅ **Eliminates repetitive work** - Workflows run automatically
-- ✅ **Enforces evidence-based decisions** - Confidence scoring on every insight
-- ✅ **Scales your expertise** - Expert-level frameworks at every step
-- ✅ **Builds technical literacy** - Learn engineering concepts while working
-- ✅ **Keeps you in flow** - One command, complete execution
+You don't need another tool. You need **workflow plugins** that:
+- ✅ **Eliminate repetitive work** - One command executes entire workflows
+- ✅ **Enforce best practices** - Expert-level frameworks built into every command
+- ✅ **Compound over time** - Each use makes the next one faster
+- ✅ **Scale your expertise** - AI agents handle execution, you handle strategy
+- ✅ **Keep you in flow** - No context switching between tools
 
 ---
 
@@ -47,14 +104,21 @@ You don't need another tool. You need an operating system that:
 ### Via Marketplace (Recommended)
 
 ```bash
-# Add the marketplace
+# Step 1: Add the marketplace (one time)
 /plugin marketplace add kv0906/cc-pmkt
 
-# Install the plugin (plugin-name@marketplace-name)
-/plugin install pm@cc-pmkt
+# Step 2: Install the plugins you need
+/plugin install pm@cc-pmkt     # Product Management (21 commands)
+/plugin install cm@cc-pmkt     # Compounding Marketing (1 command)
+/plugin install cf@cc-pmkt     # Content Factory (3 commands)
 
-# Restart Claude Code to activate
+# Step 3: Restart Claude Code to activate
 ```
+
+**Quick Start by Role:**
+- **Product Managers**: Install `pm@cc-pmkt` → Start with `/pm` for guided help
+- **Marketers**: Install `cm@cc-pmkt` + `cf@cc-pmkt` → Start with `/start-mkt`
+- **Full Suite**: Install all three for complete workflow coverage
 
 ### Zero-Install Testing
 
@@ -78,7 +142,9 @@ cd cc-pmkt
 
 ---
 
-## Commands
+## PM Plugin Commands
+
+The **PM (Product Management)** plugin includes 21 commands for the full product lifecycle.
 
 ### Discovery - Understanding Problems
 
@@ -125,9 +191,9 @@ cd cc-pmkt
 | `/today` | Get personalized daily work suggestions | `/today "Open: checkout PRD, pricing decision"` |
 | `/handover` | Generate vacation/transition handover docs | `/handover "Dec 20 - Jan 3, backup: Sarah"` |
 
-### Marketing - Campaign Planning & Content Generation (NEW)
+## CM & CF Plugin Commands
 
-PM-Kit now includes **marketing workflow plugins** with compounding intelligence.
+The **CM (Compounding Marketing)** and **CF (Content Factory)** plugins provide marketing workflows with compounding intelligence.
 
 #### CM: Compounding Marketing
 
@@ -284,17 +350,27 @@ Each agent implements Long Chain-of-Thought methodology:
 
 ---
 
-## Plugin Structure
+## Marketplace Structure
 
 ```
-cc-pmkt/
+cc-pmkt/                          # Marketplace root
 ├── .claude-plugin/
-│   ├── plugin.json       # Plugin manifest
-│   └── marketplace.json  # Marketplace definition
-├── commands/             # 21 slash commands
-├── agents/               # 14 specialized agents
-├── skills/               # 6 educational modules
-└── templates/            # Output templates
+│   └── marketplace.json          # Marketplace definition
+├── plugins/
+│   ├── pm/                       # Product Management Plugin
+│   │   ├── commands/    (21)     # /prd, /research, /mermaid, etc.
+│   │   ├── agents/      (14)     # Specialized AI agents
+│   │   ├── skills/      (7)      # Educational modules
+│   │   └── templates/   (4)      # Output templates
+│   ├── cm/                       # Compounding Marketing Plugin
+│   │   ├── commands/    (1)      # /cm:plan
+│   │   ├── agents/      (6)      # Brand, SEO, persona reviewers
+│   │   └── templates/   (3)      # Campaign templates
+│   └── cf/                       # Content Factory Plugin
+│       ├── commands/    (3)      # /cf:generate, /cf:repurpose, /cf:schedule
+│       └── templates/   (3)      # Content templates
+└── exercises/
+    └── markit/                   # Marketing practice workspace
 ```
 
 ---
@@ -302,12 +378,15 @@ cc-pmkt/
 ## Updating
 
 ```bash
-# Check for updates
-/plugin update pm
+# Update individual plugins
+/plugin update pm    # Product Management
+/plugin update cm    # Compounding Marketing
+/plugin update cf    # Content Factory
 
 # Or reinstall latest version
-/plugin uninstall pm
-/plugin install pm@cc-pmkt
+/plugin uninstall pm && /plugin install pm@cc-pmkt
+/plugin uninstall cm && /plugin install cm@cc-pmkt
+/plugin uninstall cf && /plugin install cf@cc-pmkt
 ```
 
 ---
@@ -342,8 +421,8 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
-Built for the Product Management community using Claude Code's plugin system.
+Built for modern professionals who want to systematize their workflows using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.9.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
+**Version:** 0.9.0 | **Marketplace:** cc-pmkt | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
