@@ -20,6 +20,32 @@
       },
       "category": "productivity",
       "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"]
+    },
+    {
+      "name": "cm",
+      "source": "./plugins/cm",
+      "description": "Compounding Marketing: Campaign planning with compounding intelligence. Each campaign makes the next one faster through accumulated patterns, templates, and performance insights.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Will Tran",
+        "username": "kv0906",
+        "twitter": "@will_tran33"
+      },
+      "category": "marketing",
+      "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics", "brand-voice"]
+    },
+    {
+      "name": "cf",
+      "source": "./plugins/cf",
+      "description": "Content Factory: Batch content generation and repurposing. Create weeks of content in hours with intelligent parallel processing across blog, email, social, and video formats.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Will Tran",
+        "username": "kv0906",
+        "twitter": "@will_tran33"
+      },
+      "category": "marketing",
+      "tags": ["marketing", "content-generation", "content-marketing", "batch-processing", "social-media", "blog", "email"]
     }
   ]
 }

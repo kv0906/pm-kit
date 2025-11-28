@@ -1,7 +1,7 @@
 # PLAN-MKT: Multi-Plugin Marketplace Restructure
 
-> Draft plan for transforming pm-kit into a multi-plugin marketplace.
-> **Status:** Draft | **Created:** 2025-11-28
+> Plan for transforming pm-kit into a multi-plugin marketplace.
+> **Status:** ✅ Implemented in v0.8.0 | **Created:** 2025-11-28 | **Completed:** 2025-11-28
 
 ---
 
@@ -11,8 +11,9 @@ Transform pm-kit from a single plugin repository into a **marketplace** hosting 
 
 | Plugin | Purpose | Status |
 |--------|---------|--------|
-| **pm** | Product Management (PRDs, research, prioritization, etc.) | ✅ Existing |
-| **marketing** | Marketing management (briefs, campaigns, performance, ROI) | 📋 Planned |
+| **pm** | Product Management (PRDs, research, prioritization, etc.) | ✅ v0.7.0 |
+| **cm** | Compounding Marketing (campaign planning with compounding intelligence) | ✅ v0.8.0 |
+| **cf** | Content Factory (batch content generation and repurposing) | ✅ v0.8.0 |
 
 ---
 

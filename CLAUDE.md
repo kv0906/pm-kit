@@ -12,16 +12,33 @@ PM-Kit is a Product Management framework plugin for Claude Code implementing Lon
 
 ```
 pm-kit/                              # Marketplace root
+├── .claude/
+│   └── commands/                    # Interactive lessons (/start-mkt, /help-mkt)
 ├── .claude-plugin/
 │   └── marketplace.json             # Marketplace definition (points to plugins)
 ├── plugins/
-│   └── pm/                          # Product Management plugin
-│       ├── .claude-plugin/
-│       │   └── plugin.json          # Plugin manifest
-│       ├── commands/     (23)       # Slash commands (/prd, /decompose, /mermaid, etc.)
-│       ├── agents/       (14)       # Specialized agents with embedded workflows
-│       ├── skills/       (7)        # Technical literacy modules (SKILL.md format)
-│       └── templates/    (4)        # Reusable output templates
+│   ├── pm/                          # Product Management plugin
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json          # Plugin manifest
+│   │   ├── commands/     (23)       # Slash commands (/prd, /decompose, /mermaid, etc.)
+│   │   ├── agents/       (14)       # Specialized agents with embedded workflows
+│   │   ├── skills/       (7)        # Technical literacy modules (SKILL.md format)
+│   │   └── templates/    (4)        # Reusable output templates
+│   ├── cm/                          # Compounding Marketing plugin
+│   │   ├── plugin.json
+│   │   ├── commands/     (1)        # /cm:plan
+│   │   ├── agents/       (6)        # Brand, conversion, SEO, persona reviewers
+│   │   └── templates/    (3)        # Campaign brief, email sequence, content calendar
+│   └── cf/                          # Content Factory plugin
+│       ├── plugin.json
+│       ├── commands/     (3)        # /cf:generate, /cf:repurpose, /cf:schedule
+│       └── templates/    (3)        # Blog, social media, video script templates
+├── exercises/
+│   └── markit/                      # Marketing practice workspace
+│       ├── campaigns/               # Campaign briefs
+│       ├── content/                 # Generated content
+│       ├── brand/                   # Brand guidelines
+│       └── templates/               # Reusable templates
 ├── CLAUDE.md                        # This file - primary routing
 ├── PLAN.md                          # Project knowledge base
 └── README.md                        # Marketplace overview
@@ -123,6 +140,98 @@ Commands are defined in `plugins/pm/commands/`. Active commands:
 | `/retro` | Meeting notes to structured retrospectives |
 | `/today` | Daily work suggestions |
 | `/handover` | Vacation handover documentation |
+
+---
+
+## Marketing Plugins (v0.8.0+)
+
+PM-Kit now includes **marketing workflow plugins** with compounding intelligence. Each campaign makes the next one faster through accumulated patterns, templates, and insights.
+
+### Available Plugins
+
+| Plugin | Commands | Purpose |
+|--------|----------|---------|
+| **CM** | `/cm:plan` | Compounding Marketing - Campaign planning |
+| **CF** | `/cf:generate`, `/cf:repurpose`, `/cf:schedule` | Content Factory - Batch content generation |
+
+### Marketing Commands
+
+#### CM: Compounding Marketing
+| Command | Purpose |
+|---------|---------|
+| `/cm:plan` | Create comprehensive campaign briefs with compounding intelligence |
+
+#### CF: Content Factory
+| Command | Purpose |
+|---------|---------|
+| `/cf:generate` | Batch content creation across blog, email, social, video |
+| `/cf:repurpose` | Transform one piece into many formats |
+| `/cf:schedule` | Create and organize content calendars |
+
+### Marketing Agents
+
+Specialized reviewers in `plugins/cm/agents/`:
+
+| Agent | Purpose | Model | Parallelizable |
+|-------|---------|-------|----------------|
+| `brand-voice-guardian` | Brand consistency validation | sonnet | ✅ |
+| `conversion-optimizer` | Conversion rate optimization | sonnet | ✅ |
+| `seo-specialist` | SEO optimization | sonnet | ✅ |
+| `startup-sam-reviewer` | Founder persona feedback | sonnet | ✅ |
+| `manager-maria-reviewer` | Manager persona feedback | sonnet | ✅ |
+| `solo-steve-reviewer` | Solopreneur persona feedback | sonnet | ✅ |
+
+**All marketing agents** follow PO-OS principles and can run in parallel for multi-perspective feedback.
+
+### Marketing Workspace
+
+Practice workspace: `exercises/markit/` (Markit agency working for client Planerio)
+
+```
+markit/
+├── campaigns/          # Campaign briefs (/cm:plan)
+├── content/           # Generated content (/cf:generate)
+│   ├── blog/
+│   ├── email/
+│   ├── social/
+│   └── ads/
+├── brand/             # Brand guidelines, personas
+├── research/          # Competitive analysis
+├── analytics/         # Performance data, patterns
+└── templates/         # Reusable templates (compounding!)
+```
+
+### Compounding Intelligence
+
+The marketing plugins implement **compounding efficiency**:
+- **Campaign 1**: 40 hours - Build foundation
+- **Campaign 5**: 15 hours - Leverage patterns (62% faster)
+- **Campaign 10**: 10 hours - Systematized (75% faster)
+
+Each campaign accumulates:
+- ✅ Templates that evolve
+- ✅ Patterns from successful campaigns
+- ✅ Performance insights
+- ✅ Automated workflows
+
+### Quick Start
+
+```bash
+# 1. Start marketing course
+/start-mkt
+
+# 2. Plan campaign
+/cm:plan "Q1 Product Launch" --budget 50000 --duration "6 weeks"
+
+# 3. Generate content
+/cf:generate "Q1 Launch" --formats "blog,email,social"
+
+# 4. Review with agents
+@brand-voice-guardian Review this content
+@seo-specialist Optimize for "team productivity"
+```
+
+**Help**: Type `/help-mkt` for full marketing command reference.
 
 ---
 
