@@ -1,6 +1,6 @@
 ---
 description: Translate technical code and concepts into PM-friendly explanations
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <code or concept to explain>
 ---
 

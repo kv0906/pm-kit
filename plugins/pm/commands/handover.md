@@ -1,6 +1,6 @@
 ---
 description: Generate vacation or transition handover documentation with open tasks and owners
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <transition context or notes>
 ---
 

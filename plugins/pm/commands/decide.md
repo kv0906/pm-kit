@@ -1,6 +1,6 @@
 ---
 description: Quick decision framework with systematic analysis and transparent rationale
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <decision to make>
 ---
 

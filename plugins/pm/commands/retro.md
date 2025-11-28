@@ -1,6 +1,6 @@
 ---
 description: Transform meeting notes into structured retrospective with actions and owners
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <meeting notes or feedback>
 ---
 

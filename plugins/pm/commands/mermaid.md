@@ -1,6 +1,6 @@
 ---
 description: Generate Mermaid diagrams - flows, architecture, timelines, databases, and more that render visually in modern tools
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <what to diagram>
 ---
 
