@@ -1,170 +1,36 @@
 ---
-description: Get help choosing the right PM command for your task
+description: Get help choosing the right PM command
 argument-hint: "[optional: what you need help with]"
 ---
 
-# PM-Kit Help & Command Router
+# PM-Kit Help
 
-You are the **PM-Kit Assistant**, helping Product Managers find the right command for their task.
+Need help with: **$ARGUMENTS**
 
-## Your Task
-
-Help the user with: $ARGUMENTS
-
-If no specific input is provided, present the interactive guide below.
-
----
-
-## Interactive Guide
-
-**What do you need help with today?**
-
-### 1. Understanding a Problem
-> "Why is this happening? What's the root cause?"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Complex problem to break down | `/decompose "your problem"` |
-| Need to research a topic | `/research "your question"` |
-
----
-
-### 2. Defining a Solution
-> "I know what to build, now I need to spec it out"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Need to write requirements | `/prd "feature name"` |
-| Need a visual diagram (Mermaid) | `/mermaid "journey name"` |
-| Need a quick wireframe | `/wireframe "screen name"` |
-| Need design handoff specs | `/design-spec "feature name"` |
-
----
-
-### 3. Making a Decision
-> "I have options and need to choose"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Need to prioritize features | `/prioritize "feature list"` |
-| Quick yes/no or A/B decision | `/decide "the decision"` |
-| Comparing multiple options | `/matrix "comparison topic"` |
-| Need stakeholder alignment | `/consensus "topic"` |
-
----
-
-### 4. Communicating with Others
-> "I need to share or explain something"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Strategic planning document | `/strategy "initiative"` |
-| Technical architecture for PMs | `/architecture "system"` |
-| Explain code/tech concepts | `/explain-code "concept"` |
-| Assess technical feasibility | `/tech-impact "feature"` |
-
----
-
-### 5. Creating Visual Diagrams
-> "I need to visualize something"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Visual diagrams (Mermaid - flows, Gantt, ERD) | `/mermaid "what to diagram"` |
-| ASCII text-based diagrams | `/ascii "what to diagram"` |
-| Quick ASCII wireframe | `/wireframe "screen name"` |
-| Hand-drawn style diagrams | `/excalidraw "what to diagram"` |
-
----
-
-### 6. Learning Something
-> "I need to understand a technical concept"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Browse all learning modules | `/skill` |
-| Learn API concepts | `/skill api` |
-| Learn JSON fundamentals | `/skill json` |
-| Learn debugging strategies | `/skill debug` |
-| Learn Mermaid diagrams | `/skill mermaid` |
-
-### 7. Using Templates
-> "I need a structured document format"
-
-| Your Situation | Recommended Command |
-|----------------|---------------------|
-| Browse all templates | `/template` |
-| Stakeholder alignment doc | `/template consensus` |
-| Option comparison | `/template decision-matrix` |
-| Evidence tracking | `/template evidence` |
-| Research organization | `/template research-matrix` |
-
----
-
-## Quick Command Reference
+## Quick Reference
 
 | I need to... | Command |
 |--------------|---------|
-| Break down a complex problem | `/decompose` |
+| Break down a problem | `/decompose` |
 | Research something | `/research` |
-| Write a PRD | `/prd` |
-| Prioritize my backlog | `/prioritize` |
+| Write requirements | `/prd` |
+| Prioritize backlog | `/prioritize` |
 | Make a decision | `/decide` |
 | Compare options | `/matrix` |
 | Get stakeholder buy-in | `/consensus` |
-| Create a strategy doc | `/strategy` |
-| Create visual diagrams (Mermaid) | `/mermaid` |
-| Create text diagrams (ASCII) | `/ascii` |
-| Sketch a wireframe | `/wireframe` |
-| Create hand-drawn diagrams | `/excalidraw` |
-| Understand tech concepts | `/explain-code` |
-| Check if something is feasible | `/tech-impact` |
-| Create architecture docs | `/architecture` |
-| Create design specs | `/design-spec` |
-| Browse templates | `/template` |
-| Learn a technical concept | `/skill` |
-
----
+| Create strategy | `/strategy` |
+| Create visual diagrams | `/mermaid` |
+| Create ASCII diagrams | `/ascii` |
+| Sketch wireframes | `/wireframe` |
+| Understand tech | `/explain-code` |
+| Check feasibility | `/tech-impact` |
+| Document architecture | `/architecture` |
+| Learn a concept | `/skill` |
+| Use a template | `/template` |
 
 ## Typical Workflows
 
-### New Feature (Problem to Solution)
-```
-/decompose → /research → /prd → /prioritize → /consensus
-```
-
-### Strategic Initiative
-```
-/research → /strategy → /prioritize → /consensus
-```
-
-### Quick Decision
-```
-/decide → /matrix → /consensus
-```
-
-### Technical Understanding
-```
-/explain-code → /tech-impact → /architecture
-```
-
-### Visualization
-```
-/mermaid → /wireframe → /excalidraw
-```
-
----
-
-## Response Instructions
-
-1. If the user described a specific need, recommend the most appropriate command with an example
-2. If no input provided, show the full interactive guide above
-3. Ask clarifying questions if the need is ambiguous
-4. Suggest workflow sequences for complex tasks
-5. Be concise and actionable
-
-**Example responses:**
-
-- "It sounds like you need to break down a complex problem. Try: `/decompose "Why are users abandoning checkout?"`"
-- "For comparing vendor options, use: `/matrix "CRM vendor comparison"` to create a structured comparison."
-- "To visualize your checkout flow, use: `/ascii "checkout process flow"` for text diagrams or `/mermaid "checkout journey"` for visual diagrams."
+- **New Feature**: `/decompose` → `/research` → `/prd` → `/prioritize`
+- **Strategic Initiative**: `/research` → `/strategy` → `/consensus`
+- **Quick Decision**: `/decide` → `/matrix` → `/consensus`
+- **Tech Understanding**: `/explain-code` → `/tech-impact` → `/architecture`

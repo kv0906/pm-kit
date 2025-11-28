@@ -1,53 +1,26 @@
 ---
-description: Systematically decompose complex product problems into manageable components
+description: Systematically decompose complex problems into components
 allowed-tools: Write
 argument-hint: <problem to break down>
 ---
 
-# Problem Decomposition Command
+# Problem Decomposition
 
-Break down the following problem using first principles thinking:
+Break down: **$ARGUMENTS**
 
-**Problem Statement**: $ARGUMENTS
+## Agent
 
-## Instructions
-
-Use the **Problem Decomposer Agent** (`./agents/problem-decomposer.md`) to complete this task.
-
-The agent will guide you through:
-1. **Initial Analysis** - Clarify problem, map stakeholders, identify constraints
-2. **Systematic Decomposition** - First principles breakdown, multi-path analysis
-3. **Solution Framework** - Design solutions, validation protocols
-4. **Documentation** - Problem tree, recommendations, next steps
+Use the **Problem Decomposer Agent** (`@agents/problem-decomposer.md`) to execute this task.
 
 ## Output
 
-Save analysis to: `./analysis/problem-trees/[problem-name]-[date].md`
-
-## Analysis Structure
-
-Your analysis should include:
-- Refined Problem Statement
-- Problem Tree (hierarchical breakdown)
-- Stakeholder Matrix
-- Constraint Analysis
-- Opportunity Assessment
-- Dependencies
-- Prioritized Recommendations
-
----
+Save to: `./analysis/problem-trees/[problem-name]-[date].md`
 
 ## Next Steps
 
-After decomposing the problem:
-
-| Next Action | Command | When to Use |
-|-------------|---------|-------------|
-| Research solutions | `/research` | Gather evidence for options |
-| Write requirements | `/prd` | Document solution requirements |
-| Make decision | `/decide` | Choose between options |
-| Visualize structure | `/mermaid` or `/ascii` | Create visual problem tree |
-
----
-
-Begin problem decomposition now.
+| Command | When to Use |
+|---------|-------------|
+| `/research` | Gather evidence for options |
+| `/prd` | Document solution requirements |
+| `/decide` | Choose between options |
+| `/mermaid` | Visualize problem tree |
