@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Plugin was not showing up when users installed from marketplace
   - Root cause: `source` field pointed to wrong directory (`.claude-plugin/` vs plugin content)
   - Fixed by restructuring to standard marketplace pattern with `plugins/` directory
+- **Command discovery** - Fixed commands not appearing in slash command autocomplete
+  - Users only saw `/pm:commands` instead of individual commands (`/prd`, `/mermaid`, etc.)
+  - Root cause: `plugin.json` missing explicit `commands`, `agents`, `skills` path declarations
+  - Added `"commands": "./commands"`, `"agents": "./agents"`, `"skills": "./skills"` to plugin.json
 
 ## [0.7.0] - 2025-11-27
 
