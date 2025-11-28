@@ -21,9 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Root cause: `source` field pointed to wrong directory (`.claude-plugin/` vs plugin content)
   - Fixed by restructuring to standard marketplace pattern with `plugins/` directory
 - **Command discovery** - Fixed commands not appearing in slash command autocomplete
-  - Users only saw `/pm:commands` instead of individual commands (`/prd`, `/mermaid`, etc.)
-  - Root cause: `plugin.json` missing explicit `commands`, `agents`, `skills` path declarations
-  - Added `"commands": "./commands"`, `"agents": "./agents"`, `"skills": "./skills"` to plugin.json
+  - Users only saw `/pm:commands` instead of individual commands (`/pm:prd`, `/pm:mermaid`, etc.)
+  - Root cause: Explicit `commands`, `agents`, `skills` fields in `plugin.json` broke auto-discovery
+  - Fix: Removed explicit path declarations to rely on standard directory-based auto-discovery (matching working plugins like hookify, commit-commands)
 
 ## [0.7.0] - 2025-11-27
 
