@@ -7,13 +7,10 @@
     "website": "https://vanthk.com",
     "twitter": "@will_tran33"
   },
-  "metadata": {
-    "description": "Product Management tools and frameworks for Claude Code. Building tools that make PMs more technical.",
-    "version": "0.7.0"
-  },
   "plugins": [
     {
       "name": "pm",
+      "source": "./",
       "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
       "version": "0.7.0",
       "author": {
@@ -22,8 +19,7 @@
         "twitter": "@will_tran33"
       },
       "category": "productivity",
-      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
-      "strict": false
+      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"]
     }
   ]
 }
