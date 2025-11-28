@@ -11,17 +11,20 @@ PM-Kit is a Product Management framework plugin for Claude Code implementing Lon
 ## Repository Structure
 
 ```
-pm-kit/
+pm-kit/                              # Marketplace root
 ├── .claude-plugin/
-│   ├── plugin.json          # Plugin manifest (required)
-│   └── marketplace.json     # Marketplace definition
-├── commands/      (23)      # Slash commands (/prd, /decompose, /mermaid, etc.)
-├── agents/        (14)      # Specialized agents with embedded workflows
-├── skills/        (7)       # Technical literacy modules (SKILL.md format)
-├── templates/     (4)       # Reusable output templates
-├── CLAUDE.md                # This file - primary routing
-├── PLAN.md                  # Project knowledge base
-└── README.md                # Plugin overview
+│   └── marketplace.json             # Marketplace definition (points to plugins)
+├── plugins/
+│   └── pm/                          # Product Management plugin
+│       ├── .claude-plugin/
+│       │   └── plugin.json          # Plugin manifest
+│       ├── commands/     (23)       # Slash commands (/prd, /decompose, /mermaid, etc.)
+│       ├── agents/       (14)       # Specialized agents with embedded workflows
+│       ├── skills/       (7)        # Technical literacy modules (SKILL.md format)
+│       └── templates/    (4)        # Reusable output templates
+├── CLAUDE.md                        # This file - primary routing
+├── PLAN.md                          # Project knowledge base
+└── README.md                        # Marketplace overview
 ```
 
 **No code to build/test** - This repo contains only markdown framework files.
@@ -76,7 +79,7 @@ Everything else (agents) happens automatically under the hood.
 
 ## Core Commands
 
-Commands are defined in `commands/`. Active commands:
+Commands are defined in `plugins/pm/commands/`. Active commands:
 
 ### Discovery & Help
 | Command | Purpose |
@@ -171,24 +174,24 @@ User types:         Command delegates to:
 
 ### Component Roles
 
-1. **Commands** (`commands/`) - Entry points that users invoke
+1. **Commands** (`plugins/pm/commands/`) - Entry points that users invoke
    - Simple markdown with YAML frontmatter
    - Delegate to agents for execution
    - Include "Next Steps" section for follow-up commands
 
-2. **Agents** (`agents/`) - Complete execution units
+2. **Agents** (`plugins/pm/agents/`) - Complete execution units
    - YAML frontmatter with `name`, `description`, `tools`, `model`
    - Embedded workflow methodology (15+ steps)
    - Verification checkpoints and quality checklists
 
-3. **Skills** (`skills/`) - Educational content
+3. **Skills** (`plugins/pm/skills/`) - Educational content
    - Each skill in its own subdirectory
    - `SKILL.md` file format for plugin discovery
 
-4. **Templates** (`templates/`) - Output document formats
+4. **Templates** (`plugins/pm/templates/`) - Output document formats
 
 ### When Creating New Commands
-1. Create command file in `commands/`
+1. Create command file in `plugins/pm/commands/`
 2. Add YAML frontmatter with `description` field
 3. Use `$ARGUMENTS` for user input placeholder
 4. Reference the appropriate agent
@@ -196,7 +199,7 @@ User types:         Command delegates to:
 6. Update README.md command tables
 
 ### When Creating New Agents
-1. Add agent definition to `agents/`
+1. Add agent definition to `plugins/pm/agents/`
 2. Use YAML frontmatter:
    ```yaml
    ---
@@ -211,7 +214,7 @@ User types:         Command delegates to:
 5. Add quality checklist before completion
 
 ### When Creating New Skills
-1. Create subdirectory in `skills/` with skill name
+1. Create subdirectory in `plugins/pm/skills/` with skill name
 2. Create `SKILL.md` file inside
 3. Skills are auto-discovered by the plugin system
 
@@ -226,7 +229,7 @@ When consolidating commands/agents:
 
 ## Agents
 
-Specialized agents in `agents/`:
+Specialized agents in `plugins/pm/agents/`:
 
 | Agent | Purpose | Model | Mode | Context Isolation |
 |-------|---------|-------|------|-------------------|
@@ -254,7 +257,7 @@ Specialized agents in `agents/`:
 
 ## Skills
 
-Educational modules in `skills/`:
+Educational modules in `plugins/pm/skills/`:
 
 | Skill | Purpose |
 |-------|---------|
@@ -270,7 +273,7 @@ Educational modules in `skills/`:
 
 ## Templates
 
-Pre-built templates in `templates/`:
+Pre-built templates in `plugins/pm/templates/`:
 - `consensus-template.md` - Stakeholder alignment
 - `decision-matrix.md` - Decision framework
 - `evidence-log.md` - Evidence tracking
