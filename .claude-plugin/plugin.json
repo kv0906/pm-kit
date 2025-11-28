@@ -24,8 +24,5 @@
     "claude-code",
     "ai-augmented",
     "technical-pm"
-  ],
-  "commands": "./commands/",
-  "agents": "./agents/",
-  "skills": "./skills/"
+  ]
 }
