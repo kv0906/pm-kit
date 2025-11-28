@@ -1,59 +1,26 @@
 ---
-description: Generate a comprehensive Product Requirements Document with multi-layer validation
+description: Generate a comprehensive Product Requirements Document
 allowed-tools: Write
 argument-hint: <feature or product to document>
 ---
 
-# PRD Generation Command
+# PRD Generation
 
-Create a comprehensive Product Requirements Document for:
+Create a PRD for: **$ARGUMENTS**
 
-**Feature/Product**: $ARGUMENTS
+## Agent
 
-## Instructions
-
-Use the **PRD Writer Agent** (`./agents/prd-writer.md`) to complete this task.
-
-The agent will guide you through:
-1. **Foundation Building** - Context gathering, problem validation, success metrics
-2. **Solution Design** - Feature specification, UX design, technical requirements
-3. **Implementation Planning** - Phasing, dependencies, risk assessment
-4. **Stakeholder Alignment** - Cross-functional review, feedback integration
-5. **Documentation** - Complete PRD generation with quality validation
+Use the **PRD Writer Agent** (`@agents/prd-writer.md`) to execute this task.
 
 ## Output
 
-Save PRD to: `./prds/active/[feature-name]-[date].md`
-
-## PRD Structure
-
-Your PRD must include:
-- Executive Summary (problem, solution, metrics, timeline)
-- Background and Context
-- Goals and Success Metrics
-- User Personas and Use Cases
-- Detailed Requirements (functional, non-functional)
-- Technical Approach
-- Implementation Plan
-- Risks and Mitigations
-- Success Criteria
-- Open Questions
-
----
+Save to: `./prds/active/[feature-name]-[date].md`
 
 ## Next Steps
 
-After completing the PRD:
-
-| Next Action | Command | When to Use |
-|-------------|---------|-------------|
-| Prioritize features | `/prioritize` | Score features by RICE/ICE/Kano |
-| Create design handoff | `/design-spec` | Prepare specs for design team |
-| Assess feasibility | `/tech-impact` | Validate engineering effort |
-| Get stakeholder buy-in | `/consensus` | Build alignment on PRD |
-| Create user flows | `/mermaid` | Visualize user journeys |
-| Generate wireframes | `/wireframe` | Quick visual prototypes |
-
----
-
-Begin PRD creation now.
+| Command | When to Use |
+|---------|-------------|
+| `/prioritize` | Score features by RICE/ICE/Kano |
+| `/design-spec` | Prepare specs for design team |
+| `/tech-impact` | Validate engineering effort |
+| `/consensus` | Build stakeholder alignment |
