@@ -1,7 +1,7 @@
 # PM-Kit: Product Operating System (PO-OS)
 
-[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/pm-kit)
-[![Version](https://img.shields.io/badge/version-0.8.0-green?style=flat-square)](https://github.com/kv0906/pm-kit/releases)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue?style=flat-square)](https://github.com/kv0906/cc-pmkt)
+[![Version](https://img.shields.io/badge/version-0.9.0-green?style=flat-square)](https://github.com/kv0906/cc-pmkt/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
@@ -48,10 +48,10 @@ You don't need another tool. You need an operating system that:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add kv0906/pm-kit
+/plugin marketplace add kv0906/cc-pmkt
 
 # Install the plugin (plugin-name@marketplace-name)
-/plugin install pm@pm-kit
+/plugin install pm@cc-pmkt
 
 # Restart Claude Code to activate
 ```
@@ -62,8 +62,8 @@ To test PM-Kit without installation, clone and work directly:
 
 ```bash
 # Clone the repository
-git clone https://github.com/kv0906/pm-kit.git
-cd pm-kit
+git clone https://github.com/kv0906/cc-pmkt.git
+cd cc-pmkt
 
 # Open in Claude Code - commands work immediately
 # No installation required for local testing
@@ -287,7 +287,7 @@ Each agent implements Long Chain-of-Thought methodology:
 ## Plugin Structure
 
 ```
-pm-kit/
+cc-pmkt/
 ├── .claude-plugin/
 │   ├── plugin.json       # Plugin manifest
 │   └── marketplace.json  # Marketplace definition
@@ -307,7 +307,7 @@ pm-kit/
 
 # Or reinstall latest version
 /plugin uninstall pm
-/plugin install pm@pm-kit
+/plugin install pm@cc-pmkt
 ```
 
 ---
@@ -318,7 +318,7 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 ### Ways to Contribute
 
-- Report bugs or suggest features via [Issues](https://github.com/kv0906/pm-kit/issues)
+- Report bugs or suggest features via [Issues](https://github.com/kv0906/cc-pmkt/issues)
 - Submit pull requests for improvements
 - Share your workflows and use cases
 - Help improve documentation
@@ -346,4 +346,4 @@ Built for the Product Management community using Claude Code's plugin system.
 
 ---
 
-**Version:** 0.8.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
+**Version:** 0.9.0 | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)

@@ -46,8 +46,8 @@ We welcome contributions in several areas:
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/pm-kit.git
-   cd pm-kit
+   git clone https://github.com/YOUR_USERNAME/cc-pmkt.git
+   cd cc-pmkt
    ```
 3. Create a branch for your contribution:
    ```bash
@@ -451,7 +451,7 @@ Deprecated components remain for at least **2 minor versions** before removal co
 
 ## Questions?
 
-- Open a [GitHub Issue](https://github.com/kv0906/pm-kit/issues) for questions
+- Open a [GitHub Issue](https://github.com/kv0906/cc-pmkt/issues) for questions
 - Tag issues with `question` label
 - Follow [@will_tran33](https://twitter.com/will_tran33) for updates
 

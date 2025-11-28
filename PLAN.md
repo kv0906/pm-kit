@@ -239,7 +239,7 @@ After:  Command → Agent (2 files, workflow embedded)
 **Migration:**
 ```
 Before: npm install -g pm-kit-cli && pm-kit init
-After:  /plugin install kv0906/pm-kit
+After:  /plugin install kv0906/cc-pmkt
 ```
 
 **Rationale:**
@@ -926,7 +926,7 @@ Industry subagent architecture best practices recommend standardized metadata fi
 **Version:** 0.7.0
 **Released:** 2025-11-24
 **Distribution:** Claude Code Plugin
-**Install:** `/plugin install kv0906/pm-kit`
+**Install:** `/plugin install kv0906/cc-pmkt`
 
 ### Component Counts
 | Component | Active | Deprecated | Total |
@@ -1071,7 +1071,7 @@ Industry subagent architecture best practices recommend standardized metadata fi
 | Metric | Before | After |
 |--------|--------|-------|
 | Distribution | npm CLI (pm-kit-cli) | Claude Code plugin |
-| Installation | `npm install -g pm-kit-cli` | `/plugin install kv0906/pm-kit` |
+| Installation | `npm install -g pm-kit-cli` | `/plugin install kv0906/cc-pmkt` |
 | Directory structure | `.claude/` subdirectories | Root-level plugin standard |
 | Skills format | Individual `.md` files | `SKILL.md` in directories |
 

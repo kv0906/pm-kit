@@ -7,6 +7,38 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2025-11-28
+
+### Changed
+- **Repository Rename** - Renamed from `pm-kit` to `cc-pmkt` (Claude Code for Product Managers and Marketing)
+  - Repository URL: `https://github.com/kv0906/cc-pmkt`
+  - Marketplace name: `cc-pmkt`
+  - Individual plugin branding unchanged (PM-Kit, CM, CF)
+
+### Migration Guide
+
+**Installation commands updated:**
+```bash
+# Old (no longer works)
+/plugin marketplace add kv0906/pm-kit
+/plugin install pm@pm-kit
+
+# New
+/plugin marketplace add kv0906/cc-pmkt
+/plugin install pm@cc-pmkt
+```
+
+**Clone commands updated:**
+```bash
+# Old
+git clone https://github.com/kv0906/pm-kit.git
+
+# New
+git clone https://github.com/kv0906/cc-pmkt.git
+```
+
+**Note:** GitHub automatically redirects old URLs to new ones, so existing links will continue to work.
+
 ## [0.8.0] - 2025-11-28
 
 ### Added

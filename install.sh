@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # PM-Kit Installation Script
-# Usage: curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/kv0906/cc-pmkt/main/install.sh | bash
 #
 
 set -e
@@ -23,8 +23,8 @@ RED='\033[38;5;196m'
 YELLOW='\033[38;5;220m'
 
 # Configuration
-REPO_URL="https://github.com/kv0906/pm-kit"
-PLUGIN_NAME="pm-kit"
+REPO_URL="https://github.com/kv0906/cc-pmkt"
+PLUGIN_NAME="cc-pmkt"
 CLAUDE_PLUGINS_DIR="${HOME}/.claude/plugins"
 INSTALL_DIR="${CLAUDE_PLUGINS_DIR}/${PLUGIN_NAME}"
 
@@ -181,7 +181,7 @@ print_success() {
     echo ""
     print_divider
     echo ""
-    echo -e "  ${DIM}Docs: ${PURPLE}https://github.com/kv0906/pm-kit${NC}"
+    echo -e "  ${DIM}Docs: ${PURPLE}https://github.com/kv0906/cc-pmkt${NC}"
     echo ""
 }
 
