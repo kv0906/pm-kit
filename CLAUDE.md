@@ -11,7 +11,7 @@ PM-Kit is a Product Management framework plugin for Claude Code implementing Lon
 ## Repository Structure
 
 ```
-pm-kit/                              # Marketplace root
+cc-pmkt/                             # Marketplace root
 ├── .claude/
 │   └── commands/                    # Interactive lessons (/start-mkt, /help-mkt)
 ├── .claude-plugin/

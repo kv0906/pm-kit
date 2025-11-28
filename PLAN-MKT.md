@@ -1,13 +1,13 @@
 # PLAN-MKT: Multi-Plugin Marketplace Restructure
 
-> Plan for transforming pm-kit into a multi-plugin marketplace.
+> Plan for transforming cc-pmkt into a multi-plugin marketplace.
 > **Status:** ✅ Implemented in v0.8.0 | **Created:** 2025-11-28 | **Completed:** 2025-11-28
 
 ---
 
 ## Vision
 
-Transform pm-kit from a single plugin repository into a **marketplace** hosting multiple plugins:
+Transform cc-pmkt from a single plugin repository into a **marketplace** hosting multiple plugins:
 
 | Plugin | Purpose | Status |
 |--------|---------|--------|
@@ -21,7 +21,7 @@ Transform pm-kit from a single plugin repository into a **marketplace** hosting 
 
 ### Current (Single Plugin)
 ```
-pm-kit/
+cc-pmkt/
 ├── .claude-plugin/
 │   ├── plugin.json
 │   └── marketplace.json
@@ -34,7 +34,7 @@ pm-kit/
 
 ### Target (Multi-Plugin Marketplace)
 ```
-pm-kit/
+cc-pmkt/
 ├── .claude-plugin/
 │   └── marketplace.json   # References all plugins
 ├── plugins/
@@ -76,7 +76,7 @@ mv .claude-plugin/plugin.json plugins/pm/
 ### Step 3: Update marketplace.json
 ```json
 {
-  "name": "pm-kit",
+  "name": "cc-pmkt",
   "owner": {
     "name": "Will Tran",
     "username": "kv0906",
@@ -111,7 +111,7 @@ mv .claude-plugin/plugin.json plugins/pm/
 ### Step 5: Test Installation
 ```bash
 # Test marketplace install
-/plugin install kv0906/pm-kit
+/plugin install kv0906/cc-pmkt
 
 # Verify pm plugin works
 /pm
@@ -156,7 +156,7 @@ plugins/marketing/
 ## Breaking Changes
 
 **None expected:**
-- Install command unchanged: `/plugin install kv0906/pm-kit`
+- Install command unchanged: `/plugin install kv0906/cc-pmkt`
 - Plugin name unchanged: `pm`
 - All commands work identically: `/prd`, `/research`, `/prioritize`, etc.
 

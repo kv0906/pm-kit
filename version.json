@@ -22,8 +22,8 @@
         "Plugin Conversion: Created .claude-plugin/marketplace.json for pm-tools marketplace",
         "Plugin Conversion: Restructured to plugin standard directories (commands/, agents/, skills/)",
         "Plugin Conversion: Converted skills to SKILL.md format in subdirectories",
-        "Distribution: Now installable via /plugin install vanlumberworks/pm-kit",
-        "Distribution: Marketplace available at /plugin marketplace add vanlumberworks/pm-kit",
+        "Distribution: Now installable via /plugin install kv0906/cc-pmkt",
+        "Distribution: Marketplace available at /plugin marketplace add kv0906/cc-pmkt",
         "Documentation: Updated README with plugin installation instructions",
         "Documentation: Updated CLAUDE.md with plugin architecture",
         "Documentation: Added ADR-006 for plugin conversion decision"
