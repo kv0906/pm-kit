@@ -21,7 +21,22 @@
       "category": "productivity",
       "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
       "commands": ["./commands/"],
-      "agents": ["./agents/"],
+      "agents": [
+        "./agents/analytics-synthesizer.md",
+        "./agents/consensus-builder.md",
+        "./agents/daily-planner.md",
+        "./agents/handover-generator.md",
+        "./agents/matrix-generator.md",
+        "./agents/northstar-architect.md",
+        "./agents/prd-writer.md",
+        "./agents/prioritization-engine.md",
+        "./agents/problem-decomposer.md",
+        "./agents/rapid-prototyper.md",
+        "./agents/research-agent.md",
+        "./agents/retro-facilitator.md",
+        "./agents/technical-translator.md",
+        "./agents/user-researcher.md"
+      ],
       "skills": ["./skills/"]
     },
     {
@@ -37,7 +52,14 @@
       "category": "marketing",
       "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics", "brand-voice"],
       "commands": ["./commands/"],
-      "agents": ["./agents/"]
+      "agents": [
+        "./agents/brand-voice-guardian.md",
+        "./agents/conversion-optimizer.md",
+        "./agents/manager-maria-reviewer.md",
+        "./agents/seo-specialist.md",
+        "./agents/solo-steve-reviewer.md",
+        "./agents/startup-sam-reviewer.md"
+      ]
     },
     {
       "name": "cf",
