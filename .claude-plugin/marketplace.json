@@ -11,69 +11,17 @@
     {
       "name": "pm",
       "source": "./plugins/pm",
-      "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
-      "version": "0.7.0",
-      "author": {
-        "name": "Will Tran",
-        "username": "kv0906",
-        "twitter": "@will_tran33"
-      },
-      "category": "productivity",
-      "tags": ["product-management", "prd", "research", "prioritization", "decision-making", "ai-augmented", "technical-pm"],
-      "commands": ["./commands/"],
-      "agents": [
-        "./agents/analytics-synthesizer.md",
-        "./agents/consensus-builder.md",
-        "./agents/daily-planner.md",
-        "./agents/handover-generator.md",
-        "./agents/matrix-generator.md",
-        "./agents/northstar-architect.md",
-        "./agents/prd-writer.md",
-        "./agents/prioritization-engine.md",
-        "./agents/problem-decomposer.md",
-        "./agents/rapid-prototyper.md",
-        "./agents/research-agent.md",
-        "./agents/retro-facilitator.md",
-        "./agents/technical-translator.md",
-        "./agents/user-researcher.md"
-      ],
-      "skills": ["./skills/"]
+      "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more."
     },
     {
       "name": "cm",
       "source": "./plugins/cm",
-      "description": "Compounding Marketing: Campaign planning with compounding intelligence. Each campaign makes the next one faster through accumulated patterns, templates, and performance insights.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Will Tran",
-        "username": "kv0906",
-        "twitter": "@will_tran33"
-      },
-      "category": "marketing",
-      "tags": ["marketing", "campaign-planning", "marketing-strategy", "compounding", "roi", "analytics", "brand-voice"],
-      "commands": ["./commands/"],
-      "agents": [
-        "./agents/brand-voice-guardian.md",
-        "./agents/conversion-optimizer.md",
-        "./agents/manager-maria-reviewer.md",
-        "./agents/seo-specialist.md",
-        "./agents/solo-steve-reviewer.md",
-        "./agents/startup-sam-reviewer.md"
-      ]
+      "description": "Compounding Marketing: Campaign planning with compounding intelligence. Each campaign makes the next one faster through accumulated patterns, templates, and performance insights."
     },
     {
       "name": "cf",
       "source": "./plugins/cf",
-      "description": "Content Factory: Batch content generation and repurposing. Create weeks of content in hours with intelligent parallel processing across blog, email, social, and video formats.",
-      "version": "0.1.0",
-      "author": {
-        "name": "Will Tran",
-        "username": "kv0906",
-        "twitter": "@will_tran33"
-      },
-      "category": "marketing",
-      "tags": ["marketing", "content-generation", "content-marketing", "batch-processing", "social-media", "blog", "email"],
-      "commands": ["./commands/"]
+      "description": "Content Factory: Batch content generation and repurposing. Create weeks of content in hours with intelligent parallel processing across blog, email, social, and video formats."
     }
   ]
 }
