@@ -1,6 +1,6 @@
 ---
 description: Generate a comprehensive Product Requirements Document with multi-layer validation
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <feature or product to document>
 ---
 

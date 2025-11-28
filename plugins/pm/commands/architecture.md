@@ -1,6 +1,6 @@
 ---
 description: Generate PM-friendly system architecture documentation with visual diagrams and technical translation
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <system to document>
 ---
 

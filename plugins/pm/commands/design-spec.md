@@ -1,6 +1,6 @@
 ---
 description: Generate detailed design handoff specifications for designer collaboration
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <feature to specify>
 ---
 

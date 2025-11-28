@@ -1,6 +1,6 @@
 ---
 description: Generate comparison matrices, decision frameworks, and analytical tables for data-driven decisions
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <options to compare>
 ---
 

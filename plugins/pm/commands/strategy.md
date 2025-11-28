@@ -1,6 +1,6 @@
 ---
 description: Create comprehensive strategic planning documents with multi-agent orchestration
-allowed-tools: [Write]
+allowed-tools: Write
 argument-hint: <strategic topic>
 ---
 
