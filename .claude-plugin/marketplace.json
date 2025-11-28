@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "pm",
-      "source": ".",
+      "source": "./",
       "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, North Star frameworks, retrospectives, daily planning, and more.",
       "version": "0.7.0",
       "author": {

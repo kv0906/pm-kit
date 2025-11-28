@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Plugin marketplace discovery** - Added missing `source` field to `marketplace.json`
   - Plugin was not showing up when users installed from marketplace
   - Root cause: `plugins[].source` field required but missing
-  - Added `"source": "."` to point Claude Code to `plugin.json` location
+  - Added `"source": "./"` to point Claude Code to `plugin.json` location
   - Removed unnecessary `metadata` wrapper and non-standard `strict` field
 
 ## [0.7.0] - 2025-11-27
