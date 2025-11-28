@@ -7,12 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- **Multi-plugin marketplace restructure** - Transformed repo into marketplace hosting multiple plugins
+  - Created `plugins/pm/` directory for Product Management plugin
+  - Moved `commands/`, `agents/`, `skills/`, `templates/` into `plugins/pm/`
+  - Moved `plugin.json` to `plugins/pm/.claude-plugin/`
+  - Updated `marketplace.json` source to `"./plugins/pm"`
+  - Prepares for future plugins (marketing, etc.)
+
 ### Fixed
-- **Plugin marketplace discovery** - Added missing `source` field to `marketplace.json`
+- **Plugin marketplace discovery** - Fixed source path in `marketplace.json`
   - Plugin was not showing up when users installed from marketplace
-  - Root cause: `plugins[].source` field required but missing
-  - Added `"source": "./"` to point Claude Code to `plugin.json` location
-  - Removed unnecessary `metadata` wrapper and non-standard `strict` field
+  - Root cause: `source` field pointed to wrong directory (`.claude-plugin/` vs plugin content)
+  - Fixed by restructuring to standard marketplace pattern with `plugins/` directory
 
 ## [0.7.0] - 2025-11-27
 
