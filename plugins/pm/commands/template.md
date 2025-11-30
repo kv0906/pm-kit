@@ -1,3 +1,8 @@
+---
+description: Browse and apply PM-Kit templates
+argument-hint: <template name to apply>
+---
+
 # Template Browser
 
 Browse and apply PM-Kit templates.

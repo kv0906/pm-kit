@@ -1,3 +1,8 @@
+---
+description: Help choosing the right PM command
+argument-hint: <what you need help with>
+---
+
 # PM-Kit Help
 
 Get help choosing the right PM command.

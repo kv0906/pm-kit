@@ -1,3 +1,8 @@
+---
+description: Apply RICE, ICE, Kano prioritization frameworks
+argument-hint: <features or backlog items to prioritize>
+---
+
 # Feature Prioritization
 
 Apply prioritization frameworks (RICE, ICE, Kano, MoSCoW).

@@ -1,3 +1,8 @@
+---
+description: Create strategic planning documents
+argument-hint: <strategic initiative or area>
+---
+
 # Strategic Planning
 
 Create comprehensive strategic planning documents.

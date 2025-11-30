@@ -1,3 +1,8 @@
+---
+description: Sketch ASCII wireframes for UI screens
+argument-hint: <screen or feature to wireframe>
+---
+
 # Wireframe Generator
 
 Generate ASCII wireframes and low-fidelity UI mockups.

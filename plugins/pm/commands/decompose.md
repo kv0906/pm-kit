@@ -1,3 +1,8 @@
+---
+description: Systematically break down complex problems into components
+argument-hint: <problem or challenge to decompose>
+---
+
 # Problem Decomposition
 
 Systematically decompose complex problems into components.

@@ -1,3 +1,8 @@
+---
+description: Create universal text-based ASCII diagrams
+argument-hint: <diagram type and subject>
+---
+
 # ASCII Diagram Generator
 
 Generate ASCII diagrams for universal text compatibility.

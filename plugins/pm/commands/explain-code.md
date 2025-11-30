@@ -1,3 +1,8 @@
+---
+description: Translate code concepts for PMs
+argument-hint: <code, file, or technical concept>
+---
+
 # Code Explanation
 
 Translate technical code into PM-friendly explanations.

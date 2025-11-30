@@ -1,3 +1,8 @@
+---
+description: Interactive skill browser for technical concepts
+argument-hint: <skill topic to learn>
+---
+
 # Learn - Skill Browser
 
 Interactive skill browser - learn technical concepts.

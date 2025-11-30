@@ -1,3 +1,8 @@
+---
+description: Transform meeting notes to retrospectives
+argument-hint: <meeting notes or sprint to analyze>
+---
+
 # Retrospective
 
 Transform meeting notes into structured retrospective.

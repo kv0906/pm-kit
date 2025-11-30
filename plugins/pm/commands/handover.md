@@ -1,3 +1,8 @@
+---
+description: Vacation handover documentation
+argument-hint: <duration and coverage details>
+---
+
 # Handover Documentation
 
 Generate vacation or transition handover documentation.

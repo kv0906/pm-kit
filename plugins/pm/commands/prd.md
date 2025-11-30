@@ -1,3 +1,8 @@
+---
+description: Generate comprehensive Product Requirements Documents
+argument-hint: <feature or product name>
+---
+
 # PRD Generation
 
 Generate a comprehensive Product Requirements Document.
