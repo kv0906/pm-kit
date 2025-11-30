@@ -22,7 +22,7 @@ Need help with: **$ARGUMENTS**
 | Understand tech | `/explain-code` |
 | Check feasibility | `/tech-impact` |
 | Document architecture | `/architecture` |
-| Learn a concept | `/skill` |
+| Learn a concept | `/learn` |
 | Use a template | `/template` |
 
 ## Typical Workflows

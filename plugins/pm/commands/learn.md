@@ -1,4 +1,4 @@
-# Skill Browser
+# Learn - Skill Browser
 
 Interactive skill browser - learn technical concepts.
 
@@ -18,9 +18,9 @@ Learn about: **$ARGUMENTS**
 ## Usage
 
 ```
-/skill              # Show all skills
-/skill api          # Learn API basics
-/skill mermaid      # Learn Mermaid diagrams
+/learn              # Show all skills
+/learn api          # Learn API basics
+/learn mermaid      # Learn Mermaid diagrams
 ```
 
 Load skill from `./skills/[topic]/SKILL.md` and teach interactively.

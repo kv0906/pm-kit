@@ -103,7 +103,7 @@ Commands are defined in `plugins/pm/commands/`. Active commands:
 |---------|---------|
 | `/pm` | Help choosing the right command |
 | `/template` | Browse and apply PM-Kit templates |
-| `/skill` | Interactive skill browser |
+| `/learn` | Interactive skill browser |
 | `/decompose` | Systematic problem decomposition |
 | `/research` | Comprehensive research (all types) |
 

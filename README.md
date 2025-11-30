@@ -136,7 +136,7 @@ cd cc-pmkt
 **Verification Checklist:**
 - [ ] Commands appear in `/pm` help
 - [ ] `/template` shows template catalog
-- [ ] `/skill` shows skill browser
+- [ ] `/learn` shows skill browser
 - [ ] Agents execute with proper workflows
 - [ ] Output files save to correct directories
 
@@ -229,7 +229,7 @@ The **CM (Compounding Marketing)** and **CF (Content Factory)** plugins provide 
 |---------|-------------|
 | `/pm` | Interactive guide to help you choose the right command |
 | `/template` | Browse and apply PM-Kit templates |
-| `/skill` | Interactive skill browser - learn technical concepts |
+| `/learn` | Interactive skill browser - learn technical concepts |
 | `/start-mkt` | Start marketing workflow course |
 | `/help-mkt` | Marketing commands reference |
 
@@ -258,7 +258,7 @@ The **CM (Compounding Marketing)** and **CF (Content Factory)** plugins provide 
 | Run a retrospective | `/retro` |
 | Prepare for time off | `/handover` |
 | Browse available templates | `/template` |
-| Learn a technical concept | `/skill` |
+| Learn a technical concept | `/learn` |
 
 ---
 
