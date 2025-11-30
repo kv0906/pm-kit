@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `/pm:start` - Onboarding/help command for PM plugin
+  - Quick reference table mapping user needs to commands
+  - Typical workflow examples (New Feature, Strategic Initiative, Quick Decision, Tech Understanding)
+  - Replaces `/pm` reference in documentation
+
 ## [0.9.0] - 2025-11-28
 
 ### Changed

@@ -101,7 +101,7 @@ Commands are defined in `plugins/pm/commands/`. Active commands:
 ### Discovery & Help
 | Command | Purpose |
 |---------|---------|
-| `/pm` | Help choosing the right command |
+| `/pm:start` | Help choosing the right command |
 | `/template` | Browse and apply PM-Kit templates |
 | `/learn` | Interactive skill browser |
 | `/decompose` | Systematic problem decomposition |
@@ -398,3 +398,4 @@ The `.claude-plugin/` directory contains:
 
 These follow Claude Code plugin specifications and enable installation via `/plugin install`.
 - let's update Changelog.md and plan.nd as well always after new feature or update in pm kit
+- always update corresponding PLAN.md for appropriate plugins and CHANGELOG.MD as well
