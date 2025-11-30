@@ -1,3 +1,8 @@
+---
+description: Design handoff specifications for design team
+argument-hint: <feature or screen to specify>
+---
+
 # Design Specification
 
 Generate detailed design handoff specifications.

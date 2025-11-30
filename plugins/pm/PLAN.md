@@ -2,7 +2,7 @@
 
 > This document serves as the centralized knowledge base for PM-Kit, tracking project vision, architecture decisions, roadmap, and progress.
 
-**Last Updated:** 2025-11-27 (Plugin best practices complete: argument-hint added to all commands)
+**Last Updated:** 2025-11-30 (Added /pm:start onboarding command)
 
 ---
 
@@ -941,7 +941,7 @@ Industry subagent architecture best practices recommend standardized metadata fi
 ### Active Commands by Category
 
 **Discovery:**
-- `/pm` - Help choosing the right command
+- `/pm:start` - Help choosing the right command (onboarding)
 - `/decompose` - Problem decomposition
 - `/research` - Comprehensive research (all types)
 

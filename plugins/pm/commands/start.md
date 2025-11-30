@@ -1,3 +1,8 @@
+---
+description: Help choosing the right PM command
+argument-hint: <what you need help with>
+---
+
 # PM-Kit Help
 
 Get help choosing the right PM command.
@@ -22,7 +27,7 @@ Need help with: **$ARGUMENTS**
 | Understand tech | `/explain-code` |
 | Check feasibility | `/tech-impact` |
 | Document architecture | `/architecture` |
-| Learn a concept | `/skill` |
+| Learn a concept | `/learn` |
 | Use a template | `/template` |
 
 ## Typical Workflows

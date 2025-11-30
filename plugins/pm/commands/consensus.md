@@ -1,3 +1,8 @@
+---
+description: Build stakeholder alignment and consensus
+argument-hint: <topic or decision to align on>
+---
+
 # Consensus Building
 
 Build stakeholder consensus with documented rationale.

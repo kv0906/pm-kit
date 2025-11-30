@@ -1,3 +1,8 @@
+---
+description: North Star framework from raw ideas
+argument-hint: <product or initiative>
+---
+
 # North Star Framework
 
 Generate North Star framework (Problem, Vision, Target, Constraints, Bets).

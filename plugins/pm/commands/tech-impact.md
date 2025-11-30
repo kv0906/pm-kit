@@ -1,3 +1,8 @@
+---
+description: Technical feasibility assessment
+argument-hint: <feature or change to assess>
+---
+
 # Technical Impact Assessment
 
 Assess technical impact and feasibility of features.

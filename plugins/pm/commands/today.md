@@ -1,3 +1,8 @@
+---
+description: Daily work planning and suggestions
+argument-hint: <optional context or priorities>
+---
+
 # Daily Planning
 
 Generate daily work suggestions based on priorities.

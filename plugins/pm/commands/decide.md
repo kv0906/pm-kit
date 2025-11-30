@@ -1,3 +1,8 @@
+---
+description: Quick decision framework for fast choices
+argument-hint: <decision to make>
+---
+
 # Decision Framework
 
 Quick decision framework with systematic analysis.

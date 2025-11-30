@@ -1,3 +1,8 @@
+---
+description: PM-friendly architecture documentation
+argument-hint: <system or component to document>
+---
+
 # Architecture Documentation
 
 Generate PM-friendly system architecture documentation.

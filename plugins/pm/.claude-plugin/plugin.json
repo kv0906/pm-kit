@@ -1,28 +1,9 @@
 {
   "name": "pm",
-  "description": "Product Management framework implementing Long Chain-of-Thought methodology. 23 slash commands for PRDs, research, prioritization, decision matrices, stakeholder consensus, and more.",
   "version": "0.7.0",
+  "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, and more.",
   "author": {
     "name": "Will Tran",
-    "username": "kv0906",
-    "url": "https://github.com/kv0906",
-    "website": "https://vanthk.com",
-    "twitter": "@will_tran33"
-  },
-  "homepage": "https://github.com/kv0906/cc-pmkt",
-  "repository": "https://github.com/kv0906/cc-pmkt",
-  "license": "MIT",
-  "keywords": [
-    "product-management",
-    "prd",
-    "research",
-    "prioritization",
-    "decision-matrix",
-    "user-research",
-    "stakeholder-alignment",
-    "pm",
-    "claude-code",
-    "ai-augmented",
-    "technical-pm"
-  ]
+    "email": "will@vanthk.com"
+  }
 }

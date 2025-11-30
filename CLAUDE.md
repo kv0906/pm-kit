@@ -20,9 +20,9 @@ cc-pmkt/                             # Marketplace root
 │   ├── pm/                          # Product Management plugin
 │   │   ├── .claude-plugin/
 │   │   │   └── plugin.json          # Plugin manifest
-│   │   ├── commands/     (23)       # Slash commands (/prd, /decompose, /mermaid, etc.)
+│   │   ├── commands/     (22)       # Slash commands (/prd, /decompose, /mermaid, etc.)
 │   │   ├── agents/       (14)       # Specialized agents with embedded workflows
-│   │   ├── skills/       (7)        # Technical literacy modules (SKILL.md format)
+│   │   ├── skills/       (8)        # Technical literacy modules (SKILL.md format)
 │   │   └── templates/    (4)        # Reusable output templates
 │   ├── cm/                          # Compounding Marketing plugin
 │   │   ├── plugin.json
@@ -101,9 +101,8 @@ Commands are defined in `plugins/pm/commands/`. Active commands:
 ### Discovery & Help
 | Command | Purpose |
 |---------|---------|
-| `/pm` | Help choosing the right command |
+| `/pm:start` | Help choosing the right command |
 | `/template` | Browse and apply PM-Kit templates |
-| `/skill` | Interactive skill browser |
 | `/decompose` | Systematic problem decomposition |
 | `/research` | Comprehensive research (all types) |
 
@@ -371,12 +370,13 @@ Educational modules in `plugins/pm/skills/`:
 | Skill | Purpose |
 |-------|---------|
 | `api-basics/` | API concepts for PMs |
-| `json-fundamentals/` | JSON basics |
-| `frontend-prompts/` | Frontend design specs |
-| `debug-without-code/` | Debugging strategies |
 | `ascii-diagrams/` | ASCII diagram reference |
-| `mermaid-diagrams/` | Mermaid syntax, optimization rules, rendering best practices |
+| `debug-without-code/` | Debugging strategies |
+| `excalidraw-skill/` | Excalidraw diagram generation patterns |
+| `frontend-design/` | Frontend design specs |
 | `gemini-grounded-search/` | Real-time web search, code execution via Gemini API |
+| `json-fundamentals/` | JSON basics |
+| `mermaid-diagrams/` | Mermaid syntax, optimization rules, rendering best practices |
 
 ---
 
@@ -398,3 +398,4 @@ The `.claude-plugin/` directory contains:
 
 These follow Claude Code plugin specifications and enable installation via `/plugin install`.
 - let's update Changelog.md and plan.nd as well always after new feature or update in pm kit
+- always update corresponding PLAN.md for appropriate plugins and CHANGELOG.MD as well

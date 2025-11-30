@@ -1,3 +1,8 @@
+---
+description: Comprehensive research across market, user, and technical domains
+argument-hint: <research topic or question>
+---
+
 # Research
 
 Comprehensive research with multi-source synthesis.

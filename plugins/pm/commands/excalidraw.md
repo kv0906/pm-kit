@@ -1,3 +1,8 @@
+---
+description: Hand-drawn style diagrams for presentations
+argument-hint: <diagram type and subject>
+---
+
 # Excalidraw Diagram Generator
 
 Generate hand-drawn style diagrams in Excalidraw JSON format.

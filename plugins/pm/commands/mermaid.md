@@ -1,3 +1,8 @@
+---
+description: Create visual diagrams using Mermaid syntax
+argument-hint: <diagram type and subject>
+---
+
 # Mermaid Diagram Generator
 
 Generate Mermaid diagrams (flows, architecture, timelines, ERD).

@@ -1,3 +1,8 @@
+---
+description: Generate decision comparison matrices
+argument-hint: <options or alternatives to compare>
+---
+
 # Matrix Generation
 
 Generate comparison matrices and decision frameworks.
