@@ -1,10 +1,6 @@
----
-description: Build stakeholder consensus with documented rationale
-allowed-tools: Write
-argument-hint: <decision or topic needing alignment>
----
-
 # Consensus Building
+
+Build stakeholder consensus with documented rationale.
 
 Build alignment on: **$ARGUMENTS**
 

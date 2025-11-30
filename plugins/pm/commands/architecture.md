@@ -1,10 +1,6 @@
----
-description: Generate PM-friendly system architecture documentation
-allowed-tools: Write
-argument-hint: <system to document>
----
-
 # Architecture Documentation
+
+Generate PM-friendly system architecture documentation.
 
 Document architecture for: **$ARGUMENTS**
 

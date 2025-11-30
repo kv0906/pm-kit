@@ -1,10 +1,6 @@
----
-description: Generate detailed design handoff specifications
-allowed-tools: Write
-argument-hint: <feature to specify>
----
-
 # Design Specification
+
+Generate detailed design handoff specifications.
 
 Create design spec for: **$ARGUMENTS**
 

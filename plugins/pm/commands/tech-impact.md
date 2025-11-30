@@ -1,10 +1,6 @@
----
-description: Assess technical impact and feasibility of features
-allowed-tools: Write
-argument-hint: <feature to assess>
----
-
 # Technical Impact Assessment
+
+Assess technical impact and feasibility of features.
 
 Assess: **$ARGUMENTS**
 

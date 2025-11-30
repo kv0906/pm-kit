@@ -1,10 +1,6 @@
----
-description: Generate daily work suggestions based on priorities
-allowed-tools: Write
-argument-hint: "[optional: context about current work]"
----
-
 # Daily Planning
+
+Generate daily work suggestions based on priorities.
 
 Plan today's work: **$ARGUMENTS**
 

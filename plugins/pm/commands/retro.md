@@ -1,10 +1,6 @@
----
-description: Transform meeting notes into structured retrospective
-allowed-tools: Write
-argument-hint: <meeting notes or feedback>
----
-
 # Retrospective
+
+Transform meeting notes into structured retrospective.
 
 Generate retro from: **$ARGUMENTS**
 

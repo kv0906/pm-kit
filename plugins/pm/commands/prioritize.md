@@ -1,10 +1,6 @@
----
-description: Apply prioritization frameworks (RICE, ICE, Kano, MoSCoW)
-allowed-tools: Write
-argument-hint: <features or items to prioritize>
----
-
 # Feature Prioritization
+
+Apply prioritization frameworks (RICE, ICE, Kano, MoSCoW).
 
 Prioritize: **$ARGUMENTS**
 

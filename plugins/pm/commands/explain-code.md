@@ -1,10 +1,6 @@
----
-description: Translate technical code into PM-friendly explanations
-allowed-tools: Write
-argument-hint: <code or concept to explain>
----
-
 # Code Explanation
+
+Translate technical code into PM-friendly explanations.
 
 Explain: **$ARGUMENTS**
 
