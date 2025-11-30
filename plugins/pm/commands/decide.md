@@ -1,10 +1,6 @@
----
-description: Quick decision framework with systematic analysis
-allowed-tools: Write
-argument-hint: <decision to make>
----
-
 # Decision Framework
+
+Quick decision framework with systematic analysis.
 
 Make decision on: **$ARGUMENTS**
 

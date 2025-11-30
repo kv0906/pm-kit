@@ -1,10 +1,6 @@
----
-description: Generate ASCII wireframes and low-fidelity UI mockups
-allowed-tools: Write
-argument-hint: <screen or feature to wireframe>
----
-
 # Wireframe Generator
+
+Generate ASCII wireframes and low-fidelity UI mockups.
 
 Create wireframes for: **$ARGUMENTS**
 

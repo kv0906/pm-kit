@@ -1,10 +1,6 @@
----
-description: Generate ASCII diagrams for universal text compatibility
-allowed-tools: Write
-argument-hint: <what to diagram>
----
-
 # ASCII Diagram Generator
+
+Generate ASCII diagrams for universal text compatibility.
 
 Create ASCII diagram for: **$ARGUMENTS**
 

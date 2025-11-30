@@ -1,10 +1,6 @@
----
-description: Comprehensive research with multi-source synthesis
-allowed-tools: Read, Write, Glob, Grep, WebFetch
-argument-hint: <topic to research>
----
-
 # Research
+
+Comprehensive research with multi-source synthesis.
 
 Research topic: **$ARGUMENTS**
 

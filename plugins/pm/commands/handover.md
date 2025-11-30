@@ -1,10 +1,6 @@
----
-description: Generate vacation or transition handover documentation
-allowed-tools: Write
-argument-hint: <transition context or notes>
----
-
 # Handover Documentation
+
+Generate vacation or transition handover documentation.
 
 Create handover for: **$ARGUMENTS**
 

@@ -1,9 +1,6 @@
----
-description: Interactive skill browser - learn technical concepts
-argument-hint: "[optional: topic to learn]"
----
-
 # Skill Browser
+
+Interactive skill browser - learn technical concepts.
 
 Learn about: **$ARGUMENTS**
 

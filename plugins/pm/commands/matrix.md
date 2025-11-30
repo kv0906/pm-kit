@@ -1,10 +1,6 @@
----
-description: Generate comparison matrices and decision frameworks
-allowed-tools: Write
-argument-hint: <options to compare>
----
-
 # Matrix Generation
+
+Generate comparison matrices and decision frameworks.
 
 Create matrix for: **$ARGUMENTS**
 

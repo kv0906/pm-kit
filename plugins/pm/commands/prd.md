@@ -1,10 +1,6 @@
----
-description: Generate a comprehensive Product Requirements Document
-allowed-tools: Write
-argument-hint: <feature or product to document>
----
-
 # PRD Generation
+
+Generate a comprehensive Product Requirements Document.
 
 Create a PRD for: **$ARGUMENTS**
 

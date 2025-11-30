@@ -1,10 +1,6 @@
----
-description: Generate Mermaid diagrams (flows, architecture, timelines, ERD)
-allowed-tools: Write
-argument-hint: <what to diagram>
----
-
 # Mermaid Diagram Generator
+
+Generate Mermaid diagrams (flows, architecture, timelines, ERD).
 
 Create Mermaid diagram for: **$ARGUMENTS**
 

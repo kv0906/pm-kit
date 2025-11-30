@@ -1,10 +1,6 @@
----
-description: Generate North Star framework (Problem → Vision → Target → Constraints → Bets)
-allowed-tools: Write
-argument-hint: <product idea or concept>
----
-
 # North Star Framework
+
+Generate North Star framework (Problem, Vision, Target, Constraints, Bets).
 
 Create North Star for: **$ARGUMENTS**
 

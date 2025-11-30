@@ -1,10 +1,6 @@
----
-description: Generate hand-drawn style diagrams in Excalidraw JSON format
-allowed-tools: Write
-argument-hint: <what to visualize>
----
-
 # Excalidraw Diagram Generator
+
+Generate hand-drawn style diagrams in Excalidraw JSON format.
 
 Create Excalidraw diagram for: **$ARGUMENTS**
 

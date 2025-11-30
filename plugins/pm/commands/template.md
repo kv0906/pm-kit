@@ -1,9 +1,6 @@
----
-description: Browse and apply PM-Kit templates
-argument-hint: "[optional: template type]"
----
-
 # Template Browser
+
+Browse and apply PM-Kit templates.
 
 Apply template: **$ARGUMENTS**
 

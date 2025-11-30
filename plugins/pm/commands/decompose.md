@@ -1,10 +1,6 @@
----
-description: Systematically decompose complex problems into components
-allowed-tools: Write
-argument-hint: <problem to break down>
----
-
 # Problem Decomposition
+
+Systematically decompose complex problems into components.
 
 Break down: **$ARGUMENTS**
 

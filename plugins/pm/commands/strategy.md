@@ -1,10 +1,6 @@
----
-description: Create comprehensive strategic planning documents
-allowed-tools: Write
-argument-hint: <strategic topic>
----
-
 # Strategic Planning
+
+Create comprehensive strategic planning documents.
 
 Create strategy for: **$ARGUMENTS**
 
