@@ -1,16 +1,16 @@
 {
-  "version": "0.4.0",
-  "releaseDate": "2025-11-24T00:00:00Z",
+  "version": "0.9.1",
+  "releaseDate": "2025-11-30T00:00:00Z",
   "distribution": "claude-code-plugin",
-  "marketplace": "pm-tools",
+  "marketplace": "cc-pmkt",
   "files": {
-    "commands": 19,
-    "agents": 11,
-    "skills": 5,
+    "commands": 22,
+    "agents": 14,
+    "skills": 8,
     "templates": 4
   },
   "deprecatedFiles": {
-    "commands": ["research-unified.md", "evidence.md", "synthesize.md"],
+    "commands": ["research-unified.md", "evidence.md", "synthesize.md", "learn.md", "pm.md"],
     "agents": ["research-synthesizer.md"]
   },
   "changelog": [

@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Typical workflow examples (New Feature, Strategic Initiative, Quick Decision, Tech Understanding)
   - Replaces `/pm` reference in documentation
 
+### Removed
+- `/pm:learn` command - Interactive skill browser (functionality removed)
+- `/pm:pm` command - Help command (replaced by `/pm:start`)
+
 ## [0.9.0] - 2025-11-28
 
 ### Changed
