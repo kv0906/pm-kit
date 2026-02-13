@@ -1,0 +1,68 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(date:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Read(*)",
+      "Write(daily/**)",
+      "Write(docs/**)",
+      "Write(decisions/**)",
+      "Write(blockers/**)",
+      "Write(meetings/**)",
+      "Write(inbox/**)",
+      "Write(index/**)",
+      "Write(roadmap/**)",
+      "Write(adrs/**)",
+      "Write(research/**)",
+      "Write(reports/**)",
+      "Write(_archive/**)",
+      "Edit(daily/**)",
+      "Edit(docs/**)",
+      "Edit(decisions/**)",
+      "Edit(blockers/**)",
+      "Edit(meetings/**)",
+      "Edit(inbox/**)",
+      "Edit(index/**)",
+      "Edit(roadmap/**)",
+      "Edit(adrs/**)",
+      "Edit(research/**)",
+      "Edit(reports/**)"
+    ],
+    "deny": [
+      "Edit(.claude/**)",
+      "Write(.git/**)",
+      "Bash(rm -rf:*)"
+    ]
+  },
+  "env": {
+    "VAULT_PATH": "${cwd}",
+    "GIT_AUTO_COMMIT": "true"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/session-init.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/auto-commit.sh \"$TOOL_INPUT_FILE_PATH\""
+          }
+        ]
+      }
+    ]
+  }
+}

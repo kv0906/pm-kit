@@ -1,0 +1,138 @@
+# MindLoom Configuration
+# Edit this file to configure your vault
+
+# Your projects/workstreams
+projects:
+  - id: project-a
+    name: Project A
+    description: Your first project
+    active: true
+
+  - id: project-b
+    name: Project B
+    description: Your second project
+    active: true
+
+# Folder paths (customize as needed)
+paths:
+  vault_root: .
+  inbox: 00-inbox
+  index: 01-index
+  daily: daily
+  docs: docs           # PRDs, specs, or whatever your domain calls them
+  decisions: decisions
+  blockers: blockers
+  meetings: meetings
+  research: research
+  reports: reports
+  archive: _archive
+  templates: _templates
+  core: _core
+
+# Default behaviors
+defaults:
+  blocker_critical_days: 2      # Flag critical if due within N days
+  daily_single_file: true       # One daily per day, not per project
+  daily_auto_link_blockers: true
+  archive_on_status_change: true
+
+# Note type configurations
+# Customize these for your domain (engineering: spec/incident, research: experiment/finding, etc.)
+note_types:
+  daily:
+    status_values: [active]
+    requires_links: false
+    folder: daily
+    filename_pattern: "YYYY-MM-DD.md"
+
+  doc:
+    # This is your main "spec" type - rename to prd, spec, case, experiment, etc.
+    status_values: [draft, in-progress, shipped]
+    requires_links: true
+    folder: "docs/{project}"
+    filename_pattern: "{slug}.md"
+    archive_on: shipped
+
+  decision:
+    status_values: [active, superseded]
+    requires_links: true
+    folder: "decisions/{project}"
+    filename_pattern: "YYYY-MM-DD-{slug}.md"
+    archive_on: superseded
+
+  blocker:
+    status_values: [open, resolved]
+    requires_links: true
+    folder: "blockers/{project}"
+    filename_pattern: "YYYY-MM-DD-{slug}.md"
+    archive_on: resolved
+    severity_values: [high, medium, low]
+
+  meeting:
+    status_values: [active]
+    requires_links: true
+    folder: meetings
+    filename_pattern: "YYYY-MM-DD-{type}-{slug}.md"
+    meeting_types: [sync, milestone, external]
+
+  index:
+    status_values: [active]
+    requires_links: false
+    folder: 01-index
+
+  inbox:
+    status_values: [unprocessed, processed]
+    requires_links: false
+    folder: 00-inbox
+    filename_pattern: "YYYY-MM-DD-{slug}.md"
+
+# Keywords for AI detection
+# Customize for your domain
+keywords:
+  blocker_signals:
+    - blocked
+    - waiting on
+    - stuck
+    - can't proceed
+    - dependency
+    - need from
+
+  decision_signals:
+    - decided
+    - going with
+    - chose
+    - selected
+    - will use
+
+  shipped_signals:
+    - shipped
+    - completed
+    - done
+    - finished
+    - merged
+    - deployed
+
+# Tag taxonomy (AI-suggested, YAML-only)
+# Customize for your domain
+tags:
+  domain: []      # e.g., payments, auth, frontend, backend
+  area: []        # e.g., api, database, infrastructure
+  risk: []        # e.g., security, compliance, performance
+
+# External integrations (optional)
+integrations:
+  linear:
+    enabled: false
+  notion:
+    enabled: false
+  # Add your own: jira, github, etc.
+
+# Template mappings
+templates:
+  daily: daily.md
+  doc: doc.md
+  decision: decision.md
+  blocker: blocker.md
+  meeting: meeting.md
+  index: index.md
+  inbox: inbox.md

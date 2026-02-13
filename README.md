@@ -1,428 +1,193 @@
-# CC-PMKT: Claude Code Plugin Marketplace
+# MindLoom
 
-[![Claude Code Marketplace](https://img.shields.io/badge/Claude%20Code-Marketplace-blue?style=flat-square)](https://github.com/kv0906/cc-pmkt)
-[![Version](https://img.shields.io/badge/version-0.9.0-green?style=flat-square)](https://github.com/kv0906/cc-pmkt/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
+**AI-augmented knowledge vault for Technical PMs and Engineering Leads.**
 
-**Systematize your workflows. Boost productivity 10x.**
+> You input raw thoughts → AI structures, links, and stores → You query for clarity
 
-A curated marketplace of Claude Code plugins that transform how modern professionals work. Stop doing repetitive tasks manually. Start commanding AI-powered systems.
+MindLoom is an open-source framework for building personal knowledge management systems powered by AI agents. Designed for teams managing PRDs, ADRs, sprints, OKRs, and architecture decisions.
 
 ---
 
-## Available Plugins
+## Quick Start
 
-| Plugin | Focus | Commands | What It Does |
-|--------|-------|----------|--------------|
-| **PM** | Product Management | 21 commands | PRDs, research, prioritization, diagrams, stakeholder alignment |
-| **CM** | Compounding Marketing | 1 command | Campaign planning with accumulated intelligence |
-| **CF** | Content Factory | 3 commands | Batch content generation across blog, email, social, video |
-
-**Install one, some, or all** — each plugin works independently or together as a complete operating system.
-
----
-
-## Vision: The Knowledge Operating System
-
-**Where we're going:**
-
-Today, professional knowledge is scattered — in books, courses, senior colleagues' heads, and tribal wisdom that takes years to acquire. We're building something different.
-
-**CC-PMKT aims to become the curated intelligence layer for modern knowledge work.**
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Knowledge Operating System                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Today (v0.9)              Tomorrow                Future       │
-│   ─────────────             ────────                ──────       │
-│   • PM Plugin               • Design Plugin         • Finance    │
-│   • CM Plugin               • Engineering Plugin    • Legal      │
-│   • CF Plugin               • Sales Plugin          • HR         │
-│                             • Operations Plugin     • Strategy   │
-│                                                                  │
-│   ══════════════════════════════════════════════════════════    │
-│                    Claude Code Runtime                           │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-**The thesis:**
-1. **Every role has patterns** — Product managers write PRDs. Marketers plan campaigns. Engineers architect systems. These patterns can be systematized.
-2. **Expert knowledge is transferable** — The best frameworks, mental models, and workflows can be encoded into AI-executable commands.
-3. **Compounding intelligence** — Each plugin learns from usage, making the next execution faster and better.
-4. **Democratized expertise** — A junior PM with CC-PMKT operates at senior level. A solo founder gets enterprise-grade workflows.
-
-**Future plugins we're exploring:**
-| Plugin | Role | Systematized Knowledge |
-|--------|------|------------------------|
-| **DE** | Design | Design systems, accessibility audits, handoff specs |
-| **EN** | Engineering | Architecture decisions, code reviews, tech debt tracking |
-| **SA** | Sales | Pipeline management, proposal generation, competitive analysis |
-| **OP** | Operations | Process documentation, SOP creation, workflow optimization |
-| **FI** | Finance | Budget planning, forecasting, financial modeling |
-
-**The end game:** A knowledge industry professional opens Claude Code, installs plugins for their role, and instantly operates with systematized best practices from thousands of experts — not replacing human judgment, but **amplifying it 10x**.
-
-Want to contribute a plugin for your domain? See [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## The Transformation
-
-| Your Old World | Your PO-OS World |
-|----------------|------------------|
-| Hours writing PRDs from scratch | `/prd` → Complete specifications with technical depth |
-| Scattered research across tools | `/research` → Multi-source synthesis with confidence scoring |
-| Gut-feel prioritization | `/prioritize` → RICE/ICE/Kano frameworks applied systematically |
-| Endless stakeholder debates | `/consensus` → Structured alignment orchestration |
-| Manual diagram creation | `/mermaid` → Visual architecture generated on command |
-| Administrative busywork | **Strategic thinking at scale** |
-
-**Built on Long Chain-of-Thought methodology** - every command executes 15+ systematic reasoning steps with validation checkpoints.
-
-**See [MANIFESTO.md](MANIFESTO.md) for complete PO-OS philosophy.**
-
----
-
-## Why This Marketplace?
-
-Because **your work should be strategic, not administrative**.
-
-You don't need another tool. You need **workflow plugins** that:
-- ✅ **Eliminate repetitive work** - One command executes entire workflows
-- ✅ **Enforce best practices** - Expert-level frameworks built into every command
-- ✅ **Compound over time** - Each use makes the next one faster
-- ✅ **Scale your expertise** - AI agents handle execution, you handle strategy
-- ✅ **Keep you in flow** - No context switching between tools
-
----
-
-## Installation
-
-### Via Marketplace (Recommended)
+### Automated Setup
 
 ```bash
-# Step 1: Add the marketplace (one time)
-/plugin marketplace add kv0906/cc-pmkt
-
-# Step 2: Install the plugins you need
-/plugin install pm@cc-pmkt     # Product Management (21 commands)
-/plugin install cm@cc-pmkt     # Compounding Marketing (1 command)
-/plugin install cf@cc-pmkt     # Content Factory (3 commands)
-
-# Step 3: Restart Claude Code to activate
+git clone https://github.com/your-repo/mindloom.git
+cd mindloom
+./scripts/setup.sh
 ```
 
-**Quick Start by Role:**
-- **Product Managers**: Install `pm@cc-pmkt` → Start with `/pm` for guided help
-- **Marketers**: Install `cm@cc-pmkt` + `cf@cc-pmkt` → Start with `/start-mkt`
-- **Full Suite**: Install all three for complete workflow coverage
+### Manual Setup
 
-### Zero-Install Testing
-
-To test PM-Kit without installation, clone and work directly:
-
-```bash
-# Clone the repository
-git clone https://github.com/kv0906/cc-pmkt.git
-cd cc-pmkt
-
-# Open in Claude Code - commands work immediately
-# No installation required for local testing
-```
-
-**Verification Checklist:**
-- [ ] Commands appear in `/pm` help
-- [ ] `/template` shows template catalog
-- [ ] `/learn` shows skill browser
-- [ ] Agents execute with proper workflows
-- [ ] Output files save to correct directories
+1. Clone this repo
+2. Edit `_core/config.yaml` with your projects
+3. Start using skills:
+   ```
+   /onboard                                          # Load vault context
+   /daily xmarket: shipped auth, wip payments         # Log standup
+   /progress xmarket                                  # View status
+   /push                                              # Save changes
+   ```
 
 ---
 
-## PM Plugin Commands
+## Skills (15)
 
-The **PM (Product Management)** plugin includes 21 commands for the full product lifecycle.
+### User-Invocable (13)
 
-### Discovery - Understanding Problems
+| Skill | Purpose |
+|-------|---------|
+| `/daily` | Multi-project standup with keyword detection |
+| `/progress` | Cross-project status synthesis |
+| `/block` | Flag a blocker with severity/owner/due |
+| `/decide` | Log a decision with alternatives |
+| `/doc` | Draft PRD/spec/document |
+| `/meet` | Process meeting notes → extract decisions, blockers, actions |
+| `/inbox` | Quick capture + batch processing |
+| `/ask` | Fast vault Q&A |
+| `/health` | Vault health: broken links, orphans, stats |
+| `/adr` | Architecture Decision Record |
+| `/weekly` | Sprint retro (Collect → Reflect → Plan) |
+| `/push` | Git commit and sync |
+| `/onboard` | Load _core/ + CLAUDE.md context |
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/decompose` | Break down complex problems into root causes using first principles | `/decompose "Why are users abandoning checkout?"` |
-| `/research` | Multi-source research synthesis with confidence scoring | `/research "Should we build a mobile app?"` |
+### Auto-Invoked (2)
 
-### Definition - Specifying Solutions
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/prd` | Generate comprehensive Product Requirements Documents | `/prd "Shopping cart transparency feature"` |
-| `/mermaid` | Create visual diagrams (flows, architecture, Gantt, ERD) that render in modern tools | `/mermaid "Password reset journey"` |
-| `/ascii` | Generate text-based diagrams for universal compatibility | `/ascii "Microservices architecture"` |
-| `/wireframe` | Create ASCII wireframes for quick UI visualization | `/wireframe "User profile settings page"` |
-| `/excalidraw` | Generate hand-drawn style diagrams for presentations | `/excalidraw "System architecture brainstorm"` |
-| `/design-spec` | Produce design handoff specifications | `/design-spec "Checkout redesign"` |
-| `/northstar` | Transform raw ideas into North Star framework | `/northstar "AI-powered search for e-commerce"` |
-
-### Decision - Making Choices
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/prioritize` | Apply RICE, ICE, or Kano frameworks to feature lists | `/prioritize "Q1 feature backlog"` |
-| `/decide` | Quick decision framework with structured analysis | `/decide "Build vs buy payment processing?"` |
-| `/matrix` | Generate comparison matrices for options | `/matrix "CRM vendor comparison"` |
-| `/consensus` | Build stakeholder alignment with structured approach | `/consensus "API pricing strategy"` |
-
-### Communication - Sharing with Others
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/strategy` | Create strategic planning documents | `/strategy "AI-powered recommendations roadmap"` |
-| `/architecture` | Generate PM-friendly architecture documentation | `/architecture "Payment system overview"` |
-| `/explain-code` | Translate technical code into PM-friendly explanations | `/explain-code "What does this API endpoint do?"` |
-| `/tech-impact` | Assess technical feasibility of proposed features | `/tech-impact "Real-time notifications feature"` |
-
-### Daily Operations - Managing Your Work
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/retro` | Transform meeting notes into structured retrospectives | `/retro "Sprint 23 notes: discussed velocity..."` |
-| `/today` | Get personalized daily work suggestions | `/today "Open: checkout PRD, pricing decision"` |
-| `/handover` | Generate vacation/transition handover docs | `/handover "Dec 20 - Jan 3, backup: Sarah"` |
-
-## CM & CF Plugin Commands
-
-The **CM (Compounding Marketing)** and **CF (Content Factory)** plugins provide marketing workflows with compounding intelligence.
-
-#### CM: Compounding Marketing
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/cm:plan` | Create campaign briefs that learn from past campaigns | `/cm:plan "Q1 Product Launch" --budget 50000 --duration "6 weeks"` |
-
-#### CF: Content Factory
-
-| Command | Description | Example |
-|---------|-------------|---------|
-| `/cf:generate` | Batch content creation across blog, email, social, video | `/cf:generate "Q1 Launch" --formats "blog,email,social" --quantity "3 blogs, 5 emails, 20 social"` |
-| `/cf:repurpose` | Transform one piece into many formats | `/cf:repurpose blog/post.md --into "social" --platforms "linkedin,twitter"` |
-| `/cf:schedule` | Create and organize content calendars | `/cf:schedule --period "March 2025" --frequency "2 blogs/week, 5 social/day"` |
-
-**Marketing Agents** (6 specialized reviewers):
-- `@brand-voice-guardian` - Brand consistency validation
-- `@conversion-optimizer` - Conversion rate optimization
-- `@seo-specialist` - SEO optimization
-- `@startup-sam-reviewer` - Founder persona feedback
-- `@manager-maria-reviewer` - Manager persona feedback
-- `@solo-steve-reviewer` - Solopreneur persona feedback
-
-**Compounding Effect**: Each campaign makes the next one faster (Campaign 1: 40hrs → Campaign 10: 10hrs)
-
-**Practice Workspace**: `exercises/markit/` - Marketing agency working for client Planerio
-
-**Quick Start**: Type `/start-mkt` for interactive marketing course or `/help-mkt` for command reference.
-
-### Help & Discovery
-
-| Command | Description |
-|---------|-------------|
-| `/pm` | Interactive guide to help you choose the right command |
-| `/template` | Browse and apply PM-Kit templates |
-| `/learn` | Interactive skill browser - learn technical concepts |
-| `/start-mkt` | Start marketing workflow course |
-| `/help-mkt` | Marketing commands reference |
+| Skill | Purpose |
+|-------|---------|
+| `vault-ops` | Core file read/write/link operations |
+| `okr-tracking` | OKR progress calculation, roadmap alignment |
 
 ---
 
-## Quick Reference
+## Agents (4)
 
-| I need to... | Use |
-|--------------|-----|
-| Understand why something is broken | `/decompose` |
-| Research a question or decision | `/research` |
-| Write product requirements | `/prd` |
-| Define a new product vision | `/northstar` |
-| Prioritize my backlog | `/prioritize` |
-| Make a quick decision | `/decide` |
-| Compare options side-by-side | `/matrix` |
-| Get stakeholder buy-in | `/consensus` |
-| Plan a strategic initiative | `/strategy` |
-| Create visual diagrams (Mermaid) | `/mermaid` |
-| Create text diagrams (ASCII) | `/ascii` |
-| Sketch a wireframe | `/wireframe` |
-| Create presentation diagrams | `/excalidraw` |
-| Understand technical concepts | `/explain-code` |
-| Assess feasibility | `/tech-impact` |
-| Structure my day | `/today` |
-| Run a retrospective | `/retro` |
-| Prepare for time off | `/handover` |
-| Browse available templates | `/template` |
-| Learn a technical concept | `/learn` |
+| Agent | Purpose |
+|-------|---------|
+| **Scribe** | Note creation — knows all templates and naming conventions |
+| **Analyst** | Deep synthesis, trend analysis, sprint metrics, decision audits |
+| **Maintainer** | Index regen, link validation, auto-archiving |
+| **Processor** | GTD-style inbox routing |
+
+Agents are invoked automatically by Claude based on your request.
 
 ---
 
-## Example Workflows
-
-### New Feature Development
+## Folder Structure
 
 ```
-/decompose "user problem"        # Understand the root cause
-        ↓
-/research "solution approaches"  # Research possible solutions
-        ↓
-/prd "feature name"              # Write requirements
-        ↓
-/prioritize "feature list"       # Score against other work
-        ↓
-/consensus "stakeholders"        # Align the team
-```
-
-### Strategic Planning
-
-```
-/research "market opportunity"   # Gather market insights
-        ↓
-/strategy "initiative name"      # Create strategy document
-        ↓
-/prioritize "initiatives"        # Prioritize efforts
-        ↓
-/consensus "leadership"          # Get executive alignment
-```
-
-### Quick Decision
-
-```
-/decide "the decision"           # Frame the decision
-        ↓
-/matrix "options"                # Compare alternatives
-        ↓
-/consensus "approvers"           # Get sign-off
+mindloom/
+├── CLAUDE.md               # Vault context for Claude
+├── _core/                  # config.yaml, MANIFESTO.md, PROCESSING.md
+├── _templates/             # 9 note templates
+├── .claude/                # Skills, agents, hooks, rules, output styles
+├── inbox/                  # Unprocessed captures
+├── index/                  # Project MOCs (auto-maintained)
+├── daily/                  # YYYY-MM-DD.md (multi-project)
+├── docs/{project}/         # PRDs, specs, documents
+├── decisions/{project}/    # Decision records
+├── blockers/{project}/     # Active blockers
+├── meetings/               # Meeting notes
+├── adrs/                   # Architecture Decision Records
+├── roadmap/                # OKR objectives + key results
+├── research/               # Exploration notes
+├── reports/                # Generated reports (sprint retros, etc.)
+└── _archive/               # Auto-archived by YYYY-MM/
 ```
 
 ---
 
-## Skills (Learning Modules)
+## Key Features
 
-PM-Kit includes educational modules for PMs who want to understand technical concepts:
+### Keyword Detection
+Mention "blocked" in `/daily` → prompt to create blocker note. "Decided" → prompt for decision note.
 
-| Skill | What You'll Learn |
-|-------|-------------------|
-| **api-basics** | HTTP methods, status codes, REST concepts |
-| **json-fundamentals** | Reading and understanding JSON data structures |
-| **debug-without-code** | Debugging strategies without writing code |
-| **frontend-prompts** | How to specify frontend design requirements |
-| **ascii-diagrams** | Creating effective ASCII diagrams and wireframes |
-| **mermaid-diagrams** | Mermaid syntax, optimization rules, rendering best practices for 7 diagram types |
-| **gemini-grounded-search** | Real-time web search and code execution via Gemini API |
+### Naming-as-API
+Strict filename patterns (`YYYY-MM-DD-{slug}.md`) enable glob queries without a database.
 
----
+### Multi-Project Dailies
+One `daily/YYYY-MM-DD.md` per day with H2 sections per project. PMs managing multiple projects get a cross-project view.
 
-## Output Locations
+### OKR Tracking
+Quarterly objectives with measurable key results. `/weekly` calculates progress and surfaces stalled KRs.
 
-When you use PM-Kit commands, outputs are saved to organized directories:
+### Auto-Archiving
+Resolved blockers, shipped docs, superseded decisions → `_archive/YYYY-MM/` automatically.
 
+### Session Task Progress
+Multi-step skills show real-time progress spinners:
 ```
-your-project/
-├── prds/           # Product Requirements Documents
-├── research/       # Research reports and syntheses
-├── decisions/      # Decision logs and matrices
-├── roadmaps/       # Strategic roadmaps
-└── metrics/        # KPIs and analytics reports
+[Spinner] Collecting sprint data...
+[Done] Phase 1 complete
+[Spinner] Reflecting on OKR progress...
 ```
 
 ---
 
-## How It Works
+## Configuration
 
-PM-Kit uses a **Command → Agent** architecture:
+All domain config lives in `_core/config.yaml`:
 
-1. **You invoke a command** (e.g., `/prd "feature name"`)
-2. **Command delegates to a specialized agent** with embedded workflow
-3. **Agent executes 15+ systematic steps** with verification checkpoints
-4. **Output is generated** using professional templates
+```yaml
+projects:
+  - id: xmarket
+    name: xMarket
+    description: Prediction market platform
+    active: true
+```
 
-Each agent implements Long Chain-of-Thought methodology:
-- Multi-phase reasoning process
-- Verification checkpoints at each phase
-- Backtracking when issues are found
-- Quality checklists before completion
+For personal overrides, copy `CLAUDE.local.md.template` → `CLAUDE.local.md`.
+
+See `docs/CUSTOMIZATION.md` for full customization options.
 
 ---
 
-## Marketplace Structure
+## Philosophy
 
-```
-cc-pmkt/                          # Marketplace root
-├── .claude-plugin/
-│   └── marketplace.json          # Marketplace definition
-├── plugins/
-│   ├── pm/                       # Product Management Plugin
-│   │   ├── commands/    (21)     # /prd, /research, /mermaid, etc.
-│   │   ├── agents/      (14)     # Specialized AI agents
-│   │   ├── skills/      (7)      # Educational modules
-│   │   └── templates/   (4)      # Output templates
-│   ├── cm/                       # Compounding Marketing Plugin
-│   │   ├── commands/    (1)      # /cm:plan
-│   │   ├── agents/      (6)      # Brand, SEO, persona reviewers
-│   │   └── templates/   (3)      # Campaign templates
-│   └── cf/                       # Content Factory Plugin
-│       ├── commands/    (3)      # /cf:generate, /cf:repurpose, /cf:schedule
-│       └── templates/   (3)      # Content templates
-└── exercises/
-    └── markit/                   # Marketing practice workspace
-```
+See `_core/MANIFESTO.md` for the full philosophy. Key principles:
 
----
-
-## Updating
-
-```bash
-# Update individual plugins
-/plugin update pm    # Product Management
-/plugin update cm    # Compounding Marketing
-/plugin update cf    # Content Factory
-
-# Or reinstall latest version
-/plugin uninstall pm && /plugin install pm@cc-pmkt
-/plugin uninstall cm && /plugin install cm@cc-pmkt
-/plugin uninstall cf && /plugin install cf@cc-pmkt
-```
-
----
-
-## Contributing
-
-Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-### Ways to Contribute
-
-- Report bugs or suggest features via [Issues](https://github.com/kv0906/cc-pmkt/issues)
-- Submit pull requests for improvements
-- Share your workflows and use cases
-- Help improve documentation
+1. **You never organize** — AI does all filing
+2. **Naming is the API** — Consistent naming enables queries
+3. **Links over folders** — Discovery via connections
+4. **Capture fast** — `/inbox` exists for speed, process later
+5. **Systems over goals** — Build repeatable processes that compound
 
 ---
 
 ## Documentation
 
-- [Contributing Guide](CONTRIBUTING.md) - How to contribute
-- [Changelog](CHANGELOG.md) - Version history
-- [Development Roadmap](PLAN.md) - Project roadmap
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Community standards
+| Doc | What It Covers |
+|-----|----------------|
+| `docs/SETUP_GUIDE.md` | Installation, prerequisites, first session |
+| `docs/CUSTOMIZATION.md` | Projects, templates, tags, integrations |
+| `docs/WORKFLOW_EXAMPLES.md` | Daily PM workflow, sprint retros, ADRs |
+| `docs/TROUBLESHOOTING.md` | Common issues and fixes |
+
+---
+
+## Requirements
+
+- [Claude Code](https://claude.ai/code) — AI coding assistant (CLI)
+- [Git](https://git-scm.com/) — version control
+- [Obsidian](https://obsidian.md/) — markdown editor (optional but recommended)
+
+---
+
+## Contributing
+
+Contributions welcome! Areas of interest:
+- New domain examples (engineering, research, legal)
+- Additional integrations (Jira, GitHub Issues)
+- Improved templates
+- Documentation
 
 ---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT
 
 ---
 
-## Acknowledgments
-
-Built for modern professionals who want to systematize their workflows using Claude Code's plugin system.
-
----
-
-**Version:** 0.9.0 | **Marketplace:** cc-pmkt | **Author:** [Will Tran](https://github.com/kv0906) | [Twitter](https://twitter.com/will_tran33) | [Website](https://vanthk.com)
+*MindLoom: Weaving raw thought into structured, link-rich knowledge.*

@@ -1,0 +1,29 @@
+{
+  "name": "mindloom",
+  "version": "3.0.0",
+  "description": "AI-augmented knowledge vault for Technical PMs and Engineering Leads — PRDs, ADRs, sprints, OKRs, architecture decisions",
+  "author": {
+    "name": "Van Nguyen"
+  },
+  "license": "MIT",
+  "capabilities": {
+    "commands": false,
+    "agents": true,
+    "skills": true,
+    "hooks": true,
+    "outputStyles": true,
+    "rules": true
+  },
+  "keywords": [
+    "obsidian",
+    "pkm",
+    "product-management",
+    "engineering",
+    "adr",
+    "okr",
+    "sprint",
+    "decisions",
+    "blockers",
+    "daily-standup"
+  ]
+}

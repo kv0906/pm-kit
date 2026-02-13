@@ -1,9 +1,0 @@
-{
-  "name": "pm",
-  "version": "0.7.0",
-  "description": "Product Management framework with Long Chain-of-Thought methodology. 23 commands for PRDs, research, prioritization, and more.",
-  "author": {
-    "name": "Will Tran",
-    "email": "will@vanthk.com"
-  }
-}

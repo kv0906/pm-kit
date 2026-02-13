@@ -50,7 +50,9 @@ SCRATCH.md
 
 # Claude Code user-specific files
 .claude/settings.local.json
-.claude/settings.json
+# Note: .claude/settings.json is tracked for MindLoom
+.mcp.json
+.cocoindex_sync.log
 # Obsidian (markdown knowledge base) workspace files
 .obsidian/
 .obsidian*
