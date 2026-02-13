@@ -25,8 +25,8 @@ cd pm-kit
 3. Start using skills:
    ```
    /onboard                                          # Load vault context
-   /daily xmarket: shipped auth, wip payments         # Log standup
-   /progress xmarket                                  # View status
+   /daily project-alpha: shipped login, wip checkout  # Log standup
+   /progress project-alpha                            # View status
    /push                                              # Save changes
    ```
 
@@ -131,9 +131,13 @@ All domain config lives in `_core/config.yaml`:
 
 ```yaml
 projects:
-  - id: xmarket
-    name: xMarket
-    description: Prediction market platform
+  - id: project-alpha
+    name: Project Alpha
+    description: Your product description here
+    active: true
+  - id: project-beta
+    name: Project Beta
+    description: Another product description
     active: true
 ```
 
@@ -190,55 +194,10 @@ MIT
 
 ---
 
-## Project History
+## Star History
 
-**PM-Kit v1.0 - v0.8 (Jan 2025 - Feb 2026): Plugin Marketplace**
-
-PM-Kit began as a Claude Code plugin marketplace for product management, implementing the "Product Operating System (PO-OS)" philosophy. It featured:
-
-- **22 commands** (`/prd`, `/decompose`, `/mermaid`, `/prioritize`, `/research`, etc.)
-- **14 specialized agents** (prd-writer, problem-decomposer, research-agent, consensus-builder, etc.)
-- **8 technical literacy skills** (API basics, JSON fundamentals, Mermaid diagrams, etc.)
-- **3 plugin system**: PM (core), CM (marketing), CF (content factory)
-- **Long Chain-of-Thought methodology**: Embedded 15+ step workflows in agents
-- **Agent design principles**: Input-first execution, tool minimalism, Haiku optimization
-
-The marketplace helped PMs become "CEOs with engineering superpowers" by systematizing product work through commands and agents.
-
-**PM-Kit v2.0 (Feb 2026): Knowledge Vault**
-
-After analyzing user patterns, we discovered PMs needed persistent knowledge management more than command-based workflows. PM-Kit v2.0 represents a complete architectural shift:
-
-- **From**: Command-based plugin marketplace (`/prd` → produce document)
-- **To**: AI-augmented knowledge vault (capture → AI structures → query anytime)
-
-**What Changed:**
-- Removed marketplace structure (plugins/pm, plugins/cm, plugins/cf)
-- Removed 22 slash commands (now skills with persistent state)
-- Added vault structure (inbox, daily, decisions, blockers, meetings, etc.)
-- Added 4 core agents (scribe, analyst, maintainer, processor)
-- Added 15 skills with GTD-style processing
-- Added auto-commit hooks, session init, output styles
-
-**What Stayed:**
-- PO-OS philosophy (PMs think, AI executes)
-- Agent architecture (specialized, proactive, model-optimized)
-- Git history (all commits from v0.1 preserved)
-- Open-source ethos (MIT license, community-driven)
-
-**Why the Shift:**
-- Commands produced one-off documents → knowledge fragmented across files
-- No cross-project synthesis → PMs managing 3+ projects lost context
-- No persistent state → every session started from scratch
-- Vault approach → captures accumulate, AI maintains structure, knowledge compounds
-
-The v2.0 architecture treats PM work as **knowledge that evolves** rather than **documents to produce**. Every standup, decision, and blocker feeds into a graph that Claude can query, synthesize, and act upon.
-
-**Technical Migration:**
-- Codebase shift: -25,137 lines, +4,357 lines (162 files changed)
-- Git history: Fully preserved from commit `077a6e5` (Jan 2025) onward
-- Migration commit: `a93d935` (Feb 13, 2026)
+[![Star History Chart](docs/star-history.png)](https://star-history.com/#kv0906/pm-kit&Date)
 
 ---
 
-*PM-Kit: From command-driven workflows to knowledge that compounds.*
+*PM-Kit: Weaving raw thought into structured, link-rich knowledge.*
