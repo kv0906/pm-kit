@@ -1,9 +1,9 @@
 {
-  "name": "mindloom",
+  "name": "pm-kit",
   "version": "3.0.0",
   "description": "AI-augmented knowledge vault for Technical PMs and Engineering Leads — PRDs, ADRs, sprints, OKRs, architecture decisions",
   "author": {
-    "name": "Van Nguyen"
+    "name": "Van Tran (Will)"
   },
   "license": "MIT",
   "capabilities": {

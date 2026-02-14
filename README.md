@@ -1,16 +1,62 @@
 # PM-Kit
 
-**AI-augmented knowledge vault for Technical PMs and Engineering Leads.**
+Turn your AI coding tool into a PM workspace, knowledge hub, and execution engine.
 
-> You input raw thoughts → AI structures, links, and stores → You query for clarity
+## Disclaimer
 
-PM-Kit is an open-source framework for building personal knowledge management systems powered by AI agents. Designed for teams managing PRDs, ADRs, sprints, OKRs, and architecture decisions.
+This is not gospel. This is not the holy grail.
 
----
+PM-Kit is one system that works. It is a guideline and mindset shift, not a rigid rulebook.
 
-## Quick Start
+The principles in `_core/MANIFESTO.md` may resonate with you, or they may not. That is fine.
+Take what works. Ignore what does not. Make it yours.
 
-### Automated Setup
+You will get better results through repetition. The framework should adapt to your workflow, not the other way around.
+
+## Who Uses PM-Kit
+
+| Role | How They Use It |
+|------|------------------|
+| Product Managers / Product Owners | Run dailies, write PRDs, track blockers, align cross-functional work |
+| Engineering Leads | Capture decisions, maintain ADRs, drive sprint and roadmap clarity |
+| Engineers (Junior -> Senior) | Document context, ship specs, keep decisions traceable |
+| Founders / Solo Builders | Turn scattered thoughts into an execution system |
+| Analysts / Operators | Log research, synthesize findings, build durable knowledge |
+
+PM-Kit is optimized for Claude Code and markdown-native workflows.
+
+## The Problem
+
+Most teams using AI for product and execution hit the same wall:
+
+- Scattered workspace: notes and specs across random files
+- Fragmented context: no continuity between sessions
+- Weak traceability: decisions, blockers, and docs disconnected
+- Planning drift: jumping to outputs before framing the problem
+- Shipping friction: too much context switching, not enough closure
+
+AI is powerful. Without structure, it turns into noise.
+
+## The Solution
+
+PM-Kit gives you a system where AI helps maintain order while you focus on decisions and delivery.
+
+What changes:
+
+- Workspace stays organized with strict naming conventions
+- Context persists through linked notes and project indexes
+- Daily operations become repeatable (`/daily`, `/progress`, `/weekly`)
+- Decision quality improves with explicit artifacts (`/decide`, `/adr`, `/block`)
+- You move from raw thought to shipped outcomes faster
+
+## Works With
+
+| Tool | Status |
+|------|--------|
+| Claude Code | ✓ Native (reads `CLAUDE.md`, commands, skills) |
+| Other AI tools that read markdown context | ✓ Partial (manual prompt + file workflow) |
+
+## Quick Start (2 minutes)
 
 ```bash
 git clone git@github.com:kv0906/pm-kit.git
@@ -18,186 +64,117 @@ cd pm-kit
 ./scripts/setup.sh
 ```
 
-### Manual Setup
+Then open your AI coding tool and start with:
 
-1. Clone this repo
-2. Edit `_core/config.yaml` with your projects
-3. Start using skills:
-   ```
-   /onboard                                          # Load vault context
-   /daily project-alpha: shipped login, wip checkout  # Log standup
-   /progress project-alpha                            # View status
-   /push                                              # Save changes
-   ```
-
----
-
-## Skills (15)
-
-### User-Invocable (13)
-
-| Skill | Purpose |
-|-------|---------|
-| `/daily` | Multi-project standup with keyword detection |
-| `/progress` | Cross-project status synthesis |
-| `/block` | Flag a blocker with severity/owner/due |
-| `/decide` | Log a decision with alternatives |
-| `/doc` | Draft PRD/spec/document |
-| `/meet` | Process meeting notes → extract decisions, blockers, actions |
-| `/inbox` | Quick capture + batch processing |
-| `/ask` | Fast vault Q&A |
-| `/health` | Vault health: broken links, orphans, stats |
-| `/adr` | Architecture Decision Record |
-| `/weekly` | Sprint retro (Collect → Reflect → Plan) |
-| `/push` | Git commit and sync |
-| `/onboard` | Load _core/ + CLAUDE.md context |
-
-### Auto-Invoked (2)
-
-| Skill | Purpose |
-|-------|---------|
-| `vault-ops` | Core file read/write/link operations |
-| `okr-tracking` | OKR progress calculation, roadmap alignment |
-
----
-
-## Agents (4)
-
-| Agent | Purpose |
-|-------|---------|
-| **Scribe** | Note creation — knows all templates and naming conventions |
-| **Analyst** | Deep synthesis, trend analysis, sprint metrics, decision audits |
-| **Maintainer** | Index regen, link validation, auto-archiving |
-| **Processor** | GTD-style inbox routing |
-
-Agents are invoked automatically by Claude based on your request.
-
----
-
-## Folder Structure
-
+```text
+/onboard
 ```
+
+Or jump straight into operations:
+
+```text
+/daily project-alpha: shipped login, blocked checkout API
+/progress project-alpha
+/push
+```
+
+## How It Works
+
+1. You capture intent
+- "Log today's product standup"
+- "Draft a PRD for checkout improvements"
+- "Record this architecture decision"
+
+2. PM-Kit routes to the right workflow
+
+| Workflow Type | Typical Commands | Output |
+|---------------|------------------|--------|
+| Daily Operations | `/daily`, `/progress`, `/weekly` | Status, risks, momentum |
+| Documentation | `/doc`, `/meet`, `/ask` | PRDs, notes, synthesis |
+| Decision Control | `/decide`, `/adr`, `/block` | Decision logs, ADRs, blocker tracking |
+| Capture & Maintenance | `/inbox`, `/push`, `/health` | Intake, cleanup, repository health |
+
+3. AI keeps the system coherent
+- Applies naming conventions
+- Links related notes
+- Preserves traceability across docs, decisions, blockers, and roadmap
+
+## Project Structure
+
+```text
 pm-kit/
-├── CLAUDE.md               # Vault context for Claude
+├── CLAUDE.md               # Workspace context for Claude
 ├── _core/                  # config.yaml, MANIFESTO.md, PROCESSING.md
-├── _templates/             # 9 note templates
-├── .claude/                # Skills, agents, hooks, rules, output styles
+├── _templates/             # Note templates
+├── .claude/                # Skills, agents, hooks, rules
 ├── inbox/                  # Unprocessed captures
-├── index/                  # Project MOCs (auto-maintained)
-├── daily/                  # YYYY-MM-DD.md (multi-project)
-├── docs/{project}/         # PRDs, specs, documents
+├── index/                  # Project MOCs
+├── daily/                  # YYYY-MM-DD.md
+├── docs/{project}/         # PRDs, specs, docs
 ├── decisions/{project}/    # Decision records
 ├── blockers/{project}/     # Active blockers
 ├── meetings/               # Meeting notes
 ├── adrs/                   # Architecture Decision Records
 ├── roadmap/                # OKR objectives + key results
 ├── research/               # Exploration notes
-├── reports/                # Generated reports (sprint retros, etc.)
-└── _archive/               # Auto-archived by YYYY-MM/
+├── reports/                # Generated reports
+└── _archive/               # Archived notes by YYYY-MM/
 ```
 
----
+## Core Commands
 
-## Key Features
+| Command | Purpose |
+|---------|---------|
+| `/daily` | Multi-project standup logging |
+| `/progress` | Cross-project status synthesis |
+| `/block` | Structured blocker capture |
+| `/decide` | Decision records with alternatives |
+| `/doc` | PRD/spec drafting |
+| `/meet` | Meeting extraction into actions/decisions |
+| `/inbox` | Fast capture for later processing |
+| `/ask` | Vault Q&A |
+| `/health` | Link + vault integrity checks |
+| `/adr` | Architecture Decision Records |
+| `/weekly` | Sprint retro and planning loop |
+| `/push` | Commit and sync |
+| `/onboard` | Load full workspace context |
 
-### Keyword Detection
-Mention "blocked" in `/daily` → prompt to create blocker note. "Decided" → prompt for decision note.
+## Core Principles
 
-### Naming-as-API
-Strict filename patterns (`YYYY-MM-DD-{slug}.md`) enable glob queries without a database.
+From `_core/MANIFESTO.md`:
 
-### Multi-Project Dailies
-One `daily/YYYY-MM-DD.md` per day with H2 sections per project. PMs managing multiple projects get a cross-project view.
-
-### OKR Tracking
-Quarterly objectives with measurable key results. `/weekly` calculates progress and surfaces stalled KRs.
-
-### Auto-Archiving
-Resolved blockers, shipped docs, superseded decisions → `_archive/YYYY-MM/` automatically.
-
-### Session Task Progress
-Multi-step skills show real-time progress spinners:
-```
-[Spinner] Collecting sprint data...
-[Done] Phase 1 complete
-[Spinner] Reflecting on OKR progress...
-```
-
----
-
-## Configuration
-
-All domain config lives in `_core/config.yaml`:
-
-```yaml
-projects:
-  - id: project-alpha
-    name: Project Alpha
-    description: Your product description here
-    active: true
-  - id: project-beta
-    name: Project Beta
-    description: Another product description
-    active: true
-```
-
-For personal overrides, copy `CLAUDE.local.md.template` → `CLAUDE.local.md`.
-
-See `docs/CUSTOMIZATION.md` for full customization options.
-
----
-
-## Philosophy
-
-See `_core/MANIFESTO.md` for the full philosophy. Key principles:
-
-1. **You never organize** — AI does all filing
-2. **Naming is the API** — Consistent naming enables queries
-3. **Links over folders** — Discovery via connections
-4. **Capture fast** — `/inbox` exists for speed, process later
-5. **Systems over goals** — Build repeatable processes that compound
-
----
+- System over chaos: keep a consistent workspace contract
+- Naming as API: file patterns make retrieval reliable
+- Links over silos: discover context through connections
+- Capture fast, process deliberately
+- Ship and iterate: clarity compounds when artifacts stay current
 
 ## Documentation
 
 | Doc | What It Covers |
 |-----|----------------|
-| `docs/SETUP_GUIDE.md` | Installation, prerequisites, first session |
-| `docs/CUSTOMIZATION.md` | Projects, templates, tags, integrations |
-| `docs/WORKFLOW_EXAMPLES.md` | Daily PM workflow, sprint retros, ADRs |
+| `docs/SETUP_GUIDE.md` | Installation and first run |
+| `docs/CUSTOMIZATION.md` | Projects, templates, and overrides |
+| `docs/WORKFLOW_EXAMPLES.md` | Example operating flows |
 | `docs/TROUBLESHOOTING.md` | Common issues and fixes |
-
----
-
-## Requirements
-
-- [Claude Code](https://claude.ai/code) — AI coding assistant (CLI)
-- [Git](https://git-scm.com/) — version control
-- [Obsidian](https://obsidian.md/) — markdown editor (optional but recommended)
-
----
+| `docs/maintainer-workflow.md` | PR, changelog, and maintainer workflow |
 
 ## Contributing
 
-Contributions welcome! Areas of interest:
-- New domain examples (engineering, research, legal)
-- Additional integrations (Jira, GitHub Issues)
-- Improved templates
-- Documentation
+Contributions are welcome.
 
----
+- Read `CONTRIBUTING.md`
+- Use the PR template
+- Include a `## Changelog Entry` in each PR
+
+Every merged PR to `main` is automatically recorded in `CHANGELOG.md`.
 
 ## License
 
 MIT
 
----
-
 ## Star History
 
 [![Star History Chart](docs/star-history.png)](https://star-history.com/#kv0906/pm-kit&Date)
 
----
-
-*PM-Kit: Weaving raw thought into structured, link-rich knowledge.*
+Think clearly. Build simply. Let systems carry the weight.

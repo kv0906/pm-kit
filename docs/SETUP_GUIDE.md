@@ -11,8 +11,8 @@
 ### Automated Setup
 
 ```bash
-git clone https://github.com/your-repo/mindloom.git
-cd mindloom
+git clone https://github.com/your-repo/pm-kit.git
+cd pm-kit
 ./scripts/setup.sh
 ```
 

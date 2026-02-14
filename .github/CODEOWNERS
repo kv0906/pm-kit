@@ -1,0 +1,6 @@
+# Default reviewer for all changes
+* @kv0906
+
+# Ownership by area
+/.github/ @kv0906
+/docs/ @kv0906

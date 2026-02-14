@@ -11,7 +11,7 @@ Core operations for reading, writing, and managing files in a MindLoom vault.
 ## Vault Structure
 
 ```
-mindloom/
+pm-kit/
 ├── CLAUDE.md           # Vault context (read first)
 ├── _core/              # config.yaml, MANIFESTO.md, PROCESSING.md
 ├── _templates/         # Note templates (ALWAYS USE)

@@ -1,0 +1,112 @@
+name: Changelog On Merge
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  update-changelog:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Update CHANGELOG.md with merged PR entry
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+        run: |
+          set -euo pipefail
+
+          PR_NUMBER=$(jq -r '.pull_request.number' "$GITHUB_EVENT_PATH")
+          PR_URL=$(jq -r '.pull_request.html_url' "$GITHUB_EVENT_PATH")
+          PR_TITLE=$(jq -r '.pull_request.title' "$GITHUB_EVENT_PATH")
+          PR_AUTHOR=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
+          PR_LABELS=$(jq -r '.pull_request.labels | map(.name) | join(", ")' "$GITHUB_EVENT_PATH")
+          PR_MERGED_AT=$(jq -r '.pull_request.merged_at' "$GITHUB_EVENT_PATH")
+          PR_DATE=$(date -u -d "$PR_MERGED_AT" +"%Y-%m-%d")
+
+          if [ -z "${PR_NUMBER}" ] || [ "${PR_NUMBER}" = "null" ]; then
+            echo "Could not read PR number from event payload"
+            exit 1
+          fi
+
+          if [ ! -f CHANGELOG.md ]; then
+            cat > CHANGELOG.md <<'EOC'
+# Changelog
+
+All notable changes to this project are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+<!-- New merged PR entries are inserted here automatically. -->
+EOC
+          fi
+
+          if ! grep -q '^## \[Unreleased\]$' CHANGELOG.md; then
+            printf "\n## [Unreleased]\n\n<!-- New merged PR entries are inserted here automatically. -->\n" >> CHANGELOG.md
+          fi
+
+          if grep -q "\[#${PR_NUMBER}\]" CHANGELOG.md; then
+            echo "Changelog entry for PR #${PR_NUMBER} already exists."
+            exit 0
+          fi
+
+          SUMMARY=$(jq -r '.pull_request.body // ""' "$GITHUB_EVENT_PATH" | awk '
+            BEGIN { in_section=0 }
+            /^## Changelog Entry[[:space:]]*$/ { in_section=1; next }
+            /^## / { if (in_section) exit; in_section=0 }
+            in_section { print }
+          ' | sed 's/\r$//' | sed '/^[[:space:]]*$/d')
+
+          if [ -z "$SUMMARY" ]; then
+            SUMMARY="No changelog details provided in the PR body."
+          fi
+
+          ENTRY_FILE=$(mktemp)
+          {
+            echo "- ${PR_DATE}: [#${PR_NUMBER}](${PR_URL}) ${PR_TITLE} (@${PR_AUTHOR})"
+            if [ -n "$PR_LABELS" ]; then
+              echo "  - Labels: ${PR_LABELS}"
+            fi
+            while IFS= read -r line; do
+              line=$(echo "$line" | sed 's/^[[:space:]]*[-*]\{0,1\}[[:space:]]*//')
+              [ -z "$line" ] && continue
+              echo "  - ${line}"
+            done <<< "$SUMMARY"
+            echo
+          } > "$ENTRY_FILE"
+
+          INSERTED=false
+          NEW_FILE=$(mktemp)
+          while IFS= read -r line; do
+            echo "$line" >> "$NEW_FILE"
+            if [ "$INSERTED" = false ] && [ "$line" = "## [Unreleased]" ]; then
+              echo >> "$NEW_FILE"
+              cat "$ENTRY_FILE" >> "$NEW_FILE"
+              INSERTED=true
+            fi
+          done < CHANGELOG.md
+
+          mv "$NEW_FILE" CHANGELOG.md
+          rm -f "$ENTRY_FILE"
+
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "No changelog update needed."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs(changelog): record merge of PR #${PR_NUMBER}"
+          git push

@@ -1,0 +1,23 @@
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: ['README.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'docs/**']
+
+commands:
+  - changed-files:
+      - any-glob-to-any-file: ['commands/**']
+
+agents:
+  - changed-files:
+      - any-glob-to-any-file: ['agents/**']
+
+skills:
+  - changed-files:
+      - any-glob-to-any-file: ['skills/**']
+
+templates:
+  - changed-files:
+      - any-glob-to-any-file: ['templates/**', '_templates/**']
+
+workflows:
+  - changed-files:
+      - any-glob-to-any-file: ['.github/workflows/**', '.github/**']

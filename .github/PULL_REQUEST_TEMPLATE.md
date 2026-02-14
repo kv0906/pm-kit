@@ -20,6 +20,13 @@ Fixes #(issue number) or Related to #(issue number)
 - Change 2
 - Change 3
 
+## Changelog Entry
+Describe this change as you want it to appear in `CHANGELOG.md` after merge to `main`.
+
+- User-facing impact:
+- Key technical note:
+- Breaking change: Yes/No
+
 ## Checklist
 
 ### Required
@@ -31,7 +38,7 @@ Fixes #(issue number) or Related to #(issue number)
 - [ ] Updated README.md (if adding/removing commands)
 - [ ] Updated CLAUDE.md (if changing agents or commands)
 - [ ] Updated version.json (file counts)
-- [ ] Updated CHANGELOG.md
+- [ ] Added/updated `## Changelog Entry` section in this PR body
 
 ### For New Components
 - [ ] Follows the required structure from CONTRIBUTING.md

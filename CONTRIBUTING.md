@@ -388,10 +388,27 @@ Your PR should include:
 
 - [ ] Clear description of changes
 - [ ] Link to related issue (if applicable)
+- [ ] `## Changelog Entry` section in the PR body (required)
 - [ ] Updated documentation (README.md, CLAUDE.md)
 - [ ] Updated PLAN.md component counts (if adding/removing files)
 - [ ] Follows style guide
 - [ ] Self-tested in Claude Code
+
+### Changelog Workflow (Required)
+
+Every merged PR to `main` is automatically written into `CHANGELOG.md`.
+
+To make this useful for releases:
+
+1. Add a `## Changelog Entry` section in your PR body.
+2. Write 2-4 clear bullets focused on user impact.
+3. Include breaking-change notes when relevant.
+4. Avoid placeholders such as "TBD" or "N/A" (CI checks this).
+
+GitHub Actions will:
+- Validate your PR includes a non-empty changelog entry section.
+- Auto-label the PR based on changed paths.
+- Append a changelog entry when the PR is merged into `main`.
 
 ### Review Process
 
@@ -461,7 +478,7 @@ Deprecated components remain for at least **2 minor versions** before removal co
 
 Contributors are recognized in:
 - Release notes
-- CHANGELOG.md (for significant contributions)
+- CHANGELOG.md (every merged PR to `main`)
 - README.md acknowledgments (for major contributions)
 
 ---
