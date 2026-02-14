@@ -159,6 +159,16 @@ if [ "$DRY_RUN" = false ]; then
   fi
 fi
 
+# --- Dirty tree guard (skip for --dry-run) ---
+
+if [ "$DRY_RUN" = false ]; then
+  if ! git -C "$VAULT_DIR" diff --quiet 2>/dev/null || ! git -C "$VAULT_DIR" diff --cached --quiet 2>/dev/null; then
+    warn "You have uncommitted changes. Commit or stash before updating."
+    git -C "$VAULT_DIR" status --short
+    exit 1
+  fi
+fi
+
 # --- Download and extract ---
 
 TMPDIR_UPDATE="$(mktemp -d)"

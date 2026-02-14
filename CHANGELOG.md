@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- `update.sh` now checks for uncommitted changes before applying updates
+
 <!-- New merged PR entries are inserted here automatically. -->
 
 ## [2026.02.14] - 2026-02-14
