@@ -6,8 +6,8 @@
 
 ```
 /onboard                # Load vault context
-/daily xmarket: shipped auth flow, wip notifications, blocked on API rate limits
-/daily playstat: shipped dashboard v2, wip analytics, decided to use websockets
+/daily project-a: shipped auth flow, wip notifications, blocked on API rate limits
+/daily project-b: shipped dashboard v2, wip analytics, decided to use websockets
 ```
 
 Claude will:
@@ -18,9 +18,9 @@ Claude will:
 ### Throughout the Day
 
 ```
-/block xmarket: waiting on legal review for compliance --severity high --due friday
-/decide xmarket: chose PostgreSQL over MongoDB for transaction data
-/doc xmarket checkout-flow
+/block project-a: waiting on legal review for compliance --severity high --due friday
+/decide project-a: chose PostgreSQL over MongoDB for transaction data
+/doc project-a checkout-flow
 /inbox competitor launched similar feature — analyze later
 /ask what did we decide about the auth approach?
 ```
@@ -28,7 +28,7 @@ Claude will:
 ### After Meetings
 
 ```
-/meet xmarket sync sprint-review
+/meet project-a sync sprint-review
 [paste meeting notes]
 ```
 
@@ -73,7 +73,7 @@ Output: `index/_graph-health.md`
 
 ```
 /progress all
-/progress xmarket --since 2026-01-01
+/progress project-a --since 2026-01-01
 ```
 
 Synthesizes shipped items, blockers, and decisions across projects.
@@ -108,7 +108,7 @@ tags: []
 
 # 2026-01-15
 
-## xMarket
+## Project A
 
 ### Shipped
 - Auth flow complete and deployed
@@ -119,14 +119,14 @@ tags: []
 - Payment integration planning
 
 ### Blocked
-- [[blockers/xmarket/2026-01-15-api-rate-limit|API rate limit from provider]]
+- [[blockers/project-a/2026-01-15-api-rate-limit|API rate limit from provider]]
 
 ### Notes
 Meeting with legal at 2pm about compliance requirements.
 
 ---
 
-## PlayStat
+## Project B
 
 ### Shipped
 - Dashboard v2 deployed

@@ -33,12 +33,12 @@ Strict filename patterns enable glob queries without a database:
 | Type | Pattern | Example |
 |------|---------|---------|
 | Daily | `daily/YYYY-MM-DD.md` | `daily/2026-01-15.md` |
-| Doc | `docs/{project}/{slug}.md` | `docs/xmarket/checkout-flow.md` |
-| Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` | `decisions/xmarket/2026-01-15-auth-approach.md` |
-| Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` | `blockers/xmarket/2026-01-15-api-rate-limit.md` |
+| Doc | `docs/{project}/{slug}.md` | `docs/project-a/checkout-flow.md` |
+| Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` | `decisions/project-a/2026-01-15-auth-approach.md` |
+| Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` | `blockers/project-a/2026-01-15-api-rate-limit.md` |
 | Meeting | `meetings/YYYY-MM-DD-{type}-{slug}.md` | `meetings/2026-01-15-sync-sprint-review.md` |
 | Inbox | `inbox/YYYY-MM-DD-{slug}.md` | `inbox/2026-01-15-quick-thought.md` |
-| Index | `index/{project}.md` | `index/xmarket.md` |
+| Index | `index/{project}.md` | `index/project-a.md` |
 
 ## File Operations
 

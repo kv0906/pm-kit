@@ -18,16 +18,16 @@ This example shows how to configure PM-Kit for Product Owner workflows.
 # _core/config.yaml changes for PO domain
 
 projects:
-  - id: xmarket
-    name: xMarket
-    description: Prediction market platform
-    linear_project: XMKT
+  - id: project-a
+    name: Project A
+    description: Main product platform
+    linear_project: PA
     active: true
 
-  - id: playstat
-    name: PlayStat
-    description: Gaming statistics platform
-    linear_project: PS
+  - id: project-b
+    name: Project B
+    description: Internal tools platform
+    linear_project: PB
     active: true
 
 note_types:
@@ -75,20 +75,20 @@ integrations:
 
 ```bash
 # Morning review
-/progress xmarket
-/progress playstat
+/progress project-a
+/progress project-b
 
 # During standup
-/daily xmarket: shipped auth flow, wip notifications, blocked on API rate limits
+/daily project-a: shipped auth flow, wip notifications, blocked on API rate limits
 
 # After meetings
-/meet xmarket sprint review
+/meet project-a sprint review
 [paste notes]
 
 # Throughout day
 /inbox competitor pattern to analyze later
-/decide xmarket: using websocket over polling
-/block playstat: waiting on legal review --severity high --due friday
+/decide project-a: using websocket over polling
+/block project-b: waiting on legal review --severity high --due friday
 
 # End of day
 /inbox

@@ -31,15 +31,15 @@ Run `/daily` once per project. All updates go in same `daily/YYYY-MM-DD.md`:
 ```markdown
 # 2026-01-15
 
-## xMarket
+## Project A
 ### Shipped
 - Auth flow
 ### In Progress
 - Notifications
 ### Blocked
-- [[blockers/xmarket/2026-01-15-api-rate-limit|API rate limit]]
+- [[blockers/project-a/2026-01-15-api-rate-limit|API rate limit]]
 
-## PlayStat
+## Project B
 ### Shipped
 - Dashboard v2
 ```

@@ -145,8 +145,8 @@ echo -e "\n${BLUE}Step 4: Configure Your Projects${NC}"
 echo "=================================="
 
 echo "Let's set up your first project."
-read -p "Project ID (lowercase, e.g., 'xmarket'): " PROJECT_ID
-read -p "Project name (display name, e.g., 'xMarket'): " PROJECT_NAME
+read -p "Project ID (lowercase, e.g., 'project-a'): " PROJECT_ID
+read -p "Project name (display name, e.g., 'Project A'): " PROJECT_NAME
 read -p "Brief description: " PROJECT_DESC
 
 if [ -n "$PROJECT_ID" ] && [ -n "$PROJECT_NAME" ]; then

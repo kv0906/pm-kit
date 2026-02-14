@@ -52,9 +52,9 @@ Edit `_core/config.yaml`:
 
 ```yaml
 projects:
-  - id: xmarket        # Used in folder paths
-    name: xMarket       # Display name
-    description: Prediction market platform
+  - id: project-a        # Used in folder paths
+    name: Project A       # Display name
+    description: Your first project
     active: true
 ```
 
