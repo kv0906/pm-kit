@@ -1,28 +1,85 @@
-# PM-Kit — AI-Augmented Knowledge Vault
+# CLAUDE.md
 
-## Overview
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Knowledge vault for Technical PMs and Engineering Leads. Run `/onboard` to get started.
+## What This Is
+
+PM-Kit is a markdown-only Claude Code plugin — an AI-augmented knowledge vault for Technical PMs and Engineering Leads. No build system, no runtime, no dependencies. The entire framework is `.md` files, shell scripts, and YAML config. Claude Code reads `CLAUDE.md` + `.claude/` to become a PM workspace operator.
+
+Run `/onboard` to get started as a user.
 
 **Always scan `_core/` first:** `config.yaml` (projects, paths, note types), `PROCESSING.md` (I-P-O flows), `MANIFESTO.md` (philosophy).
+
+## Architecture
+
+```
+User types /command
+  → Claude reads .claude/skills/{command}/SKILL.md
+  → SKILL.md contains I-P-O instructions + tool permissions
+  → Claude executes: reads config.yaml, uses templates, writes notes
+  → PostToolUse hook auto-commits vault changes
+```
+
+**Two-layer design**: Skills (user-invocable `/commands` with SKILL.md) delegate heavy work to Agents (`.claude/agents/*.md` — specialized subprocesses for scribe, analyst, maintainer, processor roles).
+
+**Naming-as-API**: Strict filename patterns (`daily/YYYY-MM-DD.md`, `blockers/{project}/YYYY-MM-DD-{slug}.md`) enable glob queries without a database. All patterns defined in `_core/config.yaml` under `note_types`.
+
+**Hooks** (`.claude/hooks/`):
+- `session-init.sh` — sets `$TODAY`, `$ACTIVE_PROJECTS`, `$DAILY_NOTE` on SessionStart
+- `auto-commit.sh` — auto-commits after Write/Edit on vault files (controlled by `GIT_AUTO_COMMIT` env var in `.claude/settings.json`)
+
+**Permissions** (`.claude/settings.json`): Write/Edit allowed only in user content dirs (daily, docs, decisions, blockers, meetings, inbox, index, reports, _archive). Framework files require explicit approval.
 
 ## Structure
 
 | Folder | Purpose |
 |--------|---------|
 | `_core/` | config.yaml, MANIFESTO.md, PROCESSING.md |
-| `_templates/` | Note templates (ALWAYS USE) |
-| `inbox/` | Raw captures |
-| `index/` | Project MOCs |
-| `daily/` | `YYYY-MM-DD.md` — one file per day, H2 per project |
-| `docs/{project}/` | PRDs, specs, user documents |
-| `docs/general/` | Cross-project or uncategorized docs |
-| `decisions/{project}/` | Decision records |
-| `blockers/{project}/` | Active blockers |
-| `meetings/` | Meeting notes |
-| `reports/` | Generated reports |
+| `_templates/` | Note templates (ALWAYS USE when creating notes) |
+| `.claude/skills/` | Skill definitions (SKILL.md per command) |
+| `.claude/agents/` | Agent definitions (scribe, analyst, maintainer, processor) |
+| `.claude/rules/` | Naming conventions, markdown standards, workflow rules |
+| `.claude/hooks/` | Session init + auto-commit hooks |
+| `scripts/` | setup.sh, update.sh, release.sh |
 | `handbook/` | Framework documentation (maintainer-owned) |
-| `_archive/` | Auto-archived by `YYYY-MM/` |
+| `.github/workflows/` | PR labeler, changelog-on-merge, release-on-tag |
+| User content dirs | `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/` |
+
+## Development Commands
+
+```bash
+# Setup (first install or in-place refresh)
+./scripts/setup.sh
+
+# Release (maintainer only — must be on clean main)
+./scripts/release.sh          # Bumps VERSION, tags, pushes, GH Actions creates release
+
+# Update (user pulls latest framework release)
+./scripts/update.sh           # Full update
+./scripts/update.sh --check   # Check version only
+./scripts/update.sh --dry-run # Preview changes without applying
+
+# Validation (no test suite — markdown-only framework)
+# Use /health to check vault integrity (broken links, orphans, missing sections)
+# Use grep to verify cross-references after changes:
+grep -r "xmarket\|MindLoom\|project-a" . --include="*.md" -l
+```
+
+## Versioning and Releases
+
+Date-based versions: `YYYY.MM.DD` (e.g., `2026.02.14`). Version stored in `VERSION` file and `.claude-plugin/plugin.json`.
+
+Release flow: PRs merged to `main` → changelog entries added automatically → maintainer runs `./scripts/release.sh` → GH Actions creates GitHub Release → users get updates via `/update`.
+
+## Update System (Framework vs User Content)
+
+The update script (`scripts/update.sh`) overwrites framework files but never touches user content:
+
+| Category | Action |
+|----------|--------|
+| **Framework** (CLAUDE.md, _templates/*, .claude/**, scripts/*, handbook/*) | Overwrite (backed up to `_archive/_updates/`) |
+| **Hybrid** (_core/config.yaml, .gitignore) | Diff shown, user merges manually |
+| **User content** (daily/, docs/, decisions/, blockers/, meetings/, inbox/, index/) | Never touched |
 
 ## Skills
 
@@ -30,6 +87,7 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 
 | Skill | Invocation | Purpose |
 |-------|------------|---------|
+| `today` | `/today` | Guided daily workflow (standup/sync/review/focus/wrap-up) |
 | `daily` | `/daily` | Multi-project standup with keyword detection |
 | `progress` | `/progress` | Cross-project status synthesis |
 | `block` | `/block` | Create blocker with severity/owner/due |
@@ -39,20 +97,13 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `inbox` | `/inbox` | Quick capture + batch processing |
 | `ask` | `/ask` | Fast vault Q&A |
 | `health` | `/health` | Vault health check |
-| `today` | `/today` | Guided daily workflow (standup/sync/review/focus/wrap-up) |
 | `weekly` | `/weekly` | Sprint retro (Collect/Reflect/Plan) |
 | `push` | `/push` | Git commit and sync |
 | `update` | `/update` | Check for and apply framework updates |
-| `onboard` | `/onboard` | Load _core/ + CLAUDE.md context |
+| `onboard` | `/onboard` | Interactive setup + context loading |
 | `vault-ops` | (auto) | Core file read/write/link operations |
 
-### Progress Visibility
-
-Skills use session task tools to show progress during multi-step operations:
-```
-[Spinner] Collecting standup data...
-[Done] Daily note created (3/3 projects)
-```
+Skills use session task tools for progress visibility during multi-step operations.
 
 ## Agents
 
@@ -66,7 +117,8 @@ Skills use session task tools to show progress during multi-step operations:
 ## Conventions
 
 - **Files**: `YYYY-MM-DD-{slug}.md` (daily: `YYYY-MM-DD.md`, docs: `{slug}.md`)
-- **Frontmatter**: `type`, `project`, `status`, `date`, `tags`; Blocker: `severity`/`owner`/`due`- **Links**: `[[wikilinks]]` with `[[path|Title]]`; `## Links` required on typed notes
+- **Frontmatter**: `type`, `project`, `status`, `date`, `tags`; Blocker adds `severity`/`owner`/`due`
+- **Links**: `[[wikilinks]]` with `[[path|Title]]`; `## Links` required on typed notes
 - **Naming-as-API**: Strict filename patterns enable glob queries without database
 
 ## Processing

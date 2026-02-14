@@ -8,6 +8,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+## [2026.02.15a] - 2026-02-15
+
+### Added
+- `AGENTS.md` — Cross-agent compatibility file for Codex, Cursor, Windsurf, and other AI coding tools (project structure, build commands, coding style, testing, commit conventions)
+
+### Changed
+- `CLAUDE.md` rewritten for developer clarity: added architecture overview, two-layer design (skills + agents), hooks documentation, development commands, versioning/release flow, update system (framework vs user content), and permissions model
+- Fixed formatting bug where frontmatter and links conventions were merged on one line
+- Skills table reordered: `/today` moved to top as primary daily workflow
+- `/onboard` description updated to "Interactive setup + context loading"
+- Progress visibility section condensed to single line
+
 ## [2026.02.15] - 2026-02-15
 
 ### Added
