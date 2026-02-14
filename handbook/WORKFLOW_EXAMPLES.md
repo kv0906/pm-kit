@@ -1,6 +1,31 @@
 # PM-Kit Workflow Examples
 
-## Daily PM Workflow
+## Guided Daily Workflow with `/today`
+
+Start your day with a structured workflow that guides you through standup, sync, review, and focus:
+
+```
+/today
+```
+
+**Phases**:
+1. **Daily Standup** — Update each project (shipped/wip/blocked) with auto-detection of blockers and decisions
+2. **Team Sync** — Process external context (Slack threads, meeting notes, Linear updates)
+3. **Review** — See cross-project health dashboard (blockers, active docs, recent decisions)
+4. **Focus** — View priorities, then do deep work
+5. **Wrap-Up** — Summarize the day and commit
+
+**Resume**: Run `/today` again after focus time to wrap up.
+**Skip phases**: Use `/today skip` to jump to next phase.
+**End of day**: Use `/today wrap` to jump straight to wrap-up.
+
+For quick atomic updates without the full workflow:
+
+```
+/daily project-a: shipped auth flow, wip notifications
+```
+
+## Daily PM Workflow (Manual)
 
 ### Morning (5 min)
 

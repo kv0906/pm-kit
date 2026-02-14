@@ -1,3 +1,5 @@
+![PM-Kit Banner](./pm-kit-banner.png)
+
 # PM-Kit
 
 Turn your AI coding tool into a PM workspace, knowledge hub, and execution engine.
@@ -32,6 +34,13 @@ claude
 ## Daily Routine
 
 ```
+/today                # Guided workflow: standup → sync → review → focus → wrap-up
+/today wrap           # Jump to end-of-day summary
+```
+
+Or for quick atomic updates:
+
+```
 /daily my-project: shipped X, wip Y, blocked on Z
 /push
 ```
@@ -58,6 +67,7 @@ Updates only touch framework files (skills, templates, scripts, docs). Your note
 
 | Command | Purpose |
 |---------|---------|
+| `/today` | Guided daily workflow orchestrator |
 | `/daily` | Multi-project standup logging |
 | `/progress` | Cross-project status synthesis |
 | `/block` | Structured blocker capture |

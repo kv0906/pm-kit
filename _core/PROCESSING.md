@@ -121,7 +121,7 @@
 | I-P-O | Description |
 |-------|-------------|
 | **Input** | None |
-| **Process** | Health → Standup → Sync → Review → Focus → Wrap-up |
+| **Process** | Standup → Team Sync → Review → Focus → Wrap-up |
 | **Output** | Daily notes, blocker updates, priorities set |
 
 ---

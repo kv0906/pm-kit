@@ -39,6 +39,7 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `inbox` | `/inbox` | Quick capture + batch processing |
 | `ask` | `/ask` | Fast vault Q&A |
 | `health` | `/health` | Vault health check |
+| `today` | `/today` | Guided daily workflow (standup/sync/review/focus/wrap-up) |
 | `weekly` | `/weekly` | Sprint retro (Collect/Reflect/Plan) |
 | `push` | `/push` | Git commit and sync |
 | `update` | `/update` | Check for and apply framework updates |

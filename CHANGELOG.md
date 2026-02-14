@@ -6,10 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+<!-- New merged PR entries are inserted here automatically. -->
+
+## [2026.02.15] - 2026-02-15
+
+### Added
+- `/today` — Guided daily workflow orchestrator with 5 phases: standup, team sync, review, focus, wrap-up
+- `/today wrap` — Jump directly to end-of-day summary
+- `/today skip` — Skip current phase and advance to next
+- `/today status` — Show current workflow phase
+- Same-session resume: run `/today` again after focus time to pick up where you left off
+- New skills: `/excalidraw`, `/explain`, `/find-skills`, `/interview`, `/json-canvas`, `/mermaid-visualizer`, `/obsidian-bases`, `/obsidian-cli`, `/obsidian-markdown`
+- README banner image
+
+### Changed
+- README daily routine section now features `/today` as primary workflow
+- `WORKFLOW_EXAMPLES.md` leads with guided `/today` workflow, existing manual flow renamed to "Manual"
+- `PROCESSING.md` `/today` entry corrected to match implementation phases
+
 ### Fixed
 - `update.sh` now checks for uncommitted changes before applying updates
-
-<!-- New merged PR entries are inserted here automatically. -->
 
 ## [2026.02.14] - 2026-02-14
 
