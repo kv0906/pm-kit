@@ -15,9 +15,7 @@
       "Write(meetings/**)",
       "Write(inbox/**)",
       "Write(index/**)",
-      "Write(roadmap/**)",
-      "Write(adrs/**)",
-      "Write(research/**)",
+
       "Write(reports/**)",
       "Write(_archive/**)",
       "Edit(daily/**)",
@@ -27,14 +25,11 @@
       "Edit(meetings/**)",
       "Edit(inbox/**)",
       "Edit(index/**)",
-      "Edit(roadmap/**)",
-      "Edit(adrs/**)",
-      "Edit(research/**)",
+
       "Edit(reports/**)"
     ],
     "deny": [
-      "Write(.git/**)",
-      "Bash(rm -rf:*)"
+      "Write(.git/**)"
     ]
   },
   "env": {

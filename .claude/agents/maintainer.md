@@ -30,7 +30,6 @@ Rebuild project index MOC:
    - `docs/{project}/` for active docs
    - `decisions/{project}/` for recent decisions
    - `daily/` for sections mentioning project (last 7 days)
-   - `adrs/` for ADRs mentioning project
 2. Preserve manual sections (marked with `%% Manual %%`)
 3. Update auto-generated sections
 4. Write to `index/{project}.md`
@@ -44,7 +43,6 @@ Trigger: Status change to terminal state
 | blocker | resolved | Move to `_archive/YYYY-MM/` |
 | doc | shipped | Move to `_archive/YYYY-MM/` |
 | decision | superseded | Move to `_archive/YYYY-MM/` |
-| adr | deprecated/superseded | Move to `_archive/YYYY-MM/` |
 
 After archiving:
 - Update index to remove archived note
@@ -60,7 +58,7 @@ After archiving:
 ### Structural Consistency
 
 - Verify all typed notes have required frontmatter
-- Check `## Links` sections exist on doc, decision, blocker, meeting, adr
+- Check `## Links` sections exist on doc, decision, blocker, meeting
 - Ensure naming conventions are followed
 - Flag misplaced files (e.g., blocker not in `blockers/`)
 

@@ -1,13 +1,13 @@
 ---
 name: weekly
-description: Sprint retro and weekly review — 3-phase process (Collect/Reflect/Plan). Reviews shipped items, blockers, OKR progress, and plans next sprint. Use on Fridays or Mondays.
+description: Weekly review — 3-phase process (Collect/Reflect/Plan). Reviews shipped items, blockers, decisions, and plans next week. Use on Fridays or Mondays.
 allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
-# /weekly — Sprint Retro & Weekly Review
+# /weekly — Weekly Review
 
-Facilitates your sprint retro / weekly review by collecting the past week's data, reflecting on OKR progress, and planning the next sprint.
+Facilitates your weekly review by collecting the past week's data, reflecting on progress, and planning the next week.
 
 ## Context
 
@@ -15,7 +15,6 @@ Today's date: `!date +%Y-%m-%d`
 
 Config: @_core/config.yaml
 Processing logic: @_core/PROCESSING.md
-OKRs: @roadmap/objectives.md
 
 Reference template: @_templates/sprint-retro.md
 
@@ -26,15 +25,15 @@ Create tasks at skill start with dependencies:
 ```
 TaskCreate: "Phase 1: Collect"
   description: "Gather daily notes, shipped items, blockers from past week"
-  activeForm: "Collecting sprint data..."
+  activeForm: "Collecting weekly data..."
 
 TaskCreate: "Phase 2: Reflect"
-  description: "Analyze OKR progress, patterns, what worked/didn't"
-  activeForm: "Reflecting on sprint performance..."
+  description: "Analyze patterns, what worked/didn't"
+  activeForm: "Reflecting on weekly performance..."
 
 TaskCreate: "Phase 3: Plan"
-  description: "Set next sprint goals, identify ONE Big Thing"
-  activeForm: "Planning next sprint..."
+  description: "Set next week priorities, identify top risks"
+  activeForm: "Planning next week..."
 ```
 
 Set dependencies:
@@ -51,31 +50,27 @@ TaskUpdate: "Phase 3", addBlockedBy: [phase-2-id]
    - Items carried over (WIP)
    - Blockers resolved
    - Blockers still open
-3. Read recent decisions and ADRs
+3. Read recent decisions
 4. Identify patterns in standup data
 
 ## Phase 2: Reflect (10 minutes)
 
-1. Read `roadmap/objectives.md` for current OKRs
-2. Calculate progress delta for each key result
-3. Check OKR-action alignment:
-   - Which shipped items advanced which key results?
-   - Which key results had no activity?
-4. Identify what went well / didn't go well
-5. Surface recurring patterns (e.g., same blocker type)
+1. Identify what went well / didn't go well
+2. Surface recurring patterns (e.g., same blocker type)
+3. Check: which shipped items had the most impact?
+4. Check: which blockers slowed progress most?
+5. Note any decisions that need revisiting
 
 ## Phase 3: Plan (10 minutes)
 
-1. Identify the ONE Big Thing for next sprint
-2. Set sprint goals aligned to lagging key results
-3. Identify decisions that need to be made
-4. Anticipate blockers
-5. Update OKR progress in `roadmap/objectives.md`
-6. Add weekly entry to `roadmap/key-results.md`
+1. Set top 3 priorities for next week with owner + due
+2. Identify decisions that need to be made
+3. Anticipate blockers (risk watchlist)
+4. Note any carry-over items
 
 ## Output
 
-Create sprint retro note using template:
+Create weekly review note using template:
 - Filename: `reports/{date}-sprint-retro.md`
 
 ## Integration

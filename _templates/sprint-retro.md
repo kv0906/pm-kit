@@ -6,16 +6,14 @@ sprint: {{sprint}}
 tags: []
 ---
 
-# Sprint Retro: {{sprint}}
+# Weekly Review: {{sprint}}
 
 **Date**: {{date}}
-**Sprint**: {{sprint_name}}
 
 ---
 
-## Collect
+## Wins
 
-### Shipped This Sprint
 {{#each shipped}}
 - {{this}}
 {{/each}}
@@ -25,14 +23,26 @@ tags: []
 - {{this}}
 {{/each}}
 
-### Blockers Resolved
+---
+
+## Blockers
+
+### Resolved
 {{#each resolved_blockers}}
 - [[{{this.path}}|{{this.title}}]]
 {{/each}}
 
-### Blockers Still Open
+### Still Open
 {{#each open_blockers}}
 - [[{{this.path}}|{{this.title}}]] — {{this.severity}}
+{{/each}}
+
+---
+
+## Decisions This Week
+
+{{#each decisions}}
+- [[{{this.path}}|{{this.title}}]] — {{this.date}}
 {{/each}}
 
 ---
@@ -40,11 +50,11 @@ tags: []
 ## Reflect
 
 ### What Went Well
-{{#each wins}}
+{{#each wins_reflect}}
 - {{this}}
 {{/each}}
 
-### What Didn't Go Well
+### What Slowed Progress
 {{#each challenges}}
 - {{this}}
 {{/each}}
@@ -56,24 +66,20 @@ tags: []
 
 ---
 
-## OKR Progress
+## Risks
 
-| Objective | Key Result | Progress | Delta |
-|-----------|-----------|----------|-------|
-{{#each okr_progress}}
-| {{this.objective}} | {{this.key_result}} | {{this.progress}}% | {{this.delta}} |
+{{#each risks}}
+- {{this}}
 {{/each}}
 
 ---
 
-## Plan
+## Next Week Priorities
 
-### ONE Big Thing Next Sprint
-> {{one_big_thing}}
-
-### Sprint Goals
-{{#each sprint_goals}}
-- [ ] {{this}}
+| Priority | Owner | Due |
+|----------|-------|-----|
+{{#each priorities}}
+| {{this.task}} | {{this.owner}} | {{this.due}} |
 {{/each}}
 
 ### Decisions Needed

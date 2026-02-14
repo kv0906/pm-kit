@@ -419,6 +419,19 @@ GitHub Actions will:
 
 ---
 
+## Release Process
+
+PM-Kit uses **date-based versioning** (`YYYY.MM.DD`). The release flow:
+
+1. Contributors merge PRs to `main` (changelog entries added automatically)
+2. Maintainer runs `./scripts/release.sh` when ready to ship
+3. GitHub Actions creates a GitHub Release with changelog notes
+4. Users receive updates via `/update` or `./scripts/update.sh`
+
+For full details, see [handbook/RELEASES.md](handbook/RELEASES.md).
+
+---
+
 ## Deprecation Policy
 
 When consolidating or removing components:

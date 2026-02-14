@@ -22,9 +22,6 @@ pm-kit/
 ├── decisions/{project}/ # Decision records
 ├── blockers/{project}/  # Active blockers
 ├── meetings/           # Meeting notes
-├── adrs/               # Architecture Decision Records
-├── roadmap/            # OKR objectives + key results
-├── research/           # Exploration notes
 ├── reports/            # Generated reports
 └── _archive/           # Archived by YYYY-MM/
 ```
@@ -40,7 +37,6 @@ Strict filename patterns enable glob queries without a database:
 | Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` | `decisions/xmarket/2026-01-15-auth-approach.md` |
 | Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` | `blockers/xmarket/2026-01-15-api-rate-limit.md` |
 | Meeting | `meetings/YYYY-MM-DD-{type}-{slug}.md` | `meetings/2026-01-15-sync-sprint-review.md` |
-| ADR | `adrs/YYYY-MM-DD-{slug}.md` | `adrs/2026-01-15-database-choice.md` |
 | Inbox | `inbox/YYYY-MM-DD-{slug}.md` | `inbox/2026-01-15-quick-thought.md` |
 | Index | `index/{project}.md` | `index/xmarket.md` |
 
@@ -82,7 +78,7 @@ When processing templates, replace Handlebars syntax:
 All notes require frontmatter:
 ```yaml
 ---
-type: [daily|doc|decision|blocker|meeting|adr|inbox|index]
+type: [daily|doc|decision|blocker|meeting|inbox|index]
 project: {project-id}
 status: {per note_types in config.yaml}
 date: YYYY-MM-DD
@@ -98,7 +94,6 @@ tags: []
 | Meeting | `decisions/{project}/`, `blockers/{project}/` |
 | Decision | `docs/{project}/` |
 | Doc | decisions, blockers |
-| ADR | decisions, docs |
 
 ## Archive Rules
 
@@ -106,4 +101,3 @@ Move to `_archive/YYYY-MM/` when:
 - Blocker status → resolved
 - Doc status → shipped
 - Decision status → superseded
-- ADR status → deprecated or superseded

@@ -50,7 +50,7 @@ projects:
 **Check**: Templates exist in `_templates/`:
 ```bash
 ls _templates/
-# Should show: daily.md doc.md decision.md blocker.md meeting.md index.md inbox.md adr.md sprint-retro.md
+# Should show: daily.md doc.md decision.md blocker.md meeting.md index.md inbox.md sprint-retro.md
 ```
 
 ### Broken Wiki-Links

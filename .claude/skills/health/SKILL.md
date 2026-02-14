@@ -42,7 +42,7 @@ TaskCreate: "Generate health report"
    - Exclude: index files, standalone: true
 
 4. **Check Missing Sections**
-   - Typed notes (doc, decision, blocker, meeting, adr) should have `## Links`
+   - Typed notes (doc, decision, blocker, meeting) should have `## Links`
    - Report missing required sections
 
 5. **Calculate Statistics**
@@ -50,7 +50,12 @@ TaskCreate: "Generate health report"
    - Notes by project
    - Link density (links per note)
 
-6. **Generate Report**
+6. **Check Update Status**
+   - Read `VERSION` file for local version
+   - Query GitHub API for latest release: `curl -sS "https://api.github.com/repos/{repo}/releases/latest"` (non-fatal on failure)
+   - Compare: "Up to date" | "Update available: vX → vY" | "Could not check"
+
+7. **Generate Report**
    - Write to `index/_graph-health.md`
 
 ## Output Format
@@ -78,7 +83,6 @@ TaskCreate: "Generate health report"
 |------|-------|
 | daily | {n} |
 | doc | {n} |
-| adr | {n} |
 
 ### By Project
 | Project | Count |
@@ -88,6 +92,10 @@ TaskCreate: "Generate health report"
 ### Link Density
 - Total links: {n}
 - Average per note: {avg}
+
+## Framework Status
+- **Version**: v{local}
+- **Update**: {status — "Up to date" | "Update available: vX → vY" | "Could not check"}
 
 ## Actions
 1. [ ] Fix broken link: {source} → {target}

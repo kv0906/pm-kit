@@ -1,0 +1,38 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          # Extract the section for this version from CHANGELOG.md
+          awk -v ver="$VERSION" '
+            /^## \[/ {
+              if (found) exit
+              if (index($0, "[" ver "]")) found=1
+              next
+            }
+            found { print }
+          ' CHANGELOG.md > /tmp/release-notes.md
+
+      - name: Create GitHub Release
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file /tmp/release-notes.md
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

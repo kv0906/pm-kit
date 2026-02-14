@@ -23,7 +23,7 @@ paths:
   decisions: decisions
   blockers: blockers
   meetings: meetings
-  research: research
+
   reports: reports
   archive: _archive
   templates: _templates
@@ -120,7 +120,7 @@ tags:
   risk: []        # e.g., security, compliance, performance
 
 # QMD integration (optional — powers smarter /ask)
-# Requires: bun + qmd installed. See docs/QMD_INTEGRATION.md
+# Requires: bun + qmd installed. See handbook/QMD_INTEGRATION.md
 qmd:
   enabled: true
   collection_name: pm-kit

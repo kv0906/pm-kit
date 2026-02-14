@@ -45,7 +45,7 @@ At end of relevant line or in frontmatter only.
 All notes require frontmatter:
 ```yaml
 ---
-type: [daily|doc|decision|blocker|meeting|adr|inbox|index]
+type: [daily|doc|decision|blocker|meeting|inbox|index]
 project: {project-id}
 status: {per config.yaml note_types}
 date: YYYY-MM-DD
@@ -55,7 +55,7 @@ tags: []
 
 ### Required `## Links` Section
 
-All typed notes (doc, decision, blocker, meeting, adr) must end with:
+All typed notes (doc, decision, blocker, meeting) must end with:
 ```markdown
 ## Links
 

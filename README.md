@@ -43,6 +43,17 @@ claude
 /push
 ```
 
+## Updating
+
+```bash
+cat VERSION              # Check current version
+./scripts/update.sh      # Update framework files from latest release
+```
+
+Or from within Claude: `/update`
+
+Updates only touch framework files (skills, templates, scripts, docs). Your notes, config, and content are never modified. Backups are saved to `_archive/_updates/`.
+
 ## All Commands
 
 | Command | Purpose |
@@ -56,10 +67,10 @@ claude
 | `/inbox` | Fast capture for later processing |
 | `/ask` | Vault Q&A (QMD-powered when available) |
 | `/health` | Link + vault integrity checks |
-| `/adr` | Architecture Decision Records |
 | `/weekly` | Sprint retro and planning loop |
 | `/push` | Commit and sync |
 | `/onboard` | Interactive setup + context loading |
+| `/update` | Check for and apply framework updates |
 
 ## Smarter /ask with QMD (Optional)
 
@@ -79,14 +90,14 @@ qmd embed
 
 After setup, `/ask` automatically uses QMD when available. No command changes needed.
 
-Having trouble? See [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) or [open an issue](https://github.com/kv0906/pm-kit/issues).
+Having trouble? See [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) or [open an issue](https://github.com/kv0906/pm-kit/issues).
 
 ## Who Uses PM-Kit
 
 | Role | How They Use It |
 |------|------------------|
 | Product Managers / Product Owners | Run dailies, write PRDs, track blockers, align cross-functional work |
-| Engineering Leads | Capture decisions, maintain ADRs, drive sprint and roadmap clarity |
+| Engineering Leads | Capture decisions, drive sprint clarity, maintain technical context |
 | Engineers (Junior -> Senior) | Document context, ship specs, keep decisions traceable |
 | Founders / Solo Builders | Turn scattered thoughts into an execution system |
 | Analysts / Operators | Log research, synthesize findings, build durable knowledge |
@@ -103,13 +114,13 @@ Having trouble? See [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) or [open 
 | Doc | What It Covers |
 |-----|----------------|
 | [START_HERE.md](START_HERE.md) | 10-step beginner guide |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How PM-Kit works, project structure, principles |
-| [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) | QMD setup, troubleshooting, architecture |
-| [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) | Installation and first run |
-| [docs/CUSTOMIZATION.md](docs/CUSTOMIZATION.md) | Projects, templates, and overrides |
-| [docs/WORKFLOW_EXAMPLES.md](docs/WORKFLOW_EXAMPLES.md) | Example operating flows |
-| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Common issues and fixes |
-| [docs/maintainer-workflow.md](docs/maintainer-workflow.md) | PR, changelog, and maintainer workflow |
+| [handbook/ARCHITECTURE.md](handbook/ARCHITECTURE.md) | How PM-Kit works, project structure, principles |
+| [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) | QMD setup, troubleshooting, architecture |
+| [handbook/SETUP_GUIDE.md](handbook/SETUP_GUIDE.md) | Installation and first run |
+| [handbook/CUSTOMIZATION.md](handbook/CUSTOMIZATION.md) | Projects, templates, and overrides |
+| [handbook/WORKFLOW_EXAMPLES.md](handbook/WORKFLOW_EXAMPLES.md) | Example operating flows |
+| [handbook/TROUBLESHOOTING.md](handbook/TROUBLESHOOTING.md) | Common issues and fixes |
+| [handbook/maintainer-workflow.md](handbook/maintainer-workflow.md) | PR, changelog, and maintainer workflow |
 
 ## Contributing
 
@@ -127,6 +138,6 @@ MIT
 
 ## Star History
 
-[![Star History Chart](docs/star-history.png)](https://star-history.com/#kv0906/pm-kit&Date)
+[![Star History Chart](handbook/assets/star-history.png)](https://star-history.com/#kv0906/pm-kit&Date)
 
 Think clearly. Build simply. Let systems carry the weight.

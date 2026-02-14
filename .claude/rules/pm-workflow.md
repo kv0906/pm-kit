@@ -1,22 +1,18 @@
 ---
-paths: "daily/**/*.md, roadmap/**/*.md, reports/**/*.md"
+paths: "daily/**/*.md, reports/**/*.md"
 ---
 
 # PM Workflow Rules
 
-These conventions apply to daily standups, OKRs, and sprint processes.
+These conventions apply to daily standups and weekly review processes.
 
-## OKR Cadence
+## Weekly Cadence
 
-### Quarterly
-- Set 2-4 objectives with 2-3 key results each
-- Key results must be measurable (number, percentage, binary)
-- Store in `roadmap/objectives.md`
-
-### Weekly (Sprint Retro)
-- Update key result progress
-- Log snapshot in `roadmap/key-results.md`
-- Run `/weekly` for structured retro
+### Weekly (Review)
+- Review shipped items, blockers, decisions from past 7 days
+- Reflect on what worked and what slowed progress
+- Set top 3 priorities for next week with owners
+- Run `/weekly` for structured review
 
 ### Daily (Standup)
 - Log shipped/WIP/blocked per project
@@ -55,20 +51,19 @@ Run `/daily` once per project. All updates go in same `daily/YYYY-MM-DD.md`:
 | high | 2 days | Flag in standup, escalate |
 | high | overdue | Immediate escalation |
 | medium | 5 days | Monitor |
-| low | — | Track in next retro |
+| low | — | Track in next review |
 
-## Sprint Retro Process
+## Weekly Review Process
 
 Three phases, 30 minutes total:
 
 1. **Collect** (10 min) — Aggregate shipped, carried, blockers
-2. **Reflect** (10 min) — OKR progress, patterns, what worked
-3. **Plan** (10 min) — ONE Big Thing, sprint goals, decisions needed
+2. **Reflect** (10 min) — Patterns, what worked, what slowed progress
+3. **Plan** (10 min) — Top 3 priorities, risk watchlist, decisions needed
 
 ## Decision Discipline
 
 - Every decision gets a note, always
 - Document alternatives even for "obvious" choices
-- ADRs for architecture/technical decisions
 - Regular decisions in `decisions/{project}/`
-- Revisit decisions flagged in retros
+- Revisit decisions flagged in reviews

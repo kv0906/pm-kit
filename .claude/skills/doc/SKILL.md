@@ -27,14 +27,12 @@ User input: $ARGUMENTS
 1. **Parse Input**
    - Extract project
    - Extract title/feature name
-   - Check for --from flag (source research)
 
 2. **Check Existing**
-   - Search `docs/{project}/*.md` for similar titles
+   - Search `docs/{project}/*.md` for similar titles (or `docs/general/*.md` if no project)
    - If found: Offer to edit or create new
 
 3. **Gather Context**
-   - If --from: Load source file content
    - Search for related decisions/blockers
 
 4. **Interactive Drafting**
@@ -46,7 +44,8 @@ User input: $ARGUMENTS
    - Or accept full content at once
 
 5. **Create Doc Note**
-   - Filename: `docs/{project}/{slug}.md`
+   - If no project specified: write to `docs/general/{slug}.md`
+   - If project specified: write to `docs/{project}/{slug}.md`
    - Apply template with gathered data
    - Status: draft
    - Add `## Links` section

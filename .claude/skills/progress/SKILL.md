@@ -41,7 +41,6 @@ TaskCreate: "Synthesize report"
    - Scan `blockers/{project}/*.md` for open blockers
    - Scan `docs/{project}/*.md` for active docs
    - Scan `decisions/{project}/*.md` for recent decisions
-   - Scan `roadmap/objectives.md` for OKR alignment
 
 3. **Synthesize Report**
 
@@ -70,9 +69,6 @@ TaskCreate: "Synthesize report"
 
 ## Recent Decisions
 - {decision} — {date}
-
-## OKR Alignment
-- {objective}: {progress}%
 ```
 
 **Note**: This command does NOT create any files. Output to terminal only.

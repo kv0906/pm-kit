@@ -15,14 +15,13 @@ Knowledge vault for Technical PMs and Engineering Leads. Run `/onboard` to get s
 | `inbox/` | Raw captures |
 | `index/` | Project MOCs |
 | `daily/` | `YYYY-MM-DD.md` — one file per day, H2 per project |
-| `docs/{project}/` | PRDs, specs, documents |
+| `docs/{project}/` | PRDs, specs, user documents |
+| `docs/general/` | Cross-project or uncategorized docs |
 | `decisions/{project}/` | Decision records |
 | `blockers/{project}/` | Active blockers |
 | `meetings/` | Meeting notes |
-| `adrs/` | Architecture Decision Records |
-| `roadmap/` | OKR objectives + key results |
-| `research/` | Exploration notes |
 | `reports/` | Generated reports |
+| `handbook/` | Framework documentation (maintainer-owned) |
 | `_archive/` | Auto-archived by `YYYY-MM/` |
 
 ## Skills
@@ -40,12 +39,11 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `inbox` | `/inbox` | Quick capture + batch processing |
 | `ask` | `/ask` | Fast vault Q&A |
 | `health` | `/health` | Vault health check |
-| `adr` | `/adr` | Architecture Decision Record |
 | `weekly` | `/weekly` | Sprint retro (Collect/Reflect/Plan) |
 | `push` | `/push` | Git commit and sync |
+| `update` | `/update` | Check for and apply framework updates |
 | `onboard` | `/onboard` | Load _core/ + CLAUDE.md context |
 | `vault-ops` | (auto) | Core file read/write/link operations |
-| `okr-tracking` | (auto) | OKR progress calculation |
 
 ### Progress Visibility
 
@@ -67,8 +65,7 @@ Skills use session task tools to show progress during multi-step operations:
 ## Conventions
 
 - **Files**: `YYYY-MM-DD-{slug}.md` (daily: `YYYY-MM-DD.md`, docs: `{slug}.md`)
-- **Frontmatter**: `type`, `project`, `status`, `date`, `tags`; Blocker: `severity`/`owner`/`due`; ADR: `deciders`
-- **Links**: `[[wikilinks]]` with `[[path|Title]]`; `## Links` required on typed notes
+- **Frontmatter**: `type`, `project`, `status`, `date`, `tags`; Blocker: `severity`/`owner`/`due`- **Links**: `[[wikilinks]]` with `[[path|Title]]`; `## Links` required on typed notes
 - **Naming-as-API**: Strict filename patterns enable glob queries without database
 
 ## Processing
@@ -79,7 +76,7 @@ Skills use session task tools to show progress during multi-step operations:
 
 ## Output Style
 
-**PM Coach** — Challenges scope creep, pushes for user value, holds accountable to OKRs.
+**PM Coach** — Challenges scope creep, pushes for user value, holds accountable to delivery.
 
 ## Customization
 

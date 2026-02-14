@@ -23,7 +23,7 @@ What changes:
 - Workspace stays organized with strict naming conventions
 - Context persists through linked notes and project indexes
 - Daily operations become repeatable (`/daily`, `/progress`, `/weekly`)
-- Decision quality improves with explicit artifacts (`/decide`, `/adr`, `/block`)
+- Decision quality improves with explicit artifacts (`/decide`, `/block`)
 - You move from raw thought to shipped outcomes faster
 
 ## How It Works
@@ -31,7 +31,6 @@ What changes:
 1. You capture intent
 - "Log today's product standup"
 - "Draft a PRD for checkout improvements"
-- "Record this architecture decision"
 
 2. PM-Kit routes to the right workflow
 
@@ -39,13 +38,13 @@ What changes:
 |---------------|------------------|--------|
 | Daily Operations | `/daily`, `/progress`, `/weekly` | Status, risks, momentum |
 | Documentation | `/doc`, `/meet`, `/ask` | PRDs, notes, synthesis |
-| Decision Control | `/decide`, `/adr`, `/block` | Decision logs, ADRs, blocker tracking |
+| Decision Control | `/decide`, `/block` | Decision logs, blocker tracking |
 | Capture & Maintenance | `/inbox`, `/push`, `/health` | Intake, cleanup, repository health |
 
 3. AI keeps the system coherent
 - Applies naming conventions
 - Links related notes
-- Preserves traceability across docs, decisions, blockers, and roadmap
+- Preserves traceability across docs, decisions, and blockers
 
 ## Project Structure
 
@@ -62,9 +61,7 @@ pm-kit/
 ├── decisions/{project}/    # Decision records
 ├── blockers/{project}/     # Active blockers
 ├── meetings/               # Meeting notes
-├── adrs/                   # Architecture Decision Records
-├── roadmap/                # OKR objectives + key results
-├── research/               # Exploration notes
+
 ├── reports/                # Generated reports
 └── _archive/               # Archived notes by YYYY-MM/
 ```

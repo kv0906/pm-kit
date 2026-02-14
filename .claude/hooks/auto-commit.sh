@@ -29,6 +29,9 @@ if [[ "$MODIFIED_FILE" == *"daily/"* ]]; then
     MSG="Update daily note - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"docs/"* ]]; then
     PROJECT=$(echo "$MODIFIED_FILE" | sed 's|.*/docs/\([^/]*\)/.*|\1|')
+    if [ -z "$PROJECT" ] || [ "$PROJECT" = "general" ]; then
+        PROJECT="general"
+    fi
     MSG="Update doc ($PROJECT) - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"decisions/"* ]]; then
     PROJECT=$(echo "$MODIFIED_FILE" | sed 's|.*/decisions/\([^/]*\)/.*|\1|')
@@ -38,10 +41,6 @@ elif [[ "$MODIFIED_FILE" == *"blockers/"* ]]; then
     MSG="Update blocker ($PROJECT) - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"meetings/"* ]]; then
     MSG="Add meeting notes - $TIMESTAMP"
-elif [[ "$MODIFIED_FILE" == *"roadmap/"* ]]; then
-    MSG="Update roadmap - $TIMESTAMP"
-elif [[ "$MODIFIED_FILE" == *"adrs/"* ]]; then
-    MSG="Add ADR - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"index/"* ]]; then
     MSG="Regenerate index - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"inbox/"* ]]; then

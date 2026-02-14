@@ -80,8 +80,8 @@
 
 | I-P-O | Description |
 |-------|-------------|
-| **Input** | `{project} {title}` [--from research] |
-| **Process** | Parse → load context if --from → prompt sections if interactive |
+| **Input** | `{project} {title}` |
+| **Process** | Parse → load context → prompt sections if interactive |
 | **Output** | `docs/{project}/{slug}.md` |
 
 ---

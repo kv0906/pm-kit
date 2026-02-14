@@ -13,12 +13,19 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 # Banner
-echo -e "${BLUE}"
-echo "╔═══════════════════════════════════════════════════╗"
-echo "║   PM-Kit Setup Wizard                          ║"
-echo "║   AI-Augmented Knowledge Vault v3.0              ║"
-echo "╚═══════════════════════════════════════════════════╝"
-echo -e "${NC}"
+if command_exists npx; then
+    npx -y oh-my-logo "PM-Kit" sunset --filled 2>/dev/null || true
+    echo ""
+    echo -e "  ${BLUE}Setup Wizard — AI-Augmented Knowledge Vault${NC}"
+    echo ""
+else
+    echo -e "${BLUE}"
+    echo "╔═══════════════════════════════════════════════════╗"
+    echo "║   PM-Kit Setup Wizard                            ║"
+    echo "║   AI-Augmented Knowledge Vault                   ║"
+    echo "╚═══════════════════════════════════════════════════╝"
+    echo -e "${NC}"
+fi
 
 print_success() { echo -e "${GREEN}✓${NC} $1"; }
 print_error() { echo -e "${RED}✗${NC} $1"; }
@@ -105,14 +112,9 @@ if [ "$INPLACE_MODE" = false ]; then
     done
 
     # Create vault directories
-    for dir in inbox index daily docs decisions blockers meetings adrs roadmap research reports _archive; do
+    for dir in inbox index daily docs decisions blockers meetings reports _archive; do
         mkdir -p "$VAULT_PATH/$dir"
     done
-
-    # Copy roadmap files
-    if [ -d "$SOURCE_DIR/roadmap" ]; then
-        cp -r "$SOURCE_DIR/roadmap/"* "$VAULT_PATH/roadmap/" 2>/dev/null || true
-    fi
 
     # Make hooks executable
     chmod +x "$VAULT_PATH/.claude/hooks/"*.sh 2>/dev/null || true
@@ -123,8 +125,16 @@ else
     echo -e "\n${BLUE}Step 2-3: Verifying Vault Structure${NC}"
     echo "======================================"
 
-    for dir in inbox index daily docs decisions blockers meetings adrs roadmap research reports _archive; do
+    for dir in inbox index daily docs decisions blockers meetings reports _archive; do
         mkdir -p "$VAULT_PATH/$dir"
+    done
+
+    # Migration: remove deprecated ADR and roadmap directories
+    for deprecated_dir in adrs roadmap research; do
+        if [ -d "$VAULT_PATH/$deprecated_dir" ]; then
+            rm -rf "$VAULT_PATH/$deprecated_dir"
+            print_info "Removed deprecated folder: $deprecated_dir/"
+        fi
     done
 
     print_success "Vault structure verified"
@@ -416,6 +426,6 @@ echo "  /progress $PROJECT_ID       # View status"
 echo "  /push                       # Save changes"
 echo ""
 echo "All skills: /daily /progress /block /decide /doc /meet"
-echo "            /inbox /ask /health /adr /weekly /push /onboard"
+echo "            /inbox /ask /health /weekly /push /onboard"
 echo ""
-print_info "Read docs/SETUP_GUIDE.md for detailed guidance"
+print_info "Read handbook/SETUP_GUIDE.md for detailed guidance"

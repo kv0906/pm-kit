@@ -50,23 +50,10 @@ Run on Friday or Monday:
 
 Claude runs 3 phases:
 1. **Collect** — Reads all dailies from the past week, aggregates shipped/WIP/blocked
-2. **Reflect** — Checks OKR progress, finds patterns, calculates metrics
+2. **Reflect** — Finds patterns, checks what worked and what slowed progress
 3. **Plan** — Helps set next sprint goals, identifies ONE Big Thing
 
 Output: `reports/2026-01-15-sprint-retro.md`
-
-## Architecture Decisions (for Engineering Leads)
-
-```
-/adr xmarket: chose event sourcing over CRUD for order processing
-```
-
-Claude prompts for:
-- Context and decision drivers
-- Options considered (with pros/cons)
-- Consequences and risks
-
-Output: `adrs/2026-01-15-event-sourcing-orders.md`
 
 ## Vault Health
 
@@ -89,7 +76,7 @@ Output: `index/_graph-health.md`
 /progress xmarket --since 2026-01-01
 ```
 
-Synthesizes shipped items, blockers, decisions, and OKR alignment across projects.
+Synthesizes shipped items, blockers, and decisions across projects.
 
 ## Inbox Processing
 

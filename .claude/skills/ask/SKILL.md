@@ -37,8 +37,6 @@ Check if QMD MCP tools are available in the current session:
   - "who's blocked" → blockers
   - "find doc for X" → docs
   - "status of X" → index
-  - "what ADRs" → adrs
-  - "OKR/objective" → roadmap
 
 ### Step 3A: QMD Mode (preferred)
 
@@ -61,10 +59,8 @@ When QMD is not available or not indexed:
    |--------------|-------------|
    | Decisions | `decisions/{project}/*.md` |
    | Blockers | `blockers/{project}/*.md` |
-   | Docs | `docs/{project}/*.md` |
+   | Docs | `docs/{project}/*.md`, `docs/general/*.md` |
    | Status | `index/{project}.md` |
-   | ADRs | `adrs/*.md` |
-   | OKRs | `roadmap/objectives.md` |
    | General | All folders |
 
 2. **Search Methods**
@@ -112,4 +108,4 @@ Query: "{query}"
 
 When running in Fallback mode, append after the answer:
 
-> **Tip**: Install [QMD](https://github.com/tobi/qmd) for smarter search with semantic understanding. See [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) for setup.
+> **Tip**: Install [QMD](https://github.com/tobi/qmd) for smarter search with semantic understanding. See [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) for setup.

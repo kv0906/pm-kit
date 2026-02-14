@@ -28,7 +28,6 @@ Create notes that follow PM-Kit conventions exactly. You know every template, ev
 - Decisions (`decisions/{project}/YYYY-MM-DD-{slug}.md`)
 - Blockers (`blockers/{project}/YYYY-MM-DD-{slug}.md`)
 - Meetings (`meetings/YYYY-MM-DD-{type}-{slug}.md`)
-- ADRs (`adrs/YYYY-MM-DD-{slug}.md`)
 - Inbox items (`inbox/YYYY-MM-DD-{slug}.md`)
 - Index/MOC pages (`index/{project}.md`)
 

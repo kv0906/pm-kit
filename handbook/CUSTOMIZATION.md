@@ -67,14 +67,9 @@ Templates live in `_templates/` and use Handlebars syntax. Available templates:
 | `meeting.md` | `/meet` |
 | `inbox.md` | `/inbox` |
 | `index.md` | Maintainer agent |
-| `adr.md` | `/adr` |
 | `sprint-retro.md` | `/weekly` |
 
 To customize a template, edit the file directly. Handlebars variables (`{{variable}}`) are replaced at note creation time.
-
-## OKRs
-
-Edit `roadmap/objectives.md` with your quarterly objectives and key results. The `/weekly` skill updates progress automatically during sprint retros.
 
 ## Output Style
 

@@ -44,10 +44,8 @@ xcopy /E /I /Y "%SOURCE_DIR%\_core" "%VAULT_PATH%\_core\" >nul 2>&1
 xcopy /E /I /Y "%SOURCE_DIR%\_templates" "%VAULT_PATH%\_templates\" >nul 2>&1
 xcopy /E /I /Y "%SOURCE_DIR%\.claude" "%VAULT_PATH%\.claude\" >nul 2>&1
 xcopy /E /I /Y "%SOURCE_DIR%\.claude-plugin" "%VAULT_PATH%\.claude-plugin\" >nul 2>&1
-xcopy /E /I /Y "%SOURCE_DIR%\roadmap" "%VAULT_PATH%\roadmap\" >nul 2>&1
-
 REM Create directories
-for %%d in (inbox index daily docs decisions blockers meetings adrs research reports _archive) do (
+for %%d in (inbox index daily docs decisions blockers meetings reports _archive) do (
     if not exist "%VAULT_PATH%\%%d" mkdir "%VAULT_PATH%\%%d"
 )
 

@@ -226,11 +226,6 @@ Map answers to `CLAUDE.local.md` using this template. Write to vault root.
 - Moderate push → "Flag when noticed"
 - Intense coach → "Call out aggressively"
 
-**OKR Check-ins** (derived from Planning answer):
-- Detailed plans → "Weekly"
-- Flexible → "Weekly"
-- Minimal → "Daily"
-
 **Working Philosophy** (generate a 1-2 sentence statement based on role + focus areas):
 Combine the role and selected focus areas into a concise personal statement. Examples:
 - PM + Shipping fast + Clarity → "Ship with intention — move fast but make sure every feature tells a clear story."
@@ -271,7 +266,6 @@ What matters most right now:
 
 - **Challenge Level**: {answer 7}
 - **Scope Creep Alerts**: {derived from answer 7}
-- **OKR Check-ins**: {derived from answer 4}
 
 ## Working Philosophy
 
@@ -358,7 +352,6 @@ index/{project}.md     → MOC for each active project
 ```
 daily/{today}.md       → Today's standup (if exists)
 daily/{yesterday}.md   → Yesterday's context
-roadmap/objectives.md  → Current OKR status
 ```
 
 ### 5. Active Blockers
@@ -406,6 +399,6 @@ Personalize the ready message based on their profile:
 > - Indexes: {n} project MOCs
 > - Today: {summary or "No standup yet"}
 > - Blockers: {n} open across projects
-> - OKRs: {status}
+> - Updates: {version status from API check, non-fatal — e.g. "Up to date (v2026.02.14)" or "Update available: vX → vY"}
 >
 > What would you like to work on?

@@ -75,7 +75,7 @@ qmd collection add . --name pm-kit && qmd embed
 
 After this, `/ask` uses semantic search instead of basic grep. If you skip this, `/ask` still works — just less accurate.
 
-Having trouble? See [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) or [open an issue](https://github.com/kv0906/pm-kit/issues).
+Having trouble? See [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) or [open an issue](https://github.com/kv0906/pm-kit/issues).
 
 ## Step 10: Customize (when ready)
 
@@ -83,10 +83,18 @@ Having trouble? See [docs/QMD_INTEGRATION.md](docs/QMD_INTEGRATION.md) or [open 
 - `/onboard --reset` — redo personal preferences
 - `_templates/` — modify note templates
 
-## Step 11: Get help
+## Step 11: Check for updates
 
 ```
-/ask how do I track OKRs?
+/update --check
+```
+
+PM-Kit is actively developed. Check for framework updates periodically — your notes and config are never touched.
+
+## Step 12: Get help
+
+```
+/ask what did we decide about auth?
 /health
 ```
 

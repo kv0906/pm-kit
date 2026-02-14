@@ -30,8 +30,7 @@ The wizard will:
    - `CLAUDE.md`, `CLAUDE.local.md.template`
    - `_core/`, `_templates/`
    - `.claude/`, `.claude-plugin/`
-   - `roadmap/`
-3. Create empty directories: `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `adrs/`, `research/`, `reports/`, `_archive/`
+3. Create empty directories: `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/`
 4. Edit `_core/config.yaml` with your projects
 5. Run `git init` and make initial commit
 
@@ -123,6 +122,44 @@ The `.mcp.json` file in your vault already configures QMD as an MCP server. Clau
 
 For troubleshooting, see [QMD_INTEGRATION.md](QMD_INTEGRATION.md).
 
+## Keeping Up to Date
+
+PM-Kit ships an update system that pulls new framework releases from GitHub without touching your notes or project data.
+
+### Check Your Version
+
+```bash
+cat VERSION
+```
+
+### Update from Terminal
+
+```bash
+./scripts/update.sh
+```
+
+### Update from Claude
+
+```
+/update
+```
+
+### What Gets Updated
+
+| Category | Examples | Action |
+|----------|----------|--------|
+| **Framework** | `CLAUDE.md`, `_templates/*`, `.claude/**`, `scripts/*`, `handbook/*` | Overwrite (backed up first) |
+| **Hybrid** | `_core/config.yaml`, `.gitignore` | Diff shown, you merge manually |
+| **User content** | `inbox/`, `daily/`, `decisions/`, `blockers/`, `meetings/` | Never touched |
+
+### Backups
+
+Before overwriting any file, the update script saves your current copy to `_archive/_updates/{date}/`. If something goes wrong, you can restore from there.
+
+### Handling config.yaml Changes
+
+When upstream adds new config options, the script will show a diff and save the upstream version as `_core/config.yaml.upstream` in the backup directory. Review it and merge relevant changes into your `_core/config.yaml` manually.
+
 ## Obsidian Setup
 
 1. Open Obsidian
@@ -149,9 +186,7 @@ vault/
 ├── decisions/          # Decision records
 ├── blockers/           # Active blockers
 ├── meetings/           # Meeting notes
-├── adrs/               # Architecture Decision Records
-├── roadmap/            # OKRs
-├── research/           # Exploration
+
 ├── reports/            # Generated reports
 └── _archive/           # Archived notes
 ```
