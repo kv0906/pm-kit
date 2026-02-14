@@ -40,7 +40,7 @@ User types /command
 | `.claude/agents/` | Agent definitions (scribe, analyst, maintainer, processor) |
 | `.claude/rules/` | Naming conventions, markdown standards, workflow rules |
 | `.claude/hooks/` | Session init + auto-commit hooks |
-| `scripts/` | setup.sh, update.sh, release.sh |
+| `scripts/` | setup.sh, update.sh, release.sh (maintainer-only) |
 | `handbook/` | Framework documentation (maintainer-owned) |
 | `.github/workflows/` | PR labeler, changelog-on-merge, release-on-tag |
 | User content dirs | `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/` |
@@ -50,9 +50,6 @@ User types /command
 ```bash
 # Setup (first install or in-place refresh)
 ./scripts/setup.sh
-
-# Release (maintainer only — must be on clean main)
-./scripts/release.sh          # Bumps VERSION, tags, pushes, GH Actions creates release
 
 # Update (user pulls latest framework release)
 ./scripts/update.sh           # Full update
@@ -65,11 +62,7 @@ User types /command
 grep -r "xmarket\|MindLoom\|project-a" . --include="*.md" -l
 ```
 
-## Versioning and Releases
-
-Date-based versions: `YYYY.MM.DD` (e.g., `2026.02.14`). Version stored in `VERSION` file and `.claude-plugin/plugin.json`.
-
-Release flow: PRs merged to `main` → changelog entries added automatically → maintainer runs `./scripts/release.sh` → GH Actions creates GitHub Release → users get updates via `/update`.
+Maintainer-only release and governance flow is documented in `handbook/maintainer-runbook.md`.
 
 ## Update System (Framework vs User Content)
 

@@ -130,7 +130,7 @@ Having trouble? See [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) o
 | [handbook/CUSTOMIZATION.md](handbook/CUSTOMIZATION.md) | Projects, templates, and overrides |
 | [handbook/WORKFLOW_EXAMPLES.md](handbook/WORKFLOW_EXAMPLES.md) | Example operating flows |
 | [handbook/TROUBLESHOOTING.md](handbook/TROUBLESHOOTING.md) | Common issues and fixes |
-| [handbook/maintainer-workflow.md](handbook/maintainer-workflow.md) | PR, changelog, and maintainer workflow |
+| [handbook/maintainer-runbook.md](handbook/maintainer-runbook.md) | Release, changelog governance, and maintainer workflow |
 
 ## Contributing
 

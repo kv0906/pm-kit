@@ -1,45 +1,62 @@
-# Repository Guidelines
+# AGENTS.md
 
-## Project Structure & Module Organization
-PM-Kit is a markdown-first workspace template. Core framework files live at the repository root (`README.md`, `CLAUDE.md`, `START_HERE.md`, `CHANGELOG.md`).
+Audience: PM-Kit users/operators.
 
-- Runtime/config: `_core/` (manifesto, processing guide, `config.yaml`)
-- Reusable content: `_templates/` (daily, decision, blocker, doc templates)
-- Agent system: `.claude/` (`agents/`, `skills/`, `rules/`, `hooks/`)
+## Project snapshot
+PM-Kit is a markdown-first workspace template. Most work is in docs, templates, and shell scripts rather than compiled code.
+
+Key paths:
+- Framework docs: `README.md`, `CLAUDE.md`, `START_HERE.md`, `CHANGELOG.md`
+- Runtime/config: `_core/` (including `_core/config.yaml`)
+- Reusable templates: `_templates/`
+- Agent assets: `.claude/` (`agents/`, `skills/`, `rules/`, `hooks/`)
 - Distribution metadata: `.claude-plugin/plugin.json`
-- Automation scripts: `scripts/setup.sh`, `scripts/update.sh`, `scripts/release.sh`
-- Reference docs: `handbook/`, `examples/`
+- Automation scripts: `scripts/setup.sh`, `scripts/update.sh`
+- Reference material: `handbook/`, `examples/`
 
-## Build, Test, and Development Commands
-This repo does not have a compile step; validation is script- and workflow-driven.
+## Dev environment tips
+- Use `rg`/`rg --files` for fast discovery instead of manual folder scanning.
+- Use `./scripts/setup.sh` after cloning to initialize or validate a local PM-Kit vault.
+- Before changing automation, read the script you are touching end-to-end and keep guardrails intact.
+- Keep edits repository-relative and avoid machine-specific absolute paths in docs and scripts.
+- If a change affects user-facing flow, update both docs and templates in the same PR.
 
-- `./scripts/setup.sh`: initialize or verify a PM-Kit vault locally
-- `./scripts/update.sh --check`: check for upstream framework updates
-- `./scripts/update.sh --dry-run`: preview update changes without applying
-- `./scripts/release.sh`: maintainer-only release flow (requires clean `main`)
-- `git status && git diff`: required pre-PR sanity check
+## Core commands
+- `./scripts/setup.sh`: initialize or verify local PM-Kit setup.
+- `./scripts/update.sh --check`: detect whether upstream framework updates are available.
+- `./scripts/update.sh --dry-run`: preview update effects without mutating files.
+- `./scripts/update.sh`: apply framework updates.
+- `git status && git diff`: required local sanity check before commit/PR.
 
-## Coding Style & Naming Conventions
-Prefer Markdown + shell with simple, readable structure.
+## Testing instructions
+- Inspect CI definitions in `.github/workflows/` before significant changes.
+- Primary CI checks include:
+  - `PR Changelog Check` (`.github/workflows/pr-changelog-check.yml`)
+  - `PR Auto Labeler` (`.github/workflows/pr-labeler.yml`)
+  - `Changelog On Merge` (`.github/workflows/changelog-on-merge.yml`)
+- For script changes, test both:
+  - happy path
+  - guardrails (dirty git tree, missing prerequisites, invalid inputs)
+- For docs/template changes, verify command examples and paths still resolve.
+- Treat changes as incomplete until affected flows can be executed without manual patch-ups.
 
-- Markdown headings in logical order (`#`, `##`, `###`), short sections, actionable wording
-- Shell scripts: `bash` with `set -euo pipefail` for new scripts
-- File names: kebab-case for docs/templates/scripts (for example, `workflow-examples.md`)
-- Keep paths explicit and repository-relative (for example, `_templates/daily.md`)
+## Style and naming rules
+- Prefer clear Markdown with short, action-oriented sections.
+- Use heading hierarchy in order: `#`, `##`, `###`.
+- Use kebab-case filenames for new docs/scripts/templates.
+- For new shell scripts, use `bash` and `set -euo pipefail`.
 
-## Testing Guidelines
-Testing is primarily manual plus CI policy checks.
+## PR instructions
+- Use conventional commit prefixes: `feat:`, `fix:`, `docs:`, `chore:`, `release:` (optional scope allowed, e.g. `fix(update): ...`).
+- Use `.github/PULL_REQUEST_TEMPLATE.md`.
+- Ensure `## Changelog Entry` is completed in the PR template.
+- Include:
+  - what changed
+  - why it changed
+  - manual test evidence
+  - screenshots/examples for workflow UX changes
+- Run relevant local checks before opening/merging a PR.
 
-- Manually run affected scripts and verify expected files/outputs
-- If changing update/release behavior, test both happy path and guardrails (dirty tree, missing tools)
-- Confirm docs and command references stay in sync (`README.md`, `CLAUDE.md`, handbook pages)
-- CI enforces PR changelog quality via `PR Changelog Check`
-
-## Commit & Pull Request Guidelines
-Follow conventional-style commit prefixes seen in history: `feat:`, `fix:`, `docs:`, `chore:`, `release:` (optional scope, e.g., `fix(update): ...`). Keep messages imperative and specific.
-
-For PRs, use `.github/PULL_REQUEST_TEMPLATE.md` and include:
-- clear description and change type
-- linked issue when applicable
-- completed `## Changelog Entry` (required for merge)
-- manual test notes; screenshots/examples for workflow UX changes
+## Maintainer-only operations
+Release, tagging, and branch-protection workflow are intentionally separated from this core guide.
+Use `handbook/maintainer-runbook.md` for maintainer flow.
