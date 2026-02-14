@@ -1,10 +1,10 @@
 @echo off
-REM MindLoom Setup Script for Windows
+REM PM-Kit Setup Script for Windows
 REM Sets up your AI-augmented knowledge vault
 
 echo.
 echo ╔═══════════════════════════════════════════════════╗
-echo ║   MindLoom Setup Wizard                          ║
+echo ║   PM-Kit Setup Wizard                          ║
 echo ║   AI-Augmented Knowledge Vault v3.0              ║
 echo ╚═══════════════════════════════════════════════════╝
 echo.
@@ -26,7 +26,7 @@ if errorlevel 1 (
 )
 
 REM Set vault path
-set "DEFAULT_VAULT=%USERPROFILE%\Documents\MindLoom"
+set "DEFAULT_VAULT=%USERPROFILE%\Documents\PM-Kit"
 set /p "VAULT_PATH=Where should we create your vault? [%DEFAULT_VAULT%]: "
 if "%VAULT_PATH%"=="" set "VAULT_PATH=%DEFAULT_VAULT%"
 
@@ -61,11 +61,11 @@ if not exist ".git" (
 )
 
 git add .
-git commit -m "Initial MindLoom setup" >nul 2>&1
+git commit -m "Initial PM-Kit setup" >nul 2>&1
 
 echo.
 echo ════════════════════════════════════════════════════
-echo   MindLoom Setup Complete!
+echo   PM-Kit Setup Complete!
 echo ════════════════════════════════════════════════════
 echo.
 echo Your vault is ready at: %VAULT_PATH%

@@ -1,4 +1,4 @@
-# MindLoom Customization Guide
+# PM-Kit Customization Guide
 
 ## Configuration File
 

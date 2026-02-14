@@ -1,14 +1,14 @@
-# MindLoom — Core Beliefs
+# Pm-kit — Core Beliefs
 
 > The foundation. What we believe. Domain-agnostic.
 
 ---
 
-## What is MindLoom?
+## What is Pm-kit?
 
 **You input raw thoughts → AI structures, links, and stores → You query for clarity**
 
-MindLoom is a framework for building AI-augmented knowledge vaults. It provides:
+Pm-kit is a framework for building AI-augmented knowledge vaults. It provides:
 - A structured folder system
 - 5 specialized AI agents
 - Commands for capture and retrieval
@@ -68,7 +68,7 @@ Perfection is the enemy of progress. Feedback loops beat isolation.
 
 ## The 5-Agent Pattern
 
-MindLoom uses 5 specialized AI agents:
+PM-Kit uses 5 specialized AI agents:
 
 | Agent | Role | Handles |
 |-------|------|---------|

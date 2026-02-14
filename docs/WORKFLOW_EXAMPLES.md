@@ -1,4 +1,4 @@
-# MindLoom Workflow Examples
+# PM-Kit Workflow Examples
 
 ## Daily PM Workflow
 

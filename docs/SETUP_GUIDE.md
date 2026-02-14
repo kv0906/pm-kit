@@ -1,4 +1,4 @@
-# MindLoom Setup Guide
+# PM-Kit Setup Guide
 
 ## Prerequisites
 
@@ -67,6 +67,61 @@ Copy `CLAUDE.local.md.template` to `CLAUDE.local.md` for personal settings that 
 
 Auto-commit is enabled by default. To disable:
 - Set `GIT_AUTO_COMMIT` to `"false"` in `.claude/settings.json`
+
+## QMD Setup (Optional — Smarter /ask)
+
+QMD adds hybrid search (BM25 + vector + rerank) to `/ask`. This is a technical setup that requires comfort with CLI tools.
+
+**Requirements**: macOS recommended. Needs [bun](https://bun.sh) (JavaScript runtime).
+
+### Install
+
+```bash
+# Install bun (if not installed)
+curl -fsSL https://bun.sh/install | bash
+
+# Install QMD
+bun install -g github:tobi/qmd
+```
+
+### Create collection
+
+```bash
+cd /path/to/your/vault
+qmd collection add . --name pm-kit
+```
+
+### Add context
+
+```bash
+qmd context add qmd://pm-kit "PM-Kit vault notes, docs, blockers, decisions, meetings"
+```
+
+### Build embeddings
+
+```bash
+qmd embed
+```
+
+First run downloads a small model (~100MB). Subsequent runs are fast.
+
+### Verify
+
+```bash
+qmd status
+```
+
+You should see your collection with embedded document count > 0.
+
+### MCP connection
+
+The `.mcp.json` file in your vault already configures QMD as an MCP server. Claude Code will connect automatically on next session.
+
+### Without QMD
+
+`/ask` still works using vault grep. You'll see `Search Mode: Fallback (vault grep)` in results. QMD just makes results more accurate.
+
+For troubleshooting, see [QMD_INTEGRATION.md](QMD_INTEGRATION.md).
 
 ## Obsidian Setup
 

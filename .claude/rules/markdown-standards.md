@@ -2,7 +2,7 @@
 paths: "**/*.md"
 ---
 
-# Markdown Standards for MindLoom Vault
+# Markdown Standards for PM-Kit Vault
 
 These conventions apply to all markdown files in the vault.
 

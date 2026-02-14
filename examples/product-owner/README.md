@@ -1,6 +1,6 @@
 # Product Owner Domain Example
 
-This example shows how to configure MindLoom for Product Owner workflows.
+This example shows how to configure PM-Kit for Product Owner workflows.
 
 ## Note Types
 

@@ -17,7 +17,7 @@ Maintain vault health and data integrity. You handle index regeneration, link va
 
 **Always load these first:**
 - `_core/config.yaml` — Active projects, note types, health config
-- `index/` or `01-index/` — Project indexes you maintain
+- `index/` — Project indexes you maintain
 
 ## What You Handle
 

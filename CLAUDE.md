@@ -1,8 +1,8 @@
-# MindLoom — AI-Augmented Knowledge Vault
+# PM-Kit — AI-Augmented Knowledge Vault
 
 ## Overview
 
-Knowledge vault for Technical PMs and Engineering Leads. Run `/guide` for all commands.
+Knowledge vault for Technical PMs and Engineering Leads. Run `/onboard` to get started.
 
 **Always scan `_core/` first:** `config.yaml` (projects, paths, note types), `PROCESSING.md` (I-P-O flows), `MANIFESTO.md` (philosophy).
 
@@ -12,8 +12,8 @@ Knowledge vault for Technical PMs and Engineering Leads. Run `/guide` for all co
 |--------|---------|
 | `_core/` | config.yaml, MANIFESTO.md, PROCESSING.md |
 | `_templates/` | Note templates (ALWAYS USE) |
-| `inbox/` | Raw captures (`00-inbox/` also supported) |
-| `index/` | Project MOCs (`01-index/` also supported) |
+| `inbox/` | Raw captures |
+| `index/` | Project MOCs |
 | `daily/` | `YYYY-MM-DD.md` — one file per day, H2 per project |
 | `docs/{project}/` | PRDs, specs, documents |
 | `decisions/{project}/` | Decision records |

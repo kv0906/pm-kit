@@ -6,7 +6,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 # Vault Operations Skill
 
-Core operations for reading, writing, and managing files in a MindLoom vault.
+Core operations for reading, writing, and managing files in a PM-Kit vault.
 
 ## Vault Structure
 

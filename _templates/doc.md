@@ -52,7 +52,7 @@ tags: []
 ## Links
 
 ### Project
-- [[01-index/{{project}}|{{project_name}}]]
+- [[index/{{project}}|{{project_name}}]]
 
 ### Related
 %% AI determines appropriate links based on context %%

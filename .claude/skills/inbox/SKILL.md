@@ -12,7 +12,7 @@ Dual-mode command for fast capture and later processing.
 ## Context
 
 Today's date: `!date +%Y-%m-%d`
-Inbox contents: `!ls inbox/*.md 2>/dev/null` or `!ls 00-inbox/*.md 2>/dev/null`
+Inbox contents: `!ls inbox/*.md 2>/dev/null`
 
 Reference template: @_templates/inbox.md
 Config: @_core/config.yaml
@@ -62,7 +62,7 @@ TaskCreate: "Route items to destinations"
 ```
 
 1. **Scan Inbox**
-   - List all `.md` files in `inbox/` and `00-inbox/`
+   - List all `.md` files in `inbox/`
    - Read and classify each
 
 2. **Present Plan**

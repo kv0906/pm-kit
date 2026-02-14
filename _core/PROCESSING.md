@@ -27,8 +27,8 @@
 | Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` |
 | Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` |
 | Meeting | `meetings/YYYY-MM-DD-{type}-{slug}.md` |
-| Index | `01-index/{project}.md` |
-| Inbox | `00-inbox/YYYY-MM-DD-{slug}.md` |
+| Index | `index/{project}.md` |
+| Inbox | `inbox/YYYY-MM-DD-{slug}.md` |
 
 ---
 
@@ -94,7 +94,7 @@
 |-------|-------------|
 | **Input** | Raw content |
 | **Process** | Detect project/type → tag for later |
-| **Output** | `00-inbox/{timestamp}-inbox.md` |
+| **Output** | `inbox/{timestamp}-inbox.md` |
 
 **Process mode** (no content):
 
@@ -132,7 +132,7 @@
 |-------|-------------|
 | **Input** | None |
 | **Process** | Scan vault → check links/orphans/sections → generate stats |
-| **Output** | `01-index/_graph-health.md` |
+| **Output** | `index/_graph-health.md` |
 
 ---
 
@@ -215,7 +215,7 @@
 
 ## Index Updates
 
-After note creation, refresh `01-index/{project}.md`:
+After note creation, refresh `index/{project}.md`:
 - Recent dailies (7 days)
 - Open blockers
 - Active docs

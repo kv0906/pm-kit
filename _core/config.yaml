@@ -1,4 +1,4 @@
-# MindLoom Configuration
+# PM-Kit Configuration
 # Edit this file to configure your vault
 
 # Your projects/workstreams
@@ -16,8 +16,8 @@ projects:
 # Folder paths (customize as needed)
 paths:
   vault_root: .
-  inbox: 00-inbox
-  index: 01-index
+  inbox: inbox
+  index: index
   daily: daily
   docs: docs           # PRDs, specs, or whatever your domain calls them
   decisions: decisions
@@ -78,12 +78,12 @@ note_types:
   index:
     status_values: [active]
     requires_links: false
-    folder: 01-index
+    folder: index
 
   inbox:
     status_values: [unprocessed, processed]
     requires_links: false
-    folder: 00-inbox
+    folder: inbox
     filename_pattern: "YYYY-MM-DD-{slug}.md"
 
 # Keywords for AI detection
@@ -118,6 +118,15 @@ tags:
   domain: []      # e.g., payments, auth, frontend, backend
   area: []        # e.g., api, database, infrastructure
   risk: []        # e.g., security, compliance, performance
+
+# QMD integration (optional — powers smarter /ask)
+# Requires: bun + qmd installed. See docs/QMD_INTEGRATION.md
+qmd:
+  enabled: true
+  collection_name: pm-kit
+  collection_path: "."
+  min_score: 0.35
+  max_results: 8
 
 # External integrations (optional)
 integrations:

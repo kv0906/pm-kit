@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# MindLoom Setup Script
+# PM-Kit Setup Script
 # Sets up your AI-augmented knowledge vault for PM + Engineering workflows
 
 set -e
@@ -15,7 +15,7 @@ NC='\033[0m'
 # Banner
 echo -e "${BLUE}"
 echo "╔═══════════════════════════════════════════════════╗"
-echo "║   MindLoom Setup Wizard                          ║"
+echo "║   PM-Kit Setup Wizard                          ║"
 echo "║   AI-Augmented Knowledge Vault v3.0              ║"
 echo "╚═══════════════════════════════════════════════════╝"
 echo -e "${NC}"
@@ -49,60 +49,86 @@ else
     if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
 fi
 
-# Step 2: Vault Location
-echo -e "\n${BLUE}Step 2: Choose Vault Location${NC}"
-echo "================================"
-
-DEFAULT_VAULT="$HOME/Documents/MindLoom"
-read -p "Where should we create your vault? [$DEFAULT_VAULT]: " VAULT_PATH
-VAULT_PATH=${VAULT_PATH:-$DEFAULT_VAULT}
-VAULT_PATH="${VAULT_PATH/#\~/$HOME}"
-
-if [[ "$VAULT_PATH" != /* ]]; then
-    VAULT_PATH="$(pwd)/$VAULT_PATH"
-fi
-
 # Get script and source directories
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-SOURCE_DIR="$SCRIPT_DIR/.."
+SOURCE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-if [ -d "$VAULT_PATH" ]; then
-    print_warning "Directory already exists: $VAULT_PATH"
-    read -p "Use existing directory? (y/n): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
-else
-    mkdir -p "$VAULT_PATH"
-    print_success "Created vault directory: $VAULT_PATH"
-fi
+# Detect if running inside an existing vault (template-based flow)
+INPLACE_MODE=false
+RESOLVED_SOURCE="$(cd "$SOURCE_DIR" && pwd)"
+RESOLVED_CWD="$(pwd)"
 
-# Step 3: Copy Vault Structure
-echo -e "\n${BLUE}Step 3: Setting Up Vault Structure${NC}"
-echo "====================================="
-
-print_info "Copying vault files..."
-
-# Copy core structure
-for item in CLAUDE.md CLAUDE.local.md.template _core _templates .claude .claude-plugin; do
-    if [ -e "$SOURCE_DIR/$item" ]; then
-        cp -r "$SOURCE_DIR/$item" "$VAULT_PATH/"
+if [ -f "$SOURCE_DIR/CLAUDE.md" ] && [ -d "$SOURCE_DIR/_core" ] && [ -f "$SOURCE_DIR/_core/config.yaml" ]; then
+    # Check if the script's parent dir is the current working directory (or its parent)
+    if [ "$RESOLVED_SOURCE" = "$RESOLVED_CWD" ] || [ "$RESOLVED_SOURCE" = "$(cd "$RESOLVED_CWD/.." 2>/dev/null && pwd)" ]; then
+        print_info "Detected vault in current directory — skipping file copy"
+        VAULT_PATH="$RESOLVED_SOURCE"
+        INPLACE_MODE=true
     fi
-done
-
-# Create vault directories
-for dir in inbox index daily docs decisions blockers meetings adrs roadmap research reports _archive; do
-    mkdir -p "$VAULT_PATH/$dir"
-done
-
-# Copy roadmap files
-if [ -d "$SOURCE_DIR/roadmap" ]; then
-    cp -r "$SOURCE_DIR/roadmap/"* "$VAULT_PATH/roadmap/" 2>/dev/null || true
 fi
 
-# Make hooks executable
-chmod +x "$VAULT_PATH/.claude/hooks/"*.sh 2>/dev/null || true
+if [ "$INPLACE_MODE" = false ]; then
+    # Step 2: Vault Location
+    echo -e "\n${BLUE}Step 2: Choose Vault Location${NC}"
+    echo "================================"
 
-print_success "Vault structure created"
+    DEFAULT_VAULT="$HOME/Documents/PM-Kit"
+    read -p "Where should we create your vault? [$DEFAULT_VAULT]: " VAULT_PATH
+    VAULT_PATH=${VAULT_PATH:-$DEFAULT_VAULT}
+    VAULT_PATH="${VAULT_PATH/#\~/$HOME}"
+
+    if [[ "$VAULT_PATH" != /* ]]; then
+        VAULT_PATH="$(pwd)/$VAULT_PATH"
+    fi
+
+    if [ -d "$VAULT_PATH" ]; then
+        print_warning "Directory already exists: $VAULT_PATH"
+        read -p "Use existing directory? (y/n): " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
+    else
+        mkdir -p "$VAULT_PATH"
+        print_success "Created vault directory: $VAULT_PATH"
+    fi
+
+    # Step 3: Copy Vault Structure
+    echo -e "\n${BLUE}Step 3: Setting Up Vault Structure${NC}"
+    echo "====================================="
+
+    print_info "Copying vault files..."
+
+    # Copy core structure
+    for item in CLAUDE.md CLAUDE.local.md.template _core _templates .claude .claude-plugin; do
+        if [ -e "$SOURCE_DIR/$item" ]; then
+            cp -r "$SOURCE_DIR/$item" "$VAULT_PATH/"
+        fi
+    done
+
+    # Create vault directories
+    for dir in inbox index daily docs decisions blockers meetings adrs roadmap research reports _archive; do
+        mkdir -p "$VAULT_PATH/$dir"
+    done
+
+    # Copy roadmap files
+    if [ -d "$SOURCE_DIR/roadmap" ]; then
+        cp -r "$SOURCE_DIR/roadmap/"* "$VAULT_PATH/roadmap/" 2>/dev/null || true
+    fi
+
+    # Make hooks executable
+    chmod +x "$VAULT_PATH/.claude/hooks/"*.sh 2>/dev/null || true
+
+    print_success "Vault structure created"
+else
+    # In-place mode: just ensure directories exist
+    echo -e "\n${BLUE}Step 2-3: Verifying Vault Structure${NC}"
+    echo "======================================"
+
+    for dir in inbox index daily docs decisions blockers meetings adrs roadmap research reports _archive; do
+        mkdir -p "$VAULT_PATH/$dir"
+    done
+
+    print_success "Vault structure verified"
+fi
 
 # Step 4: Configure Projects
 echo -e "\n${BLUE}Step 4: Configure Your Projects${NC}"
@@ -117,14 +143,18 @@ if [ -n "$PROJECT_ID" ] && [ -n "$PROJECT_NAME" ]; then
     # Update config.yaml
     CONFIG="$VAULT_PATH/_core/config.yaml"
     if [ -f "$CONFIG" ]; then
-        if [[ "$OSTYPE" == "darwin"* ]]; then
-            sed -i '' "s/id: project-a/id: $PROJECT_ID/" "$CONFIG"
-            sed -i '' "s/name: Project A/name: $PROJECT_NAME/" "$CONFIG"
-            sed -i '' "s/description: Your first project/description: $PROJECT_DESC/" "$CONFIG"
+        if grep -q "id: project-a" "$CONFIG"; then
+            if [[ "$OSTYPE" == "darwin"* ]]; then
+                sed -i '' "s/id: project-a/id: $PROJECT_ID/" "$CONFIG"
+                sed -i '' "s/name: Project A/name: $PROJECT_NAME/" "$CONFIG"
+                sed -i '' "s/description: Your first project/description: $PROJECT_DESC/" "$CONFIG"
+            else
+                sed -i "s/id: project-a/id: $PROJECT_ID/" "$CONFIG"
+                sed -i "s/name: Project A/name: $PROJECT_NAME/" "$CONFIG"
+                sed -i "s/description: Your first project/description: $PROJECT_DESC/" "$CONFIG"
+            fi
         else
-            sed -i "s/id: project-a/id: $PROJECT_ID/" "$CONFIG"
-            sed -i "s/name: Project A/name: $PROJECT_NAME/" "$CONFIG"
-            sed -i "s/description: Your first project/description: $PROJECT_DESC/" "$CONFIG"
+            print_info "Config already has custom first project — skipping replacement"
         fi
     fi
 
@@ -190,14 +220,18 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     if [ -n "$PROJECT_ID2" ]; then
         CONFIG="$VAULT_PATH/_core/config.yaml"
         if [ -f "$CONFIG" ]; then
-            if [[ "$OSTYPE" == "darwin"* ]]; then
-                sed -i '' "s/id: project-b/id: $PROJECT_ID2/" "$CONFIG"
-                sed -i '' "s/name: Project B/name: $PROJECT_NAME2/" "$CONFIG"
-                sed -i '' "s/description: Your second project/description: $PROJECT_DESC2/" "$CONFIG"
+            if grep -q "id: project-b" "$CONFIG"; then
+                if [[ "$OSTYPE" == "darwin"* ]]; then
+                    sed -i '' "s/id: project-b/id: $PROJECT_ID2/" "$CONFIG"
+                    sed -i '' "s/name: Project B/name: $PROJECT_NAME2/" "$CONFIG"
+                    sed -i '' "s/description: Your second project/description: $PROJECT_DESC2/" "$CONFIG"
+                else
+                    sed -i "s/id: project-b/id: $PROJECT_ID2/" "$CONFIG"
+                    sed -i "s/name: Project B/name: $PROJECT_NAME2/" "$CONFIG"
+                    sed -i "s/description: Your second project/description: $PROJECT_DESC2/" "$CONFIG"
+                fi
             else
-                sed -i "s/id: project-b/id: $PROJECT_ID2/" "$CONFIG"
-                sed -i "s/name: Project B/name: $PROJECT_NAME2/" "$CONFIG"
-                sed -i "s/description: Your second project/description: $PROJECT_DESC2/" "$CONFIG"
+                print_info "Config already has custom second project — skipping replacement"
             fi
         fi
 
@@ -257,8 +291,9 @@ echo "==============================="
 
 cd "$VAULT_PATH"
 
-# Create .gitignore
-cat > "$VAULT_PATH/.gitignore" << 'EOF'
+# Create .gitignore (only if it doesn't exist)
+if [ ! -f "$VAULT_PATH/.gitignore" ]; then
+    cat > "$VAULT_PATH/.gitignore" << 'EOF'
 .obsidian/workspace*
 .obsidian/cache
 .trash/
@@ -268,6 +303,10 @@ CLAUDE.local.md
 *.swp
 *~
 EOF
+    print_success "Created .gitignore"
+else
+    print_info ".gitignore already exists — skipping"
+fi
 
 if [ ! -d .git ]; then
     git init
@@ -277,10 +316,71 @@ else
 fi
 
 git add .
-git commit -m "Initial MindLoom setup" 2>/dev/null || print_warning "Nothing to commit"
+git commit -m "Initial PM-Kit setup" 2>/dev/null || print_warning "Nothing to commit"
 
-# Step 6: GitHub (Optional)
-echo -e "\n${BLUE}Step 6: GitHub Integration (Optional)${NC}"
+# Step 6: QMD Smart Search (Optional)
+echo -e "\n${BLUE}Step 6: QMD Smart Search (Optional)${NC}"
+echo "======================================="
+echo "QMD adds semantic search (BM25 + vector + rerank) to /ask."
+echo "Requires: bun (JavaScript runtime) + qmd. macOS recommended."
+echo ""
+
+read -p "Set up QMD for smarter /ask? (y/n): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Check bun
+    if ! command_exists bun; then
+        print_warning "bun is not installed"
+        echo "Install bun first:"
+        echo "  curl -fsSL https://bun.sh/install | bash"
+        echo ""
+        echo "Then re-run this step or install QMD manually:"
+        echo "  bun install -g github:tobi/qmd"
+        echo "  qmd collection add . --name pm-kit"
+        echo "  qmd embed"
+        echo ""
+        print_info "Skipping QMD setup — /ask will use vault grep (still works)"
+    else
+        print_success "bun is installed"
+
+        # Check/install qmd
+        if ! command_exists qmd; then
+            echo "Installing QMD..."
+            bun install -g github:tobi/qmd && print_success "QMD installed" || {
+                print_warning "QMD install failed — /ask will use vault grep"
+            }
+        else
+            print_success "QMD is already installed"
+        fi
+
+        # Initialize collection if qmd is now available
+        if command_exists qmd; then
+            echo "Creating pm-kit collection..."
+            qmd collection add "$VAULT_PATH" --name pm-kit 2>/dev/null && print_success "Collection 'pm-kit' created" || print_warning "Collection may already exist"
+
+            qmd context add qmd://pm-kit "PM-Kit vault notes, docs, blockers, decisions, meetings" 2>/dev/null || true
+
+            echo ""
+            read -p "Run embeddings now? This may take a minute on first run. (y/n): " -n 1 -r
+            echo
+            if [[ $REPLY =~ ^[Yy]$ ]]; then
+                echo "Embedding vault content..."
+                qmd embed && print_success "Embeddings complete" || print_warning "Embedding failed — run 'qmd embed' later"
+                echo ""
+                qmd status 2>/dev/null || true
+            else
+                print_info "Skipped embeddings — run 'qmd embed' later to enable smart search"
+            fi
+
+            print_success "/ask now uses QMD quality search when available"
+        fi
+    fi
+else
+    print_info "Skipped QMD — /ask will use vault grep (still works fine)"
+fi
+
+# Step 7: GitHub (Optional)
+echo -e "\n${BLUE}Step 7: GitHub Integration (Optional)${NC}"
 echo "========================================="
 
 read -p "Set up GitHub remote? (y/n): " -n 1 -r
@@ -302,7 +402,7 @@ fi
 
 # Done
 echo -e "\n${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${GREEN}✨ MindLoom Setup Complete!${NC}"
+echo -e "${GREEN}✨ PM-Kit Setup Complete!${NC}"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}\n"
 
 echo "Your vault is ready at: $VAULT_PATH"

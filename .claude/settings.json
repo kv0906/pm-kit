@@ -33,7 +33,6 @@
       "Edit(reports/**)"
     ],
     "deny": [
-      "Edit(.claude/**)",
       "Write(.git/**)",
       "Bash(rm -rf:*)"
     ]

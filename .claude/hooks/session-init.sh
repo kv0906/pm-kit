@@ -1,5 +1,5 @@
 #!/bin/bash
-# Session initialization hook for MindLoom vault
+# Session initialization hook for PM-Kit vault
 # Sets up environment variables for the Claude Code session
 
 # Set vault path (defaults to current directory)
@@ -25,7 +25,7 @@ if [ ! -f "$VAULT_PATH/CLAUDE.md" ]; then
 fi
 
 # Output session info
-echo "MindLoom session initialized"
+echo "PM-Kit session initialized"
 echo "  Vault: $VAULT_PATH"
 echo "  Today: $TODAY"
 if [ -n "$ACTIVE_PROJECTS" ]; then
