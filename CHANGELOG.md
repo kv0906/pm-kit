@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+<!-- New merged PR entries are inserted here automatically. -->
+
+## [2026.02.25] - 2026-02-25
+
 ### Added
 - Export format flags (`--xlsx`, `--docx`, `--pdf`, `--pptx`) for PM-Kit skills — generate shareable files for stakeholders directly from vault workflows
 - New skills: `/xlsx` (spreadsheet creation/editing), `/docx` (Word document creation/editing), `/pdf` (PDF processing), `/pptx` (PowerPoint creation/editing)
@@ -102,6 +106,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PM Coach output style
 - GitHub Actions workflow for changelog automation
 
-[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.02.14...HEAD
-[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
+[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...HEAD
+[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kv0906/pm-kit/releases/tag/v3.0.0
