@@ -105,14 +105,14 @@ if [ "$INPLACE_MODE" = false ]; then
     print_info "Copying vault files..."
 
     # Copy core structure
-    for item in CLAUDE.md CLAUDE.local.md.template _core _templates .claude .claude-plugin; do
+    for item in CLAUDE.md _core _templates .claude .claude-plugin; do
         if [ -e "$SOURCE_DIR/$item" ]; then
             cp -r "$SOURCE_DIR/$item" "$VAULT_PATH/"
         fi
     done
 
     # Create vault directories
-    for dir in inbox index daily docs decisions blockers meetings reports _archive; do
+    for dir in 00-inbox 01-index daily docs decisions blockers meetings reports _archive; do
         mkdir -p "$VAULT_PATH/$dir"
     done
 
@@ -125,9 +125,19 @@ else
     echo -e "\n${BLUE}Step 2-3: Verifying Vault Structure${NC}"
     echo "======================================"
 
-    for dir in inbox index daily docs decisions blockers meetings reports _archive; do
+    for dir in 00-inbox 01-index daily docs decisions blockers meetings reports _archive; do
         mkdir -p "$VAULT_PATH/$dir"
     done
+
+    # Migration: rename old inbox/index to prefixed versions
+    if [ -d "$VAULT_PATH/inbox" ] && [ ! -d "$VAULT_PATH/00-inbox" ]; then
+        mv "$VAULT_PATH/inbox" "$VAULT_PATH/00-inbox"
+        print_info "Migrated inbox/ → 00-inbox/"
+    fi
+    if [ -d "$VAULT_PATH/index" ] && [ ! -d "$VAULT_PATH/01-index" ]; then
+        mv "$VAULT_PATH/index" "$VAULT_PATH/01-index"
+        print_info "Migrated index/ → 01-index/"
+    fi
 
     # Migration: remove deprecated ADR and roadmap directories
     for deprecated_dir in adrs roadmap research; do
@@ -174,7 +184,7 @@ if [ -n "$PROJECT_ID" ] && [ -n "$PROJECT_NAME" ]; then
     mkdir -p "$VAULT_PATH/blockers/$PROJECT_ID"
 
     # Create project index
-    cat > "$VAULT_PATH/index/$PROJECT_ID.md" << EOF
+    cat > "$VAULT_PATH/01-index/$PROJECT_ID.md" << EOF
 ---
 type: index
 project: $PROJECT_ID
@@ -249,7 +259,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         mkdir -p "$VAULT_PATH/decisions/$PROJECT_ID2"
         mkdir -p "$VAULT_PATH/blockers/$PROJECT_ID2"
 
-        cat > "$VAULT_PATH/index/$PROJECT_ID2.md" << EOF
+        cat > "$VAULT_PATH/01-index/$PROJECT_ID2.md" << EOF
 ---
 type: index
 project: $PROJECT_ID2
@@ -308,7 +318,6 @@ if [ ! -f "$VAULT_PATH/.gitignore" ]; then
 .obsidian/cache
 .trash/
 .DS_Store
-CLAUDE.local.md
 .setup_complete
 *.swp
 *~

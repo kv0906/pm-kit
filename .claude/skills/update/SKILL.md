@@ -86,4 +86,4 @@ After the script completes, summarize:
 |----------|----------|--------|
 | **Framework** | `CLAUDE.md`, `_templates/*`, `.claude/**`, `scripts/*`, `handbook/*` | Overwrite (backed up first) |
 | **Hybrid** | `_core/config.yaml`, `.gitignore` | Diff shown, user merges |
-| **User content** | `inbox/`, `daily/`, `decisions/`, `blockers/`, `meetings/` | Never touched |
+| **User content** | `00-inbox/`, `daily/`, `decisions/`, `blockers/`, `meetings/` | Never touched |

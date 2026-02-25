@@ -82,5 +82,4 @@ Based on your changes:
 .obsidian/cache
 .trash/
 .DS_Store
-CLAUDE.local.md
 ```

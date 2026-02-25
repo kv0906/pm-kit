@@ -34,7 +34,7 @@ User types /command
 
 | Folder | Purpose |
 |--------|---------|
-| `_core/` | config.yaml, MANIFESTO.md, PROCESSING.md |
+| `_core/` | config.yaml, identity.md, MANIFESTO.md, PROCESSING.md |
 | `_templates/` | Note templates (ALWAYS USE when creating notes) |
 | `.claude/skills/` | Skill definitions (SKILL.md per command) |
 | `.claude/agents/` | Agent definitions (scribe, analyst, maintainer, processor) |
@@ -43,7 +43,7 @@ User types /command
 | `scripts/` | setup.sh, update.sh, release.sh (maintainer-only) |
 | `handbook/` | Framework documentation (maintainer-owned) |
 | `.github/workflows/` | PR labeler, changelog-on-merge, release-on-tag |
-| User content dirs | `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/` |
+| User content dirs | `00-inbox/`, `01-index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/` |
 
 ## Development Commands
 
@@ -72,7 +72,7 @@ The update script (`scripts/update.sh`) overwrites framework files but never tou
 |----------|--------|
 | **Framework** (CLAUDE.md, _templates/*, .claude/**, scripts/*, handbook/*) | Overwrite (backed up to `_archive/_updates/`) |
 | **Hybrid** (_core/config.yaml, .gitignore) | Diff shown, user merges manually |
-| **User content** (daily/, docs/, decisions/, blockers/, meetings/, inbox/, index/) | Never touched |
+| **User content** (daily/, docs/, decisions/, blockers/, meetings/, 00-inbox/, 01-index/) | Never touched |
 
 ## Skills
 
@@ -116,6 +116,7 @@ Skills use session task tools for progress visibility during multi-step operatio
 - **Files**: `YYYY-MM-DD-{slug}.md` (daily: `YYYY-MM-DD.md`, docs: `{slug}.md`)
 - **Frontmatter**: `type`, `project`, `status`, `date`, `tags`; Blocker adds `severity`/`owner`/`due`
 - **Links**: `[[wikilinks]]` with `[[path|Title]]`; `## Links` required on typed notes
+- **Linking**: Every typed note backlinks to `01-index/{project}.md`; see `.claude/rules/index-and-linking.md`
 - **Naming-as-API**: Strict filename patterns enable glob queries without database
 
 ## Processing
@@ -130,7 +131,7 @@ Skills use session task tools for progress visibility during multi-step operatio
 
 ## Customization
 
-For personal overrides, copy `CLAUDE.local.md.template` to `CLAUDE.local.md`.
+Edit `_core/identity.md` to set your role, working style, and coaching preferences. `/onboard` populates it automatically.
 
 ---
 

@@ -8,6 +8,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+### Added
+- `.claude/rules/index-and-linking.md` — 7 enforced rules for MOC/index linking, backlinks, and Obsidian graph health
+- Linking convention in `CLAUDE.md` pointing to the new rule file
+
+### Changed
+- Renamed `inbox/` → `00-inbox/` and `index/` → `01-index/` — numeric prefixes pin these folders to the top of file explorers
+- Updated all path references across skills, agents, templates, config, and docs to match new folder names
+- Moved user identity from `CLAUDE.local.md` (gitignored) to `_core/identity.md` (tracked) — part of the bootloader directory
+- Deleted `CLAUDE.local.md.template` — `_core/identity.md` serves as both default and populated profile
+- `setup.sh` includes migration logic for existing vaults with old folder names
+
 ## [2026.02.25] - 2026-02-25
 
 ### Added

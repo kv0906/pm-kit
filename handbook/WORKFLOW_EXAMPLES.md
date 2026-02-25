@@ -92,7 +92,7 @@ Scans vault for:
 - Missing `## Links` sections
 - Statistics by type and project
 
-Output: `index/_graph-health.md`
+Output: `01-index/_graph-health.md`
 
 ## Cross-Project Status
 

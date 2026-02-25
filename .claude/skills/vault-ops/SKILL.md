@@ -15,8 +15,8 @@ pm-kit/
 ├── CLAUDE.md           # Vault context (read first)
 ├── _core/              # config.yaml, MANIFESTO.md, PROCESSING.md
 ├── _templates/         # Note templates (ALWAYS USE)
-├── inbox/              # Unprocessed captures
-├── index/              # Project MOCs
+├── 00-inbox/           # Unprocessed captures
+├── 01-index/           # Project MOCs
 ├── daily/              # YYYY-MM-DD.md (multi-project)
 ├── docs/{project}/     # PRDs, specs
 ├── decisions/{project}/ # Decision records
@@ -37,8 +37,8 @@ Strict filename patterns enable glob queries without a database:
 | Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` | `decisions/project-a/2026-01-15-auth-approach.md` |
 | Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` | `blockers/project-a/2026-01-15-api-rate-limit.md` |
 | Meeting | `meetings/YYYY-MM-DD-{type}-{slug}.md` | `meetings/2026-01-15-sync-sprint-review.md` |
-| Inbox | `inbox/YYYY-MM-DD-{slug}.md` | `inbox/2026-01-15-quick-thought.md` |
-| Index | `index/{project}.md` | `index/project-a.md` |
+| Inbox | `00-inbox/YYYY-MM-DD-{slug}.md` | `00-inbox/2026-01-15-quick-thought.md` |
+| Index | `01-index/{project}.md` | `01-index/project-a.md` |
 
 ## File Operations
 

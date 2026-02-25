@@ -101,10 +101,11 @@ integrations:
 
 Requires Notion MCP server configuration.
 
-## Personal Overrides
+## Personal Profile
 
-Copy `CLAUDE.local.md.template` → `CLAUDE.local.md` for settings that won't be committed:
-- Working style preferences
+Edit `_core/identity.md` to set your personal preferences:
+- Role and AI experience level
+- Working style and communication preferences
 - Schedule and energy patterns
 - Coaching intensity
-- Private context
+- Custom instructions for Claude

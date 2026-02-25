@@ -23,7 +23,7 @@ Transform unstructured input into structured notes in the right folders. You han
 
 ### Inbox Processing
 
-1. **Scan** — Read all items in `inbox/`
+1. **Scan** — Read all items in `00-inbox/`
 2. **Classify** — For each item:
    - Detect project from content or tags
    - Detect type using keyword signals

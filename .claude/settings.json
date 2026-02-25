@@ -16,8 +16,8 @@
       "Write(decisions/**)",
       "Write(blockers/**)",
       "Write(meetings/**)",
-      "Write(inbox/**)",
-      "Write(index/**)",
+      "Write(00-inbox/**)",
+      "Write(01-index/**)",
 
       "Write(reports/**)",
       "Write(_archive/**)",
@@ -26,8 +26,8 @@
       "Edit(decisions/**)",
       "Edit(blockers/**)",
       "Edit(meetings/**)",
-      "Edit(inbox/**)",
-      "Edit(index/**)",
+      "Edit(00-inbox/**)",
+      "Edit(01-index/**)",
 
       "Edit(reports/**)"
     ],

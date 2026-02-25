@@ -54,8 +54,8 @@ pm-kit/
 ├── _core/                  # config.yaml, MANIFESTO.md, PROCESSING.md
 ├── _templates/             # Note templates
 ├── .claude/                # Skills, agents, hooks, rules
-├── inbox/                  # Unprocessed captures
-├── index/                  # Project MOCs
+├── 00-inbox/               # Unprocessed captures
+├── 01-index/               # Project MOCs
 ├── daily/                  # YYYY-MM-DD.md
 ├── docs/{project}/         # PRDs, specs, docs
 ├── decisions/{project}/    # Decision records

@@ -60,7 +60,7 @@ When QMD is not available or not indexed:
    | Decisions | `decisions/{project}/*.md` |
    | Blockers | `blockers/{project}/*.md` |
    | Docs | `docs/{project}/*.md`, `docs/general/*.md` |
-   | Status | `index/{project}.md` |
+   | Status | `01-index/{project}.md` |
    | General | All folders |
 
 2. **Search Methods**

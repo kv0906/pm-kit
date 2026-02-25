@@ -1,6 +1,6 @@
 ---
 name: health
-description: Run vault health check — broken links, orphans, missing sections, statistics. Generates report at index/_graph-health.md. Use for "/health".
+description: Run vault health check — broken links, orphans, missing sections, statistics. Generates report at 01-index/_graph-health.md. Use for "/health".
 allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
@@ -56,7 +56,7 @@ TaskCreate: "Generate health report"
    - Compare: "Up to date" | "Update available: vX → vY" | "Could not check"
 
 7. **Generate Report**
-   - Write to `index/_graph-health.md`
+   - Write to `01-index/_graph-health.md`
 
 ## Output Format
 

@@ -1,5 +1,5 @@
 ---
-paths: "docs/**/*.md, decisions/**/*.md, blockers/**/*.md, meetings/**/*.md, daily/**/*.md, inbox/**/*.md"
+paths: "docs/**/*.md, decisions/**/*.md, blockers/**/*.md, meetings/**/*.md, daily/**/*.md, 00-inbox/**/*.md"
 ---
 
 # Naming Conventions (Naming-as-API)
@@ -15,8 +15,8 @@ Strict filename patterns are the API. They enable glob queries without a databas
 | Decision | `decisions/{project}/YYYY-MM-DD-{slug}.md` | `decisions/project-a/2026-01-15-auth-approach.md` |
 | Blocker | `blockers/{project}/YYYY-MM-DD-{slug}.md` | `blockers/project-a/2026-01-15-api-rate-limit.md` |
 | Meeting | `meetings/YYYY-MM-DD-{type}-{slug}.md` | `meetings/2026-01-15-sync-sprint-review.md` |
-| Inbox | `inbox/YYYY-MM-DD-{slug}.md` | `inbox/2026-01-15-quick-thought.md` |
-| Index | `index/{project}.md` | `index/project-a.md` |
+| Inbox | `00-inbox/YYYY-MM-DD-{slug}.md` | `00-inbox/2026-01-15-quick-thought.md` |
+| Index | `01-index/{project}.md` | `01-index/project-a.md` |
 
 ## Slug Rules
 

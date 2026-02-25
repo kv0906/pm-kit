@@ -74,7 +74,7 @@ TaskCreate: "Process detected items"
    - If new: Create from template
 
 6. **Update Project Index**
-   - Add entry to `index/{project}.md` if index exists
+   - Add entry to `01-index/{project}.md` if index exists
 
 ## Output
 

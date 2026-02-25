@@ -41,9 +41,9 @@ elif [[ "$MODIFIED_FILE" == *"blockers/"* ]]; then
     MSG="Update blocker ($PROJECT) - $TIMESTAMP"
 elif [[ "$MODIFIED_FILE" == *"meetings/"* ]]; then
     MSG="Add meeting notes - $TIMESTAMP"
-elif [[ "$MODIFIED_FILE" == *"index/"* ]]; then
+elif [[ "$MODIFIED_FILE" == *"01-index/"* ]]; then
     MSG="Regenerate index - $TIMESTAMP"
-elif [[ "$MODIFIED_FILE" == *"inbox/"* ]]; then
+elif [[ "$MODIFIED_FILE" == *"00-inbox/"* ]]; then
     MSG="Capture inbox item - $TIMESTAMP"
 else
     MSG="Vault update - $TIMESTAMP"

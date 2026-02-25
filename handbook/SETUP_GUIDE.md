@@ -27,10 +27,10 @@ The wizard will:
 
 1. Clone or download this repository
 2. Copy these to your vault location:
-   - `CLAUDE.md`, `CLAUDE.local.md.template`
+   - `CLAUDE.md`
    - `_core/`, `_templates/`
    - `.claude/`, `.claude-plugin/`
-3. Create empty directories: `inbox/`, `index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/`
+3. Create empty directories: `00-inbox/`, `01-index/`, `daily/`, `docs/`, `decisions/`, `blockers/`, `meetings/`, `reports/`, `_archive/`
 4. Edit `_core/config.yaml` with your projects
 5. Run `git init` and make initial commit
 
@@ -58,9 +58,9 @@ projects:
     active: true
 ```
 
-### Personal Overrides
+### Personal Profile
 
-Copy `CLAUDE.local.md.template` to `CLAUDE.local.md` for personal settings that won't be committed to Git.
+Edit `_core/identity.md` to set your role, working style, and coaching preferences. `/onboard` populates it automatically.
 
 ### Auto-Commit
 
@@ -150,7 +150,7 @@ cat VERSION
 |----------|----------|--------|
 | **Framework** | `CLAUDE.md`, `_templates/*`, `.claude/**`, `scripts/*`, `handbook/*` | Overwrite (backed up first) |
 | **Hybrid** | `_core/config.yaml`, `.gitignore` | Diff shown, you merge manually |
-| **User content** | `inbox/`, `daily/`, `decisions/`, `blockers/`, `meetings/` | Never touched |
+| **User content** | `00-inbox/`, `daily/`, `decisions/`, `blockers/`, `meetings/` | Never touched |
 
 ### Backups
 
@@ -179,8 +179,8 @@ vault/
 ├── _core/              # config.yaml, MANIFESTO.md, PROCESSING.md
 ├── _templates/         # Note templates
 ├── .claude/            # Skills, agents, hooks, rules
-├── inbox/              # Quick captures
-├── index/              # Project MOCs
+├── 00-inbox/           # Quick captures
+├── 01-index/           # Project MOCs
 ├── daily/              # Standup notes
 ├── docs/               # PRDs, specs
 ├── decisions/          # Decision records

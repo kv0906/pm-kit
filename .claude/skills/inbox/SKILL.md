@@ -12,7 +12,7 @@ Dual-mode command for fast capture and later processing.
 ## Context
 
 Today's date: `!date +%Y-%m-%d`
-Inbox contents: `!ls inbox/*.md 2>/dev/null`
+Inbox contents: `!ls 00-inbox/*.md 2>/dev/null`
 
 Reference template: @_templates/inbox.md
 Config: @_core/config.yaml
@@ -36,13 +36,13 @@ User input: $ARGUMENTS
    - Type: daily, decision, blocker, meeting, doc
 
 2. **Create Inbox Note**
-   - Filename: `inbox/{date}-{slug}.md`
+   - Filename: `00-inbox/{date}-{slug}.md`
    - Tag with detected project/type
    - Status: unprocessed
 
 3. **Output**
    ```
-   Captured to: inbox/{filename}
+   Captured to: 00-inbox/{filename}
    Detected: {project} / {type}
    Process later with: /inbox
    ```
@@ -62,7 +62,7 @@ TaskCreate: "Route items to destinations"
 ```
 
 1. **Scan Inbox**
-   - List all `.md` files in `inbox/`
+   - List all `.md` files in `00-inbox/`
    - Read and classify each
 
 2. **Present Plan**

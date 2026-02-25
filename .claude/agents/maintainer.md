@@ -17,7 +17,7 @@ Maintain vault health and data integrity. You handle index regeneration, link va
 
 **Always load these first:**
 - `_core/config.yaml` — Active projects, note types, health config
-- `index/` — Project indexes you maintain
+- `01-index/` — Project indexes you maintain
 
 ## What You Handle
 
@@ -32,7 +32,7 @@ Rebuild project index MOC:
    - `daily/` for sections mentioning project (last 7 days)
 2. Preserve manual sections (marked with `%% Manual %%`)
 3. Update auto-generated sections
-4. Write to `index/{project}.md`
+4. Write to `01-index/{project}.md`
 
 ### Archive Management
 

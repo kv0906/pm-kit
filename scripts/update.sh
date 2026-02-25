@@ -207,7 +207,7 @@ if [ "$DRY_RUN" = true ]; then
   DRY_UNCHANGED=0
 
   # Check individual framework files
-  for file in "CLAUDE.md" "CLAUDE.local.md.template" "README.md" "START_HERE.md" \
+  for file in "CLAUDE.md" "README.md" "START_HERE.md" \
               "CHANGELOG.md" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md" "LICENSE" \
               "_core/MANIFESTO.md" "_core/PROCESSING.md"; do
     SRC="$EXTRACT_DIR/$file"
@@ -279,7 +279,6 @@ info "Backing up current files to _archive/_updates/${BACKUP_DATE}/"
 # Individual files to update
 FRAMEWORK_FILES=(
   "CLAUDE.md"
-  "CLAUDE.local.md.template"
   "README.md"
   "START_HERE.md"
   "CHANGELOG.md"

@@ -50,7 +50,7 @@ claude
 
 ## Step 7: Browse in Obsidian
 
-- `index/my-project.md` — project home page
+- `01-index/my-project.md` — project home page
 - `daily/` — all standups
 - `blockers/my-project/` — active blockers
 - `decisions/my-project/` — decision log
