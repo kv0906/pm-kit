@@ -25,6 +25,7 @@ paths:
   meetings: meetings
 
   reports: reports
+  exports: reports/exports
   archive: _archive
   templates: _templates
   core: _core

@@ -96,6 +96,10 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `onboard` | `/onboard` | Interactive setup + context loading |
 | `vault-ops` | (auto) | Core file read/write/link operations |
 
+### Export Flags
+
+Skills that generate output support format export flags: `--xlsx`, `--docx`, `--pdf`, `--pptx`. Append to any supported skill invocation (e.g., `/progress all --xlsx`, `/doc project-a prd --docx`). Requires optional dependencies — run `./scripts/setup-export.sh` to install. See `.claude/rules/export-formats.md` for full mapping and layout specs.
+
 Skills use session task tools for progress visibility during multi-step operations.
 
 ## Agents

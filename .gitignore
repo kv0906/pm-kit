@@ -52,6 +52,7 @@ SCRATCH.md
 .claude/settings.local.json
 # Note: .claude/settings.json is tracked for PM-Kit
 .mcp.json
+
 .cocoindex_sync.log
 # Obsidian (markdown knowledge base) workspace files
 .obsidian/

@@ -1,7 +1,7 @@
 ---
 name: progress
 description: View cross-project status synthesis. Read-only report of shipped items, WIP, blockers, and decisions. Use for "/progress project" or "/progress all".
-allowed-tools: Read, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
+allowed-tools: Read, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
@@ -73,3 +73,7 @@ TaskCreate: "Synthesize report"
 
 **Note**: This command does NOT create any files. Output to terminal only.
 Use `--save` to write to `reports/{date}-progress-{project}.md`
+
+## Export (Optional)
+
+Supports `--xlsx`, `--docx`, `--pdf`, `--pptx` flags. See `.claude/rules/export-formats.md` for layout specs and workflow. Complete normal processing first, then generate the formatted file.

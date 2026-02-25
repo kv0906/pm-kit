@@ -1,7 +1,7 @@
 ---
 name: weekly
 description: Weekly review — 3-phase process (Collect/Reflect/Plan). Reviews shipped items, blockers, decisions, and plans next week. Use on Fridays or Mondays.
-allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
@@ -72,6 +72,10 @@ TaskUpdate: "Phase 3", addBlockedBy: [phase-2-id]
 
 Create weekly review note using template:
 - Filename: `reports/{date}-sprint-retro.md`
+
+## Export (Optional)
+
+Supports `--xlsx`, `--pdf`, `--pptx` flags. See `.claude/rules/export-formats.md` for layout specs and workflow. Complete normal processing first, then generate the formatted file.
 
 ## Integration
 

@@ -6,7 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-<!-- New merged PR entries are inserted here automatically. -->
+### Added
+- Export format flags (`--xlsx`, `--docx`, `--pdf`, `--pptx`) for PM-Kit skills — generate shareable files for stakeholders directly from vault workflows
+- New skills: `/xlsx` (spreadsheet creation/editing), `/docx` (Word document creation/editing), `/pdf` (PDF processing), `/pptx` (PowerPoint creation/editing)
+- `.claude/rules/export-formats.md` — export rules defining skill-to-format mapping, layout specs, and dependency handling
+- `scripts/setup-export.sh` — one-command installer for optional export dependencies (openpyxl, docx-js, reportlab, pptxgenjs)
+- `exports` path in `_core/config.yaml` — output to `reports/exports/`
+
+### Changed
+- Skills `/progress`, `/doc`, `/meet`, `/weekly`, `/block` now accept export format flags and include `Bash` in allowed tools
+- `.claude/settings.json` adds `Bash(python3:*)`, `Bash(python:*)`, `Bash(node:*)` permissions for export generation
+- `CLAUDE.md` documents export flags in Skills section
 
 ## [2026.02.15a] - 2026-02-15
 

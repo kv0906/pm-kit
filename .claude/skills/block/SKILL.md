@@ -1,7 +1,7 @@
 ---
 name: block
 description: Flag a blocker with severity, owner, and due date. Checks for duplicates before creating. Use for "/block project: description --severity high --due friday".
-allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
@@ -54,3 +54,7 @@ User input: $ARGUMENTS
 Created: blockers/{project}/{date}-{slug}.md
 Severity: {severity} | Owner: {owner} | Due: {due}
 ```
+
+## Export (Optional)
+
+Supports `--xlsx` flag. See `.claude/rules/export-formats.md` for layout specs and workflow. Complete normal processing first, then generate the formatted file.

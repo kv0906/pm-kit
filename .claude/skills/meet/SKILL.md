@@ -1,7 +1,7 @@
 ---
 name: meet
 description: Process meeting notes into structured notes with extracted decisions, blockers, and action items. Use for "/meet project type title" then paste notes.
-allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
@@ -75,3 +75,7 @@ Extracted:
 - Blockers: {count} (notes created)
 - Action items: {count}
 ```
+
+## Export (Optional)
+
+Supports `--docx`, `--pdf` flags. See `.claude/rules/export-formats.md` for layout specs and workflow. Complete normal processing first, then generate the formatted file.

@@ -1,7 +1,7 @@
 ---
 name: doc
 description: Draft or edit a document — PRD, spec, design doc, technical brief. Use for "/doc project title" to create a new doc or edit existing.
-allowed-tools: Read, Write, Edit, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
+allowed-tools: Read, Write, Edit, Bash, Glob, Grep, TaskCreate, TaskUpdate, TaskList, TaskGet
 user-invocable: true
 ---
 
@@ -60,3 +60,7 @@ Created: docs/{project}/{slug}.md
 Status: draft
 Sections: {filled}/{total}
 ```
+
+## Export (Optional)
+
+Supports `--docx`, `--pdf` flags. See `.claude/rules/export-formats.md` for layout specs and workflow. Complete normal processing first, then generate the formatted file.
