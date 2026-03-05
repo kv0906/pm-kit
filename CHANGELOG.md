@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+## [2026.03.05] - 2026-03-05
+
+### Added
+- Multi-agent compatibility: symlinks for Cursor (`.cursorrules`, `.cursor/rules/`), Windsurf (`.windsurfrules`), Cline (`.clinerules`), GitHub Copilot (`.github/copilot-instructions.md`), and generic agent conventions (`.agent/`, `.agents/`)
+- All compatibility files symlink to `CLAUDE.md` or `.claude/` as single source of truth
+
+### Changed
+- Updated README "Works With" table to reflect native compatibility with Cursor, Windsurf, Cline, Copilot, and Codex
+
 ## [2026.02.25.2] - 2026-02-25
 
 <!-- New merged PR entries are inserted here automatically. -->

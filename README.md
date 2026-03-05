@@ -114,10 +114,16 @@ Having trouble? See [handbook/QMD_INTEGRATION.md](handbook/QMD_INTEGRATION.md) o
 
 ## Works With
 
-| Tool | Status |
-|------|--------|
-| Claude Code | Native (reads `CLAUDE.md`, commands, skills) |
-| Other AI tools that read markdown context | Partial (manual prompt + file workflow) |
+| Tool | Status | How |
+|------|--------|-----|
+| Claude Code | Native | Reads `CLAUDE.md`, `.claude/` skills, agents, hooks |
+| Cursor | Compatible | `.cursorrules` + `.cursor/rules/` symlinked to source |
+| GitHub Copilot | Compatible | `.github/copilot-instructions.md` symlinked to source |
+| Windsurf | Compatible | `.windsurfrules` symlinked to source |
+| Cline | Compatible | `.clinerules` symlinked to source |
+| OpenAI Codex | Compatible | `AGENTS.md` with project context |
+
+All compatibility files are symlinks to `CLAUDE.md` (single source of truth). Rules in `.claude/rules/` are shared via symlinks where the tool supports directory-based rules.
 
 ## Documentation
 
