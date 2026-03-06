@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+### Fixed
+- **Cleaner user vaults**: `pm-kit init` and `pm-kit update` no longer copy maintainer-only files (`handbook/`, `examples/`, `.github/`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `pm-kit-banner.png`) into user vaults
+
 ## [2026.03.06.2] - 2026-03-06
 
 ### Added
