@@ -8,6 +8,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+### Added
+- **PM-Kit CLI** (`cli/`): standalone bash CLI installed via `curl | bash`
+  - `pm-kit init` — scaffold new vault from latest GitHub release
+  - `pm-kit update` — update framework files while preserving user content
+  - `pm-kit self-update` — update the CLI itself
+  - `pm-kit doctor` — verify vault structure, dependencies, and health
+  - `pm-kit status` — show CLI version, vault version, active projects
+  - `pm-kit migrate` — convert template-cloned vault to CLI-managed
+- Local testing override (`PM_KIT_LOCAL_TARBALL` env var) for CI and pre-release testing
+- CLI docs added to README, START_HERE, SETUP_GUIDE, and maintainer-runbook
+
+### Fixed
+- `find_vault_root()` unbound variable error when called without arguments under `set -u`
+
+### Changed
+- `scripts/update.sh` now includes `AGENTS.md` in framework files and `cli/` in framework dirs
+
 ## [2026.03.05] - 2026-03-05
 
 ### Added
