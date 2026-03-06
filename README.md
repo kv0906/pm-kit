@@ -175,6 +175,6 @@ MIT
 
 ## Star History
 
-[![Star History Chart](handbook/assets/star-history.png)](https://star-history.com/#kv0906/pm-kit&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kv0906/pm-kit&type=Date)](https://star-history.com/#kv0906/pm-kit&Date)
 
 Think clearly. Build simply. Let systems carry the weight.
