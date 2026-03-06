@@ -6,10 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-<!-- New merged PR entries are inserted here automatically. -->
-
-## [2026.03.06a] - 2026-03-06
-
 ### Added
 - **Google Workspace CLI skill** (`.claude/skills/gws/`): comprehensive skill for connecting PMs to Google Workspace via the `gws` CLI
   - Gmail, Calendar, Drive, Sheets, Docs, Chat, Meet, Forms integration
@@ -163,7 +159,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PM Coach output style
 - GitHub Actions workflow for changelog automation
 
-[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.06a...HEAD
-[2026.03.06a]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...v2026.03.06a
+[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...HEAD
 [2026.03.06]: https://github.com/kv0906/pm-kit/compare/v2026.03.05...v2026.03.06[2026.02.25.2]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...v2026.02.25.2[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kv0906/pm-kit/releases/tag/v3.0.0
