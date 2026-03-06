@@ -17,6 +17,23 @@ You will get better results through repetition. The framework should adapt to yo
 
 ## Quick Start
 
+### Option A: CLI Install (Recommended)
+
+```bash
+# 1. Install the CLI
+curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/cli/install.sh | bash
+
+# 2. Create your vault
+pm-kit init ~/Documents/my-vault
+cd ~/Documents/my-vault
+
+# 3. Open the folder in Obsidian, then run Claude Code
+claude
+/onboard
+```
+
+### Option B: GitHub Template
+
 ```bash
 # 1. Use this template on GitHub (or clone)
 git clone <your-repo-url>
@@ -55,7 +72,11 @@ Or for quick atomic updates:
 ## Updating
 
 ```bash
-cat VERSION              # Check current version
+# CLI users
+pm-kit update            # Update framework files from latest release
+pm-kit self-update       # Update the CLI itself
+
+# Template users
 ./scripts/update.sh      # Update framework files from latest release
 ```
 

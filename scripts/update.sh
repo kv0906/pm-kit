@@ -209,6 +209,7 @@ if [ "$DRY_RUN" = true ]; then
   # Check individual framework files
   for file in "CLAUDE.md" "README.md" "START_HERE.md" \
               "CHANGELOG.md" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md" "LICENSE" \
+              "AGENTS.md" \
               "_core/MANIFESTO.md" "_core/PROCESSING.md"; do
     SRC="$EXTRACT_DIR/$file"
     DST="$VAULT_DIR/$file"
@@ -226,7 +227,7 @@ if [ "$DRY_RUN" = true ]; then
   done
 
   # Check framework directories
-  for dir in "_templates" ".claude" ".claude-plugin" "scripts" "handbook" "examples" ".github"; do
+  for dir in "_templates" ".claude" ".claude-plugin" "scripts" "handbook" "examples" ".github" "cli"; do
     SRC_DIR="$EXTRACT_DIR/$dir"
     if [ -d "$SRC_DIR" ]; then
       while IFS= read -r src_file; do
@@ -285,6 +286,7 @@ FRAMEWORK_FILES=(
   "CONTRIBUTING.md"
   "CODE_OF_CONDUCT.md"
   "LICENSE"
+  "AGENTS.md"
   "_core/MANIFESTO.md"
   "_core/PROCESSING.md"
 )
@@ -298,6 +300,7 @@ FRAMEWORK_DIRS=(
   "handbook"
   "examples"
   ".github"
+  "cli"
 )
 
 UPDATED=0

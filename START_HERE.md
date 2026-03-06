@@ -4,6 +4,16 @@ You need 3 things installed: **Git** (or GitHub Desktop), **[Claude Code](https:
 
 ## Step 1: Get your copy
 
+### Option A: CLI Install (Recommended)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/cli/install.sh | bash
+pm-kit init ~/Documents/my-vault
+cd ~/Documents/my-vault
+```
+
+### Option B: GitHub Template
+
 On GitHub, click **"Use this template"** and create a new repo (private recommended).
 
 Clone it locally:

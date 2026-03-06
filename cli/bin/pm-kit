@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# PM-Kit CLI — entry point
+# Installed to ~/.pm-kit/bin/pm-kit
+
+set -euo pipefail
+
+CLI_HOME="${PM_KIT_HOME:-$HOME/.pm-kit}"
+
+# Source shared utilities
+if [ -f "$CLI_HOME/lib/common.sh" ]; then
+  source "$CLI_HOME/lib/common.sh"
+else
+  echo "Error: PM-Kit CLI not properly installed. Run the installer again." >&2
+  echo "  curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/cli/install.sh | bash" >&2
+  exit 1
+fi
+
+# Background self-update check (non-blocking, 24h cooldown)
+maybe_check_for_updates
+
+# --- Subcommand router ---
+
+SUBCOMMAND="${1:-help}"
+shift 2>/dev/null || true
+
+case "$SUBCOMMAND" in
+  init)
+    source "$CLI_HOME/lib/init.sh"
+    cmd_init "$@"
+    ;;
+  update)
+    source "$CLI_HOME/lib/update.sh"
+    cmd_update "$@"
+    ;;
+  self-update|selfupdate)
+    source "$CLI_HOME/lib/self-update.sh"
+    cmd_self_update "$@"
+    ;;
+  doctor|check)
+    source "$CLI_HOME/lib/doctor.sh"
+    cmd_doctor "$@"
+    ;;
+  status|info)
+    source "$CLI_HOME/lib/status.sh"
+    cmd_status "$@"
+    ;;
+  migrate)
+    source "$CLI_HOME/lib/migrate.sh"
+    cmd_migrate "$@"
+    ;;
+  version|--version|-v)
+    echo "pm-kit $(cli_version)"
+    ;;
+  help|--help|-h)
+    banner
+    echo "Usage: pm-kit <command> [options]"
+    echo ""
+    echo "Commands:"
+    echo "  init [path]           Scaffold a new PM-Kit vault"
+    echo "  update [--check|--dry-run|--yes]  Update framework files in current vault"
+    echo "  self-update           Update the PM-Kit CLI itself"
+    echo "  doctor                Verify vault structure and dependencies"
+    echo "  status                Show CLI version, vault version, projects"
+    echo "  migrate               Convert a template-cloned vault to CLI-managed"
+    echo "  version               Print CLI version"
+    echo "  help                  Show this help"
+    echo ""
+    echo "Examples:"
+    echo "  pm-kit init ~/Documents/my-vault"
+    echo "  cd ~/Documents/my-vault && pm-kit update"
+    echo "  pm-kit self-update"
+    echo ""
+    echo "Docs: https://github.com/kv0906/pm-kit"
+    ;;
+  *)
+    err "Unknown command: $SUBCOMMAND"
+    echo "Run ${BOLD}pm-kit help${NC} for usage."
+    exit 1
+    ;;
+esac

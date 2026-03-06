@@ -77,3 +77,13 @@ GitHub Actions `release-on-tag.yml` then creates the GitHub Release.
 - [ ] GitHub Release was created with expected notes
 - [ ] `VERSION` and plugin version match released tag
 - [ ] `/update` path works against latest release metadata
+- [ ] `pm-kit self-update` picks up the new release
+- [ ] `pm-kit init /tmp/test` scaffolds correctly from the new tarball
+
+## CLI Distribution
+
+The `cli/` directory is part of the release tarball and listed in `FRAMEWORK_DIRS` in `scripts/update.sh`. This means:
+- Template users get CLI files on update (they can install the CLI locally if desired)
+- CLI users get CLI updates via both `pm-kit self-update` and `pm-kit update`
+- The `install.sh` script at `cli/install.sh` is the `curl | bash` entry point
+- CLI version = framework version (single `VERSION` file, single release)

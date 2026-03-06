@@ -8,7 +8,19 @@
 
 ## Quick Start
 
-### Automated Setup
+### Option A: CLI Install (Recommended)
+
+```bash
+# Install the CLI (one-time)
+curl -fsSL https://raw.githubusercontent.com/kv0906/pm-kit/main/cli/install.sh | bash
+
+# Create a new vault
+pm-kit init ~/Documents/my-vault
+```
+
+The CLI downloads the latest release, scaffolds the vault, and walks you through project setup.
+
+### Option B: Template Clone
 
 ```bash
 git clone https://github.com/your-repo/pm-kit.git
@@ -135,13 +147,31 @@ cat VERSION
 ### Update from Terminal
 
 ```bash
+# CLI users
+pm-kit update
+pm-kit update --check    # Check only, no download
+pm-kit update --dry-run  # Preview changes
+
+# Template users
 ./scripts/update.sh
+```
+
+### Update the CLI Itself
+
+```bash
+pm-kit self-update
 ```
 
 ### Update from Claude
 
 ```
 /update
+```
+
+### Verify Vault Health
+
+```bash
+pm-kit doctor
 ```
 
 ### What Gets Updated
