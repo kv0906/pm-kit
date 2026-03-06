@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+## [2026.03.06.3] - 2026-03-06
+
+<!-- New merged PR entries are inserted here automatically. -->
+
 ### Fixed
 - **Cleaner user vaults**: `pm-kit init` and `pm-kit update` no longer copy maintainer-only files (`handbook/`, `examples/`, `.github/`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `pm-kit-banner.png`) into user vaults
 
@@ -166,6 +170,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PM Coach output style
 - GitHub Actions workflow for changelog automation
 
-[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.2...HEAD
-[2026.03.06.2]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...v2026.03.06.2[2026.03.06]: https://github.com/kv0906/pm-kit/compare/v2026.03.05...v2026.03.06[2026.02.25.2]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...v2026.02.25.2[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
+[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.3...HEAD
+[2026.03.06.3]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.2...v2026.03.06.3[2026.03.06.2]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...v2026.03.06.2[2026.03.06]: https://github.com/kv0906/pm-kit/compare/v2026.03.05...v2026.03.06[2026.02.25.2]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...v2026.02.25.2[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kv0906/pm-kit/releases/tag/v3.0.0
