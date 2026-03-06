@@ -57,15 +57,15 @@ cmd_init() {
   info "Setting up vault structure..."
 
   # Framework files (root level)
-  for file in CLAUDE.md README.md START_HERE.md CHANGELOG.md CONTRIBUTING.md \
-              CODE_OF_CONDUCT.md LICENSE AGENTS.md VERSION; do
+  for file in CLAUDE.md README.md START_HERE.md CHANGELOG.md \
+              LICENSE AGENTS.md VERSION; do
     if [ -f "$EXTRACT_DIR/$file" ]; then
       cp "$EXTRACT_DIR/$file" "$vault_path/"
     fi
   done
 
   # Framework directories
-  for dir in _core _templates .claude .claude-plugin scripts handbook examples .github cli; do
+  for dir in _core _templates .claude .claude-plugin scripts cli; do
     if [ -d "$EXTRACT_DIR/$dir" ]; then
       cp -R "$EXTRACT_DIR/$dir" "$vault_path/"
     fi
@@ -88,11 +88,6 @@ cmd_init() {
       cp -a "$EXTRACT_DIR/$agent_file" "$vault_path/" 2>/dev/null || true
     fi
   done
-
-  # Banner image
-  if [ -f "$EXTRACT_DIR/pm-kit-banner.png" ]; then
-    cp "$EXTRACT_DIR/pm-kit-banner.png" "$vault_path/"
-  fi
 
   # --- Create user content directories ---
 

@@ -87,3 +87,18 @@ The `cli/` directory is part of the release tarball and listed in `FRAMEWORK_DIR
 - CLI users get CLI updates via both `pm-kit self-update` and `pm-kit update`
 - The `install.sh` script at `cli/install.sh` is the `curl | bash` entry point
 - CLI version = framework version (single `VERSION` file, single release)
+
+## Maintainer-Only Files (Not Distributed to Users)
+
+The following files/dirs exist in the repo but are **excluded** from `pm-kit init` and `pm-kit update`:
+
+| File/Dir | Reason |
+|----------|--------|
+| `handbook/` | Maintainer docs — users have `START_HERE.md` and `/onboard` |
+| `examples/` | Dev examples — not needed in user vaults |
+| `.github/` | CI workflows — only relevant for the pm-kit repo itself |
+| `CONTRIBUTING.md` | Contributor guide — GitHub-facing only |
+| `CODE_OF_CONDUCT.md` | GitHub-facing only |
+| `pm-kit-banner.png` | README image — GitHub-facing only |
+
+These are still in the release tarball (GitHub generates it from the full repo) but `init.sh` and `update.sh` skip them when copying to user vaults.
