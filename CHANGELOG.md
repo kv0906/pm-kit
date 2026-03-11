@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+## [2026.03.11] - 2026-03-11
+
+<!-- New merged PR entries are inserted here automatically. -->
+
 ### Added
 - **External integration skills** — three new skills for bridging PM-Kit with popular task management tools:
   - **Jira skill** (`.claude/skills/jira/`): Full Jira integration via `acli` CLI with 11 sub-commands (board, create, status, move, edit, assign, backlog, search, sprint, sync, setup). Includes vault sync (blocker bridging, daily note updates), JQL cheatsheet reference, project/status mapping in config, and health check script
@@ -178,6 +182,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PM Coach output style
 - GitHub Actions workflow for changelog automation
 
-[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.3...HEAD
-[2026.03.06.3]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.2...v2026.03.06.3[2026.03.06.2]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...v2026.03.06.2[2026.03.06]: https://github.com/kv0906/pm-kit/compare/v2026.03.05...v2026.03.06[2026.02.25.2]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...v2026.02.25.2[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
+[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.03.11...HEAD
+[2026.03.11]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.3...v2026.03.11[2026.03.06.3]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.2...v2026.03.06.3[2026.03.06.2]: https://github.com/kv0906/pm-kit/compare/v2026.03.06...v2026.03.06.2[2026.03.06]: https://github.com/kv0906/pm-kit/compare/v2026.03.05...v2026.03.06[2026.02.25.2]: https://github.com/kv0906/pm-kit/compare/v2026.02.25...v2026.02.25.2[2026.02.25]: https://github.com/kv0906/pm-kit/compare/v2026.02.15a...v2026.02.25[2026.02.14]: https://github.com/kv0906/pm-kit/compare/v0.1.1...v2026.02.14[3.1.0]: https://github.com/kv0906/pm-kit/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/kv0906/pm-kit/releases/tag/v3.0.0
