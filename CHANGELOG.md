@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+### Added
+- **External integration skills** — three new skills for bridging PM-Kit with popular task management tools:
+  - **Jira skill** (`.claude/skills/jira/`): Full Jira integration via `acli` CLI with 11 sub-commands (board, create, status, move, edit, assign, backlog, search, sprint, sync, setup). Includes vault sync (blocker bridging, daily note updates), JQL cheatsheet reference, project/status mapping in config, and health check script
+  - **Linear skill** (`.claude/skills/linear/`): Linear issue tracking via MCP server with sub-commands for setup, sync, create, search, and link. OAuth-based auth, vault note linking with `linear:` frontmatter, daily note integration
+  - **Notion skill** (`.claude/skills/notion/`): Notion workspace integration for search, sync, publish, and pull operations. Bridges vault notes with Notion pages
+- **Jira config block** in `_core/config.yaml` with `site`, `email`, `project_mapping`, `default_board`, and `status_mapping` fields
+- `/jira`, `/linear`, `/notion` added to Skills table in CLAUDE.md
+
 ## [2026.03.06.3] - 2026-03-06
 
 <!-- New merged PR entries are inserted here automatically. -->

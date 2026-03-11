@@ -92,6 +92,9 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `health` | `/health` | Vault health check |
 | `weekly` | `/weekly` | Sprint retro (Collect/Reflect/Plan) |
 | `push` | `/push` | Git commit and sync |
+| `jira` | `/jira` | Jira integration via acli CLI |
+| `linear` | `/linear` | Linear issue tracking integration |
+| `notion` | `/notion` | Notion workspace sync, publish, pull |
 | `update` | `/update` | Check for and apply framework updates |
 | `onboard` | `/onboard` | Interactive setup + context loading |
 | `vault-ops` | (auto) | Core file read/write/link operations |

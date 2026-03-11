@@ -131,11 +131,21 @@ qmd:
 
 # External integrations (optional)
 integrations:
+  jira:
+    enabled: false
+    site: ""                    # e.g., your-org.atlassian.net
+    email: ""
+    project_mapping: {}         # vault-project-id: JIRA-PROJECT-KEY
+    default_board: ""
+    status_mapping:
+      "To Do": wip
+      "In Progress": wip
+      "Done": shipped
+      "Blocked": blocked
   linear:
     enabled: false
   notion:
     enabled: false
-  # Add your own: jira, github, etc.
 
 # Template mappings
 templates:
