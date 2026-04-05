@@ -50,12 +50,21 @@ TaskCreate: "Generate health report"
    - Notes by project
    - Link density (links per note)
 
-6. **Check Update Status**
+6. **Check Synthesis Freshness**
+   - For each `01-index/{project}.md`, check if `## Synthesis` section exists
+   - If synthesis is missing or says "No synthesis yet", flag as stale
+   - Check vault log (`01-index/_vault-log.md`) for last `index-regen` entry per project
+   - If no regen in 7+ days, flag as stale
+
+7. **Check Update Status**
    - Read `VERSION` file for local version
    - Query GitHub API for latest release: `curl -sS "https://api.github.com/repos/{repo}/releases/latest"` (non-fatal on failure)
    - Compare: "Up to date" | "Update available: vX → vY" | "Could not check"
 
-7. **Generate Report**
+8. **Append to Vault Log**
+   - Append `health` entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+
+9. **Generate Report**
    - Write to `01-index/_graph-health.md`
 
 ## Output Format
@@ -92,6 +101,12 @@ TaskCreate: "Generate health report"
 ### Link Density
 - Total links: {n}
 - Average per note: {avg}
+
+## Synthesis Health
+
+| Project | Has Synthesis | Last Index Regen | Status |
+|---------|---------------|------------------|--------|
+| {proj} | Yes/No | {date or "Never"} | Fresh/Stale |
 
 ## Framework Status
 - **Version**: v{local}

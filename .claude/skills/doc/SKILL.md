@@ -53,6 +53,11 @@ User input: $ARGUMENTS
 6. **Update References**
    - Add to project index if exists
 
+7. **Append to Vault Log**
+   - Append entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Action: `doc`
+   - Details: doc title and status
+
 ## Output
 
 ```

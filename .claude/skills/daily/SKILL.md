@@ -76,6 +76,11 @@ TaskCreate: "Process detected items"
 6. **Update Project Index**
    - Add entry to `01-index/{project}.md` if index exists
 
+7. **Append to Vault Log**
+   - Append entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Action: `daily`
+   - Details: summarize shipped/wip/blocked counts
+
 ## Output
 
 ```

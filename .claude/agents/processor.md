@@ -54,6 +54,27 @@ From raw meeting notes, extract:
 | Shipped | shipped, completed, done, finished, merged, deployed, released |
 | Meeting | meeting, call, discussed, attendees, action items |
 
+### Contradiction Checking
+
+Before routing, cross-check new items against existing vault knowledge:
+
+1. **New decision vs existing decisions** — Search `decisions/{project}/` for decisions on the same topic. If found, flag:
+   ```
+   ⚠️ Potential contradiction: This decision ("{new}") may conflict with
+   [[{existing-path}|{existing-title}]] from {date}. Review before creating.
+   ```
+   Present both to user and ask: create (supersedes old) / skip / merge context.
+
+2. **New blocker vs resolved blockers** — Search `_archive/` for previously resolved blockers with similar keywords. If found, flag:
+   ```
+   ⚠️ Recurring blocker: A similar blocker was resolved on {date}.
+   See [[{archived-path}|{title}]]. Same root cause?
+   ```
+
+3. **New item vs active docs** — If a blocker or decision relates to an active doc, link them and note the relationship in both notes.
+
+Always present contradictions to the user before proceeding — never silently overwrite or ignore conflicts.
+
 ### Routing Rules
 
 | Situation | Action |
@@ -62,6 +83,7 @@ From raw meeting notes, extract:
 | Decision mentioned | Always create new (point-in-time record) |
 | Doc referenced | Link if exists, don't auto-create |
 | Duplicate found | Prompt: update / new / skip |
+| Contradiction found | Flag and ask user to resolve |
 | Project unknown | Prompt to select from config |
 | Field missing | Use defaults, note in frontmatter |
 
@@ -74,6 +96,10 @@ Use batch processing pattern:
 ...
 [Done] Inbox complete (5/5 items)
 ```
+
+## Vault Log
+
+After routing items, append entries to `01-index/_vault-log.md` for each item processed. See `.claude/rules/vault-log.md` for format.
 
 ## Handoff Patterns
 

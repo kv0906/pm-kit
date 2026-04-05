@@ -45,6 +45,11 @@ User input: $ARGUMENTS
 4. **Update References**
    - Add to project index if exists
 
+5. **Append to Vault Log**
+   - Append entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Action: `decision`
+   - Details: the decision statement in ~10 words
+
 ## Output
 
 ```

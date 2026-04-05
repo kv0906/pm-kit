@@ -56,6 +56,36 @@ status: active
 
 ---
 
+## Synthesis
+
+%% Auto-updated by Keeper — compiled knowledge, not just links %%
+
+### Current State
+
+{{#if synthesis}}
+{{synthesis.current_state}}
+{{else}}
+*No synthesis yet — will be generated after first index regeneration.*
+{{/if}}
+
+### Key Tensions
+
+{{#if synthesis}}
+{{synthesis.key_tensions}}
+{{else}}
+*None identified yet.*
+{{/if}}
+
+### Open Questions
+
+{{#if synthesis}}
+{{synthesis.open_questions}}
+{{else}}
+*None yet.*
+{{/if}}
+
+---
+
 ## Manual Notes
 
 %% Add your own notes below — this section is preserved during updates %%

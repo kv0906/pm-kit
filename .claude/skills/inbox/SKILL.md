@@ -40,7 +40,12 @@ User input: $ARGUMENTS
    - Tag with detected project/type
    - Status: unprocessed
 
-3. **Output**
+3. **Append to Vault Log**
+   - Append entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Action: `inbox-capture`
+   - Details: what was captured and detected type
+
+4. **Output**
    ```
    Captured to: 00-inbox/{filename}
    Detected: {project} / {type}
@@ -82,7 +87,11 @@ TaskCreate: "Route items to destinations"
      - Route to appropriate handler (/daily, /block, /decide, etc.)
    - Mark processed inbox files
 
-4. **Output**
+4. **Append to Vault Log**
+   - Append one `inbox-route` entry per batch to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Details: count of items routed and their types
+
+5. **Output**
    ```
    Processed: {count} items
    - Daily updates: {count}

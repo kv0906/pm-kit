@@ -8,6 +8,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+### Added
+- **Vault log** — append-only chronological record at `01-index/_vault-log.md` tracks all vault operations (daily, blocker, decision, meeting, doc, inbox, archive, index-regen, health). New rule at `.claude/rules/vault-log.md` defines format and conventions. All note-creating skills (`/daily`, `/meet`, `/block`, `/decide`, `/doc`, `/inbox`) now append log entries automatically
+- **Synthesis sections in project indexes** — `_templates/index.md` now includes a `## Synthesis` section with Current State, Key Tensions, and Open Questions. Maintainer agent generates these by reading across all project notes during index regeneration
+- **Enriched index links** — maintainer agent now generates one-line summaries next to every link in project indexes instead of bare `[[wikilinks]]`
+- **Contradiction checking** — processor agent cross-checks new items against existing decisions, archived blockers, and active docs before routing. Flags conflicts and recurring issues for user review
+- **Synthesis health in `/health`** — health check now reports whether each project has a synthesis section and when the last index regeneration occurred. Stale synthesis (7+ days) flagged in report
+
 ## [2026.03.11] - 2026-03-11
 
 <!-- New merged PR entries are inserted here automatically. -->

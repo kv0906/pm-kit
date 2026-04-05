@@ -30,9 +30,26 @@ Rebuild project index MOC:
    - `docs/{project}/` for active docs
    - `decisions/{project}/` for recent decisions
    - `daily/` for sections mentioning project (last 7 days)
-2. Preserve manual sections (marked with `%% Manual %%`)
-3. Update auto-generated sections
-4. Write to `01-index/{project}.md`
+2. **Enrich links with summaries** — read each note's frontmatter and first paragraph to generate a one-line summary:
+   - Blockers: `[[path|Title]] — {severity}, {one-line description}`
+   - Docs: `[[path|Title]] — {status}, {what it covers}`
+   - Decisions: `[[path|Title]] — {date}, {decision in ~10 words}`
+   - Dailies: `[[path|Date]] — {shipped/wip/blocked counts}`
+3. Preserve manual sections (marked with `%% Manual %%`)
+4. Update auto-generated sections
+5. **Generate synthesis** (see below)
+6. Write to `01-index/{project}.md`
+7. **Append to vault log** — add `[date] index-regen | {project}` entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+
+### Synthesis Generation
+
+After updating link sections, generate the `## Synthesis` section by reading across all active notes for the project:
+
+1. **Current State** — 2-3 sentences summarizing where the project stands right now. What's been shipped recently? What's in progress? What's the trajectory?
+2. **Key Tensions** — Contradictions, competing priorities, or unresolved trade-offs found across notes. E.g., "Decision to use WebSocket (Jan 15) may conflict with the API rate limit blocker (Feb 3)."
+3. **Open Questions** — Questions raised in notes that haven't been answered by a decision. Gaps in documentation. Areas where the vault has no coverage.
+
+Preserve `## Manual Notes` — never overwrite that section.
 
 ### Archive Management
 

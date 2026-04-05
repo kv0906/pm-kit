@@ -48,6 +48,11 @@ User input: $ARGUMENTS
    - Add to project index if exists
    - If critical (high severity + due < 2 days): Flag for escalation
 
+6. **Append to Vault Log**
+   - Append entry to `01-index/_vault-log.md` (see `.claude/rules/vault-log.md`)
+   - Action: `blocker`
+   - Details: severity, owner, one-line description
+
 ## Output
 
 ```
