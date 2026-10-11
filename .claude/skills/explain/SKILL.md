@@ -1,97 +1,41 @@
 ---
 name: explain
-description: Break down complex concepts (math, models, systems, terminology) into first-principles explanations. Use when user says "explain", "break this down", "first principles", "ELI5", or pastes a formula/model/system to understand.
+description: "Explains concepts, product decisions, formulas, and systems at the user's requested depth and language. Use for /explain, how or why questions, first principles, or ELI5."
 ---
 
-# Explain — First Principles Concept Breaker
+# /explain — Working Understanding
 
-Reverse-engineer complex concepts into natural language. No jargon. Start from the end result and work backwards to raw inputs.
-
-**Input format**: `/explain [concept, formula, model, or paste]`
-
-## What You Do
-
-Take any complex input — math formula, scoring model, system design, methodology, technical concept — and explain it so a beginner can explain it back.
+Answer first, then give the smallest mental model that helps the user apply it.
+Adapted from the personal `explain-to-me` skill; keep `/explain` as the existing entry point.
 
 ## Input
 
-User provides:
-- A math problem, equation, methodology, scoring system, model, or abstract concept
-- Optional: context of what it's used for (finance, physics, prediction markets, etc.)
+`/explain [concept, formula, decision, system, or pasted material]`
 
-## Reasoning Process (follow in order)
+Use the current topic when the user asks a follow-up. Read referenced material before explaining it.
+Apply `_core/knowledge.md` to source claims and `_core/judgment.md` when explaining a product tradeoff.
 
-Work through these steps internally before writing the explanation:
+## Depth and Language
 
-**A. Find the End Goal** — What is the final output? Translate it to a real-world result (money, score, probability, decision, ranking).
+- Simple question: answer directly; do not force a tutorial or fixed sections.
+- Working understanding: explain the mechanism, necessary terms, and one useful example.
+- First principles: work backward from the result to inputs, rules, constraints, and what breaks without each part.
+- Technical depth: inspect the source; trace responsibilities, state, boundaries, and failure modes.
+- ELI5: use everyday language without hiding a material exception or constraint.
 
-**B. Find the Inputs** — What raw information goes in? Translate each to real-world meaning.
+Reply in the user's language. Preserve identifiers and useful technical terms; define unfamiliar terms when needed.
+Use notation when it clarifies a formula. An analogy should reduce effort; explain its limits if they matter.
 
-**C. Find How Value Is Earned** — What actions/factors increase the result? What decreases it?
+## Evidence and Decisions
 
-**D. Find Comparisons** — Does the model compare things? (person vs person, side vs side, time vs time). Explain as "share of total" or "relative contribution".
+Distinguish implemented behavior, observed results, assumptions, and interpretation.
+Cite inspected sources for claims about a specific product, document, or codebase.
+For a decision, explain the criteria, alternatives, uncertainty, and what would change the recommendation.
+If a definition is missing, state the assumption. Ask only when it prevents a useful or safe answer.
 
-**E. Find Rules and Boundaries** — Minimums, maximums, penalties, special cases. Explain why each exists.
+## Output
 
-**F. Find Time/Repetition** — If the model samples repeatedly, explain as "measured many times and added up over time."
-
-**G. Find What Breaks Without Each Piece** — For each major component, ask: what goes wrong if we remove this? This reveals WHY it exists.
-
-## Output Structure
-
-Write these sections in order:
-
-### 1. What This Produces
-
-One sentence: what the final output represents in real life.
-
-### 2. What Controls It
-
-List the real-world factors that push the result up or down. No symbols.
-
-### 3. Reverse Walkthrough (End → Beginning)
-
-Start from the final result. Walk backwards through each layer until reaching raw inputs. Each step should answer: "where does THIS come from?"
-
-### 4. What Each Part Measures (and Why)
-
-For each component:
-- What it measures in plain language
-- Why it exists (what breaks without it)
-- What behavior it rewards or punishes
-
-### 5. Rules of the Game
-
-Rewrite the entire model as a rulebook using "If you do X, then Y happens" statements. No math.
-
-### 6. Concrete Example
-
-Small example with simple numbers. Show how changing one input changes the outcome.
-
-### 7. One-Paragraph Summary
-
-Compress everything into one short paragraph a beginner could repeat back.
-
-## Style Rules
-
-- Short sentences. Natural wording.
-- No symbols unless user insists.
-- No jargon: avoid "quadratic", "normalization", "distribution", "convex", "derivative", "expectation", "linear regression" etc.
-- When jargon is unavoidable, immediately follow with a plain restatement: "normalization — meaning we shrink everything to fit on the same scale"
-- Use everyday metaphors: sharing a pie, scoring a game, competition ranking, filling a bucket.
-- Prioritize **meaning** over calculation.
-- Write to a file in `docs/` when output exceeds 20 lines (per vault conventions).
-
-## Fail-Safes
-
-If the input is ambiguous or missing definitions:
-- Make the best interpretation
-- State assumptions explicitly
-- Still explain the likely intent
-
-## Success Criteria
-
-Your explanation succeeds if:
-- A beginner can explain the system back to you
-- The user knows what actions increase/decrease results
-- The user understands why each major piece exists (not just what it does)
+Keep the answer in chat by default, regardless of length. Save a note only when the user asks.
+When saving, follow `/doc` paths, frontmatter, links, and logging; keep the explanation's natural structure.
+Use `/show-me` when a small visual makes the mechanism clearer.
+Ask comprehension questions only when the user requests tutoring. Stop when the question is answered.

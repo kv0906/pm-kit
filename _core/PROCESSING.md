@@ -13,6 +13,8 @@
 | `config.yaml` | Projects, paths, note types, status values | Always |
 | `PROCESSING.md` | Command flows (this file) — I-P-O for each command | Always |
 | `MANIFESTO.md` | Philosophy, principles, why we do things this way | Always |
+| `knowledge.md` | Sources, assumptions, interpretations, and reviewed lessons | When using evidence or making claims |
+| `judgment.md` | Product tradeoffs, personal guidance, and approval boundaries | Before product recommendations |
 
 **Before executing any command**: Read relevant `_core/` files to understand current config and conventions.
 
@@ -81,8 +83,58 @@
 | I-P-O | Description |
 |-------|-------------|
 | **Input** | `{project} {title}` |
-| **Process** | Parse → load context → prompt sections if interactive |
+| **Process** | Load product context → frame problem and evidence → draft proportionate requirements → define validation |
 | **Output** | `docs/{project}/{slug}.md` |
+
+---
+
+### `/explain` and `/show-me`
+
+| I-P-O | Description |
+|-------|-------------|
+| **Input** | Topic, source material, or current discussion |
+| **Process** | Inspect source → choose useful depth or visual → distinguish evidence from inference |
+| **Output** | Explanation or visual in chat; save only when requested |
+
+---
+
+### `/prioritize`
+
+| I-P-O | Description |
+|-------|-------------|
+| **Input** | Project or competing feature requests |
+| **Process** | Identify decision and evidence → choose direct triage, MoSCoW, RICE, or Kano → explain tradeoffs |
+| **Output** | Recommendation in chat; no external backlog changes without authorization |
+
+---
+
+### `/discover`
+
+| I-P-O | Description |
+|-------|-------------|
+| **Input** | Problem, issue, or customer feedback |
+| **Process** | Separate symptom/evidence → apply root cause, I-P-O, or JTBD when useful → propose smallest research step |
+| **Output** | Problem framing, hypotheses, evidence gaps, and research guidance in chat |
+
+---
+
+### `/journey`
+
+| I-P-O | Description |
+|-------|-------------|
+| **Input** | Actor, scenario, and current or proposed experience |
+| **Process** | Scope journey → map steps and friction → label observed/inferred/proposed paths |
+| **Output** | Journey table and focused visual when useful; save only when requested |
+
+---
+
+### `/weekly`
+
+| I-P-O | Description |
+|-------|-------------|
+| **Input** | Past week's notes and relevant product evidence |
+| **Process** | Collect → separate delivery/learning/outcomes → propose priorities and next validation |
+| **Output** | `reports/{date}-sprint-retro.md`; no automatic promotion of proposed lessons |
 
 ---
 

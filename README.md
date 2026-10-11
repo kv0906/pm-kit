@@ -126,16 +126,41 @@ Updates only touch framework files (skills, templates, scripts, docs). Your note
 | `/report` | Executive brief in plain language (CEO/PO view) |
 | `/block` | Structured blocker capture |
 | `/decide` | Decision records with alternatives |
-| `/doc` | PRD/spec drafting |
+| `/doc` | Evidence-backed PRDs, user stories, and validation |
+| `/explain` | Explanations at the depth and language you need |
+| `/show-me` | Focused diagrams and visual explanations |
+| `/prioritize` | Direct triage, MoSCoW, RICE, or Kano when useful |
+| `/discover` | Root cause, I-P-O, JTBD, and research guidance |
+| `/journey` | User journey maps with evidence and friction |
 | `/meet` | Meeting extraction into actions/decisions |
 | `/inbox` | Fast capture for later processing |
 | `/ask` | Vault Q&A (QMD-powered when available) |
 | `/health` | Link + vault integrity checks |
-| `/weekly` | Sprint retro and planning loop |
+| `/weekly` | Review delivery, learning, outcomes, and next priorities |
 | `/push` | Commit and sync |
 | `/onboard` | Interactive setup + context loading |
 | `/update` | Check for and apply framework updates |
 | `/help` | Command reference and workflow cheat sheet |
+
+## Product Thinking
+
+Use only the structure a decision needs. A small reversible request can receive direct
+triage; competing investments may need a comparison. MoSCoW defines release scope,
+RICE compares credible estimates, and Kano examines customer preferences with research.
+
+```text
+/discover project-a: why do users abandon checkout?
+/journey project-a: a returning customer completes checkout
+/prioritize project-a: compare the checkout requests for the next release
+/doc project-a checkout-flow
+```
+
+`_core/judgment.md` defines product reasoning and approval boundaries.
+`_core/knowledge.md` separates evidence, assumptions, interpretations, and reviewed lessons.
+Keep personal judgment and writing examples in `_core/identity.md` or linked `docs/` notes;
+keep product context under `docs/{project}/`. Framework updates preserve those user files
+but replace the shared core guides. Unknown evidence stays unknown; shipped work does
+not automatically count as a measured outcome.
 
 ## Smarter /ask with QMD (Optional)
 

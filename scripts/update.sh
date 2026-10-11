@@ -210,7 +210,8 @@ if [ "$DRY_RUN" = true ]; then
   for file in "CLAUDE.md" "README.md" "START_HERE.md" \
               "CHANGELOG.md" "LICENSE" \
               "AGENTS.md" \
-              "_core/MANIFESTO.md" "_core/PROCESSING.md"; do
+              "_core/MANIFESTO.md" "_core/PROCESSING.md" \
+              "_core/judgment.md" "_core/knowledge.md"; do
     SRC="$EXTRACT_DIR/$file"
     DST="$VAULT_DIR/$file"
     if [ -f "$SRC" ]; then
@@ -287,6 +288,8 @@ FRAMEWORK_FILES=(
   "AGENTS.md"
   "_core/MANIFESTO.md"
   "_core/PROCESSING.md"
+  "_core/judgment.md"
+  "_core/knowledge.md"
 )
 
 # Directories to update (entire contents)

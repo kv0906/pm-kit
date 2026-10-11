@@ -17,6 +17,8 @@ Existing docs: `!ls docs/*/*.md 2>/dev/null | tail -10`
 Reference template: @_templates/doc.md
 Config: @_core/config.yaml
 Processing logic: @_core/PROCESSING.md
+Product judgment: @_core/judgment.md
+Knowledge and evidence: @_core/knowledge.md
 
 ## Input
 
@@ -33,21 +35,30 @@ User input: $ARGUMENTS
    - If found: Offer to edit or create new
 
 3. **Gather Context**
-   - Search for related decisions/blockers
+   - Read the user's profile and relevant project index; follow linked product context and approved judgment/writing examples
+   - Search related docs, customer feedback, meetings, decisions, and blockers
+   - Identify the affected user, their task, observed problem, and desired business outcome before proposing requirements
+   - Separate sources, interpretations, and assumptions; retain conflicting evidence and mark missing evidence as unknown
+   - Use `/discover` when the problem needs investigation and `/prioritize` when competing requests need a scope decision
 
 4. **Interactive Drafting**
-   - Prompt for each major section:
-     - Problem statement
-     - Goals / Non-goals
-     - Requirements (P0/P1/P2)
-     - Technical approach
-   - Or accept full content at once
+   - Accept existing content; ask only for gaps that materially affect the problem, scope, or validation
+   - Draft problem statement, evidence, assumptions, goals/non-goals, and requirements at the depth the task needs
+   - For goals, state the intended outcome; include metric definition, baseline, target, period, and source when known
+   - Propose the smallest validation step and review point; distinguish proposed targets from approved commitments
+   - Do not invent metric values, customer quotes, priorities, owners, or technical decisions
+   - For an approved feature direction, break work into small user stories with actor, need, benefit, and observable acceptance criteria
+   - Cover relevant failure and recovery cases; flag dependencies. If direction is unapproved, label any stories as proposed
+   - Keep technical approach optional when unknown; match the requested audience, language, and approved voice examples
 
 5. **Create Doc Note**
    - If no project specified: write to `docs/general/{slug}.md`
    - If project specified: write to `docs/{project}/{slug}.md`
    - Apply template with gathered data
+   - For saved explanations, research briefs, comparisons, or journey maps, adapt template sections to the purpose; do not add PRD requirements to a thinking note
    - Status: draft
+   - Mark missing sections as unknown or not applicable; never leave unresolved template variables
+   - When editing, preserve existing content and structure; add evidence and validation only where they are relevant
    - Add `## Links` section
 
 6. **Update References**
@@ -65,6 +76,8 @@ Created: docs/{project}/{slug}.md
 Status: draft
 Sections: {filled}/{total}
 ```
+
+Highlight important evidence gaps and the next validation step. Creating a local draft does not authorize publishing it or creating external tickets.
 
 ## Export (Optional)
 

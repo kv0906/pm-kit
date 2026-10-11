@@ -12,6 +12,14 @@ tags: []
 
 {{problem}}
 
+## Evidence
+
+{{evidence}}
+
+## Assumptions
+
+{{assumptions}}
+
 ## Goals
 
 {{goals}}
@@ -36,6 +44,14 @@ tags: []
 {{#each p2}}
 - {{this}}
 {{/each}}
+
+## User Stories
+
+{{stories}}
+
+## Validation
+
+{{validation}}
 
 ## Technical Approach
 

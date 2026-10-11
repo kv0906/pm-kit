@@ -31,6 +31,11 @@ You type /command  →  Agent reads skill  →  Writes markdown notes  →  Link
 | Create a blocker | `/block project-a: description --severity high --due friday` |
 | Log a decision | `/decide project-a: chose X over Y` |
 | Draft a PRD/spec | `/doc project-a checkout-flow` |
+| Understand a concept | `/explain why retention differs from repeat usage` |
+| See an explanation | `/show-me the checkout flow` |
+| Triage competing requests | `/prioritize project-a: compare these requests` |
+| Investigate a user problem | `/discover project-a: why do users abandon checkout?` |
+| Map a user journey | `/journey project-a: returning customer checkout` |
 | Process meeting notes | `/meet project-a sync sprint-review` |
 | Capture a thought | `/inbox idea to review later` |
 | Ask about past work | `/ask what did we decide about auth?` |
@@ -94,6 +99,29 @@ You type /command  →  Agent reads skill  →  Writes markdown notes  →  Link
 **Meeting types:** `sync` (standup/weekly), `milestone` (planning/retro), `external` (client/stakeholder)
 
 Every typed note needs a `## Links` section back to `01-index/{project}.md`.
+
+---
+
+### Product Thinking and Discovery
+
+| Command | Use when | Default output |
+|---------|----------|----------------|
+| `/explain` | You need a concept, formula, or decision explained at a useful depth | Chat; no automatic file creation |
+| `/show-me` | A diagram or sketch explains the topic faster | Small visual in chat |
+| `/prioritize` | You need to triage intake, bound scope, or compare investments | Recommendation and tradeoffs |
+| `/discover` | The problem, cause, job, or research question is unclear | Evidence, hypotheses, and next investigation |
+| `/journey` | Friction spans several user steps or handoffs | Scoped journey table and visual when useful |
+
+Use the smallest method that answers the question. Direct triage is enough for many requests.
+Use MoSCoW for release scope, RICE for comparable estimates, and Kano for customer preference research.
+Discovery uses root cause, I-P-O, or JTBD only where each clarifies an uncertainty.
+Journey maps distinguish observed, inferred, and proposed paths; emotions and metrics are not invented.
+
+These skills save notes only when requested, using `/doc` conventions. They do not publish,
+contact research participants, or change a shared backlog without authorization.
+`/doc` includes evidence, assumptions, stories, and validation; `/weekly` separates delivery,
+learning, and measured outcomes. Store personal judgment in the profile or linked `docs/`
+notes, not in framework-owned `_core/judgment.md` or `_core/knowledge.md`.
 
 ---
 

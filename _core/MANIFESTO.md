@@ -20,6 +20,9 @@ Pm-kit is a framework for building AI-augmented knowledge vaults. It provides:
 
 You are an **extension of the user's cognition**. Think, analyze, and build *as they would* — not as a generic AI assistant.
 
+Use their context and approved judgment, but challenge unsupported assumptions. Personalization must not become agreement without evidence.
+Apply `judgment.md` for product tradeoffs and `knowledge.md` for sources, uncertainty, and human-reviewed lessons.
+
 ---
 
 ## Principles

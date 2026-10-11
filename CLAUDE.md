@@ -9,6 +9,7 @@ PM-Kit is a markdown-only Claude Code plugin — an AI-augmented knowledge vault
 Run `/onboard` to get started as a user.
 
 **Always scan `_core/` first:** `config.yaml` (projects, paths, note types), `PROCESSING.md` (I-P-O flows), `MANIFESTO.md` (philosophy).
+Apply `knowledge.md` when using evidence and `judgment.md` before product recommendations. Follow relevant personal guidance without agreeing to unsupported claims.
 
 ## Architecture
 
@@ -34,7 +35,7 @@ User types /command
 
 | Folder | Purpose |
 |--------|---------|
-| `_core/` | config.yaml, identity.md, MANIFESTO.md, PROCESSING.md |
+| `_core/` | Config, personal identity, philosophy, processing, judgment, and knowledge rules |
 | `_templates/` | Note templates (ALWAYS USE when creating notes) |
 | `.claude/skills/` | Skill definitions (SKILL.md per command) |
 | `.claude/agents/` | Agent definitions (scribe, analyst, maintainer, processor) |
@@ -70,9 +71,9 @@ The update script (`scripts/update.sh`) overwrites framework files but never tou
 
 | Category | Action |
 |----------|--------|
-| **Framework** (CLAUDE.md, _templates/*, .claude/**, scripts/*, handbook/*) | Overwrite (backed up to `_archive/_updates/`) |
+| **Framework** (CLAUDE.md, _core/MANIFESTO.md, _core/PROCESSING.md, _core/judgment.md, _core/knowledge.md, _templates/*, .claude/**, scripts/*, handbook/*) | Overwrite (backed up to `_archive/_updates/`) |
 | **Hybrid** (_core/config.yaml, .gitignore) | Diff shown, user merges manually |
-| **User content** (daily/, docs/, decisions/, blockers/, meetings/, 00-inbox/, 01-index/) | Never touched |
+| **User content** (_core/identity.md, daily/, docs/, decisions/, blockers/, meetings/, 00-inbox/, 01-index/) | Never touched |
 
 ## Skills
 
@@ -87,12 +88,17 @@ Skills are invoked with `/skill-name` or automatically by Claude when relevant.
 | `report` | `/report` | Executive brief — business/user impact, plain language |
 | `block` | `/block` | Create blocker with severity/owner/due |
 | `decide` | `/decide` | Log decision with alternatives |
-| `doc` | `/doc` | Draft PRD/spec/doc |
+| `doc` | `/doc` | Evidence-backed PRD/spec, stories, and validation |
+| `explain` | `/explain` | Adaptive explanations and first principles |
+| `show-me` | `/show-me` | Focused visual explanation |
+| `prioritize` | `/prioritize` | Direct triage, MoSCoW, RICE, or Kano when useful |
+| `discover` | `/discover` | Root cause, I-P-O, JTBD, and research guidance |
+| `journey` | `/journey` | Evidence-backed user journey maps |
 | `meet` | `/meet` | Process meeting notes |
 | `inbox` | `/inbox` | Quick capture + batch processing |
 | `ask` | `/ask` | Fast vault Q&A |
 | `health` | `/health` | Vault health check |
-| `weekly` | `/weekly` | Sprint retro (Collect/Reflect/Plan) |
+| `weekly` | `/weekly` | Delivery, learning, outcomes, and next priorities |
 | `push` | `/push` | Git commit and sync |
 | `jira` | `/jira` | Jira integration via acli CLI |
 | `linear` | `/linear` | Linear issue tracking integration |
@@ -138,6 +144,11 @@ Skills use session task tools for progress visibility during multi-step operatio
 ## Customization
 
 Edit `_core/identity.md` to set your role, working style, and coaching preferences. `/onboard` populates it automatically.
+
+Keep approved judgment and writing examples in the profile or linked `docs/` notes, such as `docs/general/product-judgment.md`.
+Keep product-specific context under `docs/{project}/` and link it from the project index.
+The core judgment and knowledge guides are framework defaults, not storage for personal context.
+Use the smallest method that resolves the decision; do not turn every feature request into a full PM exercise.
 
 ---
 

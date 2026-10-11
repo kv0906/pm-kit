@@ -335,6 +335,8 @@ Load vault context in this order:
 _core/config.yaml      → Projects, paths, note types, keywords
 _core/PROCESSING.md    → I-P-O flows for all skills
 _core/MANIFESTO.md     → Philosophy and principles
+_core/knowledge.md     → Evidence, assumptions, source integrity, and lessons
+_core/judgment.md      → Product tradeoffs, personal guidance, and approval boundaries
 ```
 
 ### 2. Vault Context

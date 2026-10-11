@@ -12,7 +12,7 @@ tags: []
 
 ---
 
-## Wins
+## Delivered
 
 {{#each shipped}}
 - {{this}}
@@ -22,6 +22,14 @@ tags: []
 {{#each carried}}
 - {{this}}
 {{/each}}
+
+## Learning
+
+{{learning}}
+
+## Outcomes
+
+{{outcomes}}
 
 ---
 
@@ -76,10 +84,10 @@ tags: []
 
 ## Next Week Priorities
 
-| Priority | Owner | Due |
-|----------|-------|-----|
+| Priority | Rationale | Owner | Due |
+|----------|-----------|-------|-----|
 {{#each priorities}}
-| {{this.task}} | {{this.owner}} | {{this.due}} |
+| {{this.task}} | {{this.reason}} | {{this.owner}} | {{this.due}} |
 {{/each}}
 
 ### Decisions Needed

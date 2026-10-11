@@ -10,8 +10,9 @@ These conventions apply to daily standups and weekly review processes.
 
 ### Weekly (Review)
 - Review shipped items, blockers, decisions from past 7 days
-- Reflect on what worked and what slowed progress
-- Set top 3 priorities for next week with owners
+- Separate delivered work, learning, and measured outcomes; mark missing impact data as unmeasured
+- Reflect on what worked and what slowed progress using linked evidence
+- Propose up to 3 priorities with rationale; leave unknown owners or dates explicit
 - Run `/weekly` for structured review
 
 ### Daily (Standup)
@@ -55,11 +56,13 @@ Run `/daily` once per project. All updates go in same `daily/YYYY-MM-DD.md`:
 
 ## Weekly Review Process
 
-Three phases, 30 minutes total:
+Three phases; scale the depth to the evidence and decision:
 
-1. **Collect** (10 min) — Aggregate shipped, carried, blockers
-2. **Reflect** (10 min) — Patterns, what worked, what slowed progress
-3. **Plan** (10 min) — Top 3 priorities, risk watchlist, decisions needed
+1. **Collect** — Aggregate shipped, carried, blockers, and product evidence
+2. **Reflect** — Separate delivery, learning, and outcomes; revisit unsupported assumptions
+3. **Plan** — Proposed priorities, next validation, risk watchlist, decisions needed
+
+Keep lessons proposed until approved. Ask before changing shared priorities or publishing a review.
 
 ## Decision Discipline
 

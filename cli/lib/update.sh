@@ -87,6 +87,7 @@ cmd_update() {
     "CHANGELOG.md" "CONTRIBUTING.md" "CODE_OF_CONDUCT.md" "LICENSE"
     "AGENTS.md"
     "_core/MANIFESTO.md" "_core/PROCESSING.md"
+    "_core/judgment.md" "_core/knowledge.md"
   )
 
   local -a FRAMEWORK_DIRS=(

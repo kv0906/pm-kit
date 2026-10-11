@@ -15,6 +15,8 @@ Today's date: `!date +%Y-%m-%d`
 
 Config: @_core/config.yaml
 Processing logic: @_core/PROCESSING.md
+Product judgment: @_core/judgment.md
+Knowledge and evidence: @_core/knowledge.md
 
 Reference template: @_templates/sprint-retro.md
 
@@ -42,7 +44,7 @@ TaskUpdate: "Phase 2", addBlockedBy: [phase-1-id]
 TaskUpdate: "Phase 3", addBlockedBy: [phase-2-id]
 ```
 
-## Phase 1: Collect (10 minutes)
+## Phase 1: Collect
 
 1. Read all daily notes from the past 7 days
 2. For each active project, aggregate:
@@ -50,28 +52,36 @@ TaskUpdate: "Phase 3", addBlockedBy: [phase-2-id]
    - Items carried over (WIP)
    - Blockers resolved
    - Blockers still open
-3. Read recent decisions
-4. Identify patterns in standup data
+3. Read recent decisions and relevant linked product docs, customer feedback, and metric observations
+4. Load relevant approved judgment examples and personal preferences; keep proposed lessons separate
+5. Separate delivered work, learning, and measured outcomes; cite original sources, dates, and scope
+6. Identify patterns in standup data without treating repeated mentions of one source as independent evidence
 
-## Phase 2: Reflect (10 minutes)
+## Phase 2: Reflect
 
 1. Identify what went well / didn't go well
 2. Surface recurring patterns (e.g., same blocker type)
-3. Check: which shipped items had the most impact?
+3. Compare expected outcomes with observed results; include metric definition, period, segment, baseline, and source when available
 4. Check: which blockers slowed progress most?
-5. Note any decisions that need revisiting
+5. Mark missing outcome data as unmeasured; distinguish correlation from causal evidence and surface conflicting signals
+6. Note decisions or assumptions that need revisiting and the evidence behind each proposed change
+7. Propose scoped lessons with sources and exceptions; do not silently update personal judgment rules
 
-## Phase 3: Plan (10 minutes)
+## Phase 3: Plan
 
-1. Set top 3 priorities for next week with owner + due
-2. Identify decisions that need to be made
-3. Anticipate blockers (risk watchlist)
-4. Note any carry-over items
+1. Propose up to 3 priorities with rationale, owner, and due date; mark missing ownership or dates as unknown
+2. Use `/prioritize` only when competing work requires a structured comparison; avoid scoring a simple next step
+3. Identify decisions that need to be made and evidence needed to resolve them
+4. Anticipate blockers (risk watchlist) and note carry-over items
+5. Identify the next outcome check or discovery step. Ask approval before changing shared priorities, publishing, or updating personal rules
 
 ## Output
 
 Create weekly review note using template:
 - Filename: `reports/{date}-sprint-retro.md`
+- Keep the template's `type: retro` and `status: active`; the note status does not approve its proposed priorities
+- Include separate Delivered, Learning, and Outcomes sections; use "No new evidence" or "Unmeasured" rather than invented conclusions
+- Reuse an existing review for the same date when appropriate; preserve human edits
 
 ## Export (Optional)
 
