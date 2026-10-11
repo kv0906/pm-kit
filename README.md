@@ -1,4 +1,4 @@
-![PM-Kit Banner](./pm-kit-banner.png)
+![PM-Kit — Your product thinking workspace. Evidence → Judgment → Outcomes.](./pm-kit-banner.png)
 
 # PM-Kit
 
