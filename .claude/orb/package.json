@@ -1,0 +1,9 @@
+{
+  "name": "pm-kit-orb-tools",
+  "private": true,
+  "description": "Document-generation dependencies for Amp orbs",
+  "dependencies": {
+    "docx": "9.10.0",
+    "pptxgenjs": "4.0.1"
+  }
+}

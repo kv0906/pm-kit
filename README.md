@@ -48,6 +48,37 @@ claude
 
 `/onboard` sets up your project, learns your preferences, and loads context. Full walkthrough: **[START_HERE.md](START_HERE.md)**
 
+### Amp Orbs
+
+Fresh Amp orbs run `.agents/setup` to prepare shell tools and locked document-export
+dependencies (Python, Node, LibreOffice, Pandoc, PDF tools, and OCR). Amp can reuse
+the prepared snapshot; warm setup checks existing packages instead of reinstalling them.
+`.agents` is a symlink to `.claude`, where the lifecycle scripts are tracked.
+
+The setup does not run the interactive vault wizard, edit your notes or configuration,
+or authenticate integrations. QMD and account-specific integrations remain optional.
+There are no persistent services to start; `.agents/resume` performs no installs.
+New login shells inside the repository automatically use the document-tools Python
+environment and Node module path.
+
+To verify setup manually from the repository root:
+
+```bash
+./.agents/setup
+./.agents/resume
+bash -lc 'python -c "import openpyxl, reportlab"; node -e "require(\"docx\"); require(\"pptxgenjs\")"'
+```
+
+Dependency manifests and locks live in `.claude/orb/`. To update them, edit
+`requirements.in` or `package.json`, regenerate the corresponding lock, and commit it:
+
+```bash
+uv pip compile .claude/orb/requirements.in -o .claude/orb/requirements.txt --python-version 3.11
+npm install --prefix .claude/orb --package-lock-only --ignore-scripts
+```
+
+Orb setup must reach the project's default branch before future orbs use it.
+
 ## Daily Routine
 
 ```

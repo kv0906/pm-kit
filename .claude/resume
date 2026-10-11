@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# No databases, tunnels, or credentials need reconnecting for this markdown vault.
+# Dependencies and the login-shell environment are prepared by .agents/setup.
+echo "[orb resume] PM-Kit ready; no services to reconnect"

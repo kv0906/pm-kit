@@ -1,0 +1,11 @@
+# Document export, extraction, validation, and OCR used by the bundled skills.
+openpyxl
+reportlab
+pypdf
+pdfplumber
+markitdown[pptx]
+Pillow
+defusedxml
+lxml
+pdf2image
+pytesseract

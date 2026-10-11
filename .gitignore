@@ -33,6 +33,10 @@ Thumbs.db
 # Node modules (if CLI development happens here)
 node_modules/
 
+# Orb-local dependencies and portal metadata
+.claude/orb/.venv/
+.amp/portals/*
+
 # Build outputs
 dist/
 build/
@@ -78,5 +82,4 @@ factories/
 *.settings.*
 *.doc.*
 *.docs.*
-
 

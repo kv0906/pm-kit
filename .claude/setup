@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# .agents is a symlink to .claude; both paths resolve to this repository.
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+tools="$repo_root/.claude/orb"
+cd "$repo_root"
+SECONDS=0
+
+echo "[orb setup] Checking system tools"
+packages=()
+for entry in git:git curl:curl tar:tar jq:jq rg:ripgrep python3:python3 \
+  node:nodejs npm:npm gcc:gcc pandoc:pandoc pdftoppm:poppler-utils \
+  tesseract:tesseract-ocr; do
+  command -v "${entry%%:*}" >/dev/null 2>&1 || packages+=("${entry#*:}")
+done
+# Writer, Impress, and Calc support Word, PowerPoint, and spreadsheet conversion.
+for package in python3-venv libreoffice-writer libreoffice-impress libreoffice-calc fonts-dejavu-core; do
+  if [[ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null || true)" != "install ok installed" ]]; then
+    packages+=("$package")
+  fi
+done
+if ((${#packages[@]})); then
+  apt=(env DEBIAN_FRONTEND=noninteractive apt-get)
+  if ((EUID != 0)); then apt=(sudo -n "${apt[@]}"); fi
+  "${apt[@]}" update -qq
+  "${apt[@]}" install -y --no-install-recommends "${packages[@]}"
+fi
+echo "[orb setup] System tools ready (${SECONDS}s elapsed)"
+
+echo "[orb setup] Installing locked Python dependencies"
+[[ -x "$tools/.venv/bin/python" ]] || python3 -m venv "$tools/.venv"
+if command -v uv >/dev/null 2>&1; then
+  uv pip install --python "$tools/.venv/bin/python" -r "$tools/requirements.txt"
+else
+  "$tools/.venv/bin/python" -m pip install --disable-pip-version-check -r "$tools/requirements.txt"
+fi
+echo "[orb setup] Python dependencies ready (${SECONDS}s elapsed)"
+
+echo "[orb setup] Installing locked Node dependencies"
+# npm install checks the restored node_modules tree without deleting it like npm ci.
+npm install --prefix "$tools" --ignore-scripts --no-audit --no-fund --prefer-offline
+echo "[orb setup] Node dependencies ready (${SECONDS}s elapsed)"
+
+echo "[orb setup] Persisting the repository environment for login shells"
+profile_marker="# PM-Kit orb document tools"
+if ! grep -Fqx "$profile_marker" "$HOME/.bash_profile" 2>/dev/null; then
+  {
+    printf '\n%s\n' "$profile_marker"
+    printf 'if [[ "$PWD/" == %q* ]]; then\n' "$repo_root/"
+    printf '  export PATH=%q:"$PATH"\n' "$tools/.venv/bin"
+    printf '  export NODE_PATH=%q${NODE_PATH:+:$NODE_PATH}\n' "$tools/node_modules"
+    printf 'fi\n'
+  } >> "$HOME/.bash_profile"
+fi
+
+echo "[orb setup] Verifying document libraries"
+"$tools/.venv/bin/python" -c 'import openpyxl, reportlab, pypdf, pdfplumber, markitdown, PIL, defusedxml, lxml, pdf2image, pytesseract'
+NODE_PATH="$tools/node_modules${NODE_PATH:+:$NODE_PATH}" node -e "require('docx'); require('pptxgenjs')"
+echo "[orb setup] Ready in ${SECONDS}s; no vault configuration or authentication changed"
