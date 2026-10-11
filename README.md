@@ -147,6 +147,9 @@ Updates only touch framework files (skills, templates, scripts, docs). Your note
 Use only the structure a decision needs. A small reversible request can receive direct
 triage; competing investments may need a comparison. MoSCoW defines release scope,
 RICE compares credible estimates, and Kano examines customer preferences with research.
+The kit chooses a method by the decision and missing evidence, then explains a non-obvious choice briefly.
+Opportunity maps, product-risk checks, and outcome measures live inside the existing workflows;
+you do not need to learn more commands or complete every framework for each request.
 
 ```text
 /discover project-a: why do users abandon checkout?

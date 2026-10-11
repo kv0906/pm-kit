@@ -45,6 +45,8 @@ User input: $ARGUMENTS
    - Accept existing content; ask only for gaps that materially affect the problem, scope, or validation
    - Draft problem statement, evidence, assumptions, goals/non-goals, and requirements at the depth the task needs
    - For goals, state the intended outcome; include metric definition, baseline, target, period, and source when known
+   - Follow `_core/judgment.md` to select outcome measures; reuse existing goals rather than forcing a North Star, OKR, or metric tree
+   - For consequential releases or experiments, include relevant guardrails, instrumentation gaps, and proposed scale/iterate/stop criteria
    - Propose the smallest validation step and review point; distinguish proposed targets from approved commitments
    - Do not invent metric values, customer quotes, priorities, owners, or technical decisions
    - For an approved feature direction, break work into small user stories with actor, need, benefit, and observable acceptance criteria

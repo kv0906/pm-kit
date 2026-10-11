@@ -20,8 +20,11 @@ Accept existing evidence before asking questions. Do not require a full research
 - Root cause: use when a failure or recurring symptom needs explanation.
 - Input–Process–Output (I-P-O): use when a process or system transforms inputs into an unexpected result.
 - Jobs to Be Done (JTBD): use when the user's motivation, context, or alternative solution is unclear.
+- Opportunity mapping: use when several customer problems or solution options could contribute to an outcome.
+- Product risks: use when an investment depends on uncertain value, usability, feasibility, or viability.
 - Research plan: use when available evidence cannot distinguish competing explanations or choices.
 
+Follow the selection rules in `_core/judgment.md`; choose the method without requiring the user to know its name.
 Combine lenses only if each answers a distinct uncertainty. Keep mechanisms, motivations, and solution ideas separate.
 
 ## Root Cause and I-P-O
@@ -41,6 +44,17 @@ Identify current alternatives, triggers, obstacles, and what success means for t
 Explore functional, emotional, or social dimensions only where relevant evidence supports them.
 Use recent concrete episodes: what triggered action, what the user tried, why it failed, and what happened next.
 Separate users, buyers, and other actors when their jobs differ. Mark inferred jobs as hypotheses needing validation.
+
+## Opportunities and Investment Tests
+
+When mapping is useful, connect one outcome to customer opportunities, candidate solutions, and assumption tests.
+Keep an opportunity phrased as a need, pain, or desired progress; a feature or AI assistant is a solution option.
+Link evidence to opportunities and mark gaps. Do not retrofit a tree to justify an existing backlog.
+Consider alternative solutions, including a process change or no build, before committing to one.
+Apply the product-risk checks in `_core/judgment.md` to consequential investments; reuse evidence and investigate the largest consequential uncertainty first.
+Match the test to the risk: observation for usability, a spike for feasibility, or a behavioral test for value.
+An interview reveals context; a usability test evaluates a proposed design. Neither alone proves willingness to pay or business viability.
+State what evidence would change the choice. Keep opportunities, causal links, and untested value propositions as hypotheses.
 
 ## Research Guideline
 

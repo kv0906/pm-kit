@@ -66,6 +66,8 @@ TaskUpdate: "Phase 3", addBlockedBy: [phase-2-id]
 5. Mark missing outcome data as unmeasured; distinguish correlation from causal evidence and surface conflicting signals
 6. Note decisions or assumptions that need revisiting and the evidence behind each proposed change
 7. Propose scoped lessons with sources and exceptions; do not silently update personal judgment rules
+8. Compare results with the recorded decision rule and guardrails; propose scale, iterate, stop, or investigate only when evidence supports it
+9. Identify which existing decision, opportunity map, or metric assumption the evidence should change; a report alone does not close the learning loop
 
 ## Phase 3: Plan
 

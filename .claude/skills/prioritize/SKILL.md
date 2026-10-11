@@ -29,6 +29,11 @@ Choose by the question and evidence, not feature complexity alone. Use the user'
 Do not run every framework or require scores for an obvious next step. Explain the method choice only when it is not obvious.
 If evidence is too weak to rank, identify the smallest discovery step instead of manufacturing certainty.
 
+Before ranking optional work, check strategy/outcome fit, customer evidence, invalidating assumptions, and dependencies.
+Explain what existing work would be displaced if a candidate starts now.
+Keep mandatory obligations outside optional scores; low reach or weak demand evidence does not remove a safety or contractual requirement.
+Use scores to inform judgment. Surface a conflict between the score and evidence or constraints rather than letting the number end the decision.
+
 ## Direct Triage and MoSCoW
 
 For direct triage, recommend act, defer, decline, or investigate, with a reason and a next step.
