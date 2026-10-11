@@ -8,6 +8,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- New merged PR entries are inserted here automatically. -->
 
+## [2026.10.11] - 2026-10-11
+
+PM-Kit now helps choose the smallest useful method for a product decision, with stronger evidence, risk, and outcome guidance.
+
+### Added
+- `/prioritize`: direct triage, MoSCoW, RICE, or Kano selected by the decision and available evidence, with strategic checks before scoring.
+- `/discover`: root-cause investigation, Input–Process–Output, JTBD, research guidance, opportunity mapping, and investment-risk tests.
+- `/journey`: evidence-linked user journey maps that distinguish observed, inferred, and proposed paths.
+- `/show-me`: focused visual explanations, with explicit routing for Mermaid and Excalidraw requests.
+- Core judgment and knowledge guides covering framework selection, source integrity, assumptions, product risks, outcome measures, and human-reviewed lessons.
+- Amp orb setup and resume scripts with locked document-tool dependencies and reuse of warm installations.
+
+### Changed
+- `/explain` adapts to the user's language and requested depth; explanations stay in chat unless saving is requested.
+- `/doc` connects problems and evidence to assumptions, user stories, validation, and relevant outcome measures without forcing every document into a PRD.
+- `/weekly` separates delivery, learning, and measured outcomes, then proposes priorities and evidence-backed decision changes.
+- Both framework updaters distribute the new core guides while preserving personal identity, configuration, and user notes.
+- README, onboarding, workflow guidance, and help documentation describe the new workflows and approval boundaries.
+
+### Known Limitations
+- Existing YAML frontmatter issues in `/daily`, `/block`, and `/decide` remain unchanged and may prevent skill discovery in hosts that enforce YAML parsing.
+- Framework selection is agent guidance, not a deterministic runtime or a guarantee of consistent decisions.
+- Claude Code marketplace installation, a custom UI/runtime, and a RAG platform are not included in this release.
+
 ## [2026.06.29] - 2026-06-29
 
 <!-- New merged PR entries are inserted here automatically. -->
@@ -207,7 +231,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - PM Coach output style
 - GitHub Actions workflow for changelog automation
 
-[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.06.29...HEAD
+[Unreleased]: https://github.com/kv0906/pm-kit/compare/v2026.10.11...HEAD
+[2026.10.11]: https://github.com/kv0906/pm-kit/compare/v2026.06.29...v2026.10.11
 [2026.06.29]: https://github.com/kv0906/pm-kit/compare/v2026.04.05...v2026.06.29[2026.04.05]: https://github.com/kv0906/pm-kit/compare/v2026.03.11...v2026.04.05
 [2026.03.11]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.3...v2026.03.11
 [2026.03.06.3]: https://github.com/kv0906/pm-kit/compare/v2026.03.06.2...v2026.03.06.3
